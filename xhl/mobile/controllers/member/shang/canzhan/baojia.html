@@ -1,0 +1,61 @@
+<!--引入header-->
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageFactoryOfferView" class="page1" data-dom-cache="false" data-title="报价项目详情页">
+    <!-- 报价panel 用来加载报价清单-->
+    <div data-role="panel" data-position="right" data-display="overlay" id="offerViewPanel"></div>
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>报价项目详情页</h1>
+    </div>
+    <div data-role="main">
+        <div data-role="content" class="article-main">
+            <div class="article-title">
+                <div class="article-title-inner">
+                    <ul>
+                        <li >工厂名称</li>
+                        <li >项目明细(元)</li>
+                        <li >场地费用(元)</li>
+                        <li >设计提点(%)</li>
+                        <li >设计费(元)</li>
+                        <li >服务费(元)</li>
+                        <li >税点(%)</li>
+                        <li >税(元)</li>
+                        <li >合计(元)</li>
+                        <li >签约</li>
+                    </ul>
+                <{foreach $items as $item}>
+                    <dl>
+                        <dd class="col-sm-3"><a href="/gong/chang-<{$item.company_id}>.html" target="_blank"><{$item.info.title|default:'工厂名称'}></a></dd>
+
+                        <dd><{$item.price}> <span>明细</span></dd>
+                        <dd><{$item.cd_price}></dd>
+                        <dd><{$item.shejidian}></dd>
+                        <dd><{$item.sheji_price}></dd>
+                        <dd><{$item.fuwu_price}></dd>
+                        <dd><{$item.shuidian}></dd>
+                        <dd><{$item.shui_price}></dd>
+                        <dd><{$item.heji_price}></dd>
+                        <dd><{if $canzhan.baojia_id}><{if $canzhan.baojia_id==$item.baojia_id}>签约<{else}>未<{/if}><{else}><a
+                                href="<{link ctl='member/shang/canzhan:qiandan' arg0=$item.baojia_id arg1=$cz_id}>"
+                                class="btn qiandan-btn" mini-act="签约" mini-confirm="确定要选择当前工厂签约？">签约</a><{/if}>
+                        </dd>
+                    </dl>
+                    <div>
+                        <div>
+                            <{foreach $item.data as $xiangmu}>
+                            <dl>
+                                <dd><{$xiangmu.xiangmu}></dd>
+                                <dd><{$xiangmu.price*1.3}></dd>
+                            </dl>
+                            <{/foreach}>
+                        </div>
+                    </div>
+                <{/foreach}>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--引入footer-->
+<{include file="mobile:block/footer.html"}>

@@ -1,0 +1,306 @@
+<{include file="member/block/header.html"}>
+<div class="ucenter_t">
+    <ul><li class="on"><{$detail.title}></li></ul>
+	<div class="r"><a href="<{link ctl='member/sheji/zhantai:index'}>" class="pbtn">案例管理</a></div>
+    <div class="cl"></div>
+</div>
+
+
+    <div class="xiaoguotu-info">
+        <table class="table">
+            <tr>
+                <td>展装名称：</td>
+                <td><{$detail.title}></td>
+            </tr>
+            <tr>
+                <td>展装面积：</td>
+                <td><{$detail.mianji}></td>
+            </tr>
+            <tr>
+                <td>展台简介：</td>
+                <td><{$detail.intro}></td>
+            </tr>
+            
+          
+        </table>
+    </div>
+    <!-- 效果图-->
+    <div class="xiaoguotu-title">效果图<small>（支持JPG、PNG,每稿不超50张图片）</small></div>
+    <div class="panel panel-xiaoguotu">
+    <{if $detail.cz_id}>
+        <div class="panel-heading">
+            <ul class="xiaoguotu-panel-nav nav nav-tabs" id="xiaoguotuTabs">
+            <{foreach $xiaoguotu as $key=>$val}>
+                <li class="active">
+                    <a href="#tu<{$key}>" data-toggle="tab"><{if $key}>修改<{$key}>稿<{else}>设计初稿<{/if}></a>
+                </li>
+            <{/foreach}>
+                <li>
+                    <a href="#tu<{$shejigao}>" data-toggle="tab">修改<{$shejigao}>稿</a>
+                </li>
+            </ul>
+        </div>
+             <{foreach $xiaoguotu as $key=>$val}>
+                <div class="panel-body tab-content">
+                <div class="tab-pane fade in active panel-xiaoguotu-con" id="tu<{$key}>">
+                    <div class="tu-item col-lg-2 col-md-3 col-sm-4">
+                       <div class="SWF_Widget" rel="__SWF_Widget" params='{"submit":"true","case_id":"<{$detail.case_id}>","group":"<{$key}>","OTOKEN":"<{$OTOKEN}>"}'>
+            <span rel="__SWF_ctl" class="SWF_Ctl" style="float:left;">控件加载中...</span>
+            <span style="display:none;" class="SWF_Loading" rel="l"><span rel="m"></span><span rel="n"></span></span>
+        </div>
+                    </div>
+                    <{foreach $val as $item}>
+                        <div class="tu-item col-lg-2 col-md-3 col-sm-4">
+                        <div class="tu-item-inner">
+                           
+                                <img src="<{$pager.img}>/<{$item.photo}>_small.jpg" photo="<{$pager.img}>/<{$item.photo}>" class="wh-50" />
+                                <p><{$item.title}></p>
+                           
+                            <{if $detail.photo == $item.photo}>已设为封面<{else}><a href="<{link ctl='member/sheji/zhantai:defaultphoto' arg0=$item.photo_id}>"  mini-act="confirm:您确定设为封面？" class="btn btn-tu-2">设为封面</a><{/if}>
+                            <a href="<{link ctl='member/sheji/zhantai:deletephoto' arg0=$item.photo_id}>" class="glyphicon glyphicon-remove xiaoguotu-del" mini-act="confirm:删除不可撤销！是否继续删除？" ></a>
+                           
+                        </div>
+                    </div>
+    
+        <{foreachelse}>
+         <div class="tu-item col-lg-2 col-md-3 col-sm-4">
+                        <div class="tu-item-inner">
+                            您还没有上传图片
+                        </div>
+                    </div>
+        <{/foreach}>
+                    
+                    
+                </div>
+            </div>
+       <{/foreach}>
+       <div class="panel-body tab-content">
+            <div class="tab-pane fade in active panel-xiaoguotu-con" id="tu<{$shejigao}>">
+                <div class="tu-item col-lg-2 col-md-3 col-sm-4">
+                   <div class="SWF_Widget" rel="__SWF_Widget" params='{"submit":"true","case_id":"<{$detail.case_id}>","group":"<{$shejigao}>","OTOKEN":"<{$OTOKEN}>"}'>
+        <span rel="__SWF_ctl" class="SWF_Ctl" style="float:left;">控件加载中...</span>
+        <span style="display:none;" class="SWF_Loading" rel="l"><span rel="m"></span><span rel="n"></span></span>
+    </div>
+                </div>
+
+     <div class="tu-item col-lg-2 col-md-3 col-sm-4">
+                    <div class="tu-item-inner">
+                        您还没有上传图片
+                    </div>
+                </div>
+            </div>
+        </div>
+    <{else}>
+        <div class="panel-body tab-content">
+            <div class="tab-pane fade in active panel-xiaoguotu-con" id="tu1">
+                <div class="tu-item col-lg-2 col-md-3 col-sm-4">
+                   <div class="SWF_Widget" rel="__SWF_Widget" params='{"submit":"true","case_id":"<{$detail.case_id}>","OTOKEN":"<{$OTOKEN}>"}'>
+        <span rel="__SWF_ctl" class="SWF_Ctl" style="float:left;">控件加载中...</span>
+        <span style="display:none;" class="SWF_Loading" rel="l"><span rel="m"></span><span rel="n"></span></span>
+    </div>
+                </div>
+                <{foreach $items as $item}>
+                <div class="tu-item col-lg-2 col-md-3 col-sm-4">
+                    <div class="tu-item-inner">
+                       
+                            <img src="<{$pager.img}>/<{$item.photo}>_small.jpg" photo="<{$pager.img}>/<{$item.photo}>" class="wh-50" />
+                            <p><{$item.title}></p>
+                       
+                        <{if $detail.photo == $item.photo}>已设为封面<{else}><a href="<{link ctl='member/sheji/zhantai:defaultphoto' arg0=$item.photo_id}>"  mini-act="confirm:您确定设为封面？" class="btn btn-tu-2">设为封面</a><{/if}>
+                        <a href="<{link ctl='member/sheji/zhantai:deletephoto' arg0=$item.photo_id}>" class="glyphicon glyphicon-remove xiaoguotu-del" mini-act="confirm:删除不可撤销！是否继续删除？" ></a>
+                       
+                    </div>
+                </div>
+
+    <{foreachelse}>
+     <div class="tu-item col-lg-2 col-md-3 col-sm-4">
+                    <div class="tu-item-inner">
+                        您还没有上传图片
+                    </div>
+                </div>
+    <{/foreach}>
+                
+                
+            </div>
+        </div>
+    <{/if}>
+    </div>
+    <{if $detail.cz_id || $detail.istz}>
+    <!-- 报馆图-->
+    <div class="xiaoguotu-title">报馆图<small>（支持JPG、PNG、GIF格式）</small></div>
+    <div class="panel panel-xiaoguotu">
+        <div class="panel-body">
+            <div class="tu-item col-lg-2 col-md-3 col-sm-4">
+               <div class="SWF_Widget" rel="__SWF_Widget_baoguan" params='{"submit":"true","case_id":"<{$detail.case_id}>","OTOKEN":"<{$OTOKEN}>"}'>
+                    <span rel="__SWF_ctl" class="SWF_Ctl" style="float:left;">控件加载中...</span>
+                    <span style="display:none;" class="SWF_Loading" rel="l"><span rel="m"></span><span rel="n"></span></span>
+                </div>
+            </div>
+            
+    <{foreach $baoguan as $item}>
+                <div class="tu-item col-lg-2 col-md-3 col-sm-4">
+                    <div class="tu-item-inner">
+                        <a href="#">
+                            <img src="<{$pager.img}>/<{$item.photo}>_small.jpg" photo="<{$pager.img}>/<{$item.photo}>" class="wh-50" />
+                            <p><{$item.title}></p>
+                        </a>
+                       
+                        <a href="<{link ctl='member/sheji/zhantai:deletebaoguan' arg0=$item.baoguan_id}>" class="glyphicon glyphicon-remove xiaoguotu-del" mini-act="confirm:删除不可撤销！是否继续删除？" ></a>
+                       
+                    </div>
+                </div>
+
+    <{foreachelse}>
+     <div class="tu-item col-lg-2 col-md-3 col-sm-4">
+                    <div class="tu-item-inner">
+                        您还没有上传图片
+                    </div>
+                </div>
+    <{/foreach}>
+            
+              
+        </div>
+    </div>
+    <!-- 施工图-->
+    <div class="xiaoguotu-title">施工图<small>（支持JPG、PNG、GIF格式）</small></div>
+    <div class="panel panel-xiaoguotu">
+        <div class="panel-body">
+            <div class="tu-item col-lg-2 col-md-3 col-sm-4">
+               <div class="SWF_Widget" rel="__SWF_Widget_shigong" params='{"submit":"true","case_id":"<{$detail.case_id}>","OTOKEN":"<{$OTOKEN}>"}'>
+                    <span rel="__SWF_ctl" class="SWF_Ctl" style="float:left;">控件加载中...</span>
+                    <span style="display:none;" class="SWF_Loading" rel="l"><span rel="m"></span><span rel="n"></span></span>
+                </div>
+            </div>
+     <{foreach $shigong as $item}>
+                <div class="tu-item col-lg-2 col-md-3 col-sm-4">
+                    <div class="tu-item-inner">
+                        <a href="#">
+                            <img src="<{$pager.img}>/<{$item.photo}>_small.jpg" photo="<{$pager.img}>/<{$item.photo}>" class="wh-50" />
+                            <p><{$item.title}></p>
+                        </a>
+                       
+                        <a href="<{link ctl='member/sheji/zhantai:deleteshigong' arg0=$item.shigong_id}>" class="glyphicon glyphicon-remove xiaoguotu-del" mini-act="confirm:删除不可撤销！是否继续删除？" ></a>
+                       
+                    </div>
+                </div>
+
+    <{foreachelse}>
+     <div class="tu-item col-lg-2 col-md-3 col-sm-4">
+                    <div class="tu-item-inner">
+                        您还没有上传图片
+                    </div>
+                </div>
+    <{/foreach}>
+            
+        </div>
+    </div>
+    <!-- 3d模型-->
+    <div class="xiaoguotu-title">3D模型<small>（支持rar,zip,tar.gz格式）</small></div>
+    <div class="panel panel-xiaoguotu">
+        <div class="panel-body">
+            <div class="tu-item col-lg-2 col-md-3 col-sm-4">
+               <div class="SWF_Widget" rel="__SWF_Widget_moxing" params='{"submit":"true","case_id":"<{$detail.case_id}>","OTOKEN":"<{$OTOKEN}>"}'>
+                    <span rel="__SWF_ctl" class="SWF_Ctl" style="float:left;">控件加载中...</span>
+                    <span style="display:none;" class="SWF_Loading" rel="l"><span rel="m"></span><span rel="n"></span></span>
+                </div>
+            </div>
+    <{foreach $moxing as $item}>
+                <div class="tu-item col-lg-2 col-md-3 col-sm-4">
+                    <div class="tu-item-inner">
+                        <a href="<{$pager.img}>/<{$item.photo}>">
+                            <img src="<{$pager.img}>/default/rar.jpg" />
+                            <p><{$item.title}></p>
+                        </a>
+                       <a href="<{link ctl='member/sheji/zhantai:deletemoxing' arg0=$item.moxing_id}>" class="glyphicon glyphicon-remove xiaoguotu-del" mini-act="confirm:删除不可撤销！是否继续删除？" ></a>
+                    </div>
+                </div>
+
+    <{foreachelse}>
+     <div class="tu-item col-lg-2 col-md-3 col-sm-4">
+                    <div class="tu-item-inner">
+                        您还没有上传图片
+                    </div>
+                </div>
+    <{/foreach}>
+        </div>
+    </div>
+    <{/if}>
+<script src="<{$pager.res}>/swfupload/swfupload.js" type="text/javascript"></script>
+<script src="<{$pager.res}>/script/kt.upload.js" type="text/javascript"></script>
+<script type="text/javascript">
+(function(K, $){
+$(document).ready(function(){
+var Events = {
+	upload_all_complete : function(event,files){
+		Widget.MsgBox.success("全部图片上传完成！");
+		window.location.reload(true);
+	}
+};
+$("div[rel='__SWF_Widget']").each(function(){
+	$(this).SWFUpload({
+		file_size_limit	: "8 MB",
+		file_upload_limit : 15,
+		upload_url: "<{link ctl='member/sheji/zhantai:upload'}>",
+		file_types : "*.jpg;*.gif;*.jpeg;*.png;",
+		file_types_description : "添加图片",
+		flash_url : "<{$pager.res}>/swfupload/swfupload.swf",
+		button_image_url : "<{$pager.res}>/swfupload/img.jpg",
+		button_placeholder :$("[rel='__SWF_ctl']",this)[0],
+		button_width: 148,
+		button_height: 148,
+		events:Events,
+		debug : false
+	});
+});
+$("div[rel='__SWF_Widget_baoguan']").each(function(){
+	$(this).SWFUpload({
+		file_size_limit	: "8 MB",
+		file_upload_limit : 15,
+		upload_url: "<{link ctl='member/sheji/zhantai:upload_baoguan'}>",
+		file_types : "*.jpg;*.gif;*.jpeg;*.png;",
+		file_types_description : "添加图片",
+		flash_url : "<{$pager.res}>/swfupload/swfupload.swf",
+		button_image_url : "<{$pager.res}>/swfupload/img.jpg",
+		button_placeholder :$("[rel='__SWF_ctl']",this)[0],
+		button_width: 148,
+		button_height: 148,
+		events:Events,
+		debug : false
+	});
+});
+$("div[rel='__SWF_Widget_shigong']").each(function(){
+	$(this).SWFUpload({
+		file_size_limit	: "8 MB",
+		file_upload_limit : 15,
+		upload_url: "<{link ctl='member/sheji/zhantai:upload_shigong'}>",
+		file_types : "*.jpg;*.gif;*.jpeg;*.png;",
+		file_types_description : "添加图片",
+		flash_url : "<{$pager.res}>/swfupload/swfupload.swf",
+		button_image_url : "<{$pager.res}>/swfupload/img.jpg",
+		button_placeholder :$("[rel='__SWF_ctl']",this)[0],
+		button_width: 148,
+		button_height: 148,
+		events:Events,
+		debug : false
+	});
+});
+$("div[rel='__SWF_Widget_moxing']").each(function(){
+	$(this).SWFUpload({
+		file_size_limit	: "200 MB",
+		file_upload_limit : 1,
+		upload_url: "<{link ctl='member/sheji/zhantai:upload_moxing'}>",
+		file_types : "*.rar;*.zip;",
+		file_types_description : "添加模型",
+		flash_url : "<{$pager.res}>/swfupload/swfupload.swf",
+		button_image_url : "<{$pager.res}>/swfupload/img.jpg",
+		button_placeholder :$("[rel='__SWF_ctl']",this)[0],
+		button_width: 148,
+		button_height: 148,
+		events:Events,
+		debug : false
+	});
+});
+});
+})(window.KT, window.jQuery)
+</script>
+<{include file="member/block/footer.html"}>

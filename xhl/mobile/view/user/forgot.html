@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <{include file="block/headerinfo.html"}>
+    <link href="/expo/expo/css/login.css" rel="stylesheet">
+    <script src="/expo/expo/js/user-opt.js"></script>
+    <title>会员登录</title>
+</head>
+<body>
+<{assign var="seo_sub_title" value="会员登录"}>
+<{include file="block/factoryheader.html"}>
+<!--接入精简header头-->
+<div class="container">
+    <!--主体内容开始-->
+    <div class="login-forgot">
+        <h3>如需找回密码请联系客服：</h3>
+        <h1>400-178-1616</h1>
+        <p><a href="user.html" class="btn btn-lg">返回登录</a> <a href="/user-reg.html" class="btn btn-lg">立即注册</a></p>
+    </div>
+    <!--主体内容结束-->
+</div>
+<!--底边内容开始-->
+<script>
+    $("[verify]").click(function () {
+        $($(this).attr("verify")).attr("src", "/index.php?magic-verify&_" + Math.random());
+    });
+</script>
+<!--接入footer-->
+<{include file="block/factoryfooter.html"}>
+</body>
+</html>

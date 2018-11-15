@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{$seo_title}>_一路展工程中心</title>   
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageInfo" class="page1" data-dom-cache="false" data-title="<{$seo_title}>_一路展工程中心">
+    <!-- panel 菜单 -->
+    <{include file="mobile:block/top.html"}>
+    <div data-role="header" class="header" data-position="fixed">
+        <a href="/" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+        <h1><{$company.title}></h1>
+        <a href="#article3-menu" class="ui-btn iconfont icon-menu"></a>
+    </div>
+    
+    <div data-role="main">
+        <div class="article3-main">
+            <{include file="mobile:gong/headermain.html"}>
+            <div class="article3-details factory-article-con">
+                <h3>工厂简介</h3>
+                <div class="article-3-details-con">
+                    <p><{$company.info}></p>
+                </div>
+            </div>
+        </div>
+    </div> 
+<{include file="mobile:block/footer.html"}>

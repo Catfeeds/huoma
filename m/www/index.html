@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>干点活</title>
+    <meta name="keywords" content="干点活"/>
+    <meta name="description" content="干点活"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/project/project.js"></script>
+    <script src="js/member_head.js"></script>
+    <script src="js/index_load.js"></script>
+    <script src="js/touchslider.js"></script>
+    <script src="js/gdh_chat.js"></script>
+    <script src="http://cdn.bootcss.com/iScroll/5.2.0/iscroll.js"></script>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/iconfont.css"/>
+    <link rel="stylesheet" href="css/iconfont1.css"/>
+    <link rel="stylesheet" href="css/iconfont3.css"/>
+    <link rel="stylesheet" href="css/style2.css" />
+    
+</head>
+
+<body>
+
+<div id="wrapper" class="collapse">
+    <div class="menu animate ">
+        <div class="menu-user">
+            <img src="img/user_photo.jpg" id="member_face"/>
+            <div class="menu-user-info">
+                <a class="unlog" href="login.html">登录</a>
+                <a class="unlog" href="register.html">注册</a>
+            </div>
+        </div>
+        <ul class="menu-list">
+            <li class="current"><a href="index.html">首页</a></li>
+            <li><a href="index.html">项目</a></li>
+            <li><a href="designer.html">技术</a></li>
+            <li><a href="project_class.html">活儿</a></li>
+            <li><a href="index.html">更多</a></li>
+            <li><a href="javascript:void(0);">APP下载</a></li>
+        </ul>
+    </div>
+    <script>
+        $(function () {
+            $(".menu-ico").click(function (e) {
+                e.preventDefault();
+                $(this).hide();
+                $("#wrapper").css("overflow", "hidden");
+                $("div.screen, div.fixedGuide").addClass("expand").removeClass("collapse");
+                $(".menu-close").fadeIn();
+            });
+
+            $(".menu-close").click(function (e) {
+                e.preventDefault();
+                $(this).hide();
+                $("div.screen, div.fixedGuide").removeClass("expand").addClass("collapse");
+                $(".menu-ico").fadeIn();
+                window.setTimeout(function () {
+                    $("#wrapper").css("overflow", "visible");
+                }, 1000);
+            });
+        });
+    </script>
+
+    <div class="screen animate collapse">
+
+        <header class="head">
+            <div class="menu-ico"></div>
+            <div class="menu-close" style="display: none;"></div>
+            <div class="sear">
+                <input type="text" name="keywords" id="keywords" placeholder="项目/解决方案/问题"/>
+                <a href="javascript:search();"><img src="img/search_03.png"></a>
+            </div>
+            <div class="xinxi"><a href="#" class="message">信息</a></div>
+            <!-- <a class="logo" href="" title="天天投"><img src="http://pp1.evervc.com/mobi-topic-imgs/wap-logo.png" /></a>-->
+            <script>
+                $(function () {
+                    $(".search-status a").click(function (e) {
+                        e.preventDefault();
+                        $(this).hide();
+                        $(".search-cancel, .search-wrap").fadeIn();
+                    });
+
+                    $(".search-cancel").click(function (e) {
+                        e.preventDefault();
+                        $(".search-cancel").hide();
+                        $(".search-wrap").fadeOut();
+                        $(".search-status a").fadeIn();
+                    });
+
+                });
+            </script>
+
+
+        </header>
+  <div class="find_nav_left">
+        <div class="find_nav_list" id="pagenavi1">
+        <!--<nav class="navbar">-->
+            <ul>
+                <li class="current"><a href="index.html">精选</a></li>
+                <li><a href="">logo设计</a></li>
+                <li><a href="">小程序</a></li>
+                <li><a href="">文案策划</a></li>
+                  <li><a href="">网站建设</a></li>
+                <li><a href="">电商</a></li>
+               <!-- <li><a href=""><img class="biao" src="img/biao_03.png"></a></li>-->
+               
+            </ul>
+       <!-- </nav>-->
+      
+</div>
+ <a class="biao_1" href="xuduo.html"><img class="biao" src="img/biao_03.png"></a>
+</div>
+        <div class="main item-card" id="item-card">
+            <div class="main1" style="display: none;">
+                <p class="p1">Hi,干点活是否设置投资偏好？</p>
+                <p class="p2">设置后我们可以根据你的投资领域、阶段等信息为你推荐匹配项目，以便提升工作效率。</p>
+                <p class="p3" onclick="$(this).parent('.main1').hide()">以后再说</p>
+                <a class="a1" href="member_preference.html">立即设置</a>
+            </div>
+            <!--内容-->
+            	
+          
+            <!--<div class="main2"> 
+            	<a href="detail.html?id="+index['xiangmu_id']+""> 
+            		<dl> 
+            			<dt><img src=""+res.attachurl+"/"+index['thumb']+""></dt> 
+            			<dd> <p class="p4">1213131</p>
+            				<span class="s1">名企</span><span class="s2">名校</span>
+            				 <p class="p5">132323</p>
+            				  </dd>
+            				   </dl> 
+            	</a> 
+            	<div class="rongzi"> 
+            		<div class="xin"> 
+            			<div class="left"> <i class="iconfont">&#xe608;</i><span>2</span>
+            				 </div> <div class="center"><i class="iconfont">&#xe64b;</i><span>2</span>
+            				 	
+            				 </div>
+     <div class="right">
+     	<a href="detail.html?id="+index['xiangmu_id']+"" class="iconfont">&#xe679;</a></div>
+            				   </div> </div> </div>-->
+            				   <div id="slider1" class="swipe">
+  <ul class="box01_list">
+	<li class="li_list_1">
+		<div class="main2"> 
+			<a href=""> <dl> <dt>
+				<img src="img/biao_07.png"></dt> 
+				<dd> <p class="p4">网站建设，企业模板开发，企业网站定制开发图形品牌商标</p>
+					<p class="p5">￥3099/个</p> </dd> </dl> </a>
+				 </div>
+				 <div class="main2"> 
+			<a href=""> <dl> <dt>
+				<img src="img/biao_07.png"></dt> 
+				<dd> <p class="p4">网站建设，企业模板开发，企业网站定制开发图形品牌商标</p>
+					<p class="p5">￥3099/个</p> </dd> </dl> </a>
+				 </div>
+				 <div class="main2"> 
+			<a href=""> <dl> <dt>
+				<img src="img/biao_07.png"></dt> 
+				<dd> <p class="p4">网站建设，企业模板开发，企业网站定制开发图形品牌商标</p>
+					<p class="p5">￥3099/个</p> </dd> </dl> </a>
+				 </div>
+				 <div class="main2"> 
+			<a href=""> <dl> <dt>
+				<img src="img/biao_07.png"></dt> 
+				<dd> <p class="p4">网站建设，企业模板开发，企业网站定制开发图形品牌商标</p>
+					<p class="p5">￥3099/个</p> </dd> </dl> </a>
+				 </div>
+				 <div class="main2"> 
+			<a href=""> <dl> <dt>
+				<img src="img/biao_07.png"></dt> 
+				<dd> <p class="p4">网站建设，企业模板开发，企业网站定制开发图形品牌商标</p>
+					<p class="p5">￥3099/个</p> </dd> </dl> </a>
+				 </div>
+	</li>
+	<li class="li_list">  <div class="da">
+            <div class="main4">
+                <a href="project.html?class=day"><p class="p1">每天优选项目解决方案</p></a>
+                <a href="project.html?class=day"><p class="p2">从海量数据中为你选择最优质的项目</p></a>
+            </div>
+            <div class="main1">
+                <a href="project.html?class=week"><p class="p1">每周优选项目解决方案</p></a>
+                <a href="project.html?class=week"><p class="p2">从海量数据中为你选择最优质的项目</p></a>
+            </div>
+            <div class="yue">
+                <a href="project.html?class=month"><p class="p1">每月优选项目解决方案</p></a>
+                <a href="project.html?class=month"><p class="p2">从海量数据中为你选择最优质的项目</p></a>
+            </div>
+            <div class="main3">
+                <a href="project.html"><p class="p1">优选项目解决方案合集</p></a>
+                <a href="project.html"><p class="p2">从海量数据中为你选择最优质的项目</p></a>
+            </div>
+        </div></li>
+	<li class="li_list_3">小程序</li>
+	<li class="li_list"><div class="xuan">文案策划</div></li>
+<li class="li_list"><div class="xuan">网站建设</div></li>
+<li class="li_list"><div class="xuan">电商</div></li>
+
+  </ul>
+</div>
+            				   <!--内容-->
+            				     
+        </div>
+
+        <div class="bottom">
+            <ul>
+                <li><a href="index.html" class="active"><i class="iconfont">&#xe62f;</i><span>项目</span></a></li>
+                <li><a href="designer.html"><i class="iconfont">&#xe72e;</i><span>技术</span></a></li>
+                <li><a href="member_preference.html"><img src="img/index_19.png"></a></li>
+                <li><a href="zixun.html"><i class="iconfont">&#xe627;</i><span>资讯</span></a></li>
+                <li><a href="member.html"><i class="iconfont">&#xe619;</i><span>我的</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	$(".find_nav_list").css("left",0);
+
+$(".find_nav_list li").each(function(){
+		$(".sideline").css({left:0});
+		$(".find_nav_list li").eq(0).addClass("find_nav_cur").siblings().removeClass("find_nav_cur");
+});
+var nav_w=$(".find_nav_list li").first().width();
+$(".sideline").width(nav_w);
+$(".find_nav_list li").on('click', function(){
+	nav_w=$(this).width();
+	$(".sideline").stop(true);
+	$(".sideline").animate({left:$(this).position().left},300);
+	$(".sideline").animate({width:nav_w});
+	$(this).addClass("find_nav_cur").siblings().removeClass("find_nav_cur");
+	var fn_w = ($(".find_nav").width() - nav_w) / 2;
+	var fnl_l;
+	var fnl_x = parseInt($(this).position().left);
+	if (fnl_x <= fn_w) {
+		fnl_l = 0;
+	} else if (fn_w - fnl_x <= flb_w - fl_w) {
+		fnl_l = flb_w - fl_w;
+	} else {
+		fnl_l = fn_w - fnl_x;
+	}
+	$(".find_nav_list").animate({
+		"left" : fnl_l
+	}, 300);
+	
+});
+var fl_w=$(".find_nav_list").width();
+var flb_w=$(".find_nav_left").width();
+$(".find_nav_list").on('touchstart', function (e) {
+	var touch1 = e.originalEvent.targetTouches[0];
+	x1 = touch1.pageX;
+	y1 = touch1.pageY;
+	ty_left = parseInt($(this).css("left"));
+});
+$(".find_nav_list").on('touchmove', function (e) {
+	var touch2 = e.originalEvent.targetTouches[0];
+	var x2 = touch2.pageX;
+	var y2 = touch2.pageY;
+	if(ty_left + x2 - x1>=0){
+		$(this).css("left", 0);
+	}else if(ty_left + x2 - x1<=flb_w-fl_w){
+		$(this).css("left", flb_w-fl_w);
+	}else{
+		$(this).css("left", ty_left + x2 - x1);
+	}
+	if(Math.abs(y2-y1)>0){
+		e.preventDefault();
+	}
+});
+
+
+for(n=1;n<9;n++){
+	var page='pagenavi'+n;
+	var mslide='slider'+n;
+	var mtitle='emtitle'+n;
+	arrdiv = 'arrdiv' + n;
+	var as=document.getElementById(page).getElementsByTagName('a');
+	var tt=new TouchSlider({id:mslide,'auto':'-1',fx:'ease-out',direction:'left',speed:600,timeout:5000,'before':function(index){
+		var as=document.getElementById(this.page).getElementsByTagName('a');
+		as[this.p].className='';
+		this.p=index;
+		
+		fnl_x =  parseInt($(".find_nav_list li").eq(this.p).position().left);
+		
+		nav_w=$(".find_nav_list li").eq(this.p).width();
+		$(".sideline").stop(true);
+		$(".sideline").animate({left:$(".find_nav_list li").eq(this.p).position().left},300);
+		$(".sideline").animate({width:nav_w},100);
+		$(".find_nav_list li").eq(this.p).addClass("find_nav_cur").siblings().removeClass("find_nav_cur");
+		var fn_w = ($(".find_nav").width() - nav_w) / 2;
+		var fnl_l;
+		if (fnl_x <= fn_w) {
+			fnl_l = 0;
+		} else if (fn_w - fnl_x <= flb_w - fl_w) {
+			fnl_l = flb_w - fl_w;
+		} else {
+			fnl_l = fn_w - fnl_x;
+		}
+		$(".find_nav_list").animate({
+			"left" : fnl_l
+		}, 300);
+	}});
+	tt.page = page;
+	tt.p = 0;
+	//console.dir(tt); console.dir(tt.__proto__);
+
+	for(var i=0;i<as.length;i++){
+		(function(){
+			var j=i;
+			as[j].tt = tt;
+			as[j].onclick=function(){
+				this.tt.slide(j);
+				return false;
+			}
+		})();
+	}
+}
+
+  var ele = $("#pagenavi1 ul");
+    ele.width((ele.find("#pagenavi1 ul li").length + 1) * (ele.find("#pagenavi1 ul li").width()+20));
+    var myScroll = new IScroll('#pagenavi1', {scrollX: true, scrollY: false});
+    myScroll.scrollToElement('.active',true,true);
+</script>

@@ -1,0 +1,235 @@
+@charset "utf-8";
+
+/* reset */
+
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+    overflow-y: scroll;
+    overflow: -moz-scrollbars-vertical;
+    color: #3a3a3a !important;
+    -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    margin: 0; padding: 0;
+}
+
+body {
+    height: 100%;
+    _height: 100%;
+    cursor: default;
+    /*background-color: #f0f0f0;*/
+}
+
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    display: block;
+}
+
+/* HTML5 媒体文件跟 img 保持一致 */
+audio,canvas,video {
+    display: inline-block;
+    *display: inline; *zoom: 1;
+}
+
+/* 要注意表单元素并不继承父级 font 的问题 */
+body,button,input,select,textarea {
+    font: 14px / 1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-font-smoothing:antialiased;
+}
+input,select,textarea {
+    font-size:100%;
+}
+
+/* 去掉各 table cell 的边距并让其边重合 */
+table {
+    border-collapse: collapse; border-spacing: 0;
+}
+
+/* IE bug fixed: th 不继承 text-align */
+th {
+    text-align: inherit;
+}
+
+/* 去除默认边框 */
+fieldset, img{
+    border: 0;
+}
+
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe{
+    display: block;
+}
+
+/* 去掉 firefox 下此元素的边框 */
+abbr,acronym {
+    border: 0; font-variant: normal;
+}
+
+/* 一致的 del 样式 */
+del {
+    text-decoration: line-through;
+}
+
+i {
+    font-style: normal;
+}
+
+address,caption,cite,code,dfn,em,th,var {
+    font-style: normal; font-weight: 500;
+}
+
+/* 去掉列表前的标识, li 会继承 */
+ol,ul {
+    list-style: none;
+}
+
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+caption,th {
+    text-align: left;
+}
+
+/* 来自yahoo, 让标题都自定义, 适应多个系统应用 */
+h1,h2,h3,h4,h5,h6 {
+    font-size: 100%; font-weight: 500; color: #000;
+}
+
+h1 {
+    font-size: 20px;font-weight: normal;
+}
+h2 {
+    font-size: 16px;
+}
+h3,h4,h5,h6 {
+    font-size: 14px;
+}
+
+/* 解决ie下重复最后字符 */
+q:before,q:after {
+    content:'';
+}
+
+/* 统一上标和下标 */
+sub,sup {
+    position: relative; font-size: 75%; line-height: 0; vertical-align: baseline;
+}
+sup {
+    top: -0.5em;
+}
+sub {
+    bottom: -0.25em;
+}
+
+.clearfix {display: block;clear: both;}
+
+a:link,a:visited {color:#445;text-decoration:none;/* transition:all 0.2s ease 0s; */}
+a:hover {
+    color: #445;
+    text-decoration: none;
+}
+a.a666 {color:#666;}
+a.a999 {color:#999;}
+a.a56 {color:#445;}
+a.a56:hover {text-decoration: none;color: #00a0ff;}
+
+/***************************{Common CSS Class}*****************************/
+.al { text-align: left; }
+.ar { text-align: right; }
+.ac { text-align: center; }
+.lc { margin: 0 auto; }
+.fl, .il .fl { float: left; }
+.fr, .il .fr { float: right; }
+.fc, .il .fc { float: none; clear: both; }
+
+.rel { position: relative; }
+.abs { position: absolute; }
+
+.il { list-style: none; }
+.il li { float: left; }
+
+.w250 {width: 250px;}
+
+.green {color:#00bb00;}
+.green2 {color:#2ee879;}
+.blue {color:#00a0ff;}
+.red {color:#f70;}
+.c000 {color:#000;}
+.c333 {color:#333;}
+.c666 {color:#666;}
+.c999 {color:#99a;}
+.c3c {color:#ccc;}
+.c3d {color:#ddd;}
+.c456 {color:#456;}
+.cf50 {color:#f50}
+.cf60 {color:#f60}
+.cf70 {color:#f70}
+.cf80 {color:#f80}
+.cc40 {color:#c40}
+.c56 {color: #445;}
+
+.bold {font-weight:bold;}
+
+.f12 {font-size:12px;}
+.f14 {font-size:14px;}
+.f16 {font-size:15px;}
+.f18 {font-size:18px;}
+.f20 {font-size:20px;}
+.f30 {font-size:30px;}
+.f40 {font-size:40px;}
+
+/* margin */
+.mt0 {margin-top: 0;}
+.mt5 {margin-top: 5px;}
+.mt10 {margin-top: 10px;}
+.mt15 {margin-top: 15px;}
+.mt20 {margin-top: 20px;}
+.mt30 {margin-top: 30px;}
+.mt50 {margin-top: 50px;}
+.mt70 {margin-top: 70px;}
+
+.mr5 {margin-right: 5px;}
+.mr10 {margin-right: 10px;}
+.mr15 {margin-right: 15px;}
+.mr20 {margin-right: 20px;}
+
+.mb5 {margin-bottom: 5px;}
+.mb10 {margin-bottom: 10px;}
+.mb15 {margin-bottom: 15px;}
+.mb20 {margin-bottom: 20px;}
+.mb30 {margin-bottom: 30px;}
+.mb50 {margin-bottom: 50px;}
+.mb100 {margin-bottom: 100px;}
+.mb300 {margin-bottom: 300px;}
+
+.ml5 {margin-left: 5px;}
+.ml10 {margin-left: 10px;}
+.ml15 {margin-left: 15px;}
+.ml18 {margin-left: 18px;}
+.ml20 {margin-left: 20px;}
+.ml30 {margin-left: 30px;}
+.ml50 {margin-left: 50px;}
+.ml70 {margin-left: 70px;}
+.ml100 {margin-left: 100px;}
+.ml120 {margin-left: 120px;}
+.ml130 {margin-left: 130px;}
+.ml140 {margin-left: 140px;}
+.ml150 {margin-left: 150px;}
+.ml160 {margin-left: 160px;}
+
+
+.pt5 {margin-top: 5px;}
+.pt10 {margin-top: 10px;}
+.pt15 {margin-top: 15px;}
+.pt20 {margin-top: 20px;}
+.pt30 {margin-top: 30px;}
+.pt50 {margin-top: 50px;}
+
+.ib {display: inline-block;}
+.lh24 {line-height: 24px;}
+
+/*::-webkit-scrollbar{width:8px;height:8px}*/
+/*::-webkit-scrollbar-thumb{background-color:#888;border-radius:5px}*/
+/*::-webkit-scrollbar-thumb:hover{background-color:#777}*/
+/*::-webkit-scrollbar-thumb:active{background-color:#666}*/

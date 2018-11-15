@@ -1,0 +1,27 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageList" data-mylist-con="order-listCon" data-mylist-src="/member/shang/canzhan-qy.html?" class="page1" data-dom-cache="false" data-title="签约监督">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>签约监督</h1>
+
+    </div>
+    <div data-role="main">
+        <div class="order-listCon" id='qiandan-<{$PAGEID}>'>
+        <!-- list 数据容器，这里不要存放数据-->
+        <{if $qy}>
+          <{include file="mobile:member/shang/canzhan/qy.html"}>
+        <{else}>
+                <div class="fOffer-noList">
+                <h1><span class="iconfont icon-menu1"></span></h1>
+                </div>
+        <{/if}>
+        </div>
+        <!-- Loading-->
+        <div class="listLoading" id="listLoading">
+            <div class="listLoadLabel"><img src="//www.jisunet.com/mobile/img/listload.gif" height="12"/> 等待载入数据。。。</div>
+        </div>
+    </div>
+<!--引入footer-->
+<{include file="mobile:member/block/footer.html"}>

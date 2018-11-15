@@ -1,0 +1,37 @@
+<!--引入header-->
+<{include file="mobile:member/block/header.html"}>
+
+<div data-role="page" data-mylist-con="order-listCon" data-mylist-src="/member/shang/canzhan-canzhanlist.html" id="pageFlow" class="pageUserFactoryOffer" data-dom-cache="false" data-title="设计后台">
+    <!-- 设计后台菜单 -->
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>订单详情</h1>
+        <a href="#userFactoryOfferPanel" class="ui-btn iconfont icon-menu"></a>
+    </div>
+    <div data-role="main">
+        <!-- 订单详情 -->
+       
+        <div class="order-listCon" id="canzhanlist-<{$PAGEID}>">
+        <ul data-role="listview" data-icon="false" class="order-list-item ui-listview">
+            <li class="ui-li-divider ui-li-static ui-body-inherit ui-li-has-count ui-first-child">订单号：<{$detail.order_sn}><span class="ui-li-count ui-body-inherit"></span></li>
+
+                <div class="order-list-offer">公司名称：<span><{$detail.cname}></span></div>
+                <div class="order-list-offer">展会名称：<span><{$detail.zname}></span></div>
+                <div class="order-list-offer">开始时间：<span><{$detail.startime|format:'Y-m-d'}>至<{$detail.endtime|format:'Y-m-d'}></span></div>
+                <div class="order-list-offer">展位号：<span><{$detail.zweihao}></span></div>
+                <div class="order-list-offer">展位面积：<span><{$detail.mianji}>㎡</span></div>
+                <div class="order-list-offer">执行经理：<{$detail.zhixing_name}><span>&nbsp;&nbsp;QQ：<{$detail.zhixing_qq}></span> <a href="tel:<{$detail.zhixing_mobile}>"><i class="iconfont icon-tel total"></i><{$detail.zhixing_mobile}></a></div>
+
+        </ul>  
+        <ul data-role="listview" data-icon="false" class="order-list-item ui-listview">
+            <li class="ui-li-divider ui-li-static ui-body-inherit ui-li-has-count ui-first-child">展台设计要求问询表<span class="ui-li-count ui-body-inherit"></span><small>（请在pc端操作）</small></li>
+            <li class="ui-li-divider ui-li-static ui-body-inherit ui-li-has-count ui-first-child">需求文档列表<span class="ui-li-count ui-body-inherit"></span><small>（请在pc端操作）</small></li>
+        </ul>     
+        </div>
+
+    </div>
+<!--设计后台菜单-->
+<{include file="mobile:member/block/designertop.html"}>
+<!--引入footer-->
+<{include file="mobile:member/block/footer.html"}>

@@ -1,0 +1,412 @@
+.top{
+	    position: fixed;
+	    top:0;
+	    left:0;
+    z-index: 1001;
+    width: 100%;
+    height: 61px;
+    background-color: white;
+        box-shadow: 1px 2px 3px 0 rgba(179,178,179,.5);
+}
+.container{
+	    /*padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;*/
+   margin:0 auto;
+        width: 1190px;
+        height:61px;
+}
+.logo{
+	    width: 100px;
+    height: 50px;
+    margin: 10px 10px 10px 0px;
+    float:left;
+}
+.logo img{
+	    width: 90px;
+    height: 40px;
+}
+.nav{
+  height:100%;
+   width:296px;
+   float:left;
+}
+.nav ul{
+	 height:100%;
+	 width:296px;
+}
+.nav ul li{
+	float:left;
+	height:100%;
+	width:25%;
+	line-height: 61px;
+}
+.nav ul li a{
+	    padding: 19px 15px;
+    letter-spacing: 2px;
+}
+.denglu{
+	float:right;
+	width:149px;
+	height:61px;
+	line-height:61px;
+}
+.denglu .zhu{
+	padding:6px 16px;
+	background:#fe552e;
+	border-radius:4px;
+	color:white;
+	
+}
+.denglu .deng{
+	padding:4px 14px;
+	border-radius:4px;
+	border:2px solid #ccc;
+	margin-left:15px;
+}
+.search{
+	width:230px;
+	height:61px;
+	line-height: 61px;
+	float:right;
+	    margin: 0px 10px 0px 10px;
+	    position:relative;
+}
+.search .form-control{
+	width:221px;
+	height:24px;
+	border:1px solid #ccc;
+	border-radius:4px;
+}
+.img1{
+	position:absolute;
+	top:24px;
+	right:27px;
+}
+
+.main{
+	width:100%;
+	padding-bottom:50px;
+	overflow: hidden;
+}
+.main_1{
+	margin:45px auto;
+	width:1190px;
+	height:100%;
+}
+
+.dier{
+	width:100%;
+	padding-bottom:60px;
+	background:#ededed;
+}
+.dier_1{
+	margin:0 auto;
+	width:1190px;
+	height:100%;
+	
+}
+
+.dier .heng{
+	width:243px;
+	height:52px;
+	margin:0px auto;
+	border-bottom:2px solid #cccccc;
+	position:relative;
+}
+
+.dier .heng h2{
+	    position: absolute;
+    bottom: -7px;
+    right: 50%;
+    margin-right: -52px;
+    width: 100px;
+    height: 24px;
+    background:#ededed;
+    text-align: center;
+    font-size:22px;
+}
+.main .heng{
+	width:243px;
+	height:52px;
+	margin:30px auto;
+	border-bottom:2px solid #cccccc;
+	position:relative;
+}
+
+.main .heng h2{
+	    position: absolute;
+    bottom: -7px;
+    right: 50%;
+    margin-right: -52px;
+    width: 100px;
+    height: 24px;
+    background: white;
+    text-align: center;
+    font-size:22px;
+}
+.view{
+	padding-left:5px;
+	padding-right:5px;
+	margin-top:20px;
+	height:100%;
+}
+.dier .xiao .p1{
+	padding:0 3px;
+	font-size:14px;
+}
+.dier .box{
+	width:214px;
+	border-radius:3px;
+	float:left;
+	margin:10px 4px;
+	background:white;
+}
+.dier .box:hover{
+	
+	transform:translateY(-5px);
+}
+.box:hover .p1{
+	
+	color:#fe552e;
+}
+.dier .s3{
+	float:left;
+	font-weight:600;
+}
+.dier .img3{
+	display:block;
+	width:100%;
+	height:100%;
+}
+.box .bao_1{
+	width:214px;
+	height:214px;
+}
+.dier .s1{
+	float:right;
+	font-size:12px;
+	height:24px;
+	line-height: 24px;
+}
+.dier .s2{
+	float:left;
+	font-size:14px;
+}
+.img4{
+	float:right;
+	padding-top:3px;
+}
+.dier .p2{
+	height:24px;
+	font-size:14px;
+	padding:0 3px;
+	border-bottom:1px solid #ccc;
+}
+.xia{
+	height:24px;
+	padding:0 3px;
+}
+.xiao{
+	border-bottom:1px solid #ccc;
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+	border-radius:0 0 4px 4px;
+}
+.gengduo{
+	height:24px;
+	width: 100%;
+	    overflow: hidden;
+}
+.gengduo a{
+	float:right;
+    width: 173px;
+	height:24px;
+	position:relative;
+}
+.gengduo a span{
+	height:24px;
+	position:absolute;
+	top:2px;
+	right:117px;
+}
+.gengduo a img{
+	height:15px;
+	position:absolute;
+	top:7px;
+	right:90px;
+}
+.middle{
+	width:100%;
+	margin-top: 28px;
+}
+.middle .left_3{
+	width:100px;
+	height:100px;
+	border-radius:50%;
+	margin:0 auto;
+	
+}
+.middle .left_3 .box1_1{
+	width:100%;
+	height:100%;
+	border-radius:50%;
+}
+.middle .box1{
+	width: 214px;
+    height: 183px;
+    float: left;
+    margin-right: 21px;
+    padding: 10px 0;
+    text-align: center;
+}
+.box1 span{
+	font-size:14px;
+	 display:table-cell;
+	 vertical-align:middle;
+}
+.box1 p{
+	font-size:14px;
+}
+.box1 .guanzhu{
+	height:21px;
+	line-height: 8px;
+	padding:0px 35px;
+	border:1px solid #ccc;
+	
+}
+.box1 .guanzhu{
+	color:#fe552e;
+
+}
+.box1 div{
+	margin-top:5px;
+}
+.yi1{
+	color:#fe552e;
+}
+.yi{
+	color:#333;
+}
+.you{
+	width:100%;
+	margin-top:28px;
+}
+.you .left_4{
+	width:50px;
+	height:50px;
+	border-radius:50%;
+	margin:0 auto;
+	float:left;
+	margin-right: 10px;
+}
+.you .box2 .fangan{
+	width:100%;
+	height:100%;
+	border-radius:50%;
+}
+.box2{
+		width:100%;
+		height:100%;
+		overflow: hidden;
+	border-right:1px solid #ccc;
+}
+.box2_5:nth-child(4) .box2,.box2_5:nth-child(8) .box2,.box2_5:nth-child(12) .box2,
+.box2_5:nth-child(16) .box2,.box2_5:nth-child(20) .box2,.box2_5:nth-child(24) .box2{
+	border-right:none;
+}
+.box2_5{
+		/*width:23%;*/
+	/*float:left;*/
+width:23%;
+	float:left;
+	
+	padding:0px 5px;
+	margin-top:20px;
+	
+}
+.box2 ul li{
+	width:25%;
+	float:left;
+	height:24px;
+	text-align: center;
+}
+.box2 ul li a{
+	font-size:12px;
+}
+.box2_5 p{
+	font-size:16px;
+	padding-left:14px;
+	font-weight:600;
+}
+.kuai{
+		display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+}
+.kuai1{
+	display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;
+overflow: hidden;
+}
+.bottom{
+	background:#333333;
+	height:280px;
+}
+.bottom_1{
+	background:#333333;
+	margin:0 auto;
+        width: 1190px;
+        height:280px;
+}
+.bottom_1 ul{
+	float:left;
+	width:20%;
+	height:100%;
+	text-align: center;
+}
+.bottom_1 ul li a{
+	font-size:20px;
+	color:white;
+}
+.bottom_1 ul li{
+	height:33.33%;
+	line-height: 87px;
+}
+.gengduo1{
+	height:34px;
+	width: 100%;
+	    overflow: hidden;
+}
+.gengduo1 a{
+	float:right;
+    width: 173px;
+	height:34px;
+	position:relative;
+}
+.gengduo1 a span{
+	height:34px;
+	position:absolute;
+	top:12px;
+	right:85px;
+}
+.gengduo1 a img{
+	height:20px;
+	position:absolute;
+	top:13px;
+	right:55px;
+}
+.diyi{
+	overflow: hidden;
+	width:100%;
+	background:white;
+}
+.dier{
+	overflow: hidden;
+}
+.add{
+	color:red;
+}

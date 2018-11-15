@@ -1,0 +1,341 @@
+<!--引入header-->
+<{include file="mobile:member/block/header.html"}>
+
+<div data-role="page" id="pagelist" class="pageUserFactory" data-dom-cache="false" data-title="项目流程">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>订单详情</h1>
+    </div>
+    <div data-role="main">
+        <!-- 项目简介-->
+        <div class="order-listCon">
+            <ul data-role="listview" class="order-list-item">
+                <li class="ui-li-divider">订单号：<{$detail.order_sn}><i><{if $detail.isoem}>OEM<{else}>定制<{/if}></i><span class="ui-li-count"><a href="http://www.baidu.com">进行中</a></span></li>
+                <div class="order-list-offer">展会名称：<span><{$detail.zname}></span></div>
+                <div class="order-list-offer">展会面积：<span><{$detail.mianji}>㎡</span></div>
+                <div class="order-list-offer">状态：<span class="total"><{$status_list[$detail.status]}></span></div>
+                <div class="order-list-offer">展馆：<span><{$detail.gname}></span></div>
+                <div class="order-list-offer">展位号：<span><{$detail.zweihao}></span></div>
+                <div class="order-list-offer">展会时间：<span><{$detail.startime|format:'Y.m.d'}> 到 <{$detail.endtime|format:'m.d'}></span></div>
+                <div class="order-list-offer">搭建时间：<span><{if $detail.dajiantime}><{$detail.dajiantime|format:'Y.m.d'}> 到 <{$detail.dajianend|format:'m.d'}><{else}>无<{/if}></span></div>
+                <div class="order-list-offer">报馆截止时间：<span><{if $detail.baoguandeadline}><{$detail.baoguandeadline|format:'Y.m.d'}><{else}>
+                 无<{/if}>
+                </span></div>
+                
+                <{if $detail.zhixing_id}>
+                <div class="ui-li-has-thumb order-manager">
+                    <a href="#" class="ui-btn" data-transition="slide">
+                        <img src="//www.jisunet.com/mobile/img/pic1.jpg"/>
+                        <h4><{$detail.zhixing_name}> <small class="manager">执行经理</small></h4>
+                        <p>QQ：<{$detail.zhixing_qq}></p>
+                    </a>
+                    <a href="tel:<{$detail.zhixing_mobile}>" class="iconfont icon-tel"></a>
+                </div>
+                <{/if}>
+                <{if $shejishi.name}>
+                <div class="ui-li-has-thumb order-manager">
+                    <a href="#" class="ui-btn" data-transition="slide">
+                        <img src="//www.jisunet.com/mobile/img/pic1.jpg"/>
+                        <h4><{$shejishi.name}> <small class="designer">设计师</small></h4>
+                        <p>QQ：<{$shejishi.qq}></p>
+                    </a>
+                    <a href="tel:<{$shejishi.mobile}>" class="iconfont icon-tel"></a>
+                </div>
+                <{/if}>
+            </ul>
+        </div>
+        <!-- 项目流程主内容 -->
+        <div class="qdFlow">
+            <div class="order-flow">
+                <a href="#" class="js-slideDown">
+                    <div class="flow-flow <{if $status.2}> pass <{/if}>"><span class="iconfont"><{if !$status.2}>1<{/if}></span></div>
+                    <div class="flow-time <{if $status.2}> pass <{/if}>"><div class="flow-item ">平台接单 </div> <span class="iconfont icon-more"></span> <{if $status.2}><{$status.2.addtime|format:'Y.m.d'}><{/if}> <p><{if $status.2}><{$status.2.addtime|format:'H:i'}><{/if}></p></div>
+                </a>
+                <div class="flow-con hide js-slideCon">
+                    <div class="flow-flow pass"></div>
+                    <div>
+                        <div class="flow-inner">
+                            <div class="flow-style1">
+                                <h4>展台设计要求问询表 <small>（请在PC端完成）</small></h4>
+                                <h4>需求文档列表 <small>（请在PC端完成）</small></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="js-slideDown">
+                    <div class="flow-flow <{if $status.3}> pass<{/if}><{if $statu.status==3}> active<{/if}>"><span class="iconfont"><{if !$status.3}>2<{/if}></span></div>
+                    <div class="flow-time <{if $detail.sheji}> pass<{/if}><{if $statu.status==3}> active<{/if}>"><div class="flow-item ">设计方案  </div> <span class="iconfont icon-more"></span><{if $countnum}><em><{$countnum}></em><{/if}> <{if $status.3}><{$status.3.addtime|format:'Y.m.d'}><{/if}> <p><{if $status.3}><{$status.3.addtime|format:'H:i'}><{/if}></p></div>
+                </a>
+                <div class="flow-con hide js-slideCon">
+                    <div class="flow-flow pass"></div>
+                    <div>
+                        <div class="flow-inner">
+                            <ul class="flow-style2">
+                                <{foreach $detail.sheji as $sheji}>
+                                <{if $detail.uid==$sheji.uid}>
+                                <li>
+                                    <{if $sheji.case.photo}>
+                                    <a href="/member/shang/canzhan-show-<{$sheji.case_id}>-<{$detail.cz_id}>.html">
+                                        <img src="<{$pager.img}>/<{$sheji.case.group.0.photo}>_small.jpg" alt="">
+                                        <h4><{$sheji.case.title}></h4>
+                                        <p><{$sheji.uname}> <small>设计师</small></p>
+                                    </a>
+                                    <{else}>
+                                    暂未上传...
+                                    <{/if}>
+                                </li>
+                                <{else}>
+                                <li>
+                                    <{if $sheji.case.photo}>
+                                    <a href="/member/shang/canzhan-show-<{$sheji.case_id}>-<{$detail.cz_id}>.html">
+                                        <img src="<{$pager.img}>/<{$sheji.case.group.0.photo}>" alt="">
+                                        <h4><{$sheji.uname}>设计初稿</h4>
+                                        <p><{$sheji.uname}> <small>设计师</small></p>
+                                    </a>
+                                    <{else}>
+                                    设计中...
+                                    <a>最迟交稿时间：<{$sheji.endtime|format}></a>
+                                    <{/if}>
+                                </li>
+                                <{/if}>
+                                <{/foreach}>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="js-slideDown">
+                    <div class="flow-flow <{if $status.51}>pass<{/if}><{if $statu.status==51}> active<{/if}>"><span class="iconfont"><{if !$status.51}>3<{/if}></span></div>
+                    <div class="flow-time <{if $xiugainum}>pass<{/if}><{if $statu.status==51}> active<{/if}>"><div class="flow-item">修改方案 </div> <span class="iconfont icon-more"></span><{if $xiugainum}><em><{$xiugainum}></em><{/if}> <{if $status.51}><{$status.51.addtime|format:'Y.m.d'}><{/if}> <p><{if $status.51}><{$status.51.addtime|format:'H:i'}><{/if}> </p></div>
+                </a>
+                <div class="flow-con hide js-slideCon">
+                    <div class="flow-flow"></div>
+                    <div>
+                        <div class="flow-inner">
+                            <ul class="flow-style2">
+                                <{foreach $detail.sheji as $sheji}>
+                                <{if count($sheji.case.group)>1}>
+                                <{foreach $sheji.case.group as $key=>$group}>
+                                <{if $key!=0}>
+                                <li>
+                                    <a href="/member/shang/canzhan-show-<{$sheji.case_id}>-<{$detail.cz_id}>-<{$key}>.html">
+                                        <img src="<{$pager.img}>/<{$group.photo}>_small.jpg" alt="">
+                                        <h4><{if $key}>修改<{$key}>稿<{else}>设计初稿<{/if}></h4>
+                                        <p><{$sheji.uname}> <small>设计师</small></p>
+                                    </a>
+                                </li>
+                                <{/if}>
+                                <{/foreach}>
+                                <{/if}>
+                                <{/foreach}>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#" class="js-slideDown">
+                    <div class="flow-flow <{if $status.4}>pass<{/if}><{if $statu.status==4}> active<{/if}>"><span class="iconfont"><{if !$status.4}>4<{/if}></span></div>
+                    <div class="flow-time <{if $cases.title}>pass<{/if}><{if $statu.status==4}> active<{/if}>"><div class="flow-item ">定稿方案  </div> <span class="iconfont icon-more"></span> <{if $status.4}><{$status.4.addtime|format:'Y.m.d'}><{/if}> <p><{if $status.4}><{$status.4.addtime|format:'H:i'}><{/if}></p></div>
+                </a>
+                <div class="flow-con hide js-slideCon">
+                    <div class="flow-flow pass"></div>
+                    <div>
+                        <div class="flow-inner">
+                            <ul class="flow-style2">
+                                <{if $cases}>
+                                <li>
+                                    <a href="/member/shang/canzhan-show-<{$cases.case_id}>-<{$detail.cz_id}>-dinggao.html">
+                                        <img src="<{$pager.img}>/<{$cases.photo}>" alt="">
+                                        <h4><{$cases.title}></h4>
+                                        <p><{$shejishi.name}> <small>设计师</small></p>
+                                    </a>
+                                </li>
+                                <{/if}>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#" class="js-slideDown">
+                    <div class="flow-flow <{if $status.52}>pass<{/if}><{if $statu.status==52}> active<{/if}>"><span class="iconfont"><{if !$status.52}>5<{/if}></span></div>
+                    <div class="flow-time <{if $qianyue}>pass<{/if}><{if $statu.status==52}> active<{/if}>"><div class="flow-item ">客户签约 </div> <span class="iconfont icon-more"></span> <{if $status.52}><{$status.52.addtime|format:'Y.m.d'}><{/if}> <p><{if $status.52}><{$status.52.addtime|format:'H:i'}><{/if}></p></div>
+                </a>
+                <div class="flow-con hide js-slideCon">
+                    <div class="flow-flow"></div>
+                    <div>
+                        <div class="flow-inner">
+                            <div class="flow-style4">
+                                <{if $detail.qianyue==1}>
+                                <{if $qianyue}>
+                                <dl>
+                                    <dt><span class="font-light">客户签约</span></dt>
+                                    <dd><span class="float-right font-light">￥<{$qianyue.price}></span>客户签约：</dd>
+                                    <dd><span class="float-right"><{$qianyue.startime|format:'Y.m.d'}></span>合同开始时间：</dd>
+                                    <dd><span class="float-right"><{$qianyue.endtime|format:'Y.m.d'}></span>合同结束时间：</dd>
+                                </dl>
+                                <{/if}>
+                                <{/if}>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#" class="js-slideDown">
+                    <div class="flow-flow <{if $status.7}>pass<{/if}><{if $statu.status==7}> active<{/if}>"><span class="iconfont"><{if !$status.7}>6<{/if}></span></div>
+                    <div class="flow-time <{if $zhuchangbaoguan}>pass<{/if}><{if $statu.status==7}> active<{/if}>"><div class="flow-item ">主场报馆 </div> <span class="iconfont icon-more"></span> <{if $status.7}><{$status.7.addtime|format:'Y.m.d'}><{/if}> <p><{if $status.7}><{$status.7.addtime|format:'H:i'}><{/if}></p></div>
+                </a>
+                <div class="flow-con hide js-slideCon">
+                    <div class="flow-flow pass"></div>
+                    <div>
+                        <div class="flow-inner">
+                            <div class="flow-style1">
+                                <{if $zhuchangbaoguan}>
+                                <h4><{$zhuchangbaoguan.ctrl}></h4>
+                                <{/if}>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#" class="js-slideDown">
+                    <!--<div class="flow-time"></div>-->
+                    <div class="flow-flow <{if $status.9}>pass<{/if}><{if $statu.status==9}> active<{/if}>"><span class="iconfont"><{if !$status.9}>7<{/if}></span></div>
+                    <div class="flow-time <{if $detail.kaigong}>pass<{/if}><{if $statu.status==9}> active<{/if}>"><div class="flow-item">展台制作 </div> <span class="iconfont icon-more"></span> <{if $status.9}><{$status.9.addtime|format:'Y.m.d'}><{/if}> <p><{if $status.9}><{$status.9.addtime|format:'H:i'}><{/if}> </p></div>
+                </a>
+                <div class="flow-con hide js-slideCon">
+                    <div class="flow-flow"></div>
+                    <div>
+                        <{if $status.9}>
+                        <div class="flow-inner">
+                            <div class="flow-style3">
+                                <{if $detail.kaigong}>
+                                <a href="#">
+                                    <p>开工</p>
+                                </a>
+                                <{/if}>
+                                <{foreach $jindu_list as $jd}>
+                                <{if $jd.type==1}>
+                                <a href="#">
+                                    <p><{$jd.title}></p>
+                                </a>
+                                <{foreach $jd.jindu as $photo}>
+                                <a href="#">
+                                    <div class="flow-img">
+                                        <img src="<{$pager.img}>/<{$photo.photo}>" alt="<{$pager.img}>/<{$photo.photo}>">
+                                        <p><{$jd.addtime|format:'Y.m.d H:i'}></p>
+                                    </div>
+                                </a>
+                                <{/foreach}>
+                                <{/if}>
+                                <{/foreach}>
+                                
+
+                            </div>
+                        </div>
+                        <{/if}>
+                    </div>
+                </div>
+                <a href="#" class="js-slideDown">
+                    <div class="flow-flow <{if $status.53}>pass<{/if}><{if $statu.status==53}> active<{/if}>"><span class="iconfont"><{if !$status.53}>8<{/if}></span></div>
+                    <div class="flow-time <{if $status.53}>pass<{/if}><{if $statu.status==53}> active<{/if}>"><div class="flow-item ">现场搭建 </div> <span class="iconfont icon-more"></span> <{if $status.53}><{$status.53.addtime|format:'Y.m.d'}><{/if}> <p><{if $status.53}><{$status.53.addtime|format:'H:i'}><{/if}></p></div>
+                </a>
+                <div class="flow-con hide js-slideCon">
+                    <div class="flow-flow"></div>
+                    <div>
+                        <{if $status.53}>
+                        <div class="flow-inner">
+                            <div class="flow-style3">
+                                <{foreach $jindu_list as $jd}>
+                                <{if $jd.type==2||$jd.type==3}>
+                                <a href="#">
+                                    <p><{$jd.title}></p>
+                                </a>
+                                <{foreach $jd.jindu as $photo}>
+                                <a href="#">
+                                    <div class="flow-img">
+                                        <img src="<{$pager.img}>/<{$photo.photo}>" alt="<{$pager.img}>/<{$photo.photo}>">
+                                        <p> <{$jd.addtime|format:'Y.m.d H:i'}></p>
+                                    </div>
+                                </a>
+                                <{/foreach}>  
+                                <{/if}>
+                                <{/foreach}>  
+                            </div>
+                        </div>
+                        <{/if}>
+                    </div>
+                </div>
+                <a href="#" class="js-slideDown">
+                    <div class="flow-flow <{if $status.10}>pass<{/if}><{if $statu.status==10}> active<{/if}>"><span class="iconfont"><{if !$status.10}>9<{/if}></span></div>
+                    <div class="flow-time <{if $status.10}>pass<{/if}><{if $statu.status==10}> active<{/if}>"><div class="flow-item">撤展 </div> <span class="iconfont icon-more"></span><{if $status.10}><{$status.10.addtime|format:'Y.m.d'}><{/if}> <p><{if $status.10}><{$status.10.addtime|format:'H:i'}><{/if}></p></div>
+                </a>
+                <div class="flow-con hide js-slideCon">
+                    <div class="flow-flow"></div>
+                    <div>
+                        <{if $status.10}>
+                        <div class="flow-inner">
+                            <div class="flow-style3">
+                                <{foreach $jindu_list as $jd}>
+                   
+                                <{if $jd.type==4}>
+                                <a href="#">
+                                    <p><{$jd.title}></p>
+                                </a>
+                                <{foreach $jd.jindu as $photo}>
+                                <a href="#">
+                                    <div class="flow-img">
+                                        <img src="<{$pager.img}>/<{$photo.photo}>" alt="<{$pager.img}>/<{$photo.photo}>">
+                                        <p><{$jd.addtime|format:'Y.m.d H:i'}></p>
+                                    </div>
+                                </a>
+                                <{/foreach}>
+                                <{/if}>
+                    
+                                <{/foreach}>
+                                <{if $detail.wangong}>
+                                <a href="#">
+                                    <p>完工</p>
+                                </a>
+                                <{/if}>
+                            </div>
+                        </div>
+                        <{/if}>
+                    </div>
+                </div>
+
+                 <a href="#" class="js-slideDown">
+                    <div class="flow-flow <{if $status.58}>pass<{/if}><{if $statu.status==58}> active<{/if}>"><span class="iconfont"><{if !$status.58}>10<{/if}></span></div>
+                    <div class="flow-time <{if $caiwuxinxi}>pass<{/if}><{if $statu.status==58 || $statu.status==11}> active<{/if}>"><div class="flow-item ">结算</div> <span class="iconfont icon-more"></span> <{if $status.58}><{$status.58.addtime|format:'Y.m.d'}><{/if}> <p><{if $status.58}><{$status.58.addtime|format:'H:i'}><{/if}></p></div>
+                </a>
+                <div class="flow-con hide js-slideCon">
+                    <div class="flow-flow"></div>
+                    <div>
+                        <{if $caiwuxinxi}>
+                        <div class="flow-inner">
+                            <div class="flow-style4">
+                                
+                                <dl>
+                                    <dt><span class="font-light">财务信息</span></dt>
+                                    <{foreach $caiwuxinxi as $caiwu}>
+                                    <dd>
+                                        <span class="float-right font-light">￥<{$caiwu.price}></span>类型：<{$caiwu.price_type}> <small><{if $caiwu.fapiao==0}>未开票<{else}>已开票<{/if}></small>
+                                        <p><span class="float-right"><{$caiwu.addtime|format:'Y.m.d'}></span>备注：<{$caiwu.content}></p>
+                                    </dd>
+                                    <{/foreach}>
+                                </dl>
+                                
+                            </div>
+                        </div>
+                        <{/if}>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+   <!--引入footer-->
+<{include file="mobile:member/block/footer.html"}>

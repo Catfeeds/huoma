@@ -1,0 +1,72 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageFactoryInfo" class="page1" data-dom-cache="false" data-title="参展商信息">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>发票信息</h1>
+    </div>
+    <div data-role="main">
+        <div data-role="content" class="factoryInfo-upload">
+            <h3><span></span>请您完善以下发票信息。
+                  <small>（发票信息仅限一条，请您慎重填写。提交后不可修改）</small>
+            </h3>
+            <form method="post" action="<{link ctl='member/shang:piao'}>" id="factoryInfoForm" data-ajax="false" onsubmit="return false;"
+                  enctype="multipart/form-data">
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="companyName">发票抬头：</label>
+                    <{if $detail}>
+                        <{$detail.taitou}>
+                    <{else}>
+                    <input type="text" name="data[taitou]" id="companyName" placeholder="请填写您营业执照上的全称" value="<{$detail['taitou']}>">
+                    <{/if}>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorymobile">发票类型：</label>
+                    <label for="factorymobile">
+                    <input type="radio" id="form2class1" name="data[leixing]" value="0">增值税普通发票
+                    </label>
+                    <label for="factorymobile">
+                    <input type="radio" id="form2class2" name="data[leixing]" value="1" checked>增值税专用发票
+                    </label>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorymobile">税务登记证号：</label>
+                    <input type="text" name="data[dengjihao]" id="factorymobile"  value="<{$detail['dengjihao']}>" placeholder="请填写您税务登记证上的编号">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryphone">基本开户银行名称：</label>
+                    <input type="text" name="data[yinhang]" id="factoryOwn" placeholder="请填写您开户许可证上的开户银行" value="<{$detail['yinhang']}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorymail">基本开户账号：</label>
+                    <input type="text" name="data[zhanghao]" id="factorymail" placeholder="请填写您开户许可证上的银行账号" value="<{$detail['zhanghao']}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryfox">注册场所地址：</label>
+                    <input type="text" name="data[dizhi]" id="factoryfox" placeholder="请填写您营业执照上的注册地址" value="<{$detail['dizhi']}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryqq">注册固定电话：</label>
+                    <input type="text" name="data[dianhua]" id="factoryqq" placeholder="请填写您公司有效的联系电话" value="<{$detail['dianhua']}>">
+                </div>
+                <!-- <div class="ui-field-contain factoryInfo-item">
+                   <label for="factoryLogo">营业执照复印件：</label>
+                   <div id="factorylogo"></div>
+                   <small>仅支持JPG、GIF、PNG图片文件,且小于2M</small>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                   <label for="factoryLogo">税务登记复印件：</label>
+                   <div id="factorylogo"></div>
+                   <small>仅支持JPG、GIF、PNG图片文件,且小于2M</small>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                   <label for="factoryLogo">一般纳税人资格认证复印件：</label>
+                   <div id="factorylogo"></div>
+                   <small>仅支持JPG、GIF、PNG图片文件,且小于2M</small>
+                </div> -->
+                <button type="submit" id="factoryInfo-btn" class="factoryInfo-btn">发布</button>
+            </form>
+        </div>
+    </div>
+<{include file="mobile:member/block/footer.html"}>

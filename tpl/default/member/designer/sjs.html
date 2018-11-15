@@ -1,0 +1,37 @@
+<{include file="member/block/header.html"}>
+
+<div class="admin-right">
+    <div class="factoryOffer-head">
+        <div class="col-sm-3">
+            <a href="<{link ctl='member/member:index'}>" class="lt">
+                <img src="<{$pager.img}>/<{$MEMBER.face}>" width="120" height="120"/>
+            </a>
+        </div>
+        <div class="col-sm-9">
+
+            <p class="col-xs-12"><{$MEMBER.uname}></p>
+
+            <p class="col-xs-6">账户类型：<{$MEMBER.group_name}></p>
+
+            <p class="col-xs-6">注册时间：<{$MEMBER.dateline|format}></p>
+            <p class="col-xs-6">手机号码：<{$MEMBER.mobile|default:'--'}></p>
+            <p class="col-xs-6">邮箱地址：<{$MEMBER.mail}></p>
+
+
+            <div class="clearfix"></div>
+            <!--div class="fatoryOffer-head-foot">
+                <p>您需要关注的情况：
+                    <a href="<{link ctl='member/designer/chao:index' arg0='unpay'}>" class="green">我的模型 (<{$order_count.new}>) </a>
+                    <a href="<{link ctl='member/misc/canzhan:looked'}>" class="green">我的任务(<{$tenders_count}>)</a>
+
+                </p>
+            </div-->
+        </div>
+    </div>
+
+    <!-- partThree-->
+
+</div>
+
+
+<{include file="member/block/footer.html"}>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{$seo_title}>_一路展工程中心</title>
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageList" class="page1" data-mylist-con="market-list" data-mylist-src="/gong/chang-machinelistcon-<{$company.company_id}>.html?" data-dom-cache="false" data-title="<{$seo_title}>_一路展工程中心">
+    
+    <div data-role="header" class="header" data-position="fixed">
+        <a href="/" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+        <h1><{$company.title}></h1>
+        <a href="#article3-menu" class="ui-btn iconfont icon-menu"></a>
+    </div>
+    <div data-role="main">
+                <!-- list 数据容器，这里不要存放数据-->
+                <div class="market-list" id="machine-<{$PAGEID}>">
+                    <{include file="mobile:gong/machinelistcon.html"}>  
+                </div>
+                <!-- Loading-->
+                    <div class="listLoading" id="listLoading">
+                        <div class="listLoadLabel">上拉加载更多</div>
+                    </div>
+    </div>
+<!-- panel 菜单 -->
+<{include file="mobile:block/top.html"}>
+<{include file="mobile:block/footer.html"}>

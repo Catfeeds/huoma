@@ -1,0 +1,163 @@
+<{include file="member/block/header.html"}>
+<div class="ucenter_t">
+    <ul><li class="on">修改模型</li></ul>
+    <span class="r"><a href="<{link ctl='member/designer/chao:index'}>" class="pbtn">模型管理</a></span>
+</div>
+<div class="ucenter_c">
+<form action="<{link ctl='member/designer/chao:edit'}>" mini-form="ucenter" method="post">
+<input type="hidden" name="chao_id" value="<{$detail.chao_id}>" />
+<div class="club_inputmsg">
+      <table width="100%" border="0" cellspacing="0" class="table-data form" id="table-info">
+<tr><th><span class="red">*</span>标题：</th><td><input type="text" name="data[title]" value="<{$detail.title|default:''}>" class="input w-400"/></td></tr>
+<tr><th><span class="red">*</span>关键词：</th><td><input type="text" name="data[seo_keywords]" value="<{$detail.seo_keywords|default:''}>" class="input w-400"/><br>
+填写关键词，提高该模型的展现机会！多个<span class="red">，</span>（逗号）隔开</td></tr>
+<{widget id="attr/form" from="zx:chao" value=$detail.attrvalues}>
+<tr>
+	<th>长宽高：</th>
+	<td>
+		<label>长:<input type="text" name="data[chang]" value="<{$detail.chang|default:'0'}>" class="input w-50"/>米</label>
+		<label>宽:<input type="text" name="data[kuan]" value="<{$detail.kuan|default:'0'}>" class="input w-50"/>米</label>
+		<label>高:<input type="text" name="data[gao]" value="<{$detail.gao|default:'0'}>" class="input w-50"/>米</label>
+		<label>面积:<input type="text" name="data[mianji]" value="<{$detail.mianji|default:'0'}>" class="input w-50"/></label>
+	</td>
+</tr>
+ <tr><th>模型简介：</th><td><textarea name="data[seo_description]" class="textarea"><{$detail.seo_description}></textarea><br /></td></tr>
+              <tr>
+                  <td class="club_mtitle"><font class="red">*</font> 软件类型：</td>
+                  <td>
+                  <select name="data[type_soft]" style="width:100px;border:1px #cecece solid;height:30px">
+                          <option value="3DMAX">3DMAX</option>
+                          <option value="MAYA">MAYA</option>
+                          <option value="cinema4d">cinema4d</option>
+                          <option value="zbursh">zbursh</option>
+                          <option value="softmiage">softmiage</option>
+                          <option value="Poser">Poser</option>
+                          <option value="LightWave">LightWave</option>
+                          <option value="CAD">CAD</option>
+                          <option value="其它">其它</option>
+                      </select>
+                      软件版本:<input type="text" name="data[type_soft_v]" value="<{$detail.type_soft_v}>" class="input w-50"/>
+                      
+                  </td>
+              </tr>
+              <tr>
+                  <td class="club_mtitle"><font class="red">*</font> 灯光材质：</td>
+                  <td>
+                    <select name="data[type_light]" style="width:100px;border:1px #cecece solid;height:30px">
+                          <option value="默认灯光">默认灯光</option>
+                          <option value="VR灯光">VR灯光</option>
+                          <option value="FR灯光">FR灯光</option>
+                          <option value="MR灯光">MR灯光</option>
+                          <option value="BR灯光">BR灯光</option>
+                          <option value="LS灯光">LS灯光</option>
+                          <option value="未知">未知</option>
+                      </select>
+默认材质:
+                    <select name="data[type_map]" style="width:100px;border:1px #cecece solid;height:30px">
+                          <option value="默认材质">默认材质</option>
+                          <option value="VR材质">VR材质</option>
+                          <option value="FR材质">FR材质</option>
+                          <option value="MR材质">MR材质</option>
+                          <option value="BR材质">BR材质</option>
+                          <option value="LS材质">LS材质</option>
+                          <option value="未知">未知</option>
+                      </select>
+                      
+                  </td>
+              </tr>
+              <tr id="jgzd">
+                  <td class="club_mtitle">图片背景：</td>
+                  <td>
+                      <select name="data[backbg]" onchange="setBg(this);" style="background-color:#000000;color:#000000;width:100px;border:1px #cecece solid;height:30px">
+                          <option value="#ffffff" style="background-color:#ffffff;color:#ffffff">#ffffff</option>
+                          <option value="#e5e5e5" style="background-color:#e5e5e5;color:#e5e5e5">#e5e5e5</option>
+                          <option value="#cccccc" style="background-color:#cccccc;color:#cccccc">#cccccc</option>
+                          <option value="#b2b2b2" style="background-color:#b2b2b2;color:#b2b2b2">#b2b2b2</option>
+                          <option value="#999999" style="background-color:#999999;color:#999999">#999999</option>
+                          <option value="#7f7f7f" style="background-color:#7f7f7f;color:#7f7f7f">#7f7f7f</option>
+                          <option value="#666666" style="background-color:#666666;color:#666666">#666666</option>
+                          <option value="#4c4c4c" style="background-color:#4c4c4c;color:#4c4c4c">#4c4c4c</option>
+                          <option value="#333333" style="background-color:#333333;color:#333333">#333333</option>
+                          <option value="#191919" style="background-color:#191919;color:#191919">#191919</option>
+                          <option value="#000000" style="background-color:#000000;color:#000000" selected="selected">#000000</option>
+                      </select> <font style="color:#f00">*请选择与效果图背景相似的颜色</font>
+                  </td>
+              </tr>
+	<tr><th></th><td><input type="submit" value="提交数据" class="green_btn" /></td></tr>
+
+</table>
+          
+      </div>
+</form>
+</div>
+<script>
+    function setBg(va)    {
+        var c=$(va).val();
+        $(va).css({'background-color':c,"color":c});
+    }
+    $(function(){
+            $("input").keypress(function (e) {
+             var keyCode = e.keyCode ? e.keyCode : e.which ? e.which : e.charCode;
+             if (keyCode == 13) {
+              for (var i = 0; i < this.form.elements.length; i++) {
+               if (this == this.form.elements[i]) break;
+              }
+              i = (i + 1) % this.form.elements.length;
+              this.form.elements[i].focus();
+              return false;
+             } else {
+              return true;
+             }
+         });
+          
+    })
+    function changediv(id){
+       
+        if(id==1){
+            $("#club_zhantai").css('display','');
+            $("#clubclass").css('width','550px');
+            $('#textname').attr('name','industry');
+        }
+        else if(id==2 || id==4){
+            $("#club_zhantai").css('display','none');
+            $("#clubclass").css('width','550px');
+            $('#textname').attr('name','topid');
+        }
+        else{
+            $("#club_zhantai").css('display','none');
+            $("#clubclass").css('width','');
+            $('#textname').attr('name','topid');
+        }      
+    }
+    function hiddendiv(id,f){
+        if(f==1){
+            $("#"+id).css('display','');
+        }
+        else{
+           $("#"+id).css('display','none');
+    }
+    }
+   function challs_flash_onSelectFile(a){ //用户选择文件完毕触发事件，参数 a 数值类型，返回等待上传文件数量
+	//document.getElementById('show').innerHTML+='<font color="#ff0000">文件选择完成：</font>等待上传文件'+a+'个！<br />';
+	alert('ok');
+}
+function getgold(id){
+    if(id==1){
+        pd=$("#meid").val();
+        if(pd==1){
+            $("#jgtss").val(2);
+        }
+        if(pd==2) {
+            $("#jgtss").val(1);
+        }
+        //$("#jgtss").attr("readonly",'readonly');
+    }
+//    else{
+//        $("#jgtss").removeAttr("readonly");
+//    }
+
+}
+
+
+</script>
+<{include file="member/block/footer.html"}>

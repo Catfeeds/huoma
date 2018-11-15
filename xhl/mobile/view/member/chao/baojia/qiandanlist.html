@@ -1,0 +1,83 @@
+       <{foreach $items as $item}>
+        <!-- 项目简介-->
+            <ul data-role="listview" class="order-list-item">
+                <li class="ui-li-divider"><i><{if $item.isoem}>OEM<{else}>定制<{/if}></i>订单号：<span><{$item.order_sn}></span><span class="ui-li-count"><{$status_list[$item.status]}></span></li>
+                <div class="order-list-offer">展会名称：<span><{$item.zname}></span></div>
+                <div class="order-list-offer">公司名称：<span><{$item.cname}></span></div>
+                <div class="order-list-offer">展位号：<span><{$item.zweihao}></span></div>
+                <div class="order-list-offer">展位面积：<span><{$item.mianji}>㎡</span></div>
+                <div class="order-list-offer">订单时间：<span><{$item.dateline|format}></span></div>
+                <{if $item.zhixing_id}>
+                <div class="order-list-offer">执行经理：<{$item.zhixing_name}> <a href="tel:<{$item.zhixing_mobile}>"><i class="iconfont icon-tel total"></i><{$item.zhixing_mobile}></a></div>
+                <{/if}>
+                <{if $item.jianli_id}>
+                <div class="order-list-offer">监理经理：<{$item.jianli_name}> <a href="tel:<{$item.jianli_mobile}>"><i class="iconfont icon-tel total"></i> <{$item.jianli_mobile}></a></div>
+                <{/if}>
+                <li>
+                    <{if $item.case.photo}>
+                    <a class="#" data-transition="slide" href="/member/shang/canzhan-show-<{$item.case_id}>-<{$item.cz_id}>.html">
+                        <img src="<{$pager.img}>/<{$item.case.photo}>_small.jpg"/>
+                        <h2><{$item.case.title}></h2>
+                        <p>展会时间: <{$item.startime|format:'Y-m-d'}>至<{$item.endtime|format:'Y-m-d'}></p>
+
+                    </a>
+                    <{else}>
+                    暂未上传...
+                    <{/if}>
+                </li>
+
+                <!--<div class="order-list-offer">负责人：某Xx <a href="#">订单详情<i class="iconfont icon-keyboardarrowright"></i></a></div>-->
+                <!-- <div class="order-list-offer">订单时间：<{$item.dateline|format}> <a href="#"><i class="iconfont icon-keyboardarrowright"></i></a></div> -->
+            </ul>
+            <div class="order-list-offer">合计总价：<span class="total">￥<{$item.baojia.gc_price}></span></div>
+        <!-- 项目流程主内容 -->
+        <div class="qdFlow">
+            <ul class="qdFlow-con">
+                <{if $item.kaigong}>
+                <li class="qdFlow-item">
+                    <div class="qdFlow-item-inner">
+                        <h3>开工 <small>（<{$item.kaigong|format:'Y-m-d'}>）</small></h3>
+                    </div>
+                </li>
+                <{foreach $type_list as $key=>$jd}>
+                <li class="qdFlow-item-title"><{$jd}></li>
+                     <{foreach $item.jindu.$key as $photo}>
+                 <li class="qdFlow-item">
+                  <a href="#" class="qdFlow-item-inner">
+                        <img src="<{$pager.img}>/<{$photo.photo}>" />
+                        <p><{$photo.title}></p>
+                        <small><{$photo.addtime|format:'Y-m-d'}></small>
+                    </a>
+                 </li>
+                   <{/foreach}>
+                   <{if IS_APP}>
+                       <li class="qdFlow-item">
+                        <div class="qdFlow-item-inner addPhoto">
+                            <a href="index.php?action=photo&uid=<{$item.cz_id}>&type=<{$key}>" data-ajax='false' class="ui-btn"> 添加图片</a>
+                        </div>
+                     </li>
+				<{/if}>
+                
+                <{/foreach}>
+                <{if $item.wangong}>
+                <li class="qdFlow-item">
+                    <div class="qdFlow-item-inner">
+                        <h3>完工<small>（<{$item.wangong|format:'Y-m-d'}>）</small></h3>
+                    </div>
+                </li>
+                <{/if}>
+                <{else}>
+                <li class="qdFlow-item active">
+                    <div class="qdFlow-item-inner">
+                        <div class="ui-grid-a qdFlow-btn">
+                            <div class="ui-block-b">
+                                <a data-customlink="ajax" href="<{link ctl='member/chao/baojia:kaigong' arg0=$item.cz_id}>">开工</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <{/if}>
+            </ul>
+
+        </div>
+        <{/foreach}>

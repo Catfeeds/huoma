@@ -1,0 +1,13 @@
+<{foreach $wtg as $item}>
+<ul data-role="listview" data-icon="false" class="order-list-item ui-listview">
+    <li class="ui-li-divider ui-li-static ui-body-inherit ui-li-has-count ui-first-child"><i><{if $item.isoem}>OEM<{else}>定制<{/if}></i>订单号：<{$item.order_sn}><span class="ui-li-count ui-body-inherit"><{$status_list[$item.status]}></span></li>
+    <div class="order-list-footer">
+        <a href="<{link ctl='member/shang/canzhan:canzhanDetail' arg0=$item.cz_id}>" class="ui-link">订单详情</a>
+        <a href="tel:<{$item.zhixing_mobile}>" class="ui-link"><span class="iconfont icon-tel"></span> 联系执行经理</a>
+    </div>
+</ul>
+<{foreachelse}>
+<ul data-role="listview" data-icon="false" class="order-list-item ui-listview">
+ <li><h3>无</h1></li>
+</ul>
+<{/foreach}>

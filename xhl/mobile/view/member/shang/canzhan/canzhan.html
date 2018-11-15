@@ -1,0 +1,73 @@
+<{include file="mobile:member/block/header.html"}>
+
+<div data-role="page" id="pageUserFactoryOffer" class="pageUserFactoryOffer" data-dom-cache="false" data-title="参展商中心">
+    <!-- 参展商后台菜单 -->
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>我的订单</h1>
+        <a href="#userFactoryOfferPanel" class="ui-btn iconfont icon-menu"></a>
+    </div>
+    <div data-role="main">
+        <!-- 订单列表 -->
+        <div class="fOffer3-list" id="fOffer-<{$PAGEID}>" data-slideid="fOfferList">
+            <div class="hd">
+                <ul class="ui-grid-b">
+                    <li class="ui-block-a"><a href="#">我的订单</a></li>
+                    <li class="ui-block-b"><a href="#">签约监督</a></li>
+                    <li class="ui-block-c"><a href="#">未通过</a></li>
+                </ul>
+            </div>
+            <div class="bd" id="34535">
+                <div class="autoHeight">
+                    <div data-offerList-url="/member/shang/canzhan-canzhanlist.html?"
+                        class="fOffer3-list-item">
+                        <{if $items}>
+                            <{include file="mobile:member/shang/canzhan/canzhanlist.html"}>
+                        <{else}>
+                        <li>
+                            <div class="fOffer-noList">
+                                <h1><span class="iconfont icon-menu1"></span></h1>
+                            </div>
+                        </li>
+                        <{/if}>
+                    </div>
+                </div>
+                <div class="autoHeight">
+                    <div data-offerList-url="/member/shang/canzhan-qy.html?"
+                        class="fOffer3-list-item">
+                        <{if $qy}>
+                            <{include file="mobile:member/shang/canzhan/qy.html"}>
+                        <{else}>
+                        <li>
+                            <div class="fOffer-noList">
+                                <h1><span class="iconfont icon-menu1"></span></h1>
+                            </div>
+                        </li>
+                        <{/if}>
+                    </div>
+                </div>
+                <div class="autoHeight">
+                    <div data-offerList-url="/member/shang/canzhan-weitongguo.html?"
+                        class="fOffer3-list-item">
+                        <{if $wtg}>
+                            <{include file="mobile:member/shang/canzhan/weitongguo.html"}>
+                        <{else}>
+                        <li>
+                            <div class="fOffer-noList">
+                                <h1><span class="iconfont icon-menu1"></span></h1>
+                            </div>
+                        </li>
+                        <{/if}>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+         <!-- Loading-->
+        <div class="listLoading">
+            <div class="listLoadLabel"><img src="//www.jisunet.com/mobile/img/listload.gif" height="12"/> 等待载入数据。。。</div>
+        </div>
+    </div>
+<{include file="mobile:member/block/shangtop.html"}>
+<{include file="mobile:member/block/footer.html"}>

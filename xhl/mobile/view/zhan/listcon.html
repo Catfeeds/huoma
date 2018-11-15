@@ -1,0 +1,11 @@
+<{foreach $items as $item}>
+<li data-icon="false" class="my-grids-1">
+    <a href="<{link ctl='zhan/hui' arg0=$item.zhan_id}>">
+        <{if $item.thumb}><img src="<{$pager.img}>/<{$item.thumb}>"/><{else}><img src="//www.jisunet.com/mobile/img/moren.jpg"/><{/if}>
+
+        <h2><{$item.title}></h2>
+
+        <p>举办时间： <{$item.fromtime|format:"Y.m.d"}> — <{$item.totime|format:"Y.m.d"}></p>
+    </a>
+</li>
+<{/foreach}>

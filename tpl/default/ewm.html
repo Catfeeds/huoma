@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>活码</title>
+    <link rel="stylesheet" href="/tpl/default/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/tpl/default/static/css/huoma.css">
+    <script src="/tpl/default/static/js/jquery-2.2.3.min.js"></script>
+    <script src="/tpl/default/static/js/bootstrap.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <{foreach $data as $v}>
+    <div class="box">
+        <a href="ewm-bianqian?code=<{$v.code}>"><p><span class="zhuse">【<{$v.tname}>】</span><{$v.title}></a>
+         <span code="<{$v.code}>" class="pull-right glyphicon glyphicon-remove-circle"></span></p>
+        <p class="bottom_xu">
+            <{if $v.time}>
+            创建于<{$v.time}>
+            <{else}>
+            内容未编辑
+            <{/if}>    
+            </p>
+        <div class="box_center">
+            <img src="<{$v.code_link}>" alt="" class="box_ewm">
+            <div class="ewm_right">
+                <p>扫描：
+                    <{if $v.num}>
+                    <{$v.num}>
+                    <{else}>
+                    0
+                    <{/if}>
+                次</p>
+                <p class="operation"><a href="ewm-edit?id=<{$v.id}>"><span class="glyphicon glyphicon-pencil"></span></a> <span class="glyphicon glyphicon-print"></span></p>
+            </div>
+        </div>
+    </div>
+     <{/foreach}>
+</div>
+    <{if !$data}>
+    <div class="wu">
+        <img src="static/images/w.png" alt="">
+        <p>您还没有创建任何活码！</p>
+    </div>
+    <{/if}>
+<div class="add_ewm">
+    <!-- <a href="ewm-code.html" class="glyphicon glyphicon-plus"></a> -->
+    <a href="ewm-code.html"></a>
+</div>
+<footer>
+    <ul class="footnav">
+        <li class="nav-1 "><a href="index.html"><i></i>首页</a></li>
+        <li class="nav-2 on"><a href="ewm.html"><i></i>活码</a></li>
+        <li class="nav-3 "><a href="my.html"><i></i>我的</a></li>
+    </ul>
+</footer>
+<script src="/tpl/default/static/js/huoma.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+    $('.pull-right').click(function () {
+        var a = $(this).attr('code');
+        var b = $(this).parents('.box');
+        $.ajax({
+            url:'./ewm-shanchu',
+            type:'POST',
+            data:{
+                a : a
+            },
+            dataType:'json',
+            success:function(data){
+                alert(data.info);
+                if(data.code == '3'){
+                    b.hide();
+                }
+            },
+            error:function(msg){
+                // alert(msg);
+                console.log(msg);
+            }
+        })  
+    })
+</script>

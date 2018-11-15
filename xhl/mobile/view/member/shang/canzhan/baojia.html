@@ -1,0 +1,108 @@
+<!--引入header-->
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" data-mylist-con="order-listCon" data-mylist-src="" id="pageList" class="pageUserFactoryOffer" data-dom-cache="false" data-title="报价">
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>报价</h1>
+        <a href="#userFactoryOfferPanel" class="ui-btn iconfont icon-menu"></a>
+    </div>
+    <div data-role="main" class="main">
+        <div class="swiper-container" data-mainSwiper="true" id="chaoindex-<{$PAGEID}>">
+            <div class="swiper-wrapper mainWrapper">
+                <div class="swiperSlide">
+        <!-- 报价 -->
+       <form id="offerListForm" class="offerListForm" method="post" action="/member/shang/canzhan-yijia-<{$case.case_id}>-<{$canzhan.cz_id}>.html">
+        <div class="order-listCon" id="canzhanlist-<{$PAGEID}>">
+        <ul data-role="listview" data-icon="false" class="order-list-item ui-listview">
+            <li class="ui-li-divider ui-li-static ui-body-inherit ui-li-has-count ui-first-child"><i> <{if $canzhan.case_id==$case.case_id && !$canzhan.yijia && !$canzhan.baojia_id}>议价<{/if}></i><span class="ui-li-count ui-body-inherit"></span></li>
+            <{foreach $items as $key=>$item}>
+                <{if $canzhan.case_id==$case.case_id && !$canzhan.yijia && !$canzhan.baojia_id}>
+                <li>
+                    <input type="checkbox" value="<{$item.baojia_id}>" name="baojia[]">
+                </li>
+                <{/if}>
+                <div class="order-list-offer">工厂名称：
+                    <span>
+                    <a href="/gong/chang-<{$item.company_id}>.html" target="_blank"><{$item.info.title|default:'工厂名称'}></a>
+                    <{if $item.iser==1}>（二次报价中）<{elseif $item.iser==2}>(二次报价完成)<{/if}>
+                    </span>
+                </div>
+                <div class="order-list-offer">项目费(元)：<span><{$item.price}></span><br/>明细
+                <{if $item.yuandata && $item.iser==2}>
+                <div>
+                    <{foreach $item.yuandata as $xiangmu}>
+                    <ul>
+                        <div class="order-list-offer"><{$xiangmu.xiangmu}><span><{$xiangmu.price}></span></div>
+                    </ul>
+                    <{/foreach}>
+                    <ul>
+                        <div class="order-list-offer">合计：
+                        <span><{$item.yuanheji}></span>
+                        </div>
+                    </ul>
+                </div>
+                <{/if}>
+                    <div>
+                        <{foreach $item.data as $xiangmu}>
+                        <ul>
+                            <div class="order-list-offer"><{$xiangmu.xiangmu}><span><{$xiangmu.price}></span></div>
+                        </ul>
+                        <{/foreach}>
+                        <ul>
+                            <div class="order-list-offer">合计：
+                            <span><{$item.xmheji}></span>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="order-list-offer">场地费(元)：<span><{$item.cd_price}></span></div>
+                <div class="order-list-offer">设计费(5%)：<span><{$item.sheji_price}></span></div>
+                <div class="order-list-offer">服务费(元)：<span><{$item.fuwu_price}></span></div>
+                <div class="order-list-offer">税点(%)：<span><{$item.shuidian}></span></div>
+                <div class="order-list-offer">税(元)：<span><{$item.shui_price}></span></div>
+                <div class="order-list-offer">合计(元)：<span><{$item.heji_price}></span></div>
+                <div class="order-list-offer">签约：<span><{if $canzhan.baojia_id}><{if $canzhan.baojia_id==$item.baojia_id}>签约<{else}>未<{/if}><{else}><a href="<{link ctl='member/shang/canzhan:qiandan' arg0=$item.baojia_id arg1=$cz_id}>" class="btn qiandan-btn" mini-act="签约" mini-confirm="确定要选择当前工厂签约？" >签约</a><{/if}></span></div>
+                <br/>
+            <{foreachelse}>
+                <div class="order-list-offer">报价中...</div>
+            <{/foreach}>    
+        </ul>     
+    </div>
+    <{if $canzhan.case_id==$case.case_id && !$canzhan.yijia && !$canzhan.baojia_id}>
+    <div>温馨提示：您还可选五家工厂进行议价，五家工厂将二次报价以最终报价为准！也可以直接选择当前工厂报价签约！</div>
+    <div class="order-list-offer">您已选择需<span>0</span>家工厂：</div>
+    <div>
+        <input type="submit" value="开始议价">
+    </div>
+    <{/if}>
+</form>
+    <div class="order-listCon">
+        <ul data-role="listview" data-icon="false" class="order-list-item ui-listview">
+            <{foreach $changdi.data as $key=>$val}>
+                <div class="order-list-offer">场地费用明细：<span><{$key}></span></div>
+                <div class="order-list-offer">项目：<span><{$val.xiangmu}></span></div>
+                <div class="order-list-offer">备注：<span><{$val.beizhu}></span></div>
+                <div class="order-list-offer">数量：<span><{$val.num}></span></div>
+                <div class="order-list-offer">单位：<span><{$val.danwei}></span></div>
+                <div class="order-list-offer">价格：<span><{$val.price}></span></div>
+                <div class="order-list-offer">合计：<span><{$val.num*$val.price}></span></div><br/>
+            <{/foreach}>
+            <div class="order-list-offer">合计：<span><{$changdi.price}></span></div>
+        </ul>
+    </div>
+</div>
+</div>
+<div class="swiper-scrollbar mainScrollbar"></div>
+</div>
+<!--swiper-container END-->
+        <div class="mainbgT"></div>
+        <div class="mainbg">
+            <p>Copyright © 2016 jisunet.com</p>
+            <p>一路展（北京）信息科技股份有限公司</p>
+        </div>
+</div>
+<!-- 展商后台菜单 -->
+<{include file="mobile:member/block/shangtop.html"}>
+<!--引入footer-->
+<{include file="mobile:member/block/footer.html"}>

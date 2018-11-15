@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <{include file="block/headerinfo.html"}>
+	
+<script type="text/javascript">window.URL={"domain":"<{$CONFIG.site.domain}>","url":"<{$CONFIG.siteurl}>", "res":"<{$pager.res}>", "img":"<{$pager.img}>","city":"<{$request.city.siteurl}>"};window.G={"city":"<{$request.city.city_name}>"};</script>
+
+<script type="text/javascript"  src="<{$pager.res}>/script/kt.js?<{$VER}>"></script>
+<script type="text/javascript"  src="<{$pager.res}>/ui/j.ui.js?<{$VER}>"></script>
+<script type="text/javascript"  src="<{$pager.res}>/script/widget.login.js?<{$VER}>"></script>
+<script type="text/javascript"  src="<{$pager.res}>/script/widget.msgbox.js?<{$VER}>"></script>
+<script type="text/javascript"  src="%THEME%/js/mydialog.js"></script>
+<script type="text/javascript"  src="/expo/default/static/js/scroll.js?<{$VER}>"></script>
+<link href="/expo/expo/member/css/manage.center.css" rel="stylesheet">
+<meta name="keywords" content="<{if $seo_keywords}><{$seo_keywords}><{elseif $SEO.keywords}><{$SEO.keywords}><{/if}>" />
+<meta name="description" content="<{if $seo_description}><{$seo_description}><{elseif $SEO.description}><{$SEO.description}><{/if}>" />
+</head>
+<body>
+<{assign var="ucenter_header" value=true}>
+<iframe id="miniframe" name="miniframe" style="display:none;"></iframe>

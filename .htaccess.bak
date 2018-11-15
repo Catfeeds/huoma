@@ -1,0 +1,23 @@
+<IfModule mod_rewrite.c> 
+RewriteEngine  on 
+RewriteBase / 
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{QUERY_STRING} ^(.+)$ 
+RewriteRule ^([\w\-]+)(\.html)?(.*)$ index.php$2 [L] 
+RewriteRule ^expo\/.*\.(html|xml) [F,L]  
+</IfModule> 
+  
+<IfModule mod_rewrite.c> 
+RewriteEngine  on 
+RewriteBase / 
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule (.*)$ index.php?$1 [L] 
+RewriteRule ^expo\/.*\.(html|xml) [F,L]  
+</IfModule> 
+  
+<IfModule mod_security.c> 
+SecFilterEngine Off 
+SecFilterScanPOST Off 
+</IfModule>

@@ -1,0 +1,28 @@
+<div class="container">
+				<div class="logo">
+					<a href="./index.html"><img src="/tpl/default/asset/public/img/gdhlogo.png"/></a>
+				</div>
+				<div class="nav">
+					<ul>
+						<li><a href="/list.html">项目</a></li>
+						<li><a href="#">技术</a></li>
+						<li><a href="/new.html">资讯</a></li>
+						<li><a href="#">需求</a></li>
+					</ul>
+				</div>
+				
+				<div class="denglu">
+					
+				<{if $MEMBER.uid}>
+					<a href="<{link ctl='member/designer:index'}>"><{$MEMBER.uname}>已登录</a>
+
+				<{else}>
+					<a data-src="/tpl/default/user/reg.html" title="注册新用户" href="<{link ctl='user:reg'}>" class="zhu">注册</a>
+					<a data-src="/tpl/default/user/login.html" title="网站登录" href="<{link ctl='user'}>" class="deng">登录</a>
+					<{/if}>
+				</div>
+				<div class="search">
+					<input class="form-control" type="text" autocomplete="off" name="q">
+					<a href="#"><img class="img1" src="/tpl/default/asset/public/img/search_03.png"/></a>
+				</div>
+			</div>

@@ -1,0 +1,48 @@
+<{include file="member/block/header.html"}>
+<div class="ucenter_t">
+    <ul>
+    <li class="on">团队管理</li>
+        <{if $xiangmu_id}>
+        <span class="r"><a href="<{link ctl='member/sheji/zhantai:teamadd' arg0=$xiangmu_id}>" title="添加团队人员" class="pbtn">添加团队人员</a></span>
+        <{else}>
+        <span class="r"><a href="<{link ctl='member/sheji/team:teamadd'}>" class="pbtn">添加团队人员</a></span>
+        <{/if}>
+    </ul>
+</div>
+<div class="admin-right">
+    <table width="100%" border="0" cellspacing="0" class="table">
+    <tr>
+        <th class="w-50">ID</th>
+        <th class="w-100">人员头像</th>
+        <th>任务</th>
+        <{if !$xiangmu_id}>
+        <th>添加时间</th>
+        <{/if}>
+        <th class="w-300">操作</th>
+    </tr>
+    <{foreach $items as $item}>
+    <tr>
+        <td class="left"><label><{$item.team_id}></label></td>
+        <td><img width='50' height='50' src='<{$pager.img}>/<{$item.team_img}>'/></td>
+        <td><{$item.team_task}></td>
+        <{if !$xiangmu_id}>
+        <td><{$item.team_dateline|format}></td>
+        <{/if}>
+        <td>
+            <{if !$xiangmu_id}>
+            <a href="<{link ctl='member/sheji/team:edit' arg0=$item.team_id}>" class="pbtn">修改</a>
+            <{/if}>
+            <{if !$xiangmu_id}>
+            <a href="<{link ctl='member/sheji/team:delete' arg0=$item.team_id}>" mini-act="删除" mini-confirm="确定要删除吗？" class="pbtn red">删除</a>
+            <{else}>
+            <a href="<{link ctl='member/sheji/zhantai:teamdelete' arg0=$xiangmu_id arg1=$item.team_id}>" mini-act="删除" mini-confirm="确定要删除吗？" class="pbtn red">删除</a>
+            <{/if}>
+        </td>
+    </tr>
+    <{foreachelse}>
+     <tr><td colspan="20"><p class="tips"><span class="notice">没有数据</span></p></td></tr>
+    <{/foreach}>
+    <!--<tr><td colspan="10"><div class="page"><{$pager.pagebar}></div></td></tr>-->
+    </table>
+</div>
+<{include file="member/block/footer.html"}>

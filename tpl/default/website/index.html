@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>干点活-身边的技术合伙人</title>
+	<{include file="block/header.html"}>
+	<script type="application/javascript" src="/tpl/default/js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<div class="main-banner">
+	<img class="banner-img" src="/tpl/default/asset/img/banner.png" alt="">
+
+	<header class="header">
+		<nav class="navbar navbar-gdh" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#"><img src=" /tpl/default/asset/img/logo.png" alt=""></a>
+			</div>
+			<div>
+				<ul class="nav navbar-nav gdh-nav pull-right">
+					<{if $MEMBER.uid}>
+					<li><a class="btn" href="<{link ctl='member/designer:index'}>"><{$MEMBER.uname}>已登录</a></li>
+					<li><a class="btn btn-login-list" href="<{link ctl='user:loginout'}>">退出</a></li>
+					<{else}>
+					<li><a class="btn js-dialog btn-register" data-src="/tpl/default/user/reg.html" title="注册新用户" href="<{link ctl='user:reg'}>">注册</a></li>
+					<li><a class="btn js-dialog btn-login" data-src="/tpl/default/user/login.html" title="网站登录" href="<{link ctl='user'}>">登录</a></li>
+					<{/if}>
+				</ul>
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="list.html">项目</a></li>
+					<li><a href="newlist.html">模块</a></li>
+					<li><a href="newlist.html">需求文案</a></li>
+					<li><a href="newlist.html">我的需求</a></li>
+					<li><a href="newlist.html">最新</a></li>
+					<!-- <li><a href="#">职位</a></li>
+					<li><a href="#">招聘人才？</a></li> -->
+				</ul>
+			</div>
+		</nav>
+		<!--头部导航 END-->
+		<div class="main-search">
+			<div class="main-search-con">
+				<h1>参照网站分析</h1>
+				<form action="#" class="search-form" method="post">
+					<div class="input-group">
+						<input type="text" name="czurl" class="form-control input-lg" placeholder="参照网址URL">
+						<span class="input-group-btn">
+						<button type="submit" class="btn btn-lg"><span class="iconfont icon-search"></span></button>
+					</span>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!--header END-->
+	</header>
+</div>
+<!--主导航-->
+<div class="container-fluid">
+	<div class="table-nav">
+		<ul class="table-row">
+			<{foreach $cate.0 as $cates}>
+				<li class="gdh-nav-item">
+					<a href="<{link ctl='list' arg0=$cates.cat_id arg1=1}>">
+						<img src="<{$pager.img}>/<{$cates.bgimg}>" alt="">
+						<span><{$cates.title}></span>
+					</a>
+				</li>
+			<{/foreach}>
+		</ul>
+	</div>
+</div>
+<!--主内容-->
+<div class="container-fluid">
+	<h5 class="guild-title"><span>推荐项目</span></h5>
+	<div class="js-guild guild-cont">
+		<{include file="indexitem.html"}>
+	</div>
+	<!--<div class="guild-bottom js-ajaxLoad" data-url="/index-indexitem.html?">
+		&lt;!&ndash;加载按钮&ndash;&gt;
+	</div>-->
+</div>
+<div class="container-fluid">
+	<h5 class="guild-title"><span>需求文案</span></h5>
+	<div class="js-guild guild-cont">
+		<{include file="demanditem.html"}>
+	</div>
+</div>
+
+<!--footer-->
+<{include file="block/footer.html"}>
+	
+</body>
+</html>

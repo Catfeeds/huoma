@@ -1,0 +1,32 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageFactoryInfo" class="page1" data-dom-cache="true" data-title="设计师信息">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>邮箱认证</h1>
+    </div>
+    <div data-role="main">
+        <div data-role="content" class="factoryInfo-upload">
+            <form method="post" action="<{link ctl='member/member:info'}>" id="factoryInfoForm" data-ajax="false"
+                  enctype="multipart/form-data">
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryName">用户名：</label>
+                    <b style="color:green"><{$MEMBER.uname}></b>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorySlogan">邮箱：</label>
+                    <{$MEMBER.mail}>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryOwn">手机：</label>
+                    <{if $MEMBER.verify_mobile}><{$MEMBER.mobile}><{else}>
+                    <input type="text" name="account[mobile]" id="factoryOwn" placeholder="手机号" value="<{$MEMBER.mobile}>">
+                    <{/if}>
+                </div>
+                <button type="submit" id="factoryInfo-btn" class="factoryInfo-btn">发布</button>
+            </form>
+        </div>
+    </div>
+
+<{include file="mobile:member/block/footer.html"}>

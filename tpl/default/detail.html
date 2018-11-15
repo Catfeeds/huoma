@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>项目详情-干点活</title>
+<<<<<<< HEAD
+<{include file="block/header.html"}>
+=======
+>>>>>>> d2a31ff35db971065813ae1c59dd238b6ff6aa58
+        <script src="/tpl/default/asset/public/js/jquery-1.11.2.min.js"></script>
+        <link rel="stylesheet" href="/tpl/default/asset/public/css/style.css" />
+        <link rel="stylesheet" href="/tpl/default/asset/public/css/xmdetails.css" />
+    </head>
+    <body>
+            <div class="top">
+<<<<<<< HEAD
+          <{include file="block/headernav.html"}>
+=======
+          <{include file="block/headernavnew.html"}>
+>>>>>>> d2a31ff35db971065813ae1c59dd238b6ff6aa58
+        </div>
+        <div class="box2">
+            <div class="box2_1">
+                <div class="left">
+                    <div class="banner">
+                    <p>干点活  >  项目  >  项目详情</p>
+                </div>
+                <div class="xq">
+                    <div class="tu"><img src="/files/<{$xiangmu.thumb}>" /></div>
+                    <div class="bao">
+                    <div class="zi">
+                        <p><{$xiangmu.title}></p>
+                    </div>
+                    <div class="kuai">
+                        <a href="javascript:;"> <{$xiangmu.desc}></a>
+                       
+                    </div>
+                    <div class="xiazai">
+<<<<<<< HEAD
+                        <a href="http://<{$xiangmu.gurl}>">在线预览</a>
+=======
+                        <a href="<{$xiangmu.gurl}>">在线预览</a>
+>>>>>>> d2a31ff35db971065813ae1c59dd238b6ff6aa58
+                        
+                    </div>
+                    <div class="fenxiang">
+                        <span><a href="#"><img src="/tpl/default/asset/public/img/xq_10.png"/>分享+</a></span>
+
+                        <{if $guanzhu == 1}>
+<<<<<<< HEAD
+                            <span><img src="/tpl/default/asset/public/img/xq_13.png"/><a href="#" id="shoucang" onclick="collect(<{$xiangmu.xiangmu_id}>)">已收藏</a></span>
+
+                        <{else}>
+                         <span><img src="/tpl/default/asset/public/img/xq_13.png"/><a href="#" id="shoucang" onclick="collect(<{$xiangmu.xiangmu_id}>)">收藏</a></span>
+=======
+                            <span><img src="/tpl/default/asset/public/img/xq_13.png"/><a href="javascript:(0)" id="shoucang" onclick="collect(<{$xiangmu.xiangmu_id}>)">已收藏</a></span>
+
+                        <{else}>
+                         <span><img src="/tpl/default/asset/public/img/xq_13.png"/><a href="javascript:(0)" id="shoucang" onclick="collect(<{$xiangmu.xiangmu_id}>)">收藏</a></span>
+>>>>>>> d2a31ff35db971065813ae1c59dd238b6ff6aa58
+
+                        <{/if}>
+
+                       
+
+                    </div>
+                    <div class="weixin">
+                        <img src="/tpl/default/asset/public/img/xq_06.png"/>
+                        <p>扫码可在手机上查看</p>
+                    </div>
+                    </div>
+                </div>
+                <div id="tabbox">
+                    <ul class="tabs" id="tabs">
+                        <li><a class="a1" href="javascript:;">项目详情</a></li>
+                        <li><a class="a1" href="javascript:;">解决方案</a></li>
+                        <li><a class="a1" href="javascript:;">问答（23）</a></li>
+                        <li><a class="a1" href="javascript:;">讨论答疑</a></li>
+                        <li><a class="a1" href="javascript:;">开发团队</a></li>
+                        <li><a class="a1" href="javascript:;">相似项目</a></li>
+                    </ul>
+                </div>
+                  <ul class="tab_conbox" id="tab_conbox">
+                <li class="tab_con">
+                    <div class="liuyan">
+<<<<<<< HEAD
+                        <div style="height:300px;"><{$xiangmu.content}></div>
+=======
+                        <textarea><{$xiangmu.content}></textarea>
+>>>>>>> d2a31ff35db971065813ae1c59dd238b6ff6aa58
+                        <p class="liu">留言板</p>
+                    </div>
+                    <div class="rate" name="1f">
+                        <span class="rate-filter">
+                            <input class="rate-list-all rate-radio-group" type="radio" name="radiogrounp">
+                            <label>全部</label>
+                            <input class="rate-list-picture rate-radio-group" type="radio" name="radiogrounp">
+                            <label>图片</label>
+                        </span>
+                        <span class="sm">
+                            <select>
+                                <option>按时间</option>
+                                <option>按默认</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="quanbu">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="col-meta">
+                                    <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_22.png"/></div>
+                                    <p>xxx</p>
+                                </td>
+                                <td class="tm-col-master">
+                                    <p>卖家发货速度极快，隔天就收到了，宝贝也非常好用，</p>
+                                    <div class="fang"><img class="tupian" src="/tpl/default/asset/public/img/xq_06.png"></div>
+                                    <p class="shijian"><span>2018-03-04</span><span>12:16</span></p>
+                                </td>
+                            
+                            </tr>
+                                <tr>
+                                <td class="col-meta">
+                                    <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_22.png"/></div>
+                                    <p>xxx</p>
+                                </td>
+                                <td class="tm-col-master">
+                                    <p>卖家发货速度极快，隔天就收到了，宝贝也非常好用，</p>
+                                    <div class="fang"><img class="tupian" src="/tpl/default/asset/public/img/xq_06.png"></div>
+                                    <p class="shijian"><span>2018-03-04</span><span>12:16</span></p>
+                                </td>
+                            
+                            </tr>
+                                <tr>
+                                <td class="col-meta">
+                                    <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_22.png"/></div>
+                                    <p>xxx</p>
+                                </td>
+                                <td class="tm-col-master">
+                                    <p>卖家发货速度极快，隔天就收到了，宝贝也非常好用，</p>
+                                    <div class="fang"><img class="tupian" src="/tpl/default/asset/public/img/xq_06.png"></div>
+                                    <p class="shijian"><span>2018-03-04</span><span>12:16</span></p>
+                                </td>
+                            
+                            </tr>
+                                <tr>
+                                <td class="col-meta">
+                                    <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_22.png"/></div>
+                                    <p>xxx</p>
+                                </td>
+                                <td class="tm-col-master">
+                                    <p>卖家发货速度极快，隔天就收到了，宝贝也非常好用，</p>
+                                    <div class="fang"><img class="tupian" src="/tpl/default/asset/public/img/xq_06.png"></div>
+                                    <p class="shijian"><span>2018-03-04</span><span>12:16</span></p>
+                                </td>
+                            
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="xuhao">
+                        <a class="shu" href="#1f" name="1f">1</a>
+                        <a class="shu" href="#1f" name="1f">2</a>
+                        <a class="shu" href="#1f" name="1f">3</a>
+                        <a class="shu" href="#1f" name="1f">4</a>
+                        <a class="shu" href="#1f" name="1f">5</a>
+                        <a href="#1f" name="1f"class="shuzi"><img src="/tpl/default/asset/public/img/zhi_07.png"></a>
+                        <a href="#1f" name="1f"class="shuzi"><img src="/tpl/default/asset/public/img/zhi_09.png"></a>
+                    </div>
+                    </div>
+                </li>
+                 <li class="tab_con">
+           <div class="jiejue">
+           <{foreach $project as $projects}>
+                <div class="fangan">
+                    <div class="left_1"><img class="im" src="/files/<{$xiangmu.thumb}>"></div>
+                    <div class="box3"><span> <{$projects.project_title}></span></div>
+                    <{if $projects.project_url != ''}>
+                        <div class="box4"><a href="<{$projects.project_url}>" class="xiazai">下载附件</a></div>
+                    <{else}>
+<<<<<<< HEAD
+                        <div class="box4"><a href="#" class="xiazai">下载附件</a></div>
+=======
+                        <div class="box4"><a href="javascript:;" class="xiazai">下载附件</a></div>
+>>>>>>> d2a31ff35db971065813ae1c59dd238b6ff6aa58
+                    <{/if}>
+                   
+                </div>
+             <{/foreach}>  
+           
+           </div>
+        </li>
+         <li class="tab_con">
+           <div class="wenda">
+            <div class="tiwen"><a href="#">我要提问题</a></div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="col-meta2">
+                                    <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_22.png"/></div>
+                                    <p>xxx</p>
+                                </td>
+                                <td class="tm-col-master2">
+                                    <p>卖家发货速度极快，隔天就收到了，宝贝也非常好用，</p>
+                                    <p class="fang1">借助三维软件进行制作游戏数字资产，依托游戏引擎，由程序员编写代码最后
+在各个平台发布的整个过程。游戏开发：游戏引擎、三维软件</p>
+                                    <p class="shijian1">
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_03.png">3722条回复</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_06.png">点赞</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_08.png">浏览</a>
+                                    </p>
+                                </td>
+                            
+                            </tr>
+                        <tr>
+                                <td class="col-meta2">
+                                    <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_22.png"/></div>
+                                    <p>xxx</p>
+                                </td>
+                                <td class="tm-col-master2">
+                                    <p>卖家发货速度极快，隔天就收到了，宝贝也非常好用，</p>
+                                    <p class="fang1">借助三维软件进行制作游戏数字资产，依托游戏引擎，由程序员编写代码最后
+在各个平台发布的整个过程。游戏开发：游戏引擎、三维软件</p>
+                                    <p class="shijian1">
+                                    <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_03.png">3722条回复</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_06.png">点赞</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_08.png">浏览</a>
+                                    </p>
+                                </td>
+                            
+                            </tr>
+                                    <tr>
+                                <td class="col-meta2">
+                                    <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_22.png"/></div>
+                                    <p>xxx</p>
+                                </td>
+                                <td class="tm-col-master2">
+                                    <p>卖家发货速度极快，隔天就收到了，宝贝也非常好用，</p>
+                                    <p class="fang1">借助三维软件进行制作游戏数字资产，依托游戏引擎，由程序员编写代码最后
+在各个平台发布的整个过程。游戏开发：游戏引擎、三维软件</p>
+                                    <p class="shijian1">
+                                    <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_03.png">3722条回复</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_06.png">点赞</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_08.png">浏览</a>
+                                    </p>
+                                </td>
+                            
+                            </tr>
+                                    <tr>
+                                <td class="col-meta2">
+                                    <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_22.png"/></div>
+                                    <p>xxx</p>
+                                </td>
+                                <td class="tm-col-master2">
+                                    <p>卖家发货速度极快，隔天就收到了，宝贝也非常好用，</p>
+                                    <p class="fang1">借助三维软件进行制作游戏数字资产，依托游戏引擎，由程序员编写代码最后
+在各个平台发布的整个过程。游戏开发：游戏引擎、三维软件</p>
+                                    <p class="shijian1">
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_03.png">3722条回复</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_06.png">点赞</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_08.png">浏览</a>
+                                    </p>
+                                </td>
+                            
+                            </tr>
+                                    <tr>
+                                <td class="col-meta2">
+                                    <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_22.png"/></div>
+                                    <p>xxx</p>
+                                </td>
+                                <td class="tm-col-master2">
+                                    <p>卖家发货速度极快，隔天就收到了，宝贝也非常好用，</p>
+                                    <p class="fang1">借助三维软件进行制作游戏数字资产，依托游戏引擎，由程序员编写代码最后
+在各个平台发布的整个过程。游戏开发：游戏引擎、三维软件</p>
+                                    <p class="shijian1">
+                                    <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_03.png">3722条回复</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_06.png">点赞</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_08.png">浏览</a>
+                                    </p>
+                                </td>
+                            
+                            </tr>
+                                    <tr>
+                                <td class="col-meta2">
+                                    <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_22.png"/></div>
+                                    <p>xxx</p>
+                                </td>
+                                <td class="tm-col-master2">
+                                    <p>卖家发货速度极快，隔天就收到了，宝贝也非常好用，</p>
+                                    <p class="fang1">借助三维软件进行制作游戏数字资产，依托游戏引擎，由程序员编写代码最后
+在各个平台发布的整个过程。游戏开发：游戏引擎、三维软件</p>
+                                    <p class="shijian1">
+                                    <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_03.png">3722条回复</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_06.png">点赞</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_08.png">浏览</a>
+                                    </p>
+                                </td>
+                            
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+        </li>
+         <li class="tab_con">
+           
+                  <div class="dayi">
+           <div class="fa">
+                    <a class="taolun" href="http://m.wordhuo.com/www/laychat/index.php/index/index/index.html">我要发讨论</a>
+                </div>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="col-meta3">
+                                    <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_22.png"/></div>
+                                    <p>xxx</p>
+                                </td>
+                                <td class="tm-col-master3">
+                                    <p>卖家发货速度极快，隔天就收到了，宝贝也非常好用，</p>
+                                    <div class="datu"><img class="datu1" src="/tpl/default/asset/public/img/xq_03.png"></div>
+                                    <p class="fang1">借助三维软件进行制作游戏数字资产，依托游戏引擎，由程序员编写代码最后
+在各个平台发布的整个过程。游戏开发：游戏引擎、三维软件</p>
+                                    <p class="shijian2">
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_03.png">3722条回复</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_06.png">点赞</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_08.png">浏览</a>
+                                    </p>
+                                </td>
+                            
+                            </tr>
+                        <tr>
+                                <td class="col-meta3">
+                                    <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_22.png"/></div>
+                                    <p>xxx</p>
+                                </td>
+                                <td class="tm-col-master3">
+                                    <p>卖家发货速度极快，隔天就收到了，宝贝也非常好用，</p>
+                                    <div class="datu"><img class="datu1" src="/tpl/default/asset/public/img/xq_03.png"></div>
+                                    <p class="fang1">借助三维软件进行制作游戏数字资产，依托游戏引擎，由程序员编写代码最后
+在各个平台发布的整个过程。游戏开发：游戏引擎、三维软件</p>
+                                    <p class="shijian2">
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_03.png">3722条回复</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_06.png">点赞</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_08.png">浏览</a>
+                                    </p>
+                                </td>
+                            
+                            </tr>
+                                <tr>
+                                <td class="col-meta3">
+                                    <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_22.png"/></div>
+                                    <p>xxx</p>
+                                </td>
+                                <td class="tm-col-master3">
+                                    <p>卖家发货速度极快，隔天就收到了，宝贝也非常好用，</p>
+                                    <div class="datu"><img class="datu1" src="/tpl/default/asset/public/img/xq_03.png"></div>
+                                    <p class="fang1">借助三维软件进行制作游戏数字资产，依托游戏引擎，由程序员编写代码最后
+在各个平台发布的整个过程。游戏开发：游戏引擎、三维软件</p>
+                                    <p class="shijian2">
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_03.png">3722条回复</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_06.png">点赞</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_08.png">浏览</a>
+                                    </p>
+                                </td>
+                            
+                            </tr>
+                                <tr>
+                                <td class="col-meta3">
+                                    <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_22.png"/></div>
+                                    <p>xxx</p>
+                                </td>
+                                <td class="tm-col-master3">
+                                    <p>卖家发货速度极快，隔天就收到了，宝贝也非常好用，</p>
+                                    <div class="datu"><img class="datu1" src="/tpl/default/asset/public/img/xq_03.png"></div>
+                                    <p class="fang1">借助三维软件进行制作游戏数字资产，依托游戏引擎，由程序员编写代码最后
+在各个平台发布的整个过程。游戏开发：游戏引擎、三维软件</p>
+                                    <p class="shijian2">
+                                    <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_03.png">3722条回复</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_06.png">点赞</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_08.png">浏览</a>
+                                    </p>
+                                </td>
+                            
+                            </tr>
+                                <tr>
+                                <td class="col-meta3">
+                                    <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_22.png"/></div>
+                                    <p>xxx</p>
+                                </td>
+                                <td class="tm-col-master3">
+                                    <p>卖家发货速度极快，隔天就收到了，宝贝也非常好用，</p>
+                                    <div class="datu"><img class="datu1" src="/tpl/default/asset/public/img/xq_03.png"></div>
+                                    <p class="fang1">借助三维软件进行制作游戏数字资产，依托游戏引擎，由程序员编写代码最后
+在各个平台发布的整个过程。游戏开发：游戏引擎、三维软件</p>
+                                    <p class="shijian2">
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_03.png">3722条回复</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_06.png">点赞</a>
+                                        <a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/tubiao_08.png">浏览</a>
+                                    </p>
+                                </td>
+                            
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+        </li>
+         <li class="tab_con">
+         <div class="tuandui2">
+            <div class="shang2">
+            <div class="left_1"><img class="touxiang" src="/tpl/default/asset/public/img/xq_22.png"></div>
+            <div class="shuo">
+                <p>团队1</p>
+                <p>团队介绍团队介绍团队介绍团队介绍团队介绍团队介绍团队介绍团队介绍团队介绍团
+队介绍团队介绍团队介绍</p>
+            </div>
+            </div>
+            <div class="xia">
+                <div class="left3">
+                    <div class="left_5"><img class="touxiang" src="/tpl/default/asset/public/img/xq_22.png"></div>
+                    <p>JAVA高级工程师</p>
+                    <p>JAVA SENIOR DEVELOPER
+Java后台业务开发和维护，编写概要和详
+设计文档；计算机相关专业本科以上学历，5年以上Java开发经验， 熟悉RESTful API开发、
+Linux和Tomcat的配置，具备高并发系统性能优化经验者优先，熟MySQL数据库，具备大型数
+据库性能优化经验者优先，熟悉Github代码管理工具的使用。</p>
+                </div>
+                <div class="left3">
+                    <div class="left_5"><img class="touxiang" src="/tpl/default/asset/public/img/xq_22.png"></div>
+                    <p>JAVA高级工程师</p>
+                    <p>JAVA SENIOR DEVELOPER
+Java后台业务开发和维护，编写概要和详
+设计文档；计算机相关专业本科以上学历，5年以上Java开发经验， 熟悉RESTful API开发、
+Linux和Tomcat的配置，具备高并发系统性能优化经验者优先，熟MySQL数据库，具备大型数
+据库性能优化经验者优先，熟悉Github代码管理工具的使用。</p>
+                </div>
+                <div class="left3">
+                    <div class="left_5"><img class="touxiang" src="/tpl/default/asset/public/img/xq_22.png"></div>
+                    <p>JAVA高级工程师</p>
+                    <p>JAVA SENIOR DEVELOPER
+Java后台业务开发和维护，编写概要和详
+设计文档；计算机相关专业本科以上学历，5年以上Java开发经验， 熟悉RESTful API开发、
+Linux和Tomcat的配置，具备高并发系统性能优化经验者优先，熟MySQL数据库，具备大型数
+据库性能优化经验者优先，熟悉Github代码管理工具的使用。</p>
+                </div>
+            </div>
+         </div>
+        </li>
+         <li class="tab_con">
+           <div class="xiangsi">
+                <div class="box5">
+                    <div class="xm"><img class="img3" src="/tpl/default/asset/public/img/dui_03.png"/></div>
+                    <div class="xiao3">
+                        
+                        <p class="p6"><a href="#" class="s3">源码下载</a><span class="s1">成交数量：1</span></p>
+                        <p class="p5">网站建设，企业模板网站</p>
+                    
+                    <p class="xia3"><span class="s2">文娜网络科技</span><span class="s4">天津</span></p></div>
+                </div>
+                    <div class="box5">
+                    <div class="xm"><img class="img3" src="/tpl/default/asset/public/img/dui_03.png"/></div>
+                    <div class="xiao3">
+                        
+                        <p class="p6"><a href="#" class="s3">源码下载</a><span class="s1">成交数量：1</span></p>
+                        <p class="p5">网站建设，企业模板网站</p>
+                    
+                    <p class="xia3"><span class="s2">文娜网络科技</span><span class="s4">天津</span></p></div>
+                </div>
+                    <div class="box5">
+                    <div class="xm"><img class="img3" src="/tpl/default/asset/public/img/dui_03.png"/></div>
+                    <div class="xiao3">
+                        
+                        <p class="p6"><a href="#" class="s3">源码下载</a><span class="s1">成交数量：1</span></p>
+                        <p class="p5">网站建设，企业模板网站</p>
+                    
+                    <p class="xia3"><span class="s2">文娜网络科技</span><span class="s4">天津</span></p></div>
+                </div>
+                    <div class="box5">
+                    <div class="xm"><img class="img3" src="/tpl/default/asset/public/img/dui_03.png"/></div>
+                    <div class="xiao3">
+                        
+                        <p class="p6"><a href="#" class="s3">源码下载</a><span class="s1">成交数量：1</span></p>
+                        <p class="p5">网站建设，企业模板网站</p>
+                    
+                    <p class="xia3"><span class="s2">文娜网络科技</span><span class="s4">天津</span></p></div>
+                </div>
+                    <div class="box5">
+                    <div class="xm"><img class="img3" src="/tpl/default/asset/public/img/dui_03.png"/></div>
+                    <div class="xiao3">
+                        
+                        <p class="p6"><a href="#" class="s3">源码下载</a><span class="s1">成交数量：1</span></p>
+                        <p class="p5">网站建设，企业模板网站</p>
+                    
+                    <p class="xia3"><span class="s2">文娜网络科技</span><span class="s4">天津</span></p></div>
+                </div>
+                    <div class="box5">
+                    <div class="xm"><img class="img3" src="/tpl/default/asset/public/img/dui_03.png"/></div>
+                    <div class="xiao3">
+                        
+                        <p class="p6"><a href="#" class="s3">源码下载</a><span class="s1">成交数量：1</span></p>
+                        <p class="p5">网站建设，企业模板网站</p>
+                    
+                    <p class="xia3"><span class="s2">文娜网络科技</span><span class="s4">天津</span></p></div>
+                </div>
+                    <div class="box5">
+                    <div class="xm"><img class="img3" src="/tpl/default/asset/public/img/dui_03.png"/></div>
+                    <div class="xiao3">
+                        
+                        <p class="p6"><a href="#" class="s3">源码下载</a><span class="s1">成交数量：1</span></p>
+                        <p class="p5">网站建设，企业模板网站</p>
+                    
+                    <p class="xia3"><span class="s2">文娜网络科技</span><span class="s4">天津</span></p></div>
+                </div>
+                    <div class="box5">
+                    <div class="xm"><img class="img3" src="/tpl/default/asset/public/img/dui_03.png"/></div>
+                    <div class="xiao3">
+                        
+                        <p class="p6"><a href="#" class="s3">源码下载</a><span class="s1">成交数量：1</span></p>
+                        <p class="p5">网站建设，企业模板网站</p>
+                    
+                    <p class="xia3"><span class="s2">文娜网络科技</span><span class="s4">天津</span></p></div>
+<<<<<<< HEAD
+                </div>
+           </div>
+        </li>
+                </ul>
+                </div>
+=======
+                </div>
+           </div>
+        </li>
+                </ul>
+                </div>
+>>>>>>> d2a31ff35db971065813ae1c59dd238b6ff6aa58
+                <div class="right">
+                    <div class="shang">
+                        <p>版权所有：<span>干点活公司</span></p>
+                        <p>公司：<span>干点活（北京）信息技术有限公司</span></p>
+                        <p>官网：<span>http://gdh.wordhuo.com</span></p>
+                    </div>
+                    <div class="center">
+                        <p class="tit">技术列表</p>
+                        <ul>
+                            <li><a href="#">
+                                <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_19.png"/></div>
+                                <div class="right_1">
+                                    <p class="list">3D场景模型</p>
+                                    <p class="list"><span>益智游戏</span><span>动作冒险</span></p>
+                                </div>
+                            </a></li>
+                                <li><a href="#">
+                                <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_19.png"/></div>
+                                <div class="right_1">
+                                    <p class="list">3D场景模型</p>
+                                    <p class="list"><span>益智游戏</span><span>动作冒险</span></p>
+                                </div>
+                            </a></li>
+                                <li><a href="#">
+                                <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_19.png"/></div>
+                                <div class="right_1">
+                                    <p class="list">3D场景模型</p>
+                                    <p class="list"><span>益智游戏</span><span>动作冒险</span></p>
+                                </div>
+                            </a></li>
+                                <li><a href="#">
+                                <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_19.png"/></div>
+                                <div class="right_1">
+                                    <p class="list">3D场景模型</p>
+                                    <p class="list"><span>益智游戏</span><span>动作冒险</span></p>
+                                </div>
+                            </a></li>
+                                <li><a href="#">
+                                <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_19.png"/></div>
+                                <div class="right_1">
+                                    <p class="list">3D场景模型</p>
+                                    <p class="list"><span>益智游戏</span><span>动作冒险</span></p>
+                                </div>
+                            </a></li>
+                                <li><a href="#">
+                                <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_19.png"/></div>
+                                <div class="right_1">
+                                    <p class="list">3D场景模型</p>
+                                    <p class="list"><span>益智游戏</span><span>动作冒险</span></p>
+                                </div>
+                            </a></li>
+                        </ul>
+                    </div>
+                    <div class="footer">
+                        <p class="tit">项目关注排行</p>
+                        <ul>
+                                <li><a href="#">
+                                <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_19.png"/></div>
+                                <div class="right_1">
+                                    <p class="list">金牌项目</p>
+                                </div>
+                            </a></li>
+                                    <li><a href="#">
+                                <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_19.png"/></div>
+                                <div class="right_1">
+                                    <p class="list">金牌项目</p>
+                                </div>
+                            </a></li>
+                                    <li><a href="#">
+                                <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_19.png"/></div>
+                                <div class="right_1">
+                                    <p class="list">金牌项目</p>
+                                </div>
+                            </a></li>
+                                    <li><a href="#">
+                                <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_19.png"/></div>
+                                <div class="right_1">
+                                    <p class="list">金牌项目</p>
+                                </div>
+                            </a></li>
+                                    <li><a href="#">
+                                <div class="left_1"><img class="im" src="/tpl/default/asset/public/img/xq_19.png"/></div>
+                                <div class="right_1">
+                                    <p class="list">金牌项目</p>
+                                </div>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<script type="text/javascript">
+    
+$(document).ready(function() {
+jQuery.jqtab = function(tabtit,tab_conbox,shijian) {
+$(tab_conbox).find("li").hide();
+$(tabtit).find("li:first").addClass("thistab").show(); 
+$(tab_conbox).find("li:first").show();
+$(tabtit).find("li").bind(shijian,function(){
+ $(this).addClass("thistab").siblings("li").removeClass("thistab"); 
+var activeindex = $(tabtit).find("li").index(this);
+$(tab_conbox).children().eq(activeindex).show().siblings().hide();
+return false;
+});
+};
+/*调用方法如下：*/
+$.jqtab("#tabs","#tab_conbox","click");
+//$.jqtab("#tabs","#tab_conbox","mouseenter");
+
+//$(".xuhao a").on("click","a",function(){
+//      $(".xuhao a").removeClass("add");
+//      $(this).addClass("add");
+//  });
+});
+//ul背景
+//序号
+
+ window.onload=function(){
+var oA=document.getElementsByClassName('shu');
+for(var i=0;i<oA.length;i++){
+oA[i].onclick=function() {
+for(var i=0;i<oA.length;i++){
+oA[i].style.background="";
+oA[i].style.color="";
+}
+this.style.background='#ccc';
+this.style.color='red';
+}
+}
+} 
+</script>
+<script type="text/javascript">
+    
+function collect(id){
+
+
+        $.ajax({
+            type:'POST',
+            url:"<{link ctl='detail-xmsheji'}>",
+            data:{
+                
+                "xiangmu_id": id,
+                    
+            },
+            success:function(data){  
+            var info = eval('(' + data + ')');       
+               
+               if(info.error == 12){
+                   $("#shoucang").html("收藏");
+               }else if(info.error == 13){
+                   $("#shoucang").html("已收藏");
+
+<<<<<<< HEAD
+               }else{
+
+               	window.location.href = "/user.html";
+=======
+>>>>>>> d2a31ff35db971065813ae1c59dd238b6ff6aa58
+               }
+            },
+            error:function(){
+                alert('系统繁忙,请稍候重试！');
+            }
+        
+        });  
+    
+
+}
+
+</script>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <{include file="block/header.html"}>
+</head>
+<body class="gdh-body">
+<div class="main-banner">
+    <{include file="block/headernav.html"}>
+    <!--头部导航 END-->
+</div>
+<!--user head-->
+<div class="user-banner">
+    <img src="/tpl/default/asset/img/user-banner.png" alt="">
+    <div class="user-center">
+        <div class="user-table">
+            <div class="user-head">
+                <{if $designer.face}><p class="user-tx"><img src="<{$pager.img}>/<{$designer.face}>" alt=""></p><{/if}>
+                <p class="user-name"><{$designer.name}> <span class="iconfont icon-v"></span></p>
+                <p class="user-des">
+                    <small><{$designer.city_name}> / <{$designer.group_id}>年 / <{$designer.group_name}></small>
+                </p> 
+                <p class="user-btn">
+                    <a class="btn btn-user1" href="#"><span class="iconfont icon-plus"></span> 关注</a>
+                    <a class="btn btn-user2" href="#">找TA交流</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--user 头 END-->
+<div class="container-fluid user-con">
+    <div class="row user-row">
+        <div class="col-sm-9 user-col">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">个人简介</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <table class="table user-tt">
+                                <tbody>
+                                <tr>
+                                    <th class="w-100">职位：</th>
+                                    <td><{$designer.group_name}></td>
+                                    <th class="w-100">QQ号码：</th>
+                                    <td><{$designer.qq}></td>
+                                    <th class="w-100">毕业院校：</th>
+                                    <td><{$designer.school}></td>
+                                </tr>
+                                <tr>
+                                    <th class="w-100">电话：</th>
+                                    <td><{$designer.mobile}></td>
+                                    <th class="w-100">邮箱：</th>
+                                    <td><{$designer.mail}></td>
+                                    <th class="w-100">经验：</th>
+                                    <td><{$designer.group_id}>年</td>
+                                </tr>
+                                <{if $designer.slogan}>
+                                <tr>
+                                    <th class="w-100">设计理念：</th>
+                                    <td colspan="5">
+                                        <span><{$designer.slogan}></span>
+                                    </td>
+                                </tr>
+                                <{/if}>
+                                <{if $designer.about}>
+                                <tr>
+                                    <th class="w-100">个人简介：</th>
+                                    <td colspan="5">
+                                        <{$designer.about}>
+                                    </td>
+                                </tr>
+                                <{/if}>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="user-tr">
+                                <h3 class="iconfont pull-right icon-user"></h3>
+                                <small>关注</small>
+                                <h3><{$designer.attention_num}></h3>
+                            </div>
+                            <!-- <div class="user-tr">
+                                <h3 class="iconfont pull-right icon-start"></h3>
+                                <small>收藏</small>
+                                <h3>38734</h3>
+                            </div> -->
+                            <div class="user-tr">
+                                <h3 class="iconfont pull-right icon-chart"></h3>
+                                <small>项目</small>
+                                <h3><{$xmcount}></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 user-col">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">个人技能</h4>
+                </div>
+                <div class="panel-body user-tag">
+                    <{foreach $skills as $skill}>
+                    <{if $skill}>
+                    <span class="tag"><{$skill}></span>
+                    <{/if}>
+                    <{/foreach}>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid user-con">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">项目经验（<{$xmcount}>）</h4>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <{foreach $items as $xiangmu}>
+                <div class="col-lg-2 col-md-3 col-sm-4">
+                    <div class="item-project">
+                        <img src="<{$pager.img}>/<{$xiangmu.thumb}>" alt="">
+                        <h4><{$xiangmu.title}></h4>
+                        <p>
+                            <small class="pull-right">
+                                <span><em class="iconfont icon-start"></em> <{$xiangmu.favorites}></span>
+                                <span><em class="iconfont icon-comm"></em> <{$xiangmu.comments}></span>
+                            </small>
+                            <small><{$xiangmu.dateline|format:'Y-m-d'}></small>
+                        </p>
+                    </div>
+                </div>
+                <{/foreach}>
+   
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--footer-->
+<{include file="block/footer.html"}>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageUserFactoryMachine" class="pageUserFactoryOffer" data-dom-cache="true" data-title="设计中心">
+    <!-- 设计后台菜单 -->
+   <{include file="mobile:member/block/designertop.html"}>
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+ 
+        <h1>案例管理</h1>
+        <a href="#userFactoryOfferPanel" class="ui-btn iconfont icon-menu"></a>
+    </div>
+    <div data-role="main">
+        <!-- 案例管理列表 -->
+        <div class="fOffer-list">
+            <ul class="fOffer-list-view" data-offerList-url="member/designer/blog-listcon.html" data-role="listview" data-inset="false" data-input="#offerFilter" data-icon="false">
+                <li class="ui-li-divider"><i></i><button data-role="none" class="iconfont icon-del my-list-del"></button><a data-transition="slide" href="<{link ctl='member/designer/case:create'}>" class="iconfont icon-plus1"></a>案例管理</li>
+                <{include file="mobile:member/designer/case/listcon.html"}>
+                <li class="offer-list-more"><button  class="offer-list-moreBtn"><span class="iconfont icon-more"></span></button></li>
+            </ul>
+        </div>
+    </div>
+<{include file="mobile:member/block/footer.html"}>

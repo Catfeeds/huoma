@@ -1,0 +1,77 @@
+<{include file="member/header.html"}>
+
+
+<div class="base_info"><b>博客资料</b>（<span class="red">*</span>必填项)</div>
+<div class="page-data">
+    <form  action="<{link ctl='member/designer:index' http=true}>" mini-form="designer" method="post" >
+        <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+            <li><a href="#table-info">基本信息</a></li>
+            <li><a href="#table-attr">属性设置</a></li>
+        </ul>
+        <table width="100%" border="0" cellspacing="0" id="table-info" class="form">
+            <tr>
+                <th>所属工厂：</th>
+                <td>
+                    <input type="hidden" id="select_company_id" name="data[company_id]" value="<{$designer.company_id}>" class="input"/>
+                    <input type="text" id="select_company_name" value="<{$company.name}>" class="input"/>
+                    <a class="yzmbtn" action="<{link ctl='member/select:company'}>" mini-select="#select_company_id,#select_company_name/N/<{$designer.city_id}>/选择工厂"/>选择工厂</a>
+                </td>
+            </tr>
+            <tr>
+                <th >城市：</th>
+                <td>
+                    <label>城市:<select name="data[city_id]" class="w-100"><{widget id="data/city" value=$designer.city_id}></select></label>
+                    <label>地区:<select name="data[area_id]" class="w-100"><{widget id="data/area" value=$designer.area_id city_id=$designer.city_id}></select></label>
+                </td>
+            </tr>
+            <tr><th>毕业院校：</th><td><input type="text" name="data[school]" value="<{$designer.school}>" class="input w-300"/></td></tr>
+            <tr><th>QQ：</th><td><input type="text" name="data[qq]" value="<{$designer.qq}>" class="input w-300"/></td></tr>
+            <tr><th>简介：</th><td><textarea name="data[about]" kindeditor="full" style="width:580px;height:350px;"><{$designer.about}></textarea></td></tr>
+
+    
+      <tr><th></th><td><input type="submit" value="保存" class="set_btn" /></td></tr>
+</table>
+<table width="100%" border="0" cellspacing="0" class="form" id="table-attr" style="display:none;">
+    <{widget id="attr/form" value=$attr from="zx:designer"}>
+        <tr><th></th><td><input type="submit" value="保存" class="set_btn" /></td></tr>
+</table> 
+    
+    
+
+</form>
+</div>
+<script type="text/javascript" src="<{$pager.res}>/kindeditor/kindeditor.js"></script>
+<script type="text/javascript" src="<{$pager.res}>/script/designer-hz.js"></script>
+<script type="text/javascript">
+    (function(K, $) {
+
+        var editor = KindEditor.create('textarea[kindeditor]', $.extend({uploadJson: '<{link ctl="magic:editorupload" http=true}>'}, window.KindEditor_Simple));
+
+    })(window.KT, window.jQuery);
+</script>
+<script type="text/javascript">
+    (function(K, $) {
+        $("div.page-data").tabs();
+        $("select[name='data[city_id]']").live('change', function() {
+            var city_id = $(this).val();
+            if (!city_id) {
+                return false;
+            }
+            var link = "<{link ctl='magic:area' arg0='#city_id#' http=true}>"
+            $.getJSON(link.replace("#city_id#", city_id), function(ret) {
+                if (ret.error) {
+                    Widget.MsgBox.error(ret.message.join(","));
+                } else if (ret.areas.length > 0) {
+                    var html = "";
+                    for (var i = 0; i < ret.areas.length; i++) {
+                        html += '<option value="' + ret.areas[i].area_id + '">' + ret.areas[i].area_name + '</option>';
+                    }
+                    $("select[name='data[area_id]']").html(html);
+                } else {
+                    $("select[name='data[area_id]']").html('<option value="">--</option>');
+                }
+            });
+        });
+    })(window.KT, window.jQuery);
+</script>
+<{include file="member/footer.html"}>

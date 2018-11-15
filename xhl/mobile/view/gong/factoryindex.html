@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{$seo_title}>_一路展工程中心</title>
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageFactoryMain" class="page1" data-dom-cache="false" data-title="<{$seo_title}>_一路展工程中心">
+    <!-- panel 菜单 -->
+    <{include file="mobile:block/top.html"}>
+    <div data-role="header" class="header" data-position="fixed">
+        <a href="/" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+        <h1><{$company.title}></h1>
+        <a href="#article3-menu" class="ui-btn iconfont icon-menu"></a>
+    </div>
+   
+    <div data-role="main">
+        <!-- 图片轮播 -->
+        <div class="index-focus factory-focus" id="gongchang-<{$PAGEID}>" data-slideid="factoryFocus">
+            <div class="hd">
+                <ul></ul>
+            </div>
+            <div class="bd">
+                <ul>
+                    <!-- 开发说明：轮播图，循环此 li 即可-->
+                    <{foreach from=$photo_banner item=item name=banner}>
+                    <li><a href="<{$item.link}>"><img src="<{$pager.img}>/<{$item.photo}>" _src="<{$pager.img}>/<{$item.photo}>"/> </a></li>
+                    <{foreachelse}>
+                    <li><a href="#"><img src="//www.jisunet.com/mobile/img/weishangchuan.jpg" _src="//www.jisunet.com/mobile/img/weishangchuan.jpg"/> </a></li>
+                    <{/foreach}>
+                </ul>
+            </div>
+        </div>
+        <div class="article3-main">
+            <{include file="mobile:gong/headermain.html"}>
+
+            <div class="article3-details factory-details">
+                <h3><i>工厂介绍</i><a href="<{link ctl='gong/chang:jieshao' arg0=$company.company_id}>"><span>更多...</span></a></h3>
+                <div class="article-3-details-con">
+                    <p><{$company.desc|cutstr:260}></p>
+                </div>
+            </div>
+            <!-- 工厂主内容-->
+            <div class="article3-details factory-details">
+                <h3><i>工厂案例</i><a href="<{link ctl='gong/chang:anli' arg0=$company.company_id}>"><span>更多...</span></a></h3>
+                <div class="factory-details-con">
+                    <{foreach $items as $item}>
+                    <{if $item.photo}>
+                    <div class="my-grids-2 factory-details-item">
+                        <a href="<{link ctl='gong/anli-anlitu' arg0=$item.case_id}>" data-transition="slide">
+                            <img src="<{$pager.img}>/<{$item.photo}>_small.jpg"/>
+                            <p><{$item.title}></p>
+                        </a>
+                    </div>
+                    <{/if}>
+                    <{/foreach}>
+                </div>
+            </div>
+            <div class="article3-details factory-details">
+                <h3><i>工厂设备</i> <a href="<{link ctl='gong/chang:shebei' arg0=$company.company_id}>"><span>更多...</span></a></h3>
+                <div class="factory-details-con">
+                        <{foreach from=$photo_list item=v name=photo}> 
+                        <{if $v.type == 1}> 
+                         <div class="my-grids-2 factory-details-item">
+                            <a href="<{link ctl='gong/chang:shebei' arg0=$company.company_id}>" data-transition="slide">
+                                <img src="<{$pager.img}>/<{$v.photo}>"/>
+                            </a>
+                         </div>
+                        <{/if}>
+                        <{/foreach}>       
+                </div>
+            </div>
+            <div class="article3-details factory-details">
+                <h3><i>工厂动态</i><a href="<{link ctl='gong/chang:dongtai' arg0=$company.company_id}>"><span>更多...</span></a></h3>
+                <ul data-role="listview" class="factory-article">
+                    <{foreach $news as $new}>
+                        <li data-icon="false"><a href="<{link ctl='gong/news' arg0=$new.news_id}>" data-transition="slide"><{$new.title|cutstr:80}></a> </li>
+                    <{/foreach}>
+                </ul>
+            </div>
+        </div>
+    </div>
+<{include file="mobile:block/footer.html"}>

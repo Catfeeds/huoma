@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{$pager.from_title}>注册_一路展展装网</title>
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageRegister" class="page1" data-dom-cache="false" data-title="<{$pager.from_title}>注册_一路展展装网">
+
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+        <h1><{$pager.from_title}>注册</h1>
+    </div>
+    <div data-role="main">
+        <form data-role="form" method="post" action="<{link ctl='user:create' http='base'}>" data-ajax='false' onsubmit="return false;" id="loginForm">
+            <input type="hidden" name="ylz[from]" value="<{$pager.from}>"/>
+            <div class="login-content">
+                  <{if $pager.from=='company'}>
+                    <fieldset class="login-fromInput">
+                        <label for="cname"><span class="iconfont icon-user"></span> </label>
+                        <input type="text" name="ylz[cname]" id="cname" placeholder="工厂名称">
+                    </fieldset>
+ 	               <fieldset class="login-fromH"></fieldset>
+                  <{elseif $pager.from=='shang'}>
+                        <fieldset class="login-fromInput">
+                            <label for="cname"><span class="iconfont icon-user"></span> </label>
+                            <input type="text" name="ylz[cname]" id="cname" placeholder="公司名称">
+                        </fieldset>
+		                <fieldset class="login-fromH"></fieldset>
+                  <{/if}>
+                <fieldset class="login-fromInput">
+                    <label for="uname"><span class="iconfont icon-user"></span> </label>
+                    <input type="text" name="ylz[uname]" id="uname" placeholder="用户名">
+                </fieldset>
+                <fieldset class="login-fromH"></fieldset>
+                <fieldset class="login-fromInput">
+                    <label for="loginUserTel"><span class="iconfont icon-phone"></span> </label>
+                    <input type="text" name="ylz[mobile]" id="mobile" placeholder="手机号">
+                </fieldset>
+                <fieldset class="login-fromH"></fieldset>
+                <fieldset class="login-fromInput">
+                    <label for="loginUserCode"><span class="iconfont icon-verification"></span> </label>
+                    <input type="text" name="ylz[regCode]" id="regCode" placeholder="验证码">
+                    <button type="button" data-mini="true" class="registerCodeBtn" id="loginGetCode" data-ajax='false'>点击获取</button>
+                </fieldset>
+                <fieldset class="login-fromH"></fieldset>
+              <{if $pager.from!='company' && $pager.from!='shang'}>
+                <fieldset class="login-fromInput">
+                    <label for="mail"><span class="iconfont icon-user"></span> </label>
+                    <input type="text" name="ylz[mail]" id="mail" placeholder="常用邮箱">
+                </fieldset>
+                <fieldset class="login-fromH"></fieldset>
+               <{/if}>
+                <fieldset class="login-fromInput">
+                    <label for="loginUserRPwd"><span class="iconfont icon-password"></span> </label>
+                    <input type="password" name="ylz[passwd]" id="passwd" placeholder="密码">
+                </fieldset>
+                <!--fieldset class="login-fromH"></fieldset>
+                <fieldset class="login-fromInput">
+                    <label for="confirmpasswd"><span class="iconfont icon-password"></span> </label>
+                    <input type="password" name="confirmpasswd" id="confirmpasswd" placeholder="确认密码">
+                </fieldset-->
+                
+            </div>
+            <fieldset class="loginForgot"></fieldset>
+            <fieldset class="loginSubmit">
+                <input type="submit" id="regSubmit" value="立即注册">
+            </fieldset>
+            <!-- <fieldset class="oth_type_tit">
+                <legend align="center" class="oth_type_txt">使用第三方登录</legend>
+            </fieldset>
+            <fieldset class="oth_type_links">
+                <a class="icon_type icon_qq sns-login-link" data-type="qq" href="#" title="QQ"
+                   target="_blank">QQ联合登录</a>
+                <a class="icon_type icon_wb sns-login-link" data-type="weibo" href="#" title="新浪微博"
+                   target="_blank">Weibo联合登录</a>
+                <a class="icon_type icon_zfb sns-login-link" data-type="alipay" href="#" title="支付宝"
+                   target="_blank">支付宝登录</a>
+            </fieldset> -->
+        </form>
+    </div>
+
+</div>
+<{include file="mobile:block/bottom.html"}>
+</body>
+</html>

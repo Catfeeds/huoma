@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>干点活</title>
+    <meta name="keywords" content="干点活"/>
+    <meta name="description" content="干点活"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/project/project.js"></script>
+    <script src="js/member_team.js"></script>
+    <!--<script type="text/javascript" src="js/flexible.js"></script>
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <script type="text/javascript" src="js/navbarscroll.js"></script>-->
+      
+    <script src="http://cdn.bootcss.com/iScroll/5.2.0/iscroll.js"></script>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/huo.css"/>
+    
+    <link rel="stylesheet" href="css/iconfont.css"/>
+    <link rel="stylesheet" href="css/iconfont1.css"/>
+    <link rel="stylesheet" href="css/iconfont3.css"/>
+    <link rel="stylesheet" href="css/iconfont4.css"/>
+    <link rel="stylesheet" href="css/style2.css"/>
+</head>
+<body>
+<div id="wrapper" class="collapse">
+    <div class="screen animate collapse">
+        <header>
+         <div class="kuo"> <input type="text" placeholder="例如：logo设计">
+         <img src="img/jing.png"></div>
+          
+        </header>
+    <div class="xia">
+    	<div class="top">
+    		<div class="tui"><h1>精选项目</h1></div>
+    		
+    		<div class="zhi"><img src="img/zhi_19.png"></div>
+    	</div>
+    	<div class="wrapper">
+    	<ul>
+    		<li>
+    		<img src="img/huo_08.png">
+    		<p>网站建设</p>
+    		<p>￥1234</p>
+    		</li>
+    		<li>
+    		<img src="img/huo_08.png">
+    		<p>网站建设</p>
+    		<p>￥1234</p>
+    		</li>
+    		<li>
+    		<img src="img/huo_08.png">
+    		<p>网站建设</p>
+    		<p>￥1234</p>
+    		</li>
+    		<li>
+    		<img src="img/huo_08.png">
+    		<p>网站建设</p>
+    		<p>￥1234</p>
+    		</li>
+    		<li>
+    		<img src="img/huo_08.png">
+    		<p>网站建设</p>
+    		<p>￥1234</p>
+    		</li>
+    		<li>
+    		<img src="img/huo_08.png">
+    		<p>网站建设</p>
+    		<p>￥1234</p>
+    		</li>
+    		<li>
+    		<img src="img/huo_08.png">
+    		<p>网站建设</p>
+    		<p>￥1234</p>
+    		</li>
+    	</ul>
+    	</div>
+    </div>
+    <div class="xia">
+    	<div class="top">
+    		<div class="tui"><h1>推荐项目</h1></div>
+    		
+    		<div class="zhi"><img src="img/zhi_19.png"></div>
+    	</div>
+    	<div class="zuixia">
+    		<div class="main2"> 
+			<a href=""> <dl> <dt>
+				<img src="img/biao_07.png"></dt> 
+				<dd> <p class="p4">网站建设，企业模板开发，企业网站定制开发图形品牌商标</p>
+					<p class="p5">￥3099/个</p> </dd> </dl> </a>
+				 </div>
+				 <div class="main2"> 
+			<a href=""> <dl> <dt>
+				<img src="img/biao_07.png"></dt> 
+				<dd> <p class="p4">网站建设，企业模板开发，企业网站定制开发图形品牌商标</p>
+					<p class="p5">￥3099/个</p> </dd> </dl> </a>
+				 </div>
+				 <div class="main2"> 
+			<a href=""> <dl> <dt>
+				<img src="img/biao_07.png"></dt> 
+				<dd> <p class="p4">网站建设，企业模板开发，企业网站定制开发图形品牌商标</p>
+					<p class="p5">￥3099/个</p> </dd> </dl> </a>
+				 </div>
+    	</div>
+    </div>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    
+   var ele = $(".wrappper ul");
+    ele.width((ele.find(".wrappper ul li").length + 1) * (ele.find(".wrappper ul li").width()+20));
+    var myScroll = new IScroll('.wrappper', {scrollX: true, scrollY: false});
+//  myScroll.scrollToElement('.active',true,true);
+        //demo示例一到四 通过lass调取，一句可以搞定，用于页面中可能有多个导航的情况
+//      $('.wrapper').navbarscroll();
+//
+//      //demo示例五 通过id调取
+//      $('#demo05').navbarscroll({
+//          defaultSelect: 6,
+//          endClickScroll: function (obj) {
+//              console.log(obj.text())
+//          }
+//      });
+//
+//      //demo示例六 通过id调取
+//      $('#demo06').navbarscroll({
+//          defaultSelect: 3,
+//          scrollerWidth: 6,
+//          fingerClick: 1,
+//          endClickScroll: function (obj) {
+//              console.log(obj.text())
+//          }
+//      });
+    
+</script>
+

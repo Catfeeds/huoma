@@ -1,0 +1,40 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageFactoryInfo" class="page1" data-dom-cache="false" data-title="添加案例">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>添加案例</h1>
+    </div>
+    <div data-role="main">
+        <div data-role="content" class="factoryInfo-upload">
+            <form method="post" action="<{link ctl='member/company/case:create'}>" id="factoryInfoForm" data-ajax="false" onsubmit="return false;"
+                  enctype="multipart/form-data">
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryName">展台名称：</label>
+                    <input type="text" name="data[title]" id="factoryName" placeholder="请输入展台名称" value="<{$detail.title|default:''}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorymianji">展台面积：</label>
+                    <input type="text" name="data[mianji]" id="factorySlogan" placeholder="请输入展台面积" value="<{$detail.mianji}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryOwn">展台简介：</label>
+                    <textarea name="data[intro]"><{$detail.intro}></textarea>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryLogo">图片（多选）：</label>
+                    <{if IS_APP}>
+                    	<a href="/index.php?type=case&uid=<{$MEMBER.uid}>&action=photo">选择图片</a>
+                    <{else}>
+                        <div id="factorylogo" data-upurl="/up-1000.html" data-mutpic="10"></div>
+                        <input type="hidden" name="data[logo]" id="factoryLogoPath">
+                    <{/if}>
+                </div>
+                <button type="submit" id="factoryInfo-btn" class="factoryInfo-btn">发布</button>
+            </form>
+        </div>
+    </div>
+
+
+<{include file="mobile:member/block/footer.html"}>

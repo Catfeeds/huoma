@@ -1,0 +1,125 @@
+<{include file="member/block/header.html"}>
+<div class="ucenter_t">
+    <ul>
+        <li><a href="<{link ctl='member/member/canzhan:canzhan'}>">我的参展计划</a></li>
+        <li><a href="<{link ctl='member/member/canzhan:canzhanDetail' arg0=$baojia.id}>"><{$baojia.zname|default:'查看参展信息'}></a></li>
+        <li class="on"><{$baojia.title|default:'工程报价单'}></li>
+    </ul>
+</div>
+<div class="ucenter_c">
+<table width="100%" border="0" cellspacing="0" class="info">
+    <tr>
+    	<th colspan="4" style="text-align:center; font-weight:bold; font-size:16px"><{$baojia.title}></th>
+    </tr>  
+	<tr>
+	  <td colspan="4" style="text-align:right; ">编号：<{$baojia.sn}></td>
+    </tr>
+	<tr>
+    	<td colspan="4" >状态：<{if $baojia.qduid}>已签单 签单时间：<{date('Y-m-d H:i:s',$baojia.qdtime)}><{else}><{if $baojia.status}>竞价中<{else}>报价中<{/if}><a href="<{link ctl='member/member/baojia:qiandan' arg0=$baojia.baojia_id http='ajax'}>"  mini-act="confirm:您确认要和<{$baojia.name}>签单吗？确认即视为同意平台的合同条款！" class="btn_main_big btn rt">签单</a><{/if}></td>
+   </tr>
+   <tr>
+   		<th>会展名称：</th><td><{$baojia.zname|default:'--'}></td><th>展会时间：</th><td><{date('Y-m-d',$baojia.ztime)}></td>
+   </tr>
+   <tr><th>装修日期：</th><td>按展馆要求</td><th>展位面积：</th><td><{$baojia.mianji|default:'--'}>㎡</td>
+   </tr>
+   <tr><th>公司名称：</th>
+        <td colspan="5"><{$baojia.name}></td>
+   </tr>                  
+   <tr>
+   		<th>负责人：</th><td><{$baojia.uname}></td><th>联系方式：</th><td><{$baojia.mobile}></td>
+   </tr>
+   <tr>
+		<td colspan="4">
+            <table width="100%" border="0" cellspacing="0" class="table">
+                   <tr>
+                      <th style="text-align:left;">序号</th>
+                      <th style="text-align:left;"> 项 目</th>
+                      <th style="width:200px;text-align:left;"> 制 作 工 艺</th>
+                      <th style="text-align:left;">数 量</th>
+                      <th style="text-align:left;">单 位</th>
+                      <th style="text-align:left;"> 单 价</th>
+                      <th style="text-align:left;">金额合计(元)</th>
+                    </tr>
+    <{foreach $btype as $key=>$bitem}>
+        <tr>
+          <th colspan="2" style="text-align:left;"><{$bitem.title}></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th> </th>
+          <th></th>
+        </tr>
+        <{foreach $bitem.xmlist as $k=>$xitem}>
+            <tr id="item-<{$xitem.bxm_id}>">
+              <td><{$xitem.xuhao}></td>
+              <td><{$xitem.xiangmu}></td>
+              <td><{$xitem.gongyi}></td>
+              <td><{$xitem.num}></td>
+              <td><{$xitem.danwei}></td>
+              <td><{$xitem.price}></td>
+              <td><{$xitem.price_total}></td>
+            </tr>
+	    <{/foreach}>
+
+<{/foreach}>
+</table>
+<tr  batch="tool_bar"><td colspan="4">
+ <table width="100%" border="0" cellspacing="0" class="table">    
+ <tr><td></td><td></td>
+   <td colspan="4" style="text-align: right;">场馆费用小计:
+       <{$baojia.price_subtotal}>
+       </input>
+ </td></tr>
+ 
+ <tr>
+   <th colspan="4" style="text-align:left;">税</th>
+ </tr>
+ <tr><td colspan="2"></td><td><{$baojia.shui|default:'6'}>%</td><td  style="text-align:right;"><{$baojia.price_shuitotal}></td></tr>
+ <tr>
+   <td>&nbsp;</td>
+   <td>&nbsp;</td>
+   <td colspan="4" style="text-align:right;">工程总价: 
+       <{$baojia.price_total}>
+       </td>
+ </tr>
+
+</table>
+</td></tr>
+</table>
+
+
+
+   
+
+         
+    <h4 class="tips">设计方案</h4>
+    <table width="100%" border="0" cellspacing="0" class="info">
+   
+     <tr>
+        <td>
+
+<ul class="line_type case_zhuanji">
+     	
+            
+                 <{foreach from=$cphoto key=key item=item2 name=cpho}>
+        <li <{if $smarty.foreach.cpho.index < 4 && $smarty.foreach.cpho.index == 0}>class="first"<{/if}> style=" padding:0px;margin:0px;">
+                    
+            <div class="zhuanji_top_img"><a href="/canzhan-show-<{$case.case_id}>.html"  target="_blank"><img src="<{$pager.img}>/<{$item2.photo}>_thumb.jpg" /></a></div>
+                
+            <p><a href="/canzhan-show-<{$case.case_id}>.html" class="lt tit"  target="_blank"><{$case.title}></a>         
+         </p>
+        </li>
+                 <{/foreach}>
+                          
+            <div class="cl"></div>
+	</ul>
+
+    
+</td>
+      </tr>
+
+   </table>    
+        
+</div>
+
+<{include file="member/block/footer.html"}>

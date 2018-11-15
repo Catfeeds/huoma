@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>修改手机号-干点活</title>
+    <meta name="keywords" content="干点活"/>
+    <meta name="description" content="干点活"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+   <link rel="stylesheet" href="css/common.css"/>
+    <!--<link rel="stylesheet" href="css/xuqiu.css"/>-->
+    <link rel="stylesheet" href="css/iconfont.css"/>
+    <link rel="stylesheet" href="css/iconfont1.css"/>
+    <link rel="stylesheet" href="css/iconfont3.css"/>
+    <link rel="stylesheet" href="css/iconfont4.css"/>
+    <link rel="stylesheet" href="css/payment.css"/>
+    <link rel="stylesheet" href="css/kindeditor_default.css"/>
+    <link rel="stylesheet" href="css/style2.css" />
+    <link rel="stylesheet" href="css/gaihao.css"/>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/payment.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/project/project.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/kindeditor-all.js"></script>
+    <script src="js/kindeditor_lang_zhcn.js"></script>
+    <script src="js/member_project_add.js"></script>
+</head>
+<body>
+<div id="wrapper" class="collapse">
+    <div class="screen animate collapse">
+     <header class="head">
+            <a href="javascript:history.go(-1)" class="fanhui"><img src="img/tou_03.png"></a>
+            <span class="s1">修改手机号</span>
+            <a href="" class="message"></a>
+        </header>
+        <div id="menu_list" style="margin-top: 40px;">
+            <div class="main">
+            	<span class="dang">当前绑定手机号</span>
+            	<p class="hao">176xxx3287665</p>
+          <form id="formPhone" role="form" action="" method="post">
+                <div class="">
+                    <ul class="ul-signin">
+                        <li>
+                            <input class="input300" name="ylz[mobile]" id="mobile" type="number" value="" placeholder="请输入手机号码">
+                        </li>
+                        <li>
+                            <input class="input300" name="ylz[regCode]" id="regCode" type="number" value="" placeholder="请输入验证码">
+                            <button type="button" class="signin" id="loginGetCode" onclick="getRegCode()">
+                                获取验证码
+                            </button>
+                        </li>
+                       
+                    </ul>
+                </div>
+                  <div class="mt20">
+                	  <p class="mt20">
+                    长时间收不到验证码，可尝试<a class="signin-old" href="login.html">语音接听验证码</a>
+                </p>
+                	
+                </div>
+                <div class="mt30 clearfix">
+                    <button type="submit" class="signin">确认修改手机号码</button>
+                </div>
+           
+            </form>
+                
+            
+            </div>
+         
+        
+       </div>
+ 
+    </div>
+</div>
+</body>
+</html>

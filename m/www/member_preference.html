@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>干点活</title>
+    <meta name="keywords" content="干点活"/>
+    <meta name="description" content="干点活"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui"/>
+    <meta name="apple-touch-fullscreen" content="YES" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/project/project.js"></script>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/shezhi.css" />
+    <link rel="stylesheet" href="css/iconfont.css" />
+    <link rel="stylesheet" href="css/iconfont1.css" />
+    <link rel="stylesheet" href="css/iconfont3.css" />
+    <link rel="stylesheet" href="css/iconfont4.css" />
+    <link rel="stylesheet" href="css/laydate.css" />
+    <link rel="stylesheet" href="css/payment.css" />
+    <link rel="stylesheet" href="css/style2.css" />
+    <script src="js/payment.js"></script>
+    <script src="js/laydate.js"></script>
+</head>
+<body>
+<div id="wrapper" class="collapse">
+    <div class="screen animate collapse">
+        <header class="head">
+            <a href="javascript:history.go(-1);" class="fanhui"><img src="img/tou_03.png"></a>
+            <span class="s1">偏好设置</span>
+            <a href="#" class="message">保存</a>
+        </header>
+        <p class="jia">偏好信息（设置后根据偏好筛选项目）</p>
+        <div id="wrap">
+            <div class="wrap">
+                <div class="payment_time">
+                    <div class="payment_time_title bg-3">
+                        <label class="cor-3">熟悉的领域</label><span><em class="cor-6" id="industry_str">未设置</em> ></span>
+                    </div>
+                    <div class="box2">
+                        <label class="cor-3">专业技能</label><span><em class="cor-6" id="skill_str">未设置</em> ></span>
+                    </div>
+                    <div class="box3">
+                        <label class="cor-3">教育经历</label><span><em class="cor-6" id="edu_str">未设置</em> ></span>
+                    </div>
+                    <div class="box4">
+                        <label class="cor-3">工作经历</label><span><em class="cor-6" id="job_str">未设置</em> ></span>
+                    </div>
+                    <div id="bg">
+                    </div>
+                    <div class="payment_time_mask">
+                        <div class="top">
+                            <a class="a1" href="#">取消</a>
+                            <a class="a2" href="#">新增我熟悉的领域</a>
+                            <a class="a3" href="#">确定</a>
+                        </div>
+                        <div class="bottom2">
+                            <ul class="bottom3" id="industry_list">
+                                <li>
+                                    <input class="pt" type="text" name="industry" id="industry" value="" placeholder="熟悉的领域" style="margin-left:0;text-align: center;"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="bg1">
+                    </div>
+                    <div class="payment_time_mask1">
+                        <div class="top">
+                            <a class="a1" href="#">取消</a>
+                            <a class="a2" href="#">专业技能</a>
+                            <a class="a3" href="#">确定</a>
+                        </div>
+                        <div class="bottom2">
+                            <div class="context" id="skill_list">
+                                <p style="text-align: center;">
+                                    <input name="skillname" id="skillname" nodeType="add-pro" type="text" maxlength="10" class="pro" style="text-align: center;" placeholder="专业技能">
+                                    <select name="skilllevel" id="skilllevel" nodeType="add-stars" class="add_stars">
+                                        <option value="0">选择星级</option>
+                                        <option value="1">1星</option>
+                                        <option value="2">2星</option>
+                                        <option value="3">3星</option>
+                                        <option value="4">4星</option>
+                                        <option value="5">5星</option>
+                                    </select>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="bg2">
+                    </div>
+                    <div class="payment_time_mask2">
+                        <div class="top">
+                            <a class="a1" href="#">取消</a>
+                            <a class="a2" href="#">教育经历</a>
+                            <a class="a3" href="#">确定</a>
+                        </div>
+                        <div class="bottom2_2">
+                            <div class="context">
+                                <ul class="school_ul">
+                                    <li>
+                                        <em class="red">*</em>
+                                        <span>学校：
+                                        <input name="schoolname" id="schoolname" nodeType="school" important="yes" type="text" maxlength="20" class="school" placeholder="请输入学习名称">
+                                        </span>
+                                    </li>
+                                    <li style="margin-top: 10px;">
+                                        <em class="red">*</em>
+                                        <span>专业：
+                                            <input name="majorstr" id="majorstr" nodeType="pro" important="yes" type="text" maxlength="20" class="pro" placeholder="请输入专业名称"></span>
+                                        <span>学历：
+                                            <select name="degree" id="degree" nodeType="edu" class="edu">
+                                                <option value="初中">初中</option>
+                                                <option value="高中">高中</option>
+                                                <option value="中技">中技</option>
+                                                <option value="中专">中专</option>
+                                                <option value="大专">大专</option>
+                                                <option value="本科">本科</option>
+                                                <option value="硕士">硕士</option>
+                                                <option value="MBA">MBA</option>
+                                                <option value="博士">博士</option>
+                                                <option value="博士后">博士后</option>
+                                            </select>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <em class="red">*</em>
+                                        <span style="padding-right: 0 ">时间：
+                                            <input id="date_start" type="text" maxlength="20" onclick="laydate()" placeholder="请选择开始日期">
+                                            <span class="xian">-</span>
+                                            <input id="date_end" type="text" maxlength="20" onclick="laydate()" placeholder="请选择结束日期">
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="box">
+                                <ul id="edu_list">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="bg3">
+                    </div>
+                    <div class="payment_time_mask3">
+
+                        <div class="top">
+                            <a class="a1" href="#">取消</a>
+                            <a class="a2" href="#">工作经历</a>
+                            <a class="a3" href="#">确定</a>
+                        </div>
+                        <div class="bottom4">
+                            <div class="context">
+                                <ul>
+                                    <li>
+                                        <em class="red">*</em>
+                                        <span>单位：
+                                            <input name="orgname" id="orgname" nodeType="school" important="yes" type="text" maxlength="20" class="school" placeholder="请输入单位名称">
+                                        </span>
+                                        <em class="red">*</em>
+                                        <span>职位：
+                                            <input name="job" id="job" nodeType="job" type="text" maxlength="20" important="yes" class="job" placeholder="请输入职位">
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <em class="red">*</em>
+                                        <span style="padding-right: 0">时间：
+                                            <input id="job_start" type="text" maxlength="20" onclick="laydate()" placeholder="请选择开始日期">
+                                            <span class="xian">&nbsp;　-　　</span>
+                                            <input id="job_end" type="text" maxlength="20" onclick="laydate()" placeholder="请选择结束日期">
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <em class="red">*</em>
+                                        <span>简述：
+                                            <input name="workdesc" id="workdesc" important="yes" placeholder="300字以内" maxlength="300" class="intro_info"/>
+                                        </span>
+                                        <span class="textara_Mes"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="box9">
+                            <ul id="job_list">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bottom">
+    <ul>
+        <li><a href="index.html"><i class="iconfont">&#xe62f;</i><span>项目</span></a></li>
+        <li><a href="designer.html"><i class="iconfont">&#xe72e;</i><span>技术</span></a></li>
+        <li><a href="member_preference.html"><img src="img/index_19.png"></a></li>
+        <li><a href="zixun.html"><i class="iconfont">&#xe627;</i><span>资讯</span></a></li>
+        <li><a href="member.html"><i class="iconfont">&#xe619;</i><span>我的</span></a></li>
+    </ul>
+</div>
+</body>
+</html>

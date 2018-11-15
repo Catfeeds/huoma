@@ -1,0 +1,8 @@
+<{foreach $items as $item}>
+<li>
+    <a data-transition="slide" href="#">
+        <img src="<{$pager.img}>/<{$item.photo}>">
+        <h2><{$item.title}> </h2>
+    </a><a class="fList-del-btn" href="<{link ctl='member/company/photo:delete' arg0=$item.photo_id}>" data-icon="delete"></a>
+</li>
+<{/foreach}>

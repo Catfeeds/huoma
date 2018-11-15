@@ -1,0 +1,8 @@
+<{foreach $items as $item}>
+<li data-icon="false" class="my-grids-1">
+    <a href="<{link ctl='news/content' arg0=$item.article_id}>">
+		<h2><{$item.title}></h2>
+		<p><{$item.desc}></p>
+    </a>
+</li>
+<{/foreach}>

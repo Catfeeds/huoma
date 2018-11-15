@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>项目列表-干点活</title>
+<<<<<<< HEAD
+		<{include file="block/header.html"}>
+=======
+>>>>>>> d2a31ff35db971065813ae1c59dd238b6ff6aa58
+		<link rel="stylesheet" href="/tpl/default/asset/public/css/style.css" />
+		<link rel="stylesheet" href="/tpl/default/asset/public/css/project.css" />
+		<script src="/tpl/default/asset/public/js/jquery-1.11.2.min.js"></script>
+	</head>
+	<body>
+		<div class="top">
+<<<<<<< HEAD
+			<{include file="block/headernav.html"}>
+=======
+			<{include file="block/headernavnew.html"}>
+>>>>>>> d2a31ff35db971065813ae1c59dd238b6ff6aa58
+		</div>
+		
+		<div class="main">
+	    <div class="main_1">
+	    	
+	    	<div class="heng"><h2>项目分类</h2></div>
+	        <div class="you">
+
+	        <{foreach $cate as $cates}>
+	        	<div class="box2_5">
+	        	<p><{$cates.title}></p>
+	        	<div class="box2">
+	        		
+	        		<ul>
+	        		<{foreach $cates.son as $sons}>
+	        			
+	        			<li><a href="<{link ctl='list' arg0=$sons.cat_id }>"><{$sons.title}></a></li>
+	        		
+	        			
+	        		<{/foreach}>
+	        		</ul>
+	        	</div>
+	        	</div>
+	        		
+	        <{/foreach}>
+	        	
+	
+	        </div>
+	           </div>
+		</div>
+	           <div class="dier">
+	           	<div class="dier_1">
+			<div class="heng"><h2>热门项目</h2></div>
+			<div class="view">
+				<{foreach $items as $itemss}>
+				<div class="box">
+				<a href="<{link ctl='detail' arg0=$itemss.xiangmu_id}>">
+					<div class="bao_1"><img class="img3" src="<{$img_url}><{$itemss.thumb}>"/></div>
+					<div class="xiao">
+						<p class="p1"><{$itemss.title}></p>
+						<p class="p2"><span class="s3">￥1283.00</span><span class="s1">浏览量：12</span></p>
+					
+					
+					</div>
+					</a>
+				</div>
+				<{/foreach}>	
+				
+			</div>
+			<div class="gengduo">
+				<a href="#"><span>更多</span><img class="tubiao" src="/tpl/default/asset/public/img/jiantou_03.png"></a>
+	        </div>
+	       </div>
+	        </div>
+		
+		<div class="bottom">
+		<div class="bottom_1">
+			<ul>
+				<li><a href="#">联系我们</a></li>
+				<li><a href="#">联系我们</a></li>
+				<li><a href="#">联系我们</a></li>
+			</ul>
+				<ul>
+				<li><a href="#">联系我们</a></li>
+				<li><a href="#">联系我们</a></li>
+				<li><a href="#">联系我们</a></li>
+			</ul>
+				<ul>
+				<li><a href="#">联系我们</a></li>
+				<li><a href="#">联系我们</a></li>
+				<li><a href="#">联系我们</a></li>
+			</ul>
+				<ul>
+				<li><a href="#">联系我们</a></li>
+				<li><a href="#">联系我们</a></li>
+				<li><a href="#">联系我们</a></li>
+			</ul>
+				<ul>
+				<li><a href="#">联系我们</a></li>
+				<li><a href="#">联系我们</a></li>
+				<li><a href="#">联系我们</a></li>
+			</ul>
+		</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+   $(".box2 ul").on("click","a",function(){
+        $(".box2 ul li a").removeClass("add");
+        $(this).addClass("add");
+    });
+</script>

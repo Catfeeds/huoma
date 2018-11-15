@@ -1,0 +1,160 @@
+<!--引入header-->
+<{include file="mobile:member/block/header.html"}>
+            <!-- 分割处-->
+                <!--工厂报价内容-->
+                <div class="factoryOffer-head">
+                    <div class="col-sm-3">
+                        <img src="<{$pager.img}>/<{$company.thumb}>" width="120" height="120"/>
+                    </div>
+                    <div class="col-sm-9">
+                        <h3>工厂简称</h3>
+
+                        <p class="col-xs-12">工厂名称：<a href="<{$company.company_url}>" target="_blank"><{$company.title}></a></p>
+
+                        <p class="col-xs-6">服务口号：<{$company.slogan}></p>
+
+                        <p class="col-xs-6">入住时间：<{$company.dateline|format:"Y-m-d"}></p>
+
+                        <p class="col-xs-6">工厂地址：<{$company.city_name}> <{$company.area_name}> <{$company.addr}></p>
+
+                        <p class="col-xs-6">工厂资质：<{$company.group_name}></p>
+
+                        <div class="clearfix"></div>
+                        <div class="fatoryOffer-head-foot">
+                            <p>您需要关注的情况：
+                                <a href="<{link ctl='member/company/yuyue:company'}>" class="green">参展商预约(<{$company.yuyue_num}>)</a>
+                                    <a href="<{link ctl='member/company/comment:company'}>" class="green">评论数(<{$company.comments}>)</a>
+                                    <a href="<{link ctl='member/company/case:index'}>">工厂案例(<{$company.case_num}>)</a> 
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- partTwo-->
+                <div class="panel offer-panel-style">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">展台报价</h4>
+                        <a href="#" class="pull-right">更多>></a>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-sm-3">
+                            <a href="#"><img src="//www.jisunet.com/mobile/img/openmoth.jpg"/> </a>
+                        </div>
+                        <div class="col-sm-9 offer-panel-con">
+                            <p>名称：程辉家具</p>
+
+                            <p>设计师：璃茉莫</p>
+
+                            <div class="clearfix"></div>
+                            <div class="offer-panel-group">
+                            
+                                <p>报价剩余时间：<span><i>2</i><i>3</i>天<i>1</i><i>2</i>时<i>1</i><i>2</i>分</span>
+                                    <button type="button" class="btn offer-panel-btn pull-right" id="6">马上报价</button>
+                                    <a class="yzmbtn" action="<{link ctl='member/chao/baojia:create' arg0=44}>" mini-select="#select_home_id,#select_home_name/N/<{$company.city_id}>/马上报价" mini-width="1000" />马上报价</a>
+                                    <button id="mytest" data-mydialog="true" data-action="/member/chao/baojia-dialog.html" title="测试标题内容" data-mywidth="98%" type="button" class="btn pull-right">测试dialog</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- partThree-->
+                <div class="panel offer-panel-style">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">正在进行的项目</h4>
+                        <a href="#" class="pull-right">更多>></a>
+                    </div>
+                    <div class="panel-body">
+                        <div class="offer-panel-con">
+                            <p class="col-sm-6">展台名称：程辉家具</p>
+                            <p class="col-sm-6">签约时间：2012-11-11</p>
+                            <p class="col-sm-6 sum">金额：<span>500000</span>元</p>
+                            <p class="col-sm-6">进场搭建时间：2016-12-14</p>
+							<div class="clearfix"></div>
+                            <p>撤展时间：2016-12-31</p>
+                            <div class="clearfix"></div>
+                            <div class="offer-progress">
+                                <h4>进度：</h4>
+                                <div class="offer-progress-bar">
+                                    <span class="offer-progress-info" style="left:60%">60%</span>
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%" aria-valuetext="123">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+     
+          
+             <!--分割完成-->
+
+<{include file="mobile:member/block/footer.html"}>
+<!--引入footer-->
+
+
+<!--模态框，切分模板时，可以忽略模态框，切分完成直接把模态框整体放到模板内容底部-->
+<div class="modal fade" id="factoryOffer" tabindex="-1" role="dialog" aria-labelledby="factoryOfferLabel"
+     aria-hidden="true">
+    <div class="modal-dialog factoryOffer">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="factoryOfferLabel">工厂报价</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-sm-9">
+                    <div class="factory-offer-demo">
+                        <div class="factory-offer-demo-inner">
+                        	<!--设计图列表-->
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                	<div class="offer-des">
+                    <!--项目简介信息容器-->
+                    </div>
+                    <form role="form" method="post" class="form-horizontal offer-form" id="offerForm" action="#" onsubmit="return false;">
+                    	
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                            	<button class="pull-right btn-link" id='offerAdd'>新增</button>
+                                <h4 class="panel-title">展台报价明细</h4>
+                                
+                            </div>
+                            <div class="panel-body">
+                                <div class="offer-form-list">
+                                <!--系统项目容器-->
+                                </div>
+                            	<div class="offer-form-custom" data-custom="0">
+                                <!--自定义项目容器-->
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+
+                                    <label for="name5" class="control-label col-sm-5">合计：</label>
+    
+                                    <div class="col-sm-7">
+                                        <input id="sum" class="form-control sum" name="sum" type="text" placeholder="0">
+                                    </div>
+
+                            </div>
+                        </div>
+                        
+                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                		<button type="submit" class="btn btn-success" id="facOfferSubmit">提交</button>
+                        
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                提示信息
+            </div>
+        </div>
+    </div>
+</div>
+<!--模态框 Over-->
+<!--主js内涵模态框数据-->
+<script src="/expo/expo/js/factory.offer.js"></script>
+<script src="/expo/expo/js/lightbox.min.js"></script>

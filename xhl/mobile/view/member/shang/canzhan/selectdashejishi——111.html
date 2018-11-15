@@ -1,0 +1,81 @@
+<div class="picker-designer-title">
+	<h3>预约设计师</h3>
+	<p>共有<i><{$pager.count}></i>位设计师可为您提供服务-当前最多选择5位设计师为您提供设计稿，不成单不收取任何设计费！成单后按项目总额5%收取</p>
+</div>
+<form action="<{link ctl='member/shang/canzhan:selectdesigner' arg0=$pager.id}>" onsubmit="return checkPicker('pickerDesignerForm');" method="post" id="pickerDesignerForm">
+<{foreach $items as $item}>
+<div class="my-col-sm-5gr">
+	<div class="picker-designer-item">
+    <a href="<{link ctl='sheji/shi' arg0=$item.uid}>" target="_blank">
+	<img src="<{$pager.img}>/<{$item.face}>" class="personA"/>
+    <h4><{$item.name}></h4>
+    <p><{$item.city_name}></p>
+    <p class="pingLv"><{$item.group_name}></p>
+    </a>
+    <span class="cheacked glyphicon glyphicon-ok"></span>
+    <input type="checkbox" name="sheji[uid][]" class="picker-designerBox" value="<{$item.uid}>">
+    </div>
+    
+</div>
+
+<{/foreach}>
+<div class="clearfix"></div>
+<div class="choose-designer-more-refresh">
+    <!--<button class="choose-designer-refresh">加载更多</button>-->
+    <button class="btn choose-designer-submit">确认选择</button>
+</div>
+</form>
+<script>
+$(function(){
+	var pickerDesignerNum = 0;
+	$('.picker-designer-item .cheacked').on('click',function(){
+		var pickerItem = $(this).parent();
+		if(pickerDesignerNum >= 5){
+			
+			if(pickerItem.hasClass('active')){
+				pickerItem.removeClass('active');
+				pickerDesignerNum--;
+				delDesignerBox(pickerItem);
+					
+			}else{
+				alert('您最多选择5位设计师');
+			}
+			
+		}else{
+			
+			if(pickerItem.hasClass('active')){
+				pickerItem.removeClass('active');
+				pickerDesignerNum--;
+				delDesignerBox(pickerItem);
+					
+			}else{
+				pickerItem.addClass('active');
+				pickerDesignerNum++;
+				setDesignerBox(pickerItem);
+			}
+		}
+	
+	});
+});
+
+//选中
+function setDesignerBox(obj){
+	$(obj).find('.picker-designerBox').attr('checked',true);
+}
+//取消
+function delDesignerBox(obj){
+	$(obj).find('.picker-designerBox').attr('checked',false);
+}
+//校验是否空表单
+function checkPicker(id){
+	var data = $('#'+id).serialize();
+	if(data !=''){
+		return true;
+	}else{
+		alert('您还没有选中设计师');
+		return false;
+	}
+}
+
+
+</script>

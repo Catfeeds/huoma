@@ -1,0 +1,10 @@
+<{foreach $items as $item}>
+<li>
+    <a data-transition="slide" href="user.factory.offer.view.html">
+        <p>类型：<{if $item.number<0}>开支<{else}>收入<{/if}></p>
+        <p>收支：<strong<{if $item.number<0}>class="past"<{/if}>><{$item.number}></strong ></p>
+        <p>日志：<{$item.log}></p>
+        <p>时间：<{$item.dateline|format}></p>
+    </a>
+</li>
+<{/foreach}>

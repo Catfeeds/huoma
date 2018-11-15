@@ -1,0 +1,16 @@
+<{foreach $wancheng as $item}>
+<li>
+    <a data-transition="slide" href="/member/chao/baojia-wanchengdetail-<{$item.baojia_id}>.html">
+        <img src="<{$pager.img}>/<{$item.photo}>_small.jpg">
+        <h2><{$item.title|default:'--'}></h2>
+        <p><strong class="over"><{if $item.gc_price>0}>费用合计：￥<{$item.gc_price}><{/if}>完成时间：<{$item.endtime}></strong></p>
+    </a>
+</li>
+<{foreachelse}>
+<li>
+    <div class="fOffer-noList">
+        <h1><span class="iconfont icon-menu1"></span></h1>
+        <p>没有订单</p>
+    </div>
+</li>
+<{/foreach}>

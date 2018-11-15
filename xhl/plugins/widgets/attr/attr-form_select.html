@@ -1,0 +1,32 @@
+<{foreach $data.attrs as $key=>$attr}>
+<tr>
+	<th><{$attr.title}>：</th>
+	<td<{if $data.colspan}> colspan="<{$data.colspan}>"<{/if}> style="text-align:left;;">
+    <select name="attr[<{$key}>][]" class="select long">
+	<option value="0">请选择</option>
+	<{foreach $attr.values as $k=>$v}>
+				<{if in_array($v.attr_value_id, $data.value)}>
+					<option value="<{$v.attr_value_id}>" selected="selected"><{$v.title}>*</option>
+				<{else}>
+					<option value="<{$v.attr_value_id}>"><{$v.title}></option>
+				<{/if}>
+  	<{/foreach}>
+</select>
+	</td>
+    
+	<td<{if $data.colspan}> colspan="<{$data.colspan}>"<{/if}>>
+		<ul class="group-list">
+			<{foreach $attr.values as $k=>$v}>
+			<{if $attr.multi=='Y'}>
+			<li><label title="<{$v.title}>"><input type="checkbox" name="attr[<{$v.attr_id}>][<{$v.attr_value_id}>]"  <{if in_array($v.attr_value_id, $data.value)}> checked="checked"<{/if}>value="<{$v.attr_value_id}>"/>&nbsp;<{$v.title}></label></li>
+			<{else}>
+			<li><label title="<{$v.title}>"><input type="radio" name="attr[<{$v.attr_id}>][]"  <{if in_array($v.attr_value_id, $data.value)}> checked="checked"<{/if}>value="<{$v.attr_value_id}>"/>&nbsp;<{$v.title}></label></li>
+			<{/if}>
+			<{/foreach}>
+			<div style="clear:both;"></div>
+		</ul>
+	</td>
+
+    
+</tr>
+<{/foreach}>

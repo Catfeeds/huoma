@@ -1,0 +1,43 @@
+<{include file="member/block/header.html"}>
+<div class="ucenter_t">
+    <ul>
+        <li class="on"><a href="<{link ctl='member/designer:info'}>">资料设置</a></li>
+ 
+    </ul>
+</div>
+<div class="admin-right">
+<form action="<{link ctl='member/designer:info'}>" mini-form="ucenter" method="post" ENCTYPE="multipart/form-data">
+<table cellspacing="0" cellpadding="0" class="form">
+ 	<tr><th>名称：</th><td><input type="text" name="data[name]" value="<{$designer.name}>" class="input w-300"/></td></tr>
+     <tr><th class="w-100">地区：</th>
+         <td><{if $designer.city_id}><b class="blue"><{$designer.city_name}></b>&nbsp;&nbsp;&nbsp;
+            <select name="data[area_id]" class="select w-150"><{widget id="data/area" value=$designer.area_id city_id=$designer.city_id}></select>
+            <{else}>
+            <{widget id="data/region" city_id=$designer.city_id area_id=$designer.area_id class="select w-150"}>
+            <{/if}>
+        </td>
+    </tr>
+    <tr><th>QQ：</th><td><input type="text" name="data[qq]" value="<{$designer.qq}>" class="input w-300"/></td></tr>
+    <tr><th>头像：</th>
+        <td>
+            <input type="file" name="data[face]" class="input w-300" style="vertical-align:middle;display:inline;"/>
+            <{if $designer.face}><img src="<{$pager.img}>/<{$designer.face}>" photo="<{$pager.img}>/<{$designer.face}>" class="wh-30" style="vertical-align:middle;display:inline;"/><{/if}>
+            <span class="tip-comment">尺寸大小：宽200px 高200px</span>
+        </td>
+    </tr>
+    <tr><th>个人技能：</th><td><input type="text" name="data[skills]" value="<{$designer.skills}>" class="input w-300"/>(每项技能请用逗号隔开)</td></tr>
+    <tr><th>设计理念：</th><td><input type="text" name="data[slogan]" value="<{$designer.slogan}>" class="input w-300"/></td></tr>
+    <tr><th>毕业院校：</th><td><input type="text" name="data[school]" value="<{$designer.school}>" class="input w-300"/></td></tr>
+    <tr><th>个人简介：</th><td>
+    <textarea name="data[about]" kindeditor="full" style="width:800px;height:350px;"><{$designer.about}></textarea></td></tr>
+    <tr><th></th><td><input type="submit" value="保存" class="green_btn" /></td></tr>
+</table>
+</form>
+</div>
+<script type="text/javascript" src="<{$pager.res}>/kindeditor/kindeditor.js"></script>
+<script type="text/javascript">
+(function(K, $){
+var editor = KindEditor.create('textarea[kindeditor]',{uploadJson : '<{link ctl="magic:editorupload" http="base"}>', extraFileUploadParams:{OTOKEN:"<{$OTOKEN}>"}});
+})(window.KT, window.jQuery);
+</script>
+<{include file="member/block/footer.html"}>

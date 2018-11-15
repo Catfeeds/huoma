@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{$designer.name}><{$designer.group_name}>_个人主页_一路展设计中心</title>
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageDesignerCenter" class="page1" data-dom-cache="false" data-title="<{$designer.name}><{$designer.group_name}>_个人主页_一路展展装网"
+     data-mycase-con="bd-case" data-mycase-src="/sheji/shi-usercentercase-<{$designer.uid}>.html?" data-myart-con="bd-article"
+     data-myart-src="/sheji/shi-usercenterart-<{$designer.uid}>.html?" data-mydis-con="bd-discuss-list"
+     data-mydis-src="/sheji/shi-usercenterdis-<{$designer.uid}>.html?">
+
+    <div data-role="header" class="header userCenterHeader" data-position="fixed" data-fullscreen="true">
+        <a href="<{link ctl='sheji:index'}>" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1 id="userCenterTitle"><{$designer.name}></h1>
+        <a href="<{link ctl='sheji/index:search'}>" data-transition="slide" class="ui-btn iconfont icon-search"></a>
+    </div>
+    <div data-role="main">
+        <div class="userCenterDes" id="shicenter-<{$PAGEID}>" data-slideid="userCenterDes"><!--加随机数-->
+            <div class="bd" id="shicenter1-<{$PAGEID}>">
+                <div class="autoHerght">
+                    <div class="bd-item">
+                        <div class="userCenter">
+                            <div class="userCenter-title">
+                                <img src="<{$pager.img}>/<{$designer.face}>"/>
+                                <h4 id="userCenterName"><{$designer.name}></h4>
+                                <p><{$designer.city_name}>|<{$designer.group_name}></p>
+                            </div>
+                        </div>
+                        <div class="ui-grid-a user-nav">
+                           <div class="ui-block-a">
+                               <a href="#"><span><{$designer.case_num}></span>案例</a>
+                           </div> 
+                           <div class="ui-block-b">
+                               <a href="#"><span><{$designer.attention_num}></span>关注</a>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="autoHeight">
+                    <div class="bd-item">
+                        <div class="userCenterDetail" data-role="content">
+                            <{if $designer.about}><h3>个人简介</h3>
+
+                            <p><{$designer.about}></p><{/if}>
+
+                            <{if $designer.slogan}><h3>设计理念</h3>
+
+                            <p><{$designer.slogan}></p><{/if}>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hd">
+                <ul>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--头部结束-->
+        <div class="userCenter-tab" id="shicenter2-<{$PAGEID}>" data-slideid="userCenterTab">
+            <div class="hd" id="userCenterTabHd">
+                <ul class="ui-grid-a">
+                    <li class="ui-block-a"><a href="#">案例</a></li>
+                    <li class="ui-block-b"><a href="#">文章</a></li>
+                    <!-- <li class="ui-block-c"><a href="#">评价</a></li> -->
+                </ul>
+            </div>
+            <div class="bd" id="shicenter3-<{$PAGEID}>">
+                <div class="autoHeight">
+                    <div>
+                        <div class="bd-case" id="usercentercase-<{$PAGEID}>">
+                          <{if $cases}>
+                            <{include file="mobile:sheji/usercentercase.html"}>
+                          <{else}>
+                              <div class="fOffer-noList">
+                                  <h1><span class="iconfont icon-menu1"></span></h1>
+                              </div>
+                          <{/if}>
+                            <!--
+                                此处 item 用来AJAX动态加载的模板
+                                <div class="bd-case-item"><a href="#"><img src="img/pic2.jpg"><p>XXX空间设计稿<br><small>100㎡/现代/12图</small></p></a></div>
+                            -->
+
+                        </div>
+                    </div>
+                </div>
+                <div class="autoHeight">
+                    <div>
+                        <div class="bd-article" id="usercenterart-<{$PAGEID}>">
+                          <{if $items}>
+                             <{include file="mobile:sheji/usercenterart.html"}>
+                          <{else}>
+                              <div class="fOffer-noList">
+                                  <h1><span class="iconfont icon-menu1"></span></h1>
+                              </div>
+                          <{/if}>
+                        </div>
+                    </div>
+                </div>
+          <!--       <div class="autoHeight">
+              <div class="bd-discuss">
+                 <div class="bd-discuss-title ui-grid-c">
+                     <div class="ui-block-a"><span>12</span>成交数</div>
+                     <div class="ui-block-b"><span>52</span>评价数</div>
+                     <div class="ui-block-c"><span>3</span>好评数</div>
+                     <div class="ui-block-d"><span>100%</span>好评率</div>
+                 </div>
+                  此处 item 用来AJAX动态加载的模板
+                  <div class="bd-discuss-con1">
+                      <ul class="bd-discuss-list-title">客户评价</ul>
+                      <ul class="bd-discuss-list" id="usercenterdis-<{$PAGEID}>">
+                        <{if $comment_info}>
+                          <{include file="mobile:sheji/usercenterdis.html"}>
+                        <{else}>
+                          <li>
+                            <div class="fOffer-noList">
+                                <h1><span class="iconfont icon-menu1"></span></h1>
+                            </div>
+                          </li>
+                        <{/if}>
+                          此处用来动态加载数据
+                      </ul>
+                  </div>
+                 <div class="bd-discuss-con1">
+                     <ul class="bd-discuss-list-title">交易记录（52）</ul>
+                     <ul class="bd-discuss-notes">
+                         <li>
+                             <small>2015-12-18</small>
+                             <span>进行中</span>月球登月项目
+                         </li>
+                         <li>
+                             <small>2015-12-18</small>
+                             <span class="over">已完成</span>月球登月项目
+                         </li>
+                         <li>
+                             <small>2015-12-18</small>
+                             <span>进行中</span>月球登月项目
+                         </li>
+                     </ul>
+                     <div class="bd-discuss-list-more"><a href="#">查看更多</a></div>
+                 </div>
+              </div>
+          </div> -->
+            </div>
+        </div>
+         <!-- Loading-->
+        <div class="listLoading">
+            <div class="listLoadLabel"><img src="//www.jisunet.com/mobile/img/listload.gif" height="12"/> 等待载入数据。。。</div>
+        </div>
+    </div>
+<{include file="mobile:block/footer.html" }>

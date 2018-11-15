@@ -1,0 +1,31 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageFactoryInfo" class="page1" data-dom-cache="false" data-title="案例管理">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>修改案例基本信息</h1>
+    </div>
+    <div data-role="main">
+        <div data-role="content" class="factoryInfo-upload">
+            <form method="post" action="<{link ctl='member/sheji/zhantai:edit'}>" id="factoryInfoForm" data-ajax="false" onsubmit="return false;"
+                  enctype="multipart/form-data">
+                <input type="hidden" name="case_id" value="<{$detail.case_id}>" />
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorytitle">展台名称：</label>
+                    <input type="text" name="data[title]" id="factoryName" placeholder="名称" value="<{$detail.title|default:''}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorymianji">展台面积：</label>
+                    <input type="text" name="data[mianji]" id="factoryName" placeholder="面积" value="<{$detail.mianji}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryintro">展台简介：</label>
+                    <textarea name="data[intro]"><{$detail.intro}></textarea>
+                </div>
+              <button type="submit" id="factoryInfo-btn" class="factoryInfo-btn">提交</button>
+            </form>
+        </div>
+    </div>
+
+<{include file="mobile:member/block/footer.html"}>

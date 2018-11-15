@@ -1,0 +1,9 @@
+<{foreach $items as $item}>
+    <li>
+    <a data-transition="slide" href="<{link ctl='member/shang:passwd'}>">
+        <h2>真实姓名：<{$item.realname}></h2>
+        <p>手机：<{$item.mobile}></p>
+        <p>最后登录：<{$item.lastlogin|format}></p>
+    </a>
+</li>
+<{/foreach}>

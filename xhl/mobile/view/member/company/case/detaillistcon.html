@@ -1,0 +1,13 @@
+<{foreach $items as $item}>
+<li>
+    <a data-transition="slide" href="#">
+        <img src="<{$pager.img}>/<{$item.photo}>_small.jpg">
+        <h2><{$item.title}></h2>
+        <p><strong class="over">上传时间：<{$item.dateline|format}></strong></p>
+    </a>
+	<div class="fList-manageBtn">
+        <a data-mypiclist="true" class="fList-manage-btn change" href="<{link ctl='member/company/case:defaultphoto' arg0=$item.photo_id}>" ><span><{if $detail.photo == $item.photo}>已设<{else}>封面<{/if}></span></a>
+        <a class="fList-manage-btn del" href="<{link ctl='member/company/case:deletephoto' arg0=$item.photo_id}>"><span>删除</span></a>
+    </div>
+</li>
+<{/foreach}>

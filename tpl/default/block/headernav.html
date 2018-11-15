@@ -1,0 +1,36 @@
+
+	<nav class="navbar navbar-list" role="navigation">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.html"><img src="/tpl/default/asset/img/logo2.png" alt=""></a>
+		</div>
+		<div>
+			<ul class="nav navbar-nav pull-right">
+				<li class="gdh-list-search">
+					<form class="navbar-form" role="search" action="<{link ctl='list'}>" method="get">
+						<div class="input-group">
+							<input type="text" class="form-control" name="kw" placeholder="Search">
+							<span class="input-group-btn">
+								<button type="submit" class="btn btn-default"><span class="iconfont icon-search"></span></button>
+							</span>
+						</div>
+					</form>
+				</li>
+				<{if $MEMBER.uid}>
+				<li><a href="<{link ctl='member/designer:index'}>"><{$MEMBER.uname}>已登录</a></li>
+				<li><a class="btn btn-login-list" href="<{link ctl='user:loginout'}>">退出</a></li>
+				<{else}>
+				<li><a class="btn js-dialog btn-register-list" data-src="/tpl/default/user/reg.html" title="注册新用户" href="<{link ctl='user:reg'}>">注册</a></li>
+				<li><a class="btn js-dialog btn-login-list" data-src="/tpl/default/user/login.html" title="网站登录" href="<{link ctl='user'}>">登录</a></li>
+				<{/if}>
+			</ul>
+			<ul class="nav navbar-nav">
+				<li <{if $request['demand']}><{/if}>><a href="list.html">项目</a></li>
+				<li <{if $request['demand']}><{/if}>><a href="#">最新</a></li>
+				<li <{if $request['ctl']=='demand'}>class="active"<{/if}>><a href="/new.html">资讯</a></li>
+				<li <{if $request['demand']}><{/if}>><a href="#">需求</a></li>
+                <!--<li><a href="inbox.html">问答</a></li>-->
+			<!--<li><a href="#">职位</a></li>
+				<li><a href="#">招聘人才？</a></li> -->
+			</ul>
+		</div>
+	</nav>

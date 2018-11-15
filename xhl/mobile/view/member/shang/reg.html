@@ -1,0 +1,42 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageFactoryInfo" class="page1" data-dom-cache="false" data-title="参展商信息">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>添加新帐户</h1>
+    </div>
+    <div data-role="main">
+        <div data-role="content" class="factoryInfo-upload">
+            <{if $shop_no_open}><div><span>您还没有填写企业资料，请先填写企业资料</span></div><{/if}>
+            <form method="post" action="<{link ctl='member/shang:create'}>" id="factoryInfoForm" data-ajax="false" onsubmit="return false;"
+                  enctype="multipart/form-data">
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="uname">登录用户名：</label>
+                    <input type="text" name="account[uname]" id="uname" placeholder="请输入您的帐户名">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="realname">真实姓名：</label>
+                    <input type="text" name="account[realname]" id="realname" placeholder="请输入真实姓名"  value="">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="mobile">手机：</label>
+                    <input type="text" name="account[mobile]" id="mobile" placeholder="请输入您的手机号">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="mail">邮箱：</label>
+                    <input type="text" name="account[mail]" id="mail" placeholder="请输入您的邮箱" >
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="passwd">密码：</label>
+                    <input type="password" name="account[passwd]" id="passwd" placeholder="请输入您的登录密码" >
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="confirmpasswd">确认密码：</label>
+                    <input type="password" name="confirmpasswd" id="confirmpasswd" placeholder="请再次输入您的登录密码">
+                </div>
+                <button type="submit" id="factoryInfo-btn" class="factoryInfo-btn">发布</button>
+            </form>
+        </div>
+    </div>
+<{include file="mobile:member/block/footer.html"}>

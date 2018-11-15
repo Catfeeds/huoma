@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{$detail.title}>_<{$designer.name}>的案例_一路展设计中心</title>
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageHammer" class="pageHammer" data-dom-cache="false" data-title="<{$detail.title}>_<{$designer.name}>的案例_一路展设计中心">
+    <div data-role="header" data-position="fixed" data-tap-toggle="false" class="header hammerHeader" data-fullscreen="true">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1><p class="hammerNum"></p>详情页</h1>
+
+        <a href="<{link ctl='sheji/anli' arg0=$detail.case_id}>" data-transition="slide" class="ui-btn iconfont icon-iconfont30"></a>
+    </div>
+    <div data-role="main">
+
+        <div class="swiper-container" data-conswiper="true" id="caseimg-<{$PAGEID}>">
+            <div class="swiper-wrapper">
+                <{foreach $photos as $item}>
+                    <div class="swiper-slide">
+                        <div class="hammerGallery">
+                            <img src="<{$pager.img}>/<{$item.photo}>"/>
+                        </div>
+                    </div>
+                <{/foreach}>
+            </div>
+        </div>
+
+        <!--<div class="hammerGallery" id="hammerPage">-->
+            <!--<img src="../img/pic2.jpg"/>-->
+        <!--</div>-->
+
+    </div>
+    <div data-role="footer" data-position="fixed" class="footer hammerFooter" data-tap-toggle="false" data-fullscreen="true">
+        <p><{$detail.title}></p>
+        <p><{$designer.name}></p>
+        <p>作品：<{$designer.case_num}></p>
+        <p>关注：<{$designer.attention_num}></p>
+        <p><{$detail.intro}></p>
+        <div class="ui-grid-b hammerFooterMenu">
+            <div class="ui-block-a"></div>
+            <div class="ui-block-b">
+            </div>
+            <div class="ui-block-c"></div>
+        </div>
+    </div>
+</div>
+<{include file="mobile:block/bottom.html"}>
+</body>
+</html>

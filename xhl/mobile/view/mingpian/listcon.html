@@ -1,0 +1,10 @@
+<{foreach $items as $item}>
+<li data-icon="false" class="my-grids-1">
+    <a href="<{link ctl='mingpian/card' arg0=$item.mingpian_id}>">
+        <img src="<{$pager.img}>/<{$item.face}>"/>
+        <h2><{$item.username}></h2>
+        <small>职位<span>|</span><{$item.zhiwei}></small>
+        <p><span>设计理念：</span><{$item.jianjie}></p>
+    </a>
+</li>
+<{/foreach}>

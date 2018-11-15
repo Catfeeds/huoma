@@ -1,0 +1,33 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageFactoryInfo" class="page1" data-dom-cache="false" data-title="我要干点活">
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>我要干点活</h1>
+    </div>
+    <div data-role="main">
+        <div data-role="content" class="factoryInfo-upload">
+            <form method="post" action="<{link ctl='gdh:index'}>" id="factoryInfoForm" data-ajax="false" onsubmit="return false;"
+                  enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<{$detail.id}>" />
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="canzhanName">我想要做的事：</label>
+                    <textarea name="data[huo]" id="canzhanName" class="textarea"  placeholder="请简短描述您想要做的事，系统帮你找到资源互补又志同道合的人"></textarea>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="canzhanmobile">我拥有的资源：</label>
+                    <input type="text" name="canzhan[cname]" id="canzhanmobile" placeholder="请输入我拥有资源名称，多个请用逗号隔开"  value="<{$shang.title}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="canzhanuname">我需要找的资源：</label>
+                    <input type="text" name="canzhan[mobile]" id="canzhanuname" placeholder="我需要的资源，多个请用逗号隔开" value="<{$shang.mobile}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="canzhanmianji">微信号：</label>
+                    <input type="text" name="canzhan[yusuan]" id="canzhanmianji" placeholder="微信号" value="<{$detail.yusuan}>">
+                </div>
+                <button type="submit" id="factoryInfo-btn" class="factoryInfo-btn" name="canzhan[isoem]" value="0">梦想起航</button>
+            </form>
+        </div>
+    </div>
+<{include file="mobile:member/block/footer.html"}>

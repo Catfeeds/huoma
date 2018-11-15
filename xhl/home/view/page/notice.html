@@ -1,0 +1,60 @@
+<!doctype html> 
+<html> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <link href="/expo/expo/css/bootstrap.min.css" rel="stylesheet">
+<title><{$CONFIG.site.title}> - 系统提示！</title>
+<style>
+.allTip{width:600px;margin:150px auto;border-color:#fd954c;font-weight:700;}
+.allTip .panel-heading{background:#fd954c;border-color:#fd954c;}
+.allTip .panel-heading .panel-title{font-size:20px;text-align: center;color:#fff;}
+.allTip .panel-body>img{float:left;max-width:65px;margin-left:10px;margin-top:20px;}
+.allTip .panel-body h3{color:#ed7218;margin-top:10px;padding-left:100px;font-weight:700;}
+.allTip .panel-body p{color:#878787;margin-left:100px;border-bottom:1px dashed #c6c5c5;margin-right:20px;padding-bottom:8px;}
+.allTip .panel-body p span{padding:0 5px; color:#b20606;}
+.allTip .panel-body a{margin-left:100px;color:#ed7218;text-decoration: underline;font-weight:200;}
+    </style>
+</head>
+<body>
+<div class="allTip panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">系统提示</h3>
+    </div>
+    <div class="panel-body">
+        <img src="<{$pager.res}>/images/icon/<{if $pager.error}>notice-success.gif<{else}>notice-success.gif<{/if}>"/>
+        <h3><{$pager.message}></h3>
+        <p> <{if $pager.timer>0}>如果您不做出选择，将在 <span><{$pager.timer}></span> 秒后跳转到第一个链接地址。<{else}>请选择以下操作。<{/if}></p>
+			<{foreach $pager.url_list as $link}>
+            <img src="<{$pager.res}>/images/icon/link.gif"/><a href="<{$link.url}>"><{$link.title}></a>
+            <{foreachelse}>
+            <a href="<{if $pager.link}><{$pager.link}><{else}><{link ctl='index'}><{/if}>"><img src="<{$pager.res}>/images/icon/link.gif"/>点击立即跳转</a>
+			<{/foreach}>
+    </div>
+</div>
+
+<{if ((int)$pager.timer > 0)}>
+<script type="text/javascript">
+var timer = <{$pager.timer}>;
+var link = "<{if $pager.link}><{$pager.link}><{else}><{link ctl='index'}><{/if}>";
+window.onload = function(){
+	if (link == 'javascript:history.go(-1)' && window.history.length == 0){
+		document.getElementById('notice-msg').innerHTML = '';
+		return;
+	}
+	var ints = window.setInterval(function(){
+		if(timer<1){window.clearInterval(ints);
+			window.location.href = link;
+			return ;
+		}
+		timer --;
+		document.getElementById("notice-timer").inserHTML = timer;
+	}, 1000);
+}
+</script>
+<{/if}>
+<{if $pager.appendjs}><{$pager.appendjs}><{/if}>
+</body>
+</html>

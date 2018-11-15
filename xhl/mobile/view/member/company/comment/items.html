@@ -1,0 +1,22 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageUserFactoryOffer" class="pageUserFactoryOffer" data-dom-cache="false" data-title="工厂中心">
+    <!-- 工厂后台菜单 -->
+   <{include file="mobile:member/block/top.html"}>
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+ 
+        <h1>点评管理</h1>
+        <a href="#userFactoryOfferPanel" class="ui-btn iconfont icon-menu"></a>
+    </div>
+    <div data-role="main">
+        <!-- 工厂点评列表 -->
+        <div class="fOffer-list">
+            <ul class="fOffer-list-view" data-offerList-url="/member/company/comment-listcon.html" data-role="listview" data-inset="false" data-input="#offerFilter" data-icon="false">
+                <li class="ui-li-divider"><i></i><span class="iconfont icon-clock"></span>点评管理</li>
+                <{include file="mobile:member/company/comment/listcon.html"}>
+                <li class="offer-list-more"><button  class="offer-list-moreBtn"><span class="iconfont icon-more"></span></button></li>
+            </ul>
+        </div>
+    </div>
+<{include file="mobile:member/block/footer.html"}>

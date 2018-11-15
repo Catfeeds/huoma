@@ -1,0 +1,10 @@
+<{foreach $items as $item}>
+<li>
+    <a data-transition="slide" href="<{link ctl='member/company/news:edit' arg0=$item.news_id}>">
+        <h2><{$item.title}></h2>
+        <p><strong class="past">添加时间：<{$item.dateline|format}></strong></p>
+        <p><{if $item.audit}><strong class="over">通过</strong><{else}><strong>待审</strong><{/if}></p>
+    </a><a class="fList-del-btn" href="<{link ctl='member/company/news:delete' arg0=$item.news_id}>" data-icon="delete"></a>
+
+</li>
+<{/foreach}>

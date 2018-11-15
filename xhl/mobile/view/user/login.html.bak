@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>展装设计搭建_展装设计师_展装工厂_一路展展装网_手机版</title>
+    <meta name="description" content="一路展展装原本如此轻松~一路展是展台设计、展台搭建的展装O2O平台,让展装设计搭建省去诸多中间环节,给予参展企业实现 省心、省钱、省力 的互联网展装服务新体验.">
+    <meta name="Keywords" content="一路展,展装网,特装网,展台搭建,展台设计,展装APP,展装O2O,特装O2O,传统会展,互联网化,展装服务">
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+
+<div data-role="page" id="pageLogin" class="page1" data-dom-cache="false" data-title="欢迎登录">
+    <div data-role="main">
+        <div class="loginTab" id="loginTab" data-slideid="loginTab">
+            <div class="hd">
+                <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+                <ul class="ui-grid-a">
+                   <!--  <li class="ui-block-a"><a href="<{link ctl='user'}>">登录</a></li>
+                   <li class="ui-block-b"><a href="<{link ctl='user:register'}>">注册</a></li> -->
+                   <li class="ui-block-a"><a href="#">登录</a></li>
+                   <li class="ui-block-b"><a href="#">注册</a></li>
+                </ul>                                               
+            </div>
+            <div class="bd">
+                <div class="login-mainCon">
+                    <form data-role="form" method="post" data-ajax="false" action="<{link ctl='user:login'}>" id="loginForm">
+                        <div class="login-content">
+                            <fieldset class="login-fromInput">
+                                <label for="loginUserName"><span class="iconfont icon-user"></span> </label>
+                                <input type="text" name="ylz[uname]" id="loginUserName" placeholder="用户名">
+                            </fieldset>
+                            <fieldset class="login-fromH"></fieldset>
+                            <fieldset class="login-fromInput">
+                                <label for="loginUserPwd"><span class="iconfont icon-password"></span> </label>
+                                <input type="password" name="ylz[passwd]" id="loginUserPwd" placeholder="输入密码">
+                            </fieldset>
+                        </div>
+                        <fieldset class="loginForgot">
+                            <a href="#">忘记密码？400-178-1616</a>
+                        </fieldset>
+                        <fieldset class="loginSubmit">
+                            <input type="button" id="loginSubmit" value="登录">
+                        </fieldset>
+                        <!-- <fieldset class="oth_type_tit">
+                            <legend align="center" class="oth_type_txt">使用第三方登录</legend>
+                        </fieldset>
+                        <fieldset class="oth_type_links">
+                            <a class="icon_type icon_qq sns-login-link" data-type="qq" href="#" title="QQ"
+                               target="_blank">QQ联合登录</a>
+                            <a class="icon_type icon_wb sns-login-link" data-type="weibo" href="#" title="新浪微博"
+                               target="_blank">Weibo联合登录</a>
+                            <a class="icon_type icon_zfb sns-login-link" data-type="alipay" href="#" title="支付宝"
+                               target="_blank">支付宝登录</a>
+                        </fieldset> -->
+                    </form>
+                </div>
+                <!-- register-->
+                <div class="register-nav">
+                    <ul class="ui-grid-a">
+                        <li class="ui-block-a"><a href="<{link ctl='user:register' arg0='shang'}>" data-transition="slide"><span><img src="//www.16-expo.com/mobile/img/regnav1.png"/></span>我是参展商</a> </li>
+                        <li class="ui-block-b"><a href="<{link ctl='user:register' arg0='company'}>" data-transition="slide"><span><img src="//www.16-expo.com/mobile/img/regnav3.png"/></span>我是工厂</a> </li>
+                        <li class="ui-block-a"><a href="<{link ctl='user:register' arg0='designer'}>" data-transition="slide"><span><img src="//www.16-expo.com/mobile/img/regnav2.png"/></span>我是设计师	</a> </li>
+                        <li class="ui-block-b"><a href="<{link ctl='user:register' arg0='member'}>" data-transition="slide"><span><img src="//www.16-expo.com/mobile/img/regnav4.png"/></span>普通观众</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<{include file="mobile:block/footer.html"}>
+ <script>
+        $(document).on('pageshow', function () {
+            var tempWrap = $('#loginTab').children('.tempWrap');
+            if (tempWrap.size()==0) {
+                TouchSlide({slideCell: "#loginTab", effect: "leftLoop"});
+            }
+        });
+
+    </script>
+
+

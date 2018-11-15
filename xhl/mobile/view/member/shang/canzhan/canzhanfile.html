@@ -1,0 +1,57 @@
+<!--引入header-->
+<{include file="mobile:block/header.html"}>
+<div data-role="page" id="pageUserFactoryOffer" class="pageUserFactoryOffer" data-dom-cache="false" data-title="展商中心">
+    <!-- 展商后台菜单 -->
+    <{include file="mobile:member/block/shangtop.html"}>
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>展商</h1>
+        <a href="#userFactoryOfferPanel" class="ui-btn iconfont icon-menu"></a>
+    </div>
+    <div data-role="main">
+        <!-- 展商列表 -->
+        <div class="fOffer3-list" id="fOffer-<{$PAGEID}>" data-slideid="fOfferList">
+            <div class="hd">
+                <ul class="ui-grid-b">
+                    <li class="ui-block-a"><a href="#">设计中</a></li>
+                    <li class="ui-block-b"><a href="#">订单详情</a></li>
+                    <li class="ui-block-c"><a href="#">附件管理</a></li>
+                </ul>
+            </div>
+            <div class="bd" id="34535">
+                <div class="autoHeight">
+                    <ul data-offerList-url="/member/shang/canzhan-shejizhong.html"
+                        class="fOffer3-list-item">
+                            <{include file="mobile:member/shang/canzhan/shejizhong.html"}>                
+                        <li class="offer-list-more">
+                            <button class="offer-list-moreBtn"><span class="iconfont icon-more"></span></button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="autoHeight">
+                    <ul data-offerList-url="/member/shang/canzhan/weitongguo.html"
+                        class="fOffer3-list-item">
+                       <{include file="mobile:member/shang/canzhan/weitongguo.html"}>    
+                        <li class="offer-list-more">
+                            <button class="offer-list-moreBtn"><span class="iconfont icon-more"></span></button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="autoHeight">
+                    <ul data-offerList-url="/member/shang/canzhan/weitongguo.html"
+                        class="fOffer3-list-item">
+                       <{include file="mobile:member/shang/canzhan/canzhanfilelist.html"}>    
+                        <li class="offer-list-more">
+                            <button class="offer-list-moreBtn"><span class="iconfont icon-more"></span></button>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+<!--引入footer-->
+<{include file="mobile:block/footer.html"}>

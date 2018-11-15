@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{$detail.title}>_一路展特装超市</title>
+    <meta name="description" content="<{if $detail.intro}><{strip_tags($detail.intro|cutstr:200:'.')}><{else}><{$detail.title}>面积：<{$detail.mianji}>㎡一路展特装超市<{/if}>">
+    <meta name="Keywords" content="<{$detail.title}>,一路展特装超市,特装网,特装设计，特装设计案例，特装效果图，特装设计效果图，3D特装模型">
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageArticleGallery" class="page1" data-dom-cache="false" data-title="<{$detail.title}>_一路展特装超市">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>特装详情页</h1>
+        <a href="<{link ctl='chao:search'}>" data-transition="slideup" class="ui-btn iconfont icon-search"></a>
+
+    </div>
+      <div data-role="main">
+            <div data-role="content" class="article-main">
+                <div class="article-title">
+                    <div class="article-author">
+                        <a href="<{link ctl='sheji/shi' arg0=$detail.uid}>"><img src="<{$pager.img}>/<{$designer.face}>"/></a> 
+
+                        <p><{$designer.name}></p>
+
+                        <p><span class="iconfont icon-icon17"> <{$detail.views}></span><span></span><span class="iconfont icon-kongxinhand"> <{$detail.likes}></span></p>
+                    </div>
+                    <div class="article-title-inner">
+                        <h2><{$detail.title}></h2>
+                        <table class="article-title-info">
+                            <tbody>
+                            <tr>
+                                <td>编号：</td>
+                                <td>EXPO<{$detail.uid}>-<{$detail.case_id}></td>
+                            </tr>
+                            <{foreach $detail.attrvalues as $attr}>
+                            <tr>
+                                <td><{$attr.title}>：</td>
+                                <td><{$attr.val}></td>
+                            </tr>
+                            <{/foreach}>
+                            <{if $detail.mianji}>
+                            <tr>
+                                <td>面积：</td>
+                                <td><{$detail.mianji}>㎡</td>
+                            </tr>
+                            <{/if}>
+                            <{if $detail.intro}>
+                            <tr>
+                                <td>模型简介：</td>
+                                <td><{$detail.intro}></td>
+                            </tr>
+                            <{/if}>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <!-- 文章内容部分-->
+                <div class="article-details" >
+                    <{foreach $photos as $item}>
+                    <a  href="#" data-direction="reverse" data-rel="back">
+                    <img src="<{$pager.img}>/<{$item.photo}>"/>
+                    </a>
+                    <{/foreach}>
+                </div>
+                <div class="article-like" data-setsupport="true"><a href="<{link ctl='chao/tezhuang:like' arg0=$detail.case_id}>"></a></div>
+            </div>
+    </div>
+<{include file="mobile:block/foot.html"}>
+<{include file="mobile:block/bottom.html"}>
+</body>
+</html>

@@ -1,0 +1,65 @@
+    <div data-role="footer" data-position="fixed" class="footer">
+    <{if $MEMBER.uid}>
+        <div class="ui-grid-c">
+            <div class="ui-block-a">
+                <a href="<{link ctl='index'}>" data-transition="slide" class="ui-btn <{if $request.ctl=='index'}>active<{/if}>"><i class="iconfont icon-home"></i>首页</a>
+            </div>
+                <{if $MEMBER.from=='company'}>
+                    <div class="ui-block-b">
+                        <a href=" <{link ctl='member/chao/baojia:index'}>" data-transition="slide" class="ui-btn <{if $request.ctl=='member/chao/baojia:index'}>active<{/if}>"><i class="iconfont icon-order"></i>报价</a>
+                    </div>
+                    <div class="ui-block-c">
+                        <a href="<{link ctl='member/chao/baojia:qiandan'}>" data-transition="slide" class="ui-btn <{if $request.ctl=='member/chao/baojia:qiandan'}>active<{/if}>"><i class="iconfont icon-designno"></i>签约</a>
+                    </div>
+                <{elseif $MEMBER.from=='designer'}>
+                    <div class="ui-block-b"> 
+                        <a href="<{link ctl='member/sheji/canzhan:sheji'}>" data-transition="slide" class="ui-btn <{if $request.ctl=='member/sheji/canzhan'}>active<{/if}>"><i class="iconfont icon-order"></i>订单</a>
+                    </div>
+                    <div class="ui-block-c">
+                        <a href="<{link ctl='member/designer:logs'}>" data-transition="slide" class="ui-btn <{if $request.ctl=='member/designer'}>active<{/if}>"><i class="iconfont icon-designno"></i>财务</a>
+                    </div>
+                <{elseif $MEMBER.from=='shang'}>
+                    <div class="ui-block-b"> 
+                        <a href="<{link ctl='member/shang/canzhan:create'}>" data-transition="slide" class="ui-btn <{if $request.ctl=='member/shang/canzhan:create'}>active<{/if}>"><i class="iconfont icon-order"></i>发布订单</a>
+                    </div>
+                    <div class="ui-block-c">
+                        <a href="<{link ctl='member/shang/canzhan:canzhan'}>" data-transition="slide" class="ui-btn <{if $request.ctl=='member/shang/canzhan'}>active<{/if}>"><i class="iconfont icon-designno"></i>订单</a>
+                    </div>
+                <{else}>
+                    <div class="ui-block-b"> 
+                        <a href="<{link ctl='zhan/index'}>" data-transition="slide" class="ui-btn <{if $request.ctl=='zhan/index'}>active<{/if}>"><i class="iconfont icon-order"></i>展会</a>
+                    </div>
+                    <div class="ui-block-c">
+                        <a href="<{link ctl='guan/index'}>" data-transition="slide" class="ui-btn <{if $request.ctl=='guan/index'}>active<{/if}>"><i class="iconfont icon-designno"></i>展馆</a>
+                    </div>
+                <{/if}>
+              <div class="ui-block-d">
+                <a href="<{link ctl='member/member:index'}>" data-transition="slide" class="ui-btn <{if $request.ctl=='member/member'}>active<{/if}>"><i class="iconfont icon-user"></i>我的</a>
+            </div>
+        </div>
+   <{else}>
+        <div class="ui-grid-d">
+            <div class="ui-block-a">
+                <a href="<{link ctl='index'}>" data-transition="slide" class="ui-btn <{if $request.ctl=='index'}>active<{/if}>"><i class="iconfont icon-home"></i>首页</a>
+            </div>
+            <div class="ui-block-b">
+                <a href="<{link ctl='sheji/designer'}>" data-transition="slide" class="ui-btn <{if $request.ctl=='sheji/designer'}>active<{/if}>"><i class="iconfont icon-designno"></i>设计师</a>
+            </div>
+            <div class="ui-block-c"></div>
+            <div class="ui-block-d">
+                <a href="<{link ctl='gong/factoryguide'}>" data-transition="slide" class="ui-btn <{if $request.ctl=='gong/factoryguide'}>active<{/if}>"><i
+                        class="iconfont icon-zhanshigongcheng"></i>工厂</a>
+            </div>
+            <div class="ui-block-e">
+                <a href="<{link ctl='member/member:index'}>" data-transition="slide" class="ui-btn <{if $request.ctl=='member/member'}>active<{/if}>"><i class="iconfont icon-user"></i>我的</a>
+            </div>
+        </div>
+        <!-- 展商图标-->
+        <div class="shang-ico">
+            <a href="<{link ctl='shang/zhanshang'}>" data-transition="slide" class="ui-btn">
+                <i><img src="/img/shanghover.png"/></i>参展商
+            </a>
+        </div>
+   <{/if}>
+</div>
+</div>

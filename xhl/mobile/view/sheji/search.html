@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>设计师列表-设计中心</title>
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<!--pageSearch-->
+<div data-role="page" id="pageSearch">
+    <!-- 主js-->
+    <div data-role="header" data-position="fixed" id="searchHeader" class="searchHeader">
+        <div class="searchBack">
+            <a href="/" data-rel="back"><span class="iconfont icon-left"></span></a>
+        </div>
+        <form method="get" action="<{link ctl='sheji/index'}>" class="headerSearch">
+            <input type="search" name="kw" id="searchInput" placeholder="输入您要查找的设计师名称">
+            <div class="headerBack">
+                <button type="submit">搜索</button>
+            </div>
+        </form>
+    </div>
+
+    <div data-role="main">
+        <!-- 本例主要代码 Start ================================ -->
+          <div id="searchTab-<{$PAGEID}>" class="searchTab" data-slideid="searchTab">
+            <div class="hd" data-role="navbar" data-grid="a">
+                <ul>
+                    <{if $group_list}>
+                    <li><a href="#" data-ajax="false">等级</a></li>
+                    <{/if}>
+                    <{foreach $attr_values as $v}>
+                    <li><a href="#" data-ajax="false"><{$v.title}></a></li>
+                    <{/foreach}>
+                </ul>
+            </div>
+            <div class="bd">
+                <{if $group_list}>
+                <ul>
+                    <li <{if empty($pager.group_id)}>class="active"<{/if}>><a href="<{$group_all_link}>">不限</a></li>
+                    <{foreach $group_list as $v}>
+                        <li <{if $v.group_id==$pager.group_id}>class="active"<{/if}>><a href="<{$v.link}>"><{$v.group_name}></a></li>
+                    <{/foreach}>
+                </ul>
+                <{/if}> 
+               <{foreach $attr_values as $v}>
+               <ul>
+                   <li <{if $v.checked}>class="active"<{/if}>><a href="<{$v.link}>">不限</a></li>
+                   <{foreach $v.values as $vv}>
+                       <li <{if $vv.checked}>class="active"<{/if}>><a href="<{$vv.link}>"><{$vv.title}></a></li>
+                   <{/foreach}>
+               </ul>
+               <{/foreach}>
+            </div>
+        </div>
+        <!-- 本例主要代码 End ================================ -->
+    </div>
+<{include file="mobile:block/footer.html"}>

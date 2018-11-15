@@ -1,0 +1,158 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="windows-Target" content="_top">
+	<meta name="Author"  content="nickcheng">
+	<title>测试表单</title>
+	<!-- form.css 页面表单样式不用引入  -->
+	<link href="../css/form.css" rel="stylesheet" type="text/css" />
+	<link href="../css/form_valid.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="../jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="../jquery.form-1.0.1.js"></script>
+	<script type="text/javascript" src="../jquery.form.valid-1.0.1.js"></script>
+	<script type="text/javascript" src="../jquery.form.valid.function.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#username").valids({prompt:'请输入用户信息，长度5至11',required:true,validType:['username',{callback:lengths,params:[5,11]},{callback:checkUA} ]});
+			$("#money").valids({prompt:'金额必须是大于0的整数或者两位以内的小数！',required:true,validType:['money']});
+			$("#password").valids({required:true,validType:['password']});
+			$("#confirmpwd").valids({required:true,validType:['password',{callback:equalTo,params:['password','重复密码错误']}]});
+			$("#age").valids({required:true,validType:['number']});
+			$("#province").valids({required:true});
+			$("#personinfo").valids({required:true,validType:['textarea']});
+			$("input:[name=sex]").valids({required:true});
+			$("input:[name=sports]").valids({required:true});
+			$("#htmlsave").htmlform();
+			$("#ajaxsave").ajaxform();
+		});
+		function checkUA( name ) {
+			var msg="用户名重复";
+			var res=false;
+			if(name!="username"){
+				res=true;
+			}
+			return { message : msg , result : res } ;
+		}
+
+	</script>
+</head>
+<body>
+	<h1>表单测试</h1>
+	<fieldset id="testfildset">
+		<legend>表单</legend>
+		<form action="" id="testform" method="post">
+			<h2>基本信息</h2>
+			<table class="formtable">
+			<tr>
+				<th>
+					<label>用户名：</label>
+				</th>
+				<td>
+					<input id="username" type="text" />
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<label>公司名称：</label>
+				</th>
+				<td>
+					<input type="text" id="companyname" valid='chineseName' />
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<label>金额：</label>
+				</th>
+				<td>
+					<input type="text" id="money" />
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<label>密码：</label>
+				</th>
+				<td>
+					<input type="password" id="password" />
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<label>确认密码：</label>
+				</th>
+				<td>
+					<input type="password" id="confirmpwd" />
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<label>性别：</label>
+				</th>
+				<td>
+					男<input type="radio" id="male" name="sex" value="1">
+					女<input type="radio" id="female" name="sex" value="0"> 
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<label>年龄：</label>
+				</th>
+				<td>
+					<input type="text" id="age" />
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<label>爱好：</label>
+				</th>
+				<td>
+					运动<input type="checkbox" name="sports"/>
+					艺术<input type="checkbox" name="sports"/>
+					上网<input type="checkbox" name="sports"/>
+					看书<input type="checkbox" name="sports"/>
+					听音乐<input type="checkbox" name="sports"/>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<label>个人简介：</label>
+				</th>
+				<td>
+					<textarea rows="5" cols="30" id="personinfo"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<label>所在地区：</label>
+				</th>
+				<td>
+				   <select id="province" name="province">
+						<option value="">请选择</option>	
+						<option value="北京">北京</option>	
+				   </select>
+				</td>
+			</tr>
+			
+			<tr>
+				<th>
+				<label>公司性质：</label>
+				</th>
+				<td>
+						<select id="companytype">
+							<option value="-1">请选择</option>
+							<option>国企</option>
+							<option>私企</option>
+							<option>外企</option>
+					   </select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="button" id="htmlsave" value="html保存" />
+					<input type="button" id="ajaxsave" value="ajax保存" />
+				</td>
+			</tr>
+			</table>
+		</form>
+	</fieldset>
+</body>
+</html>

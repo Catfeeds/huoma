@@ -1,0 +1,57 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageFactoryInfo" class="page1" data-dom-cache="false" data-title="设计师认证">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>实名认证</h1>
+    </div>
+    <div data-role="main">
+        <div data-role="content" class="factoryInfo-upload">
+            <{if $MEMBER.verify_name || (isset($detail.verify) && empty($detail.verify))}>
+            <form method="post" action="#" id="factoryInfoForm" data-ajax="false"
+                  enctype="multipart/form-data">
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryName">姓名/企业：</label>
+                    <p><{$detail.name}></p>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorynumber">证件号：</label>
+                    <p><{$detail.id_number|default:'--'}></p>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryLogo">证件图片：</label>
+                     <a href="<{$pager.img}>/<{$detail.id_photo}>" target="_blank" title="查看原图"><img src="<{$pager.img}>/<{$detail.id_photo}>"/></a>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorynumber">手机：</label>
+                    <p><{$detail.mobile}></p>
+                </div>
+            </form>
+            <{else}>
+            <form method="post" action="<{link ctl='member/member/verify:name'}>" id="factoryInfoForm" data-ajax="false"
+                  enctype="multipart/form-data">
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryName">姓名/企业：</label>
+                    <input type="text" name="data[name]" id="factoryrealname" placeholder="真实姓名" value="<{$detail.name}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorynumber">证件号：</label>
+                    <input type="text" name="data[id_number]" id="factorynumber" placeholder="证件号" value="<{$detail.id_number}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryLogo">证件图片：</label>
+                     <{if $detail.id_photo}><a href="<{$pager.img}>/<{$detail.id_photo}>" target="_blank" title="查看原图"><img src="<{$pager.img}>/<{$detail.id_photo}>"/></a><{/if}>
+                    <div id="factorylogo"></div>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorynumber">手机：</label>
+                    <input type="text" name="data[mobile]" id="factorynumber" placeholder="手机" value="<{$detail.mobile}>">
+                </div>
+                <button type="submit" id="factoryInfo-btn" class="factoryInfo-btn">发布</button>
+            </form>
+            <{/if}>
+        </div>
+    </div>
+
+<{include file="mobile:member/block/footer.html"}>

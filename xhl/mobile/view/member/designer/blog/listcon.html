@@ -1,0 +1,10 @@
+<{foreach $items as $item}>
+<li>
+    <a data-transition="slide" href="<{link ctl='member/designer/blog:edit' arg0=$item.article_id}>">
+        <h2><{$item.title|cutstr:50}></h2>
+        <p>是否置顶：<{if $item.is_top}><strong class="over">置顶</strong><{else}><strong>不置顶</strong><{/if}></p>
+        <p>审核：<{if $item.audit}><strong class="over">通过</strong><{else}><strong>待审</strong><{/if}></p>
+        <p>添加时间：<{$item.dateline|format}></p>
+    </a><a class="fList-del-btn" href="<{link ctl='member/designer/blog:delete' arg0=$item.article_id}>" data-icon="delete"></a>
+</li>
+<{/foreach}>

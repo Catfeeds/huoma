@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>干点活</title>
+    <meta name="keywords" content="干点活"/>
+    <meta name="description" content="干点活"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/project/project.js"></script>
+    <script src="js/project_comment.js"></script>
+    <script src="js/project_detail_load.js"></script>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/xmfangan.css"/>
+    <link rel="stylesheet" href="css/iconfont.css"/>
+    <link rel="stylesheet" href="css/iconfont1.css"/>
+    <link rel="stylesheet" href="css/iconfont3.css"/>
+    <link rel="stylesheet" href="css/iconfont4.css"/>
+    <link rel="stylesheet" href="css/style2.css" />
+</head>
+<body>
+<div id="wrapper" class="collapse">
+    <div class="screen animate collapse">
+        <header class="head">
+            <a href="javascript:history.go(-1);" class="fanhui"><img src="img/tou_03.png"></a>
+            <span class="s1" id="detail_title"></span>
+        </header>
+        <div class="navbar">
+            <div class="shang">
+                <dl>
+                    <dt><img class="img1" src="" id="detail_img"></dt>
+                    <dd><span class="s2" id="detail_desc"></span></dd>
+                </dl>
+            </div>
+            <div class="xia">
+                <ul>
+                    <li><a href="javascript:void(0);" id="detail_views"><p>浏览</p></a></li>
+                    <li><a href="javascript:void(0);" id="detail_favorites"><p>约谈</p></a></li>
+                    <li><a href="javascript:void(0);" id="detail_comments"><p>粉丝</p></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="main1">
+            <p class="pgone">项目解决方案</p>
+            <div class="bao">
+                <p class="pgone2">项目简介</p>
+                <p id="div1">
+
+                </p>
+            </div>
+        </div>
+        <div class="main2">
+            <p class="pgone">解决方案</p>
+            <div class="list">
+                <p class="div2" id="project_content">
+                </p>
+            </div>
+        </div>
+        <div class="main4">
+            <p class="pgone">评论区</p>
+            <div class="pinglun">
+                <div class="commentAll">
+                    <!--评论区域 begin-->
+                    <div class="reviewArea clearfix">
+                        <textarea class="content comment-input" id="comment-input" placeholder="您有更好的想法吗？" onkeyup="keyUP(this)"></textarea>
+                        <a href="javascript:void(0);" class="plBtn">评论</a>
+                    </div>
+                    <!--评论区域 end-->
+                    <!--回复区域 begin-->
+                    <div class="comment-show">
+
+                    </div>
+                    <!--回复区域 end-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="xiangmu_id" name="xiangmu_id">
+<div class="bottom">
+    <ul>
+        <li class="qub"><a href="javascript:follow();"><i class="iconfont">&#xe600;</i><span class="sp1">关注</span></a></li>
+        <li class="qub1"><a href="#comment-input" onclick="$('#comment-input').focus();"><i class="iconfont">&#xe69a;</i><span class="sp2">约谈</span></a></li>
+        <li><a class="sp3" href="javascript:void(0);" id="business_plan">查看商业计划</a></li>
+    </ul>
+</div>
+</body>
+</html>
+
+
+

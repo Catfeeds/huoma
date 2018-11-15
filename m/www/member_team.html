@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>团队管理-干点活</title>
+    <meta name="keywords" content="干点活"/>
+    <meta name="description" content="干点活"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/project/project.js"></script>
+    <script src="js/member_team.js"></script>
+    <script type="text/javascript" src="js/flexible.js"></script>
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <script type="text/javascript" src="js/navbarscroll.js"></script>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/touziren.css"/>
+    <link rel="stylesheet" href="css/xuqiu.css"/>
+    <link rel="stylesheet" href="css/iconfont.css"/>
+    <link rel="stylesheet" href="css/iconfont1.css"/>
+    <link rel="stylesheet" href="css/iconfont3.css"/>
+    <link rel="stylesheet" href="css/iconfont4.css"/>
+    <link rel="stylesheet" href="css/style2.css"/>
+</head>
+<body>
+<div id="wrapper" class="collapse">
+    <div class="screen animate collapse">
+        <header class="head">
+            <a href="javascript:history.go(-1);" class="fanhui"><img src="img/tou_03.png"></a>
+            <span class="s1">团队管理</span>
+            <a href="member_team_add.html" class="message" style="width: auto;" id="member_team_add">添加</a>
+        </header>
+        <p class="jishu" style="display: none">xx技术团队</p>
+        <div class="wrapper wrapper01" id="retr" style="height: 0">
+            <div class="scroller" style="display: none">
+                <ul class="clearfix">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img src="img/yuan_04.png">
+                            <p>刘流</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img src="img/yuan_04.png">
+                            <p>刘流</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="main5">
+            <div class="list">
+                <ul class="list_1 item-card">
+                </ul>
+            </div>
+            <a class="show loading" href="javascript:void(0);">查看更多</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    $(function () {
+
+        //demo示例一到四 通过lass调取，一句可以搞定，用于页面中可能有多个导航的情况
+        $('.wrapper').navbarscroll();
+
+        //demo示例五 通过id调取
+        $('#demo05').navbarscroll({
+            defaultSelect: 6,
+            endClickScroll: function (obj) {
+                console.log(obj.text())
+            }
+        });
+
+        //demo示例六 通过id调取
+        $('#demo06').navbarscroll({
+            defaultSelect: 3,
+            scrollerWidth: 6,
+            fingerClick: 1,
+            endClickScroll: function (obj) {
+                console.log(obj.text())
+            }
+        });
+    });
+</script>
+

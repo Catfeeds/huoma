@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="../css/formitem.css" rel="stylesheet" type="text/css" />
+<link href="../css/form2.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="../jquery.form-1.0.1.js"></script>
+<script type="text/javascript" src="../jquery.form.valid-1.0.1.js"></script>
+<script type="text/javascript" src="../jquery.form.valid.function.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	$(".select_icon").each(function(){
+		var s=$(this);
+		var z=parseInt(s.css("z-index"));
+		var dt=$(this).children("dt");
+		var dd=$(this).children("dd");
+		var _show=function(){dd.slideDown(200);dt.addClass("cur");s.css("z-index",z+1);};   //展开效果
+		var _hide=function(){dd.slideUp(200);dt.removeClass("cur");s.css("z-index",z);};    //关闭效果
+		dt.click(function(){dd.is(":hidden")?_show():_hide();});
+		dd.find("a").click(function(){dt.html($(this).html());_hide();});     //选择效果（如需要传值，可自定义参数，在此处返回对应的"value"值 ）
+		$("body").click(function(i){ !$(i.target).parents(".select_icon").first().is(s) ? _hide():"";});
+	})
+	
+	$(".select_icon1").each(function(){
+		var s=$(this);
+		var z=parseInt(s.css("z-index"));
+		var dt=$(this).children("dt");
+		var dd=$(this).children("dd");
+		var _show=function(){dd.slideDown(200);dt.addClass("cur");s.css("z-index",z+1);};   //展开效果
+		var _hide=function(){dd.slideUp(200);dt.removeClass("cur");s.css("z-index",z);};    //关闭效果
+		dt.click(function(){dd.is(":hidden")?_show():_hide();});
+		dd.find("a").click(function(){dt.html($(this).html());_hide();});     //选择效果（如需要传值，可自定义参数，在此处返回对应的"value"值 ）
+		$("body").click(function(i){ !$(i.target).parents(".select_icon1").first().is(s) ? _hide():"";});
+	})
+	
+	
+})
+</script>
+
+	<script type="text/javascript">
+		$(function(){
+			$("#username").valids({prompt:'请输入用户信息，长度5至11',required:true,validType:['username',{callback:lengths,params:[5,11]},{callback:checkUA} ]});
+			$("#password").valids({required:true,validType:['password']});
+			$("#confirmpwd").valids({required:true,validType:['password',{callback:equalTo,params:['password','重复密码错误']}]});
+			$("#age").valids({required:true,validType:['number']});
+			$("#province").valids({required:true});
+			$("#personinfo").valids({required:true,validType:['textarea']});
+			$("input:[name=sex]").valids({required:true});
+			$("input:[name=sports]").valids({required:true});
+			$("#htmlsave").htmlform();
+			$("#ajaxsave").ajaxform();
+		});
+		function checkUA( name ) {
+			var msg="用户名重复";
+			var res=false;
+			if(name!="username"){
+				res=true;
+			}
+			return { message : msg , result : res } ;
+		}
+
+	</script>
+
+	
+
+
+</head>
+
+<body>
+<div class="from_all">
+   <form action="">
+       <table cellpadding="" cellspacing="0" border="0" class="from_all_table" width="100%">
+            <tr>
+                <td  class="form_width">用户名：</td>
+                <td ><input type="text" name="username" id="username" class="from_input"  placeholder="用户名" /><span>用户名必须为4—16位的英文字母或数字</span></td>
+            </tr>
+             <tr>
+                <td class="form_width">公司名称：</td>
+                <td><input type="text" name="name" class="from_input right-style" placeholder="公司名称"/></td>
+            </tr>
+             <tr>
+                <td class="form_width">密码：</td>
+                <td ><input type="password" name="name"  class="from_input right-style" placeholder="密码"/></td>
+            </tr>
+              <tr>
+                <td  class="form_width">确认密码：</td>
+                <td ><input type="password" name="name"  class="from_input right-style" placeholder="确认密码"/></td>
+            </tr>
+            <tr>
+                <td  class="form_width">性别：</td>
+                <td class="from_check_class">男： <input type="radio" /> 女： <input type="radio" /></td>
+            </tr>
+             <tr>
+                <td  class="form_width">年龄：</td>
+                <td>  <input type="text" name="age" id="age" class="from_input from_input_org"  /></td>
+            </tr>
+              <tr>
+                <td  class="form_width">爱好：</td>
+                <td class="from_check"> 运动<input type="checkbox" name="sports"/>艺术<input type="checkbox" name="sports"/>上网<input type="checkbox" name="sports"/>看书<input type="checkbox" name="sports"/>听音乐<input type="checkbox" name="sports"/></td>
+            </tr>
+               <tr>
+                <td  class="form_width">个人简介：</td>
+                <td> <textarea class="form_textarea"></textarea></td>
+            </tr>
+             <tr>
+                <td  class="form_width">所在地区：</td>
+                <td class="form_select"> 
+                   <dl class="select_icon">
+                        <dt>下拉</dt>
+                        <dd>
+                            <ul>
+                                <li><a href="#">12131</a></li>
+                                <li><a href="#">下拉2</a></li>
+                                <li><a href="#">下拉3</a></li>
+                                <li><a href="#">下拉4</a></li>
+                                <li><a href="#">下拉5</a></li>
+                                <li><a href="#">下拉6</a></li>
+                            </ul>
+                        </dd>
+	              </dl>
+                 </td>
+            </tr>
+            <tr>
+                <td  class="form_width">公司性质：</td>
+                  <td> 
+                     <dl class="select_icon1">
+                        <dt>下拉</dt>
+                        <dd>
+                            <ul>
+                                <li><a href="#">12131</a></li>
+                                <li><a href="#">下拉2</a></li>
+                                <li><a href="#">下拉3</a></li>
+                                <li><a href="#">下拉4</a></li>
+                                <li><a href="#">下拉5</a></li>
+                                <li><a href="#">下拉6</a></li>
+                            </ul>
+                        </dd>
+	              </dl>
+                 </td>
+            </tr>
+            
+            <tr>
+                <td colspan="2" align="center">
+                         <button class="form_but"><a href="">保存</a></button>
+                         <button class="form_but_hui"><a href="" class="form_but_hui1">取消</a></button>
+                </td>
+            </tr>
+       </table>
+    
+            
+              
+   </form>
+</div>
+</body>
+</html>

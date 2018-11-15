@@ -1,0 +1,50 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageFactoryInfo" class="pageUserFactoryOffer" data-dom-cache="false" data-title="展商中心">
+    <!--展商后台菜单-->
+   <{include file="mobile:member/block/shangtop.html"}>
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+ 
+        <h1>订单信息修改</h1>
+        <a href="#userFactoryOfferPanel" class="ui-btn iconfont icon-menu"></a>
+    </div>
+    <div data-role="main">
+        <!--订单信息修改-->
+        <div data-role="content" class="factoryInfo-upload">
+            <form method="post" action="<{link ctl='member/shang/canzhan:canzhanEdit' arg0=$detail.cz_id}>}>" id="factoryInfoForm" data-ajax="false" 
+                  enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<{$detail.id}>"/>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="canzhanName">企业名称：</label>
+                    <input type="text" name="canzhan[cname]" id="canzhanName" placeholder="请输入企业名称"  value="<{$detail.cname}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="canzhanmobile">联系人：</label>
+                    <input type="text" name="canzhan[uname]" id="canzhanmobile" placeholder="联系人" value="<{$detail.uname}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="canzhanuname">电话：</label>
+                    <input type="text" name="canzhan[mobile]" id="canzhanuname" placeholder="联系电话" value="<{$detail.mobile}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="zhanName">展会名称：</label>
+                    <input type="text" name="canzhan[zname]" id="zhanName" placeholder="请输入展会名称"  value="<{$detail.zname}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="zhanweihao">展位号：</label>
+                    <input type="text" name="canzhan[zweihao]" id="zhanweihao" placeholder="请输入展位号" value="<{$detail.zweihao}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="canzhanmianji">场地面积：</label>
+                    <input type="text" name="canzhan[mianji]" id="canzhanmianji" placeholder="场地面积" value="<{$detail.mianji}>">平米（㎡）
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="canzhanmianji">资金预算：</label>
+                    <input type="text" name="canzhan[yusuan]" id="canzhanmianji" placeholder="资金预算" value="<{$detail.yusuan}>">万元
+                </div>
+                <button type="submit" id="factoryInfo-btn" class="factoryInfo-btn">确认提交</button>
+            </form>
+        </div>
+    </div>
+<{include file="mobile:member/block/footer.html"}>

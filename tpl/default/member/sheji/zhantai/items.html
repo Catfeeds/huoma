@@ -1,0 +1,39 @@
+<{include file="member/block/header.html"}>
+<div class="ucenter_t">
+    <ul>
+    <li class="on">项目管理</li>
+    <span class="r"><a href="<{link ctl='member/sheji/zhantai:create'}>" class="pbtn">添加项目</a></span>
+</div>
+<div class="admin-right">
+    <table width="100%" border="0" cellspacing="0" class="table">
+    <tr>
+        <th class="w-50">ID</th><th>项目名称</th><th class="w-100">图片</th><th class="w-200">添加时间</th><th class="w-50">审核</th><th class="w-400">操作</th>
+    </tr>
+    <{foreach $items as $item}>
+    <tr>
+        <td class="left"><label><{$item.xiangmu_id}></label></td>
+        <td><{$item.title}></td><td><img width='50' height='50' src='<{$pager.img}>/<{$item.thumb}>'/></td><td><{$item.dateline|format}></td>
+        <td><{if $item.audit}><b class="blue">通过</b><{else}><b class="red">待审</b><{/if}></td>
+        <td>
+            <{if !$item.audit || 1}>
+            <a href="<{link ctl='member/sheji/zhantai:edit' arg0=$item.xiangmu_id}>" class="pbtn">修改</a>
+            <{/if}>
+            <a href="<{link ctl='member/sheji/zhantai:delete' arg0=$item.xiangmu_id}>" mini-act="删除" mini-confirm="确定要删除吗？" class="pbtn red">删除</a>
+            <a href="<{link ctl='member/sheji/zhantai:teamlist' arg0=$item.xiangmu_id}>" class="pbtn">团队</a>
+            <a href="<{link ctl='member/sheji/zhantai:exp' arg0=$item.xiangmu_id}>" class="pbtn">技术点</a>
+             <a href="<{link ctl='member/sheji/project:create' arg0=$item.xiangmu_id}>" class="pbtn">解决方案</a>
+            <{if $item.ischeck==0}>
+            <a href="<{link ctl='member/sheji/zhantai:check' arg0=$item.xiangmu_id}>" class="pbtn">验证</a>
+            <{else}>
+            <a href="javascript:;" class="pbtn">已通过验证</a>
+            <{/if}>
+        </td>
+        
+    </tr>
+    <{foreachelse}>
+     <tr><td colspan="20"><p class="tips"><span class="notice">没有数据</span></p></td></tr>
+    <{/foreach}>
+    <tr><td colspan="10"><div class="page"><{$pager.pagebar}></div></td></tr>
+    </table>
+</div>
+<{include file="member/block/footer.html"}>

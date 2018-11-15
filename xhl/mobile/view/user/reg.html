@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>会员注册_选择会员类型_一路展展装网</title>
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageReg" class="page1 regMain setp1bg" data-dom-cache="false" data-title="会员注册_选择会员类型_一路展展装网">
+
+    <div data-role="header" data-position="fixed" data-tap-toggle="false" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+        <h1>注册（1/3）</h1>
+    </div>
+    <div data-role="main">
+        <div class="describe">
+            请选择会员类型
+        </div>
+
+        <div class="setp1">
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <a href="<{link ctl='user:regone' arg0='shang'}>" data-transition="slide">
+                        <img src="//www.jisunet.com/mobile/img/regnav1.png" />
+                        <p>我是参展商</p>
+                    </a>
+                </div>
+               <div class="ui-block-b">
+                    <a href="<{link ctl='user:regone' arg0='designer'}>" data-transition="slide">
+                        <img src="//www.jisunet.com/mobile/img/regnav3.png" />
+                        <p>我是设计师</p>
+                    </a>
+
+                </div>
+            </div>
+            <div class="ui-grid-a">
+                 <div class="ui-block-a">
+                    <a href="<{link ctl='user:regone' arg0='company'}>" data-transition="slide">
+                        <img src="//www.jisunet.com/mobile/img/regnav2.png" />
+                        <p>搭建工厂</p>
+                    </a>
+                </div>
+                <div class="ui-block-b">
+                    <a href="<{link ctl='user:regone' arg0='member'}>" data-transition="slide">
+                        <img src="//www.jisunet.com/mobile/img/regnav4.png" title="政府人员、组委会、采购商、投融资、技术、媒体、观众" />
+                        <p>各方贵宾</p>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<{include file="mobile:block/bottom.html"}>
+</body>
+</html>

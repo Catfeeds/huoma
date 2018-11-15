@@ -1,0 +1,78 @@
+<div class="manage-content">
+    <div class="container">
+        <!-- 面包屑啊面包屑-->
+        <div class="menu-Breadcrumbs">
+            <ol class="breadcrumb menu-Breadcrumbs-inner">
+                <li class="active">我的位置：</li>
+                <li><a href="#">一路展</a></li>
+                <li><a href="#">设计师首页</a></li>
+            </ol>
+        </div>
+        <!-- 标题头部-->
+        <div class="menu-form1-title col-sm-12">
+            <h3>管理菜单</h3>
+            <div class="menu-home">
+                <{if $MEMBER.from=='company'}>
+                <span class="glyphicon glyphicon-home"></span><a href="<{link ctl='member/member:home' arg0=$MEMBER.uid}>" target="_blank">工厂主页</a>
+                <{elseif 0 && $MEMBER.from=='shop'}>
+                <span class="glyphicon glyphicon-home"></span><a href="<{link ctl='member/member:home' arg0=$MEMBER.uid}>" target="_blank">企业主页</a>
+                <{elseif $MEMBER.from=='designer'}>
+                <span class="glyphicon glyphicon-home"></span><a href="<{link ctl='member/member:home' arg0=$MEMBER.uid}>" target="_blank">我的主页</a>            
+                <{elseif $MEMBER.from=='mechanic'}>
+                <span class="glyphicon glyphicon-home"></span><a href="<{link ctl='member/member:home' arg0=$MEMBER.uid}>" target="_blank">工人主页</a>
+                <{/if}>
+            </div>
+        </div>
+        <!-- 内容分栏-->
+        <div class="row">
+            <div class="menu-form1-left col-sm-2">
+                <div class="menu-item panel my-panel-style">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-minus"></span>账户管理</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="list-group my-list-group">
+                            <li class="list-group-item"><a href="#">参展计划全部</a></li>
+                            <li class="list-group-item"><a href="#">待审核</a></li>
+                            <li class="list-group-item"><a href="#">未通过</a></li>
+                            <li class="list-group-item"><a href="#">进行中</a></li>
+                            <li class="list-group-item"><a href="#">已完成</a></li>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item panel my-panel-style">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-minus"></span>个人中心</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="list-group my-list-group">
+                            <li class="list-group-item"><a href="#">个人中心</a></li>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item panel my-panel-style">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-minus"></span>修改资料</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="list-group my-list-group">
+                            <li class="list-group-item"><a href="#">基本信息</a></li>
+                            <li class="list-group-item"><a href="#">修改密码</a></li>
+                            <li class="list-group-item"><a href="#">更换邮箱</a></li>
+                            <li class="list-group-item"><a href="#">修改头像</a></li>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item panel my-panel-style">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-minus"></span>实名认证</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="list-group my-list-group">
+                            <li class="list-group-item"><a href="#">邮箱认证</a></li>
+                            <li class="list-group-item"><a href="#">手机认证</a></li>
+                            <li class="list-group-item"><a href="#">资质认证</a></li>
+                        </div>
+                    </div>
+                </div>
+            </div>

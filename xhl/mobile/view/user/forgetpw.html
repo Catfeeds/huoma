@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{$pager.from_title}>注册_一路展展装网</title>
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageReg" class="page1 regMain" data-pageuse="retrieve" data-dom-cache="false" data-title="<{$pager.from_title}>注册_一路展展装网">
+ 
+    <div data-role="header" data-position="fixed" data-tap-toggle="false" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+        <h1 class="reg-header-title">找回密码（1/2）</h1>
+        
+    </div>
+    <div data-role="main">
+    <form data-role="form" method="post" action="<{link ctl='user:postforget'}>" data-transition="slide" id="regSep1" class="setp">
+             <div class=" reg-fromInput">
+                <label for="mobile"><span class="iconfont icon-phone"></span> </label>
+                <input type="text" name="ylz[mobile]" id="mobile" placeholder="请输入您注册的手机号">
+                <span class="iconfont icon-warning form-warning"></span>
+            </div>
+            <div class="reg-codeCon">
+                <button type="button" class="registerCodeBtn active" data-mobilecode="<{$code}>" id="loginGetCode">获取验证码</button>
+            </div>
+            <div class="reg-code-con">
+                <div class=" reg-fromInput">
+                    <label for="regCode"><span class="iconfont icon-verification"></span> </label>
+                    <input type="text" name="ylz[regCode]" id="regCode" placeholder="验证码">
+                </div>
+                <button type="submit" class="regBtnNext" id="regSubmit">下一步</button>
+            </div>
+
+
+ 
+        </form>
+        <div class="describe"></div>
+    </div>
+
+</div>
+<{include file="mobile:block/bottom.html"}>
+</body>
+</html> 

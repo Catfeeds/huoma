@@ -1,0 +1,10 @@
+<select name="data[city_id]" class="text long">
+	<option value="0">请选择</option>
+	<{foreach $data.cz_city as $k=>$v}>
+				<{if $k==$data.city_id }>
+					<option value="<{$k}>" selected="selected"><{$v}>*</option>
+				<{else}>
+					<option value="<{$k}>"><{$v}></option>
+				<{/if}>
+  	<{/foreach}>
+</select>

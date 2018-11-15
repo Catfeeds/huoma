@@ -1,0 +1,21 @@
+<{foreach $items as $item}>
+<li>
+    <a data-transition="slide" href="user.factory.offer.view.html">
+        <h2><{$canzhan_list[$item.cz_id].cname|default:'--'}></h2>
+        <p>展会名称：<{$canzhan_list[$item.cz_id].zname}></p>
+        <p>展位：<{$canzhan_list[$item.cz_id].zweihao}></p>
+        <p>交搞时间：<{($item.endtime)|format}></p>
+        <p>状态：<{if $item.is_signed}>
+            <b>恭喜签单</b>
+            <{elseif $canzhan_list[$item.cz_id].sign_uid > 1}>
+            <b>他人中选</b>
+            <{elseif $canzhan_list[$item.cz_id].status < 0}>
+            <b>已失效</b>
+            <{else}>
+            <b>设计中</b>
+            <{/if}>
+        </p>
+        <p><a href="<{link ctl='member/sheji/canzhan:track' arg0=$item.look_id}>" class="pbtn">查看</a></p>
+    </a>
+</li>
+<{/foreach}>

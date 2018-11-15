@@ -1,0 +1,175 @@
+<{include file="member/block/header.html"}>
+<div class="ucenter_t">
+    <ul>
+        <li><a href="<{link ctl='member/misc/baojia:looked'}>">展台报价</a></li>
+        <li class="on">工程报价单</li>
+    </ul>
+</div>
+<div class="ucenter_c">
+ <form action="<{link ctl='member/misc/baojia:updatebaojia'}>" mini-form="ucenter" method="post">
+<input type="hidden" name="baojia[id]" value="<{$detail.id}>" />  
+<input type="hidden" name="baojia[look_id]" value="<{$look.look_id}>" />  
+<input type="hidden" name="baojia[case_id]" value="<{$case.case_id}>" />  
+<input type="hidden" name="baojia[company_id]" value="<{$company.company_id}>" />  
+<input type="hidden" name="baojia[baojia_id]" value="<{$baojia.baojia_id}>" />  
+<table width="100%" border="0" cellspacing="0" class="info">
+    <tr>
+    	<th colspan="4" style="text-align:center; font-weight:bold; font-size:16px"><input type="text" class="input w-200"  value="<{if $baojia.title}><{$baojia.title}><{else}><{$look.info.name}>工程报价单<{/if}>" name="baojia[title]" /></th>
+    </tr>  
+	<tr>
+    	<td colspan="4" style="text-align:right; ">编号：<{$bianhao}><input type="hidden" name="baojia[sn]" value="<{$bianhao}>" /></td>
+   </tr>       
+   <tr>
+   		<th>会展名称：</th><td><{$detail.zname|default:'--'}><input type="hidden" name="baojia[zname]" value="<{$detail.zname}>" /></td><th>展会时间：</th><td><input type="hidden" name="baojia[ztime]" value="<{$detail.ztime}>" /><{date('Y-m-d',$detail.ztime)}></td>
+   </tr>
+   <tr><th>装修日期：</th><td>按展馆要求</td><th>展位面积：</th><td><input type="hidden" name="baojia[mianji]" value="<{$detail.mianji}>" /><input type="hidden" name="baojia[zweihao]" value="<{$detail.zweihao}>" />  <{$detail.mianji|default:'--'}>㎡</td>
+   </tr>
+   <tr><th>公司名称：</th>
+        <td colspan="5"><input type="text" class="input w-200"  value="<{if $baojia.name}><{$baojia.name}><{else}><{$detail.cname}><{/if}>" name="baojia[name]" /></td>
+   </tr>                  
+   <tr>
+   		<th>负责人：</th><td><input type="text" class="input w-100"  value="<{$baojia.uname}>" name="baojia[uname]"></td><th>联系方式：</th><td><input type="text" class="input w-150"  value="<{$baojia.mobile}>" name="baojia[mobile]"></td>
+   </tr>
+   <tr>
+		<td colspan="4">
+            <table width="100%" border="0" cellspacing="0" class="table">
+                   <tr>
+                      <th>序号</th>
+                      <th> 项 目</th>
+                      <th style="width:200px;"> 制 作 工 艺</th>
+                      <th>数 量</th>
+                      <th>单 位</th>
+                      <th> 单 价</th>
+                      <th>金额合计(元)</th>
+                      <th>操作</th>
+                    </tr>
+            </table>
+		</td>
+  </tr>
+    <{foreach $btype as $key=>$bitem}>
+    <tr><td colspan="4">
+    <table width="100%" border="0" cellspacing="0" class="table">
+        <tr>
+          <th colspan="2"><{if $baojia}><input type="text" class="input w-200"  value="<{$bitem.title}>" name="xiangmu[<{$key}>][title]" /><input type="hidden" name="xiangmu[<{$key}>][key]" value="<{$key}>" /><{else}><input type="text" class="input w-200"  value="<{$bitem.title}>" name="newxiangmu[<{$key}>][title]" /><input type="hidden" name="newxiangmu[<{$key}>][key]" value="<{$key}>" /><{/if}></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th> </th>
+          <th></th>
+          <th><a href="javascript:;" batch="add_new_line" data="<{$key}>">┼ 增加一行</a></th>
+        </tr>
+        <{foreach $bitem.xmlist as $k=>$xitem}>
+            <tr id="item-<{$xitem.bxm_id}>">
+              <td><input type="text" class="input w-50"  value="<{$xitem.xuhao}>" name="baojia[<{$key}>][<{$k}>][xuhao]"></td>
+              <td><input type="hidden" name="baojia[<{$key}>][<{$k}>][bxm_id]" value="<{$xitem.bxm_id}>" /> <input type="text" class="input w-100"  value="<{$xitem.xiangmu}>" name="baojia[<{$key}>][<{$k}>][xiangmu]"></td>
+              <td><input type="text" class="input w-200"  value="<{$xitem.gongyi}>" name="baojia[<{$key}>][<{$k}>][gongyi]"></td>
+              <td><input type="text" class="input w-50 xm_num" value="<{$xitem.num}>" name="baojia[<{$key}>][<{$k}>][num]"></td>
+              <td><input type="text" class="input w-50"  value="<{$xitem.danwei}>" name="baojia[<{$key}>][<{$k}>][danwei]"></td>
+              <td><input type="text" class="input w-50 xm_price" value="<{$xitem.price_gc}>" name="baojia[<{$key}>][<{$k}>][price_gc]"></td>
+              <td><input type="text" class="input w-50 xm_total" value="<{$xitem.total}>" disabled="disabled"></td>
+              <td><a href="<{link ctl='member/misc/baojia:deletebxm' arg0=$xitem.bxm_id}>"  mini-act="confirm:您确定要删除该项目吗？" class="pbtn red">删除</a></td>
+            </tr>
+	    <{/foreach}>
+
+  <tr id="xmtype_<{$key}>"></tr>
+</table>
+</td></tr>
+<{/foreach}>
+<tr  batch="tool_bar"><td colspan="4">
+ <table width="100%" border="0" cellspacing="0" class="table">    
+ <tr><td></td><td></td>
+   <td colspan="4" style="text-align: right;">场馆费用小计:
+       <input type="text" class="input w-100" id="baojia_subtotal" value="<{$baojia.subtotal}>" name="baojia[subtotal]" readonly>
+       </input>
+ </td></tr>
+ 
+ <tr>
+   <th colspan="4" style="text-align:left;">税</th>
+ </tr>
+ <tr><td colspan="2"></td><td><input type="text" class="input w-50" id="baojia_shui" value="<{$baojia.shui|default:'6'}>" name="baojia[shui]" readonly>%</td><td  style="text-align:right;"><input type="text" class="input w-100" id="baojia_shuitotal"  name="baojia[shuitotal]" value="<{$baojia.shuitotal}>" readonly>
+       </input></td></tr>
+ <tr>
+   <td>&nbsp;</td>
+   <td>&nbsp;</td>
+   <td colspan="4" style="text-align:right;">工程总价: 
+       <input type="text" class="input w-100" id="baojia_total" value="<{$baojia.total}>" name="baojia[total]" readonly>
+       </td>
+ </tr>
+ <tr><td><a href="javascript:;" batch="add_new_table" data="<{$key}>" class="mpbtn">┼ 增加一大项</a></td><td><input type="submit" value="提交保存" class="mpbtn" /></td><td colspan="4"><a href="<{link ctl='member/misc/baojia:show' arg0=$case.case_id arg1=$look_id  http='ajax'}>" class="mpbtn">放弃修改返回查看页面</a></td></tr>
+</table>
+</td></tr>
+</table>
+</form>
+
+
+   
+
+         
+    <h4 class="tips">设计方案</h4>
+    <table width="100%" border="0" cellspacing="0" class="info">
+   
+     <tr>
+        <td>
+
+<ul class="line_type case_zhuanji">
+     	
+        <li class="first" style="border:3px solid #F90004;">
+            
+                 <{foreach from=$cphoto key=key item=item2 name=cpho}>
+                    <{if $smarty.foreach.cpho.index < 4 && $smarty.foreach.cpho.index == 0}>
+            <div class="zhuanji_top_img"><a href="/canzhan-show-<{$case.case_id}>.html"  target="_blank"><img src="<{$pager.img}>/<{$item2.photo}>_small.jpg" /></a></div>
+                        <div class="zhuanji_bottom_img">
+                     <{elseif $smarty.foreach.cpho.index < 4 && $smarty.foreach.cpho.index == 1}>
+                        
+                         <a href="/canzhan-show-<{$case.case_id}>.html" class="first"  target="_blank"><img src="<{$pager.img}>/<{$item2.photo}>_small.jpg"  width="72px;" height="72px;" style="margin:0px;" /></a>
+                    <{elseif $smarty.foreach.cpho.index < 4 && $smarty.foreach.cpho.index != 1 && $smarty.foreach.cpho.index != 0}>
+                        <a href="/canzhan-show-<{$case.case_id}>.html"  target="_blank"><img src="<{$pager.img}>/<{$item2.photo}>_small.jpg"  width="72px;" height="72px;" style="margin:0px;" /></a>
+                    <{/if}>
+                 <{/foreach}>
+                          
+            </div>
+            <p><a href="/canzhan-show-<{$case.case_id}>.html" class="lt tit"  target="_blank"><{$case.title}></a><br>
+
+            设计思路：<{$case.intro}></p><a href="<{link ctl='member/canzhan/case:sjedit' arg0=$item.case_id arg1=$look.look_id http='ajax'}>" mini-width='600' mini-load="修改" class="mpbtn rt">打包下载</a>
+            <div class="cl"></div>
+        </li>
+	</ul>
+
+    
+</td>
+      </tr>
+   </table>    
+        
+</div>
+<script type="text/paint" id="baojia_xiangmu_temp">
+   <tr><td colspan="4">
+		<table width="100%" border="0" cellspacing="0" class="table">
+			<tr>
+			  <th colspan="2"><input type="text" class="input w-200"  value="<{$bitem.title}>" name="newxiangmu[{hang}][title]" /><input type="hidden" name="newxiangmu[{hang}][key]" value="{hang}" />  </th>
+			  <th></th>
+			  <th></th>
+			  <th></th>
+			  <th> </th>
+			  <th></th>
+			  <th><a href="javascript:;" batch="add_new_line" data="{hang}">┼ 增加一行</a> </th>
+			</tr>
+		  <tr id="xmtype_{hang}"></tr>
+		</table>
+		<a href="javascript:;" class="pbtn red" batch="remove_item_line">取消当前大项</a>
+	</td></tr>
+</script>
+<script type="text/paint" id="baojia_xm_tmpl">
+            <tr>
+              <td><input type="text" class="input w-50"  value="1" name="data[{xtype}][{index}][xuhao]"></td>
+              <td> <input type="text" class="input w-100"  value="" name="data[{xtype}][{index}][xiangmu]"></td>
+              <td><input type="text" class="input w-200"  value="" name="data[{xtype}][{index}][gongyi]"></td>
+              <td><input type="text" class="input w-50 xm_num"  value="0" name="data[{xtype}][{index}][num]"></td>
+              <td><input type="text" class="input w-50"  value="" name="data[{xtype}][{index}][danwei]"></td>
+              <td><input type="text" class="input w-50 xm_price"  value="0" name="data[{xtype}][{index}][price_gc]"></td>
+              <td><input type="text" class="input w-50 xm_total" value="0" disabled="disabled"></td>
+              <td><a href="javascript:;" class="pbtn red" batch="remove_item_line">取消</a></td>
+            </tr>
+</script>
+ 
+
+<{include file="member/block/footer.html"}>

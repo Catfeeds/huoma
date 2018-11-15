@@ -1,0 +1,31 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageFactoryInfo" class="page1" data-dom-cache="false" data-title="更换邮箱">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>更换邮箱</h1>
+    </div>
+<div data-role="main">
+        <div data-role="content" class="factoryInfo-upload">
+            <form method="post" action="<{link ctl='member/member:mail'}>" id="factoryInfoForm" data-ajax="false"  onsubmit="return false;"
+                  enctype="multipart/form-data">
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryName">原邮箱：</label>
+                    <b><{$MEMBER.mail}></b>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorynewmail">新邮箱：</label>
+                    <input type="text" name="account[newmail]" id="factorynewmail" placeholder="新邮箱" value="">
+                </div>
+                <{if $MEMBER.verify_mail}>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorypasswd">确认密码：</label>
+                    <input type="text" name="account[passwd]" id="factorypasswd" placeholder="确认密码" value="">
+                </div>
+                <{/if}>
+                <button type="submit" id="factoryInfo-btn" class="factoryInfo-btn">发布</button>
+            </form>
+        </div>
+</div>
+<{include file="mobile:member/block/footer.html"}>

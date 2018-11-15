@@ -1,0 +1,11 @@
+<{foreach $comment_info as $item}>
+<li>
+    <img src="<{$pager.img}>/<{$designer.face}>">
+
+    <p class="disCon1r">
+        <small><{$user_list[$item.uid].uname|cutstr:6:''}><i><{$item.dateline|format}></i></small>
+        <span><{foreach $CONFIG.score.designer as $k=>$v}><{if $v}><{$v}>:<{$item[$k]}>  <{/if}><{/foreach}></span>
+        <{$item.content}>
+    </p>
+</li>
+<{/foreach}>   

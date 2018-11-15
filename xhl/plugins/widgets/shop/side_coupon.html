@@ -1,0 +1,8 @@
+<{if $data.item}>
+<img src="<{$pager.img}>/<{$data.item.photo}>" width="245" height="106" />
+<p>活动时间：<br /><{$data.item.stime|format:'Y年m月d日'}> - <{$data.item.ltime|format:'Y年m月d日'}></p>
+<a href="<{link ctl='coupon:detail' arg0=$data.item.coupon_id}>" class="fense">查看活动详细 &gt;&gt;</a>
+<a href="<{link ctl='coupon:download' arg0=$data.item.coupon_id}>" mini-load="下载优惠券到手机" mini-width="350" class="download"></a>
+<{else}>
+<p>该企业未发布优惠券</p>
+<{/if}>

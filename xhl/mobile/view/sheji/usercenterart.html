@@ -1,0 +1,3 @@
+<{foreach $items as $item}>
+<div class="bd-article-item"><a href="<{link ctl='sheji/shi:articledetail' arg0=$item.article_id}>"><h3><{$item.title}></h3><p><{$item.dateline|format:"Y-m-d"}></p><small><i class="iconfont icon-icon17"></i><{$item.views}></small></a></div>
+<{/foreach}>

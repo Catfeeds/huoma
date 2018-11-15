@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <{include file="block/headerinfo.html"}>
+    <link rel="stylesheet" type="text/css" href="%THEME%/css/common.css">
+    <link rel="stylesheet" type="text/css" href="%THEME%/css/member.css">
+
+
+<script type="text/javascript">window.URL={"domain":"<{$CONFIG.site.domain}>","url":"<{$CONFIG.siteurl}>", "res":"<{$pager.res}>", "img":"<{$pager.img}>"};</script>
+<script type="text/javascript"  src="<{$pager.res}>/script/kt.j.js?<{$VER}>"></script>
+<script type="text/javascript"  src="<{$pager.res}>/script/kt.js?<{$VER}>"></script>
+<script type="text/javascript"  src="<{$pager.res}>/ui/j.ui.js?<{$VER}>"></script>
+
+<script type="text/javascript"  src="<{$pager.res}>/script/widget.msgbox.js?<{$VER}>"></script>
+    <link href="/expo/expo/css/manage.center.css" rel="stylesheet">
+    <title>管理中心</title>
+</head>
+<body>
+<{assign var="ucenter_header" value=true}>
+<!--mini-header-->
+<div class="factory-mini-header">
+    <div class="container">
+        <nav role="navigation" class="navbar factory-mini-navStyle">
+            <div class="navbar-header"><a class="navbar-brand" href="#"><img src="/expo/expo/img/flogo.png"/> </a> </div>
+            <ul class="nav navbar-nav">
+                <li <{if $request.ctl=='index'}>class="active"<{/if}>><a href="<{link ctl='index'}>">首页</a></li>
+                <li <{if $request.ctl=='chao/index'}>class="active"<{/if}>><a href="<{link ctl='chao/index'}>">特装超市</a></li>
+                <li <{if $request.ctl=='sheji'}>class="active"<{/if}>><a href="<{link ctl='sheji/shilist'}>">设计中心</a></li>
+                <li <{if $request.ctl=='gong/index' }>class="active"<{/if}>><a href="<{link ctl='gong/index'}>">工程中心</a></li>
+                <li <{if $request.ctl=='zhan/index'}>class="active"<{/if}>><a href="<{link ctl='zhan/index'}>">行业展会</a></li>
+                <li <{if $request.ctl=='guan/index'}>class="active"<{/if}>><a href="<{link ctl='kuang/index'}>">展会实况</a></li>
+                <li <{if $request.ctl=='guan/index'}>class="active"<{/if}>><a href="<{link ctl='guan/index'}>">展馆信息</a></li>
+            </ul>
+            <ul class="nav nav-pills navbar-right visible-lg">
+            <!-- 这里有2个样式：登录前，与登录后-->
+                <{if $MEMBER.uid}>
+                <!-- 登录成功后-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人中心<b class="caret"></b> </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="<{link ctl='ucenter/member:index'}>">个人中心</a></li>
+						<li><a href="<{link ctl='user:loginout'}>">退出</a></li>
+                        <{if $MEMBER.from == 'company'}>
+                        <li class="divider"></li>
+                        <li><a href="<{link ctl='ucenter/company:info'}>">工厂设置</a></li>
+						<li><a href="<{link ctl='ucenter/company/case:index'}>">案例管理</a></li>
+						<li><a href="<{link ctl='ucenter/company/youhui:index'}>">优惠信息</a></li>
+						<li><a href="<{link ctl='ucenter/company/yuyue:company'}>">预约管理</a></li>
+                        <{elseif $MEMBER.from == 'shop'}>
+                        <li class="divider"></li>
+                        <li><a href="<{link ctl='ucenter/shop:info'}>">企业设置</a></li>
+						<li><a href="<{link ctl='ucenter/shop/order:index'}>">订单管理</a></li>
+						<li><a href="<{link ctl='ucenter/shop/yuyue:shop'}>">预约管理</a></li>
+                        <{/if}>
+                    </ul>
+                </li>
+                <{else}>
+                <li><a href="#">登录</a> </li>
+                <li><a href="#">注册</a> </li>
+                <{/if}>
+                <li><a href="#">联系我们</a> </li>
+                <!--<li><a href="#">官方微信</a> </li>
+                <li><a href="#">APP下载</a> </li>-->
+            </ul>
+        </nav>
+    </div>
+</div>
+<!--头部完成-->
+<div class="manage-content">
+    <div class="container">
+        <!-- 面包屑啊面包屑-->
+        <div class="menu-Breadcrumbs">
+            <ol class="breadcrumb menu-Breadcrumbs-inner">
+                <li class="active">我的位置：</li>
+                <li><a href="/">一路展</a></li>
+                <li><a href="#">管理中心</a></li>
+            </ol>
+        </div>
+        <!-- 标题头部-->
+        <div class="menu-form1-title col-sm-12">
+            <h3>管理菜单</h3>
+            <div class="menu-home">
+                <{if $MEMBER.from=='company'}>
+                <span class="glyphicon glyphicon-home"></span><a href="<{link ctl='member/member:home' arg0=$MEMBER.uid}>" target="_blank">工厂主页</a>
+                <{elseif 0 && $MEMBER.from=='shop'}>
+                <span class="glyphicon glyphicon-home"></span><a href="<{link ctl='member/member:home' arg0=$MEMBER.uid}>" target="_blank">企业主页</a>
+                <{elseif $MEMBER.from=='designer'}>
+                <span class="glyphicon glyphicon-home"></span><a href="<{link ctl='member/member:home' arg0=$MEMBER.uid}>" target="_blank">我的主页</a>            
+                <{elseif $MEMBER.from=='mechanic'}>
+                <span class="glyphicon glyphicon-home"></span><a href="<{link ctl='member/member:home' arg0=$MEMBER.uid}>" target="_blank">工人主页</a>
+                <{/if}>
+            </div>
+        </div>
+        <!-- 内容分栏-->
+        <div class="row">
+            <div class="menu-form1-left col-sm-2">
+
+            
+            	<{foreach $menu_list as $menu}>
+                <div class="menu-item panel my-panel-style">
+                	<{if $menu.menu}>
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-minus"></span><a href="javascript:;"><{$menu.title}></a></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="list-group my-list-group">
+                        	<{foreach $menu.items as $item}>
+                            <{if $item.menu}>
+                            <li class="list-group-item"><a <{if $request.ctlmap.ctl==$item.ctl || $request.ctlmap.nav==$item.ctl}> class="on"<{/if}> href="<{link ctl=$item.ctl}>"><{$item.title}></a></li>
+                            <{/if}>
+                            <{/foreach}>
+                        </div>
+                    </div>
+                    <{/if}>
+                </div>
+                <{/foreach}>
+                
+                
+            </div>
+            <div class="menu-form1-right col-sm-10">

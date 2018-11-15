@@ -1,0 +1,74 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageUserFactoryOffer" class="pageUserFactoryOffer" data-dom-cache="false" data-title="工厂中心">
+   
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>展台报价</h1>
+        <a href="#userFactoryOfferPanel" class="ui-btn iconfont icon-menu"></a>
+    </div>
+    <div data-role="main">
+        <!-- 工厂报价列表 -->
+        <div class="fOffer3-list" id="fOffer-<{$PAGEID}>" data-slideid="fOfferList">
+            <div class="hd">
+                <ul class="ui-grid-b">
+                    <li class="ui-block-a"><a href="#">急需报价</a></li>
+                    <li class="ui-block-b"><a href="#">已完成</a></li>
+                    <li class="ui-block-c"><a href="#">过期</a></li>
+                </ul>
+            </div>
+           <div class="bd" id="34535">
+               <div class="autoHeight">
+                   <ul data-offerList-url="/member/chao/baojia-conclock.html"
+                       class="fOffer3-list-item">
+                <{if $items}>
+                <{include file="mobile:member/chao/baojia/conclock.html"}>
+                <{else}>
+                <li>
+                    <div class="fOffer-noList">
+                        <h1><span class="iconfont icon-menu1"></span></h1>
+                    </div>
+                </li>
+                <{/if}>
+                      
+                   </ul>
+               </div>
+               <div class="autoHeight">
+                   <ul data-offerList-url="/member/chao/baojia-wancheng.html"
+                       class="fOffer3-list-item">
+                      <{if $wancheng}>
+                        <{include file="mobile:member/chao/baojia/wancheng.html"}> 
+                      <{else}> 
+                      <li>
+                        <div class="fOffer-noList">
+                            <h1><span class="iconfont icon-menu1"></span></h1>
+                        </div>
+                      </li>
+                      <{/if}>
+                   </ul>
+               </div>
+               <div class="autoHeight">
+                   <ul data-offerList-url="/member/chao/baojia-guoqi.html"
+                       class="fOffer3-list-item">
+                       <{if $guoqi}>
+                       <{include file="mobile:member/chao/baojia/guoqi.html"}>
+                       <{else}>
+                       <li>
+                        <div class="fOffer-noList">
+                            <h1><span class="iconfont icon-menu1"></span></h1>
+                        </div>
+                      </li>
+                      <{/if}>
+                   </ul>
+               </div>
+           </div>
+        </div>
+    <!-- Loading-->
+        <div class="listLoading">
+            <div class="listLoadLabel"><img src="//www.jisunet.com/mobile/img/listload.gif" height="12"/> 等待载入数据。。。</div>
+        </div>
+    </div>
+<!-- 工厂后台菜单 -->
+<{include file="mobile:member/block/top.html"}>
+<!--引入footer-->
+<{include file="mobile:member/block/footer.html"}>

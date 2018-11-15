@@ -1,0 +1,47 @@
+<{include file="member/block/header.html"}>
+
+<div class="ucenter_t">
+
+    <ul><li class="on">添加文章</li></ul>
+
+    <span class="r"><a href="<{link ctl='member/designer/blog:index'}>" class="pbtn">文章管理</a></span>
+
+</div>
+
+<div class="admin-right">
+
+<form action="<{link ctl='member/designer/blog:create'}>" mini-form="ucenter" method="post">
+
+<table cellspacing="0" cellpadding="0" class="form">
+
+	<tr>
+
+		<th><span class="red">*</span>标题：</th>
+
+		<td><input type="text" name="data[title]" value="" class="input w-400"/></td>
+
+	</tr>
+
+	
+	<tr>
+		<th>项目名称：</th>
+		<td><input type="text" name="data[title]" value="<{$detail.title|default:''}>" class="input w-400"/></td>
+	</tr>
+	<tr><th>内容：</th><td>
+    <textarea name="data[content]" kindeditor="full" style="width:800px;height:350px;"></textarea></td></tr>
+
+    <tr><th></th><td><input type="submit" value="提交数据" class="green_btn" /></td></tr>
+
+</table>
+
+</form>
+
+</div>
+<script type="text/javascript" src="<{$pager.res}>/kindeditor/kindeditor.js"></script>
+<script type="text/javascript">
+(function(K, $){
+var editor = KindEditor.create('textarea[kindeditor]',{uploadJson : '<{link ctl="magic:editorupload" http="base"}>', extraFileUploadParams:{OTOKEN:"<{$OTOKEN}>"}});
+})(window.KT, window.jQuery);
+</script>
+
+<{include file="member/block/footer.html"}>

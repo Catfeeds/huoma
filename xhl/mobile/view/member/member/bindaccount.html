@@ -1,0 +1,32 @@
+<!--引入header-->
+<{include file="mobile:block/header.html"}>
+<div data-role="page" id="pageUserFactoryOffer" class="pageUserFactoryOffer" data-dom-cache="false" data-title="用户中心">
+    <!-- 普通用户后台菜单 -->
+    <{include file="mobile:member/block/membertop.html"}>
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>绑定帐号</h1>
+        <a href="#userFactoryOfferPanel" class="ui-btn iconfont icon-menu"></a>
+    </div>
+    <div data-role="main">
+        <div class="fOffer-list"> 
+            <{if $CONFIG.connect.qq_is_open}>
+            <ul class="fOffer-list-view" data-offerList-url="user.factory.offer.conPast.html" data-role="listview" data-filter="true" data-inset="false" data-input="#offerFilter" data-icon="false"> 
+                <li class="ui-li-divider"><i></i><span class="iconfont icon-xiangqingyeicon05"></span> </span>腾讯QQ：<a href="<{link ctl='user:qqlogin' arg0='bind'}>"></a></li>
+               
+                <!-- <li class="offer-list-more"><button class="offer-list-moreBtn"><span class="iconfont icon-more"></span></button></li> -->
+            </ul>
+            <{/if}>
+            <{if $CONFIG.connect.weibo_is_open}>
+            <ul class="fOffer-list-view" data-offerList-url="user.factory.offer.conPast.html" data-role="listview" data-filter="true" data-inset="false" data-input="#offerFilter" data-icon="false"> 
+                <li class="ui-li-divider"><i></i><span class="iconfont icon-xiangqingyeicon05"></span> </span>新浪微博：<a href="<{link ctl='user:weibo' arg0='bind'}>"></a></li>
+               
+                <!-- <li class="offer-list-more"><button class="offer-list-moreBtn"><span class="iconfont icon-more"></span></button></li> -->
+            </ul>
+            <{/if}>
+        </div>
+    </div>
+<!--引入footer-->
+<{include file="mobile:block/footer.html"}>

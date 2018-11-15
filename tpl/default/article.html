@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布文章</title>
+    <{include file="block/header.html"}>
+</head>
+<body class="gdh-body">
+<div class="main-banner">
+    <{include file="block/headernav.html"}>
+    <!--头部导航 END-->
+</div>
+<!--user 头 END-->
+<div class="container-fluid case-con">
+    <div class="case-row">
+        <div class="col-sm-9 case-col">
+
+            <div class="case-detail">
+
+                <div class="case-detail-d">
+                    <form class="case-form" action="<{link ctl='detail-article'  arg0=$xiangmu_id}>" method="post">
+                
+                        <span class="red">*</span>标题：
+                        <input type="text" name="data[title]" value="" class="input w-400"/><br/>
+                        内容：<div class="form-group">
+                                     <textarea name="data[content]" kindeditor="full" style="width:800px;height:350px;"></textarea>
+                              </div>
+                         
+                        <div class="form-group case-form-btn">
+                            <button type="submit" class="btn btn-warning">发表文章</button>
+                        </div>
+                    </form>
+                    <!--评论内容-->
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 case-col">
+            <!--技术人员推荐 END-->
+            <div class="panel panel-default"> 
+                <div class="panel-heading">
+                    <h4 class="panel-title"><a class="pull-right" href="<{link ctl='articlelist' arg0=$xiangmu.xiangmu_id}>"><small>更多</small></a>关于二次开发的文章</h4>
+                </div>
+                <div class="panel-body">
+                    <ul class="case-article-list">
+                        <{foreach $xmarticle as $xmarticles}>
+                        <li><a href="<{link ctl='articledetail-index' arg0=$xmarticles.article_id arg1=$xmarticles.xiangmu_id}>"><{$xmarticles.title}></a></li>
+                        <{/foreach}>
+                    </ul>
+                    <a class="btn btn-block btn-default" href="<{link ctl='detail-article' arg0=$xiangmu.xiangmu_id}>"><small>发布文章</small></a>
+                </div>
+            </div>
+            <!--关于二次开发的文章 END-->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title"><a class="pull-right" href="#"><small>更多</small></a>本月下载排行</h4>
+                </div>
+                <div class="panel-body">
+                    <ul class="case-recommend">
+                        <{foreach $items as $item}>
+                        <li>
+                            <a href="<{link ctl='detail' arg0=$item.xiangmu_id}>">
+                                <img src="<{$pager.img}>/<{$item.thumb}>" alt="" class="pull-left">
+                                <div><span><{$item.title}></span></div>
+                                <div>
+                                    <p><{$item.desc|cutstr:30}><span>[查看详情]</span></p>
+                                </div>
+                            </a>
+                        </li>
+                        <{/foreach}>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="<{$pager.res}>/kindeditor/kindeditor.js"></script>
+<script type="text/javascript">
+(function(K, $){
+var editor = KindEditor.create('textarea[kindeditor]',{uploadJson : '<{link ctl="magic:editorupload" http="base"}>', extraFileUploadParams:{OTOKEN:"<{$OTOKEN}>"}});
+})(window.KT, window.jQuery);
+</script>
+<!--footer-->
+<{include file="block/footer.html"}>
+
+</body>
+</html>

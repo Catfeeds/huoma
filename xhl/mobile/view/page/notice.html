@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link href="css/myTheme.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.css"/>
+    <title><{$CONFIG.site.title}> - 系统提示！</title>
+</head>
+<body>
+
+<div data-role="page" id="pageNotice" class="pageUserFactory" data-dom-cache="true" data-title="<{$CONFIG.site.title}> - 系统提示！">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>系统提示</h1>
+    </div>
+    <div data-role="main">
+        <!-- 信息成功 -->
+        <div class="notice-main" data-role="content">
+            <div class="notice-con">
+                <span><{if $pager.error}><img src="img/waring.png"/><{else}><img src="/img/success.png"/><{/if}></span>
+            </div>
+            <h2 class="notice-des1"><{$pager.message}></h2>
+            <{foreach $pager.url_list as $link}>
+            <p class="notice-des2"><{$link.title}></p>
+            <a href="<{$link.url}>" class="ui-btn notice-btn-success">确定</a>
+            <a href="#" class="ui-btn notice-btn-abort">取消</a>
+            <{/foreach}>
+        </div>
+    </div>
+<!--引入footer-->
+<{include file="mobile:block/footer.html"}>

@@ -1,0 +1,70 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageArticleGallery" class="page1" data-dom-cache="false" data-title="设计稿">
+    <{if $type=='dinggao'}>
+        <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+        <h1>定稿图</h1>
+    </div>
+    <{else}>
+    <{foreach $xiaoguotu as $key=>$val}>
+    <{if $key==$type}>
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+        <h1><{if $key}>修改<{$key}>稿<{else}>设计初稿<{/if}></h1>
+    </div>
+    <{/if}>
+    <{/foreach}>
+    <{/if}>
+    <div data-role="main">
+        <div data-role="content" class="article-main">
+            <div class="article-title">
+                <div class="article-title-inner">
+                    <h2><{$zhantai.title}></h2>
+                </div>
+                <div class="article2-author">
+                    <!-- <a href="#"><img src="img/designer.jpg"/> </a> -->
+                    <p><{if $zhantai.chang}>长:<{$zhantai.chang}><span>|</span><{/if}><{if $zhantai.kuan}>宽:<{$zhantai.kuan}><span>|</span><{/if}><{if $zhantai.gao}>高:<{$zhantai.gao}><span>|</span><{/if}>面积:<{$zhantai.mianji}></p>
+
+                    <{if !$canzhan.isoem}>
+                        <{if $canzhan.case_id}>
+                            <{if $canzhan.case_id==$zhantai.case_id}><small>已经选定当前设计稿</small><{else}><small>未被选中</small><{/if}>
+                        
+                        <{/if}>
+                    <{/if}>
+                </div>
+            </div>
+            <!-- 文章内容部分-->
+            <div class="article2-details">
+                <p><{$zhantai.intro}></p>
+            </div>
+            <{if $type=='dinggao'}>
+                <div class="article-details"> 
+                    <{foreach $xiaoguotu[count($xiaoguotu)-1] as $item}>
+                        <a href="#" data-direction="reverse" data-rel="back">
+                            <img src="<{$pager.img}>/<{$item.photo}>_expo.jpg"/> 
+                        </a>
+                    <{foreachelse}>
+                     您还没有上传图片
+                    <{/foreach}>
+                </div>      
+            <{else}>
+            <{foreach $xiaoguotu as $key=>$val}>
+            <{if $key==$type}>
+            <div class="article-details"> 
+                <{foreach $val as $item}>
+                    <a href="#" data-direction="reverse" data-rel="back">
+                        <img src="<{$pager.img}>/<{$item.photo}>_expo.jpg"/> 
+                    </a>
+                <{foreachelse}>
+                 您还没有上传图片
+                <{/foreach}>
+            </div>
+            <{/if}>
+            <{/foreach}>
+            <{/if}>
+        </div>
+    </div>
+<{include file="mobile:member/block/foot.html"}>
+<{include file="mobile:member/block/bottom.html"}>
+</body>
+</html>

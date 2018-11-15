@@ -1,0 +1,3 @@
+<{foreach $items as $item}>
+<li data-icon="false"><a href="<{link ctl='gong/news' arg0=$item.news_id}>" data-transition="slide"><{$item.title|cutstr:80}></a> </li>
+<{/foreach}>

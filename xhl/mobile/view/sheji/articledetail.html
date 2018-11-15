@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>设计师文章详情</title>
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageArticleGallery" class="page1" data-dom-cache="false" data-title="设计师文章详情">
+
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>设计师文章详情页</h1>
+        <a href="<{link ctl='sheji/index:search'}>" data-transition="slide" class="ui-btn iconfont icon-search"></a>
+    </div>
+    <div data-role="main" class="main">
+        <div class="swiper-container" data-mainSwiper="true" id="zhanindex-<{$PAGEID}>">
+            <div class="swiper-wrapper mainWrapper">
+                <div data-role="content" class="article-main swiperSlide">
+                    <div class="article-title">
+                        <div class="article-title-inner">
+                            <h2><{$detail.title}></h2>
+                        </div>
+                        <div class="article2-author">
+                            <a href="#"><img src="<{$pager.img}>/<{$designer.face}>"/> </a>
+                            <p><{$designer.name}><span>|</span>作品数：<{$designer.case_num}><span>|</span>关注：<{$designer.attention_num}></p>
+                        </div>
+                    </div>
+                    <!-- 文章内容部分-->
+                    <div class="article2-details">
+                        <p><{$detail.content}></p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-scrollbar mainScrollbar"></div>
+        </div>
+        <!--swiper-container END-->
+        <div class="mainbgT">下拉刷新</div>
+        <div class="mainbg">
+            <p>Copyright © 2016 jisunet.com</p>
+            <p>一路展（北京）信息科技股份有限公司</p>
+        </div>
+    </div>
+<{include file="mobile:block/footer.html"}>

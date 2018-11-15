@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link href="../css/myTheme.css" rel="stylesheet"/>
+    <link href="../css/jquery.mobile.icons.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/jquery.mobile.structure-1.4.5.css"/>
+    <script src="../js/jquery-2.1.4.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="../js/TouchSlide.1.1.js"></script>
+    <script src="iscroll-master/build/iscroll-probe.js"></script>
+    <title>一路展</title>
+</head>
+<body>
+<div data-role="page" id="pageList" class="page1" data-dom-cache="true" data-title="自定义title标题，用于SEO">
+    <script>
+        var myScroll, pullDown, pullUp;
+
+        function iScroll() {
+            console.log('iScroll');
+            pullDown = $('#pullDown');
+            pullUp = $('#pullUp');
+            position = $('#position');
+
+            myScroll = new IScroll('#wrapperContent1', {probeType: 3, mouseWheel: true});
+            myScroll.on('refresh', function () {
+                console.log('refresh');
+                pullDown.html('下拉刷新').removeClass('fresh');
+                pullUp.html('上拉加载更多').removeClass('loading');
+
+            });
+            myScroll.on('scroll', function () {
+                var y = this.y;
+                var maxY = this.maxScrollY;
+                if (y > 10) {
+                    pullDown.html('松开刷新页面<br/>').addClass('fresh');
+                    for (var i = 0; i < y; i=i+5) {
+                        pullDown.append('.');
+                    }
+                }
+                if (y < maxY - 10) {
+                    pullUp.html('松开加载新内容<br/>').addClass('loading');
+
+                }
+
+
+            });
+            myScroll.on('scrollEnd', function () {
+                console.log('scrollEnd');
+                if(pullDown.hasClass('fresh')){
+                    pullDown.html('加载中');
+                    setTimeout(myScroll.refresh(),2000);
+                }
+                if(pullUp.hasClass('loading')){
+                    pullDown.html('加载中');
+                    getDate();
+                    myScroll.refresh();
+                }
+            });
+        }
+
+        $(document).on({
+            pageinit: function () {
+                getDate();
+            },
+            pagebeforeshow: function () {
+                setTimeout(iScroll, 200);
+            }
+
+        });
+
+        function getDate() {
+            console.log('pageinit');
+            var content = "";
+            for (var i = 0; i < 10; i++) {
+                if (i % 2 == 0) {
+                    content = content + '<div class=\"marketLIst-item ui-block-a\">';
+                } else {
+                    content = content + '<div class=\"marketLIst-item ui-block-b\">';
+                }
+                content = content + '<a href=\"article.html\" class=\"ui-body-a\" data-transition=\"slide\" data-form=\"ui-body-a\"><img src=\"../img/pic1.jpg\"/>';
+                content = content + '<div class=\"caption\">';
+                content = content + '<p>108平米展台设计制作四面开口/ </p>';
+                content = content + '<p><span class=\"iconfont icon-kongxinhand\"></span>123';
+                content = content + '<span class=\"iconfont icon-icon17\"></span>123';
+                content = content + '</p>';
+                content = content + '</div>';
+                content = content + '</a>';
+                content = content + '</div>';
+            }
+            $("#contentList1").append(content);
+
+        }
+
+    </script>
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>特装超市 </h1>
+        <a href="search.html" data-transition="slide" class="ui-btn iconfont icon-search"></a>
+
+    </div>
+    <div data-role="main">
+        <style rel="stylesheet">
+            .wrapper {
+                position: absolute;
+                z-index: 1;
+                top: 10px;
+                bottom: 10px;
+                left: 0;
+                width: 100%;
+                padding: 10px 0 0 0;
+            }
+
+            .scroller {
+                position: absolute;
+                z-index: 1;
+                -webkit-touch-callout: none;
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                width: 100%;
+                padding: 0 0 40px 0;
+            }
+
+            .listLoadLabel {
+                text-align: center;
+                color: #929191;
+                text-shadow: 1px 1px 1px #FFF;
+            }
+            .fresh{margin-top:60px;}
+            .loading{margin-bottom:60px;}
+        </style>
+        <!-- list 数据容器，这里不要存放数据-->
+        <div class="ui-grid-a market-list"></div>
+        <!-- 测试scroll-->
+        <div id="wrapperContent1" class="wrapper">
+            <div id="initMyScroll" class="scroller">
+                <div id="pullDown" class="listLoadLabel">下拉刷新</div>
+                <div class="ui-grid-a market-list" id="contentList1"></div>
+                <div id="pullUp" class="listLoadLabel">上拉加载更多</div>
+            </div>
+        </div>
+        <!-- Loading-->
+        <!--<div class="listLoading" id="listLoading">-->
+        <!--<div class="listLoadLabel"><img src="../img/listload.gif" height="12"/> 等待载入数据。。。</div>-->
+        <!--</div>-->
+    </div>
+    <div data-role="footer" data-position="fixed" class="footer">
+        <div class="ui-grid-d">
+            <div class="ui-block-a">
+                <a href="#" data-transition="slide" class="ui-btn active"><i class="iconfont icon-home"></i>首页</a>
+            </div>
+            <div class="ui-block-b">
+                <a href="list.html" data-transition="slide" class="ui-btn"><i class="iconfont icon-designno"></i>设计</a>
+            </div>
+            <div class="ui-block-c">
+                <a href="list.html" data-transition="slide" class="ui-btn"><i
+                        class="iconfont icon-zhanshigongcheng"></i>工程</a>
+            </div>
+            <div class="ui-block-d">
+                <a href="user.html" data-transition="slide" class="ui-btn"><i class="iconfont icon-user"></i>我的</a>
+            </div>
+            <div class="ui-block-e">
+                <a href="user.html" data-transition="slide" class="ui-btn"><i class="iconfont icon-order"></i>订单</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

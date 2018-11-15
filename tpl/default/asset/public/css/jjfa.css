@@ -1,0 +1,185 @@
+.top{
+	    position: fixed;
+	    top:0;
+	    left:0;
+    z-index: 1001;
+    width: 100%;
+    height: 61px;
+    background-color: white;
+        box-shadow: 1px 2px 3px 0 rgba(179,178,179,.5);
+}
+.container{
+	    /*padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;*/
+   margin:0 auto;
+        width: 1190px;
+        height:61px;
+}
+.logo{
+	    width: 100px;
+    height: 50px;
+    margin: 10px 10px 10px 0px;
+    float:left;
+}
+.logo img{
+	    width: 90px;
+    height: 40px;
+}
+.nav{
+  height:100%;
+   width:296px;
+   float:left;
+}
+.nav ul{
+	 height:100%;
+	 width:296px;
+}
+.nav ul li{
+	float:left;
+	height:100%;
+	width:25%;
+	line-height: 61px;
+}
+.nav ul li a{
+	    padding: 19px 15px;
+    letter-spacing: 2px;
+}
+.denglu{
+	float:right;
+	width:149px;
+	height:61px;
+	line-height:61px;
+}
+.denglu .zhu{
+	padding:6px 16px;
+	background:#fe552e;
+	border-radius:4px;
+	color:white;
+	
+}
+.denglu .deng{
+	padding:4px 14px;
+	border-radius:4px;
+	border:2px solid #ccc;
+	margin-left:15px;
+}
+.search{
+	width:230px;
+	height:61px;
+	line-height: 61px;
+	float:right;
+	    margin: 0px 10px 0px 10px;
+	    position:relative;
+}
+.search .form-control{
+	width:221px;
+	height:24px;
+	border:1px solid #ccc;
+	border-radius:4px;
+}
+.img1{
+	position:absolute;
+	top:24px;
+	right:27px;
+}
+.banner{
+	margin-top:77px;
+}
+.main{
+width:100%;
+margin-top:70px;
+}
+.main_1{
+	 margin:0 auto;
+        width: 1190px;
+}
+.box{
+	height:70px;
+	line-height: 70px;
+	border-bottom:1px solid #ccc;
+	margin-top:10px;
+}
+.box p{
+	font-size:24px;
+	font-weight:600;
+}
+h3{
+	margin-top:34px;
+}
+.title{
+	height:35px;
+	margin-top:20px;
+}
+.title3{
+	height:35px;
+	margin-top:20px;
+	margin-bottom:80px;
+}
+.title .inp1{
+	height:30px;
+	width:700px;
+	border-radius:4px;
+	border:1px solid #ccc;
+}
+.title select{
+	width:240px;
+	height:33px;
+	border-radius:4px;
+	border:1px solid #ccc;
+	float:right;
+}
+.title1{
+	height:290px;
+	margin-top:20px;
+}
+.title1 textarea{
+	width:100%;
+	height:280px;
+	border-radius:4px;
+	border:1px solid #ccc;
+}
+.title .inp2{
+	height:30px;
+	width:300px;
+	border-radius:4px;
+	border:1px solid #ccc;
+}
+.title .quxiao{
+	padding:5px 16px;
+	border-radius:4px;
+	border:1px solid #ccc;
+}
+.title3 button{
+	float:right;
+	padding:5px 23px;
+	border-radius:4px;
+	border:1px solid #fe552e;
+	background:#fe552e;
+	color:white;
+}
+.bottom{
+	background:#333333;
+	height:280px;
+}
+.bottom_1{
+	background:#333333;
+	margin:0 auto;
+        width: 1190px;
+        height:280px;
+}
+.bottom_1 ul{
+	float:left;
+	width:20%;
+	height:100%;
+	text-align: center;
+}
+.bottom_1 ul li a{
+	font-size:20px;
+	color:white;
+}
+.bottom_1 ul li{
+	height:33.33%;
+	line-height: 87px;
+}

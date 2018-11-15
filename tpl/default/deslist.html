@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设计师列表页</title>
+    <{include file="block/header.html"}>
+</head>
+<body class="gdh-body">
+<div class="main-banner">
+    <{include file="block/headernav.html"}>
+    <!--头部导航 END-->
+</div>
+<!--user 头 END-->
+<div class="container-fluid case-con">
+    <div class="case-row">
+        <div class="col-sm-9 case-col">
+            <div class="case-detail">
+                <h3>
+                    <small class="pull-right"><div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+                        <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></small>
+                    <{$xiangmu.title}>
+                </h3>
+                <div class="case-detail-d">
+                    <{if $xiangmu.thumb}>
+                    <img src="<{$pager.img}>/<{$xiangmu.thumb}>" alt="" class="pull-left">
+                    <{else}>
+                    <img src="/tpl/default/asset/img/xiangmutu.png" alt="" class="pull-left">
+                    <{/if}>
+                    <div class="case-detail-dr">
+                        <table class="table">
+                            <tbody>
+                            <tr>
+                                <th>源码语言：</th><td><{$xiangmu.yuyan}></td>
+                                <th>软件大小：</th><td><{$xiangmu.size}></td>
+                            </tr>
+                            <tr>
+                                <th>插件情况：</th><td><{$xiangmu.chajian}></td>
+                                <th>网页性质：</th><td><{$xiangmu.xingzhi}></td>
+                            </tr>
+                            <tr>
+                                <th>运行环境：</th><td><{$xiangmu.huanjing}></td>
+                                <th>官方主页：</th><td><{$xiangmu.gurl}></td>
+                            </tr>
+                            <tr>
+                                <th>更新时间：</th><td><{$xiangmu.dateline|format:"Y.m.d"}></td>
+                                <{if $xiangmu.xnum}>
+                                <th>下载次数：</th><td><{$xiangmu.xnum}></td>
+                                <{/if}>
+                            </tr>
+                            <tr>
+                                <th>演示地址：</th><td><a href="<{$xiangmu.infourl}>">点击查看</a></td>
+                                <th>收费情况：</th><td><{if $xiangmu.xmprice==0}>免费<{else}>需付费<{/if}></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <{if $xiangmu.url}>
+                        <div class="case-detail-download">
+                            <span>下载地址：</span>
+                            <a href="<{$xiangmu.url}>">本地下载地址1</a>
+                        </div>
+                        <{/if}>
+                    </div>
+                </div>
+            </div>
+     
+              <div class="panel panel-default">
+               <div class="panel-body">
+                    <ul class="case-recommend">
+                        <{foreach $jishulist as $jishus}>
+                        <li>
+                            <a href="<{link ctl='center-index' arg0=$jishus.uid}>">
+                                <{if $jishus.face}>
+                                <img src="<{$pager.img}>/<{$jishus.face}>" alt="" class="pull-left">
+                                <{else}>
+                                <img src="/tpl/default/asset/img/tx.png" alt="" class="pull-left">
+                                <{/if}>
+                                <p>
+                                    <span><{$jishus.name}></span> <br>
+                                    <{$jishus.city_name}> / <{$jishus.group_id}>年 / <{$jishus.group_name}><br>
+                                    关注：12340 / 收藏：1256
+                                </p>
+                            </a>
+                        </li>
+                        <{/foreach}>
+                    </ul>
+                </div>
+               </div>
+            
+           <!--  <{if $pager.pagebar}><div class="page-com">
+                      <ul class="pager">
+                          <{$pager.pagebar}>
+                      </ul>
+                 </div><{/if}> -->
+
+
+        </div>
+        <div class="col-sm-3 case-col">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">工程师简介</h4>
+                </div>
+                <div class="panel-body case-info">
+                    <P>源码作者：<a href="<{link ctl='center-index' arg0=$xiangmu.uid}>"><{$designer.uname}></a> <span class="iconfont icon-v"></span></P>
+                    <P>经验：<{$designer.group_id}>年</P>
+                    <{if $designer.skills}><P>技术：<{$designer.skills}></P><{/if}>
+                    <{if $designer.slogan}><P>设计理念：<{$designer.slogan|cutstr:150}></P><{/if}>
+                    <P><{if $designer.about}>个人简介：<{$designer.about|cutstr:150}><{/if}><a href="<{link ctl='center-index' arg0=$xiangmu.uid}>">[查看详情]</a></P>
+                </div>
+            </div>
+           
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title"><a class="pull-right" href="<{link ctl='articlelist' arg0=$xiangmu.xiangmu_id}>"><small>更多</small></a>关于二次开发的文章</h4>
+                </div>
+                <div class="panel-body">
+                    <ul class="case-article-list">
+                        <{foreach $xmarticle as $xmarticles}>
+                        <li><a href="<{link ctl='articledetail-index' arg0=$xmarticles.article_id arg1=$xmarticles.xiangmu_id}>"><{$xmarticles.title}></a></li>
+                        <{/foreach}>
+                    </ul>
+                    <a class="btn btn-block btn-default" href="<{link ctl='detail-article' arg0=$xiangmu.xiangmu_id}>"><small>发布文章</small></a>
+                </div>
+            </div>
+            <!--关于二次开发的文章 END-->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title"><a class="pull-right" href="<{link ctl='list'}>"><small>更多</small></a>本月下载排行</h4>
+                </div>
+                <div class="panel-body">
+                    <ul class="case-recommend">
+                        <{foreach $items as $item}>
+                        <li>
+                            <a href="<{link ctl='detail' arg0=$item.xiangmu_id}>">
+                                <img src="<{$pager.img}>/<{$item.thumb}>" alt="" class="pull-left">
+                                <div><span><{$item.title}></span></div>
+                                <div>
+                                    <p><{$item.desc|cutstr:30}><span>[查看详情]</span></p>
+                                </div>
+                            </a>
+                        </li>
+                        <{/foreach}>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--footer-->
+<{include file="block/footer.html"}>
+
+</body>
+</html>

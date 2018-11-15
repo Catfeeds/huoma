@@ -1,0 +1,15 @@
+/build
+*.db
+.idea
+node_modules
+/files
+/ezhan
+/sheji
+/xhl/admin
+/xhl/data
+/xhl/config.php
+/xhl/uc_config.php
+/expo/default
+/Gruntfile.js
+/package.json
+/webpack.config.js

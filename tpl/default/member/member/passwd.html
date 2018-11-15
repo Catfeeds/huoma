@@ -1,0 +1,23 @@
+<{include file="member/block/header.html"}>
+<div class="ucenter_t">
+	<ul>
+		<!-- <li><a href="<{link ctl='member/member:info'}>">基本信息</a></li> -->
+		<li class="on"><a>修改密码</a></li>
+		<!-- <li><a href="<{link ctl='member/member:face'}>">修改头像</a></li> -->
+	</ul>
+</div>
+<div class="admin-right">
+    <form id="account-form" action="<{link ctl='member/member:passwd'}>" method="post">
+    <table cellspacing="0" cellpadding="0" class="form">
+        <tr><th><span class="red"> * </span>原密码：</th><td><input name="account[old_passwd]" type="password" value="" class="input" /></td></tr>
+        <tr><th><span class="red"> * </span>新密码：</th><td><input name="account[passwd]" type="password" value="" class="input" /></td></tr>
+        <tr><th><span class="red"> * </span>确认密码：</th><td><input name="account[confirm_passwd]" type="password" value="" class="input" /></td></tr>
+        <tr>
+			<th></th>
+            <td><input mini-submit="#account-form" type="submit" value="提交数据" class="green_btn" /></td>
+		</tr>
+    </table>
+    </form>
+</div>
+<!--//右面下开始-->
+<{include file="member/block/footer.html"}>

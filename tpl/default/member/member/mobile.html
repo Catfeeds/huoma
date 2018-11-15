@@ -1,0 +1,77 @@
+<{include file="member/header.html"}>
+<script type="text/javascript" src="<{$pager.res}>/script/widget.YMD.js"></script>
+<div class="set_c2"><h3>手机验证 <span>( <I>*</I> 为必填 )</span></h3></div>
+<div class="set_c4">
+    <{if $MEMBER.verify_mobile}> 
+    <h4 class="tips"> <span class="success">您已经通过手机认证</span></h4>
+    
+    <{else}>
+    <form id="account-form">
+        <table class="form">
+
+            <tr>
+                <th><span class="red">&nbsp;</span>手机：</th>
+                <td>
+                    <{$MEMBER.mobile}>    <input type="button" id="jq_mobile_btn"   style=" width: 120px; height: 30px; line-height: 30px; border: dotted #000 1px;" value="发送验证码" />
+                </td>
+            </tr>
+            <tr>
+                <th><span class="red">&nbsp;</span>短信验证码：</th>
+                <td>
+                    <input type="text" name="data[code]" value="" class="input w-100"/>
+                </td>
+            </tr>
+
+            <tr>
+                <th></th><td><input action="<{link ctl='member/member:mobile'}>" mini-submit="#account-form" type="button" value="保存" class="set_btn" /></td>
+            </tr>
+        </table>
+    </form>
+    <{/if}>
+</div>
+<script>
+    jQuery.fn.countDown = function(settings, to) {
+        settings = jQuery.extend({
+            defaultVal: '重新发送',
+            duration: 1000,
+            startNumber: 10,
+            endNumber: 0,
+            callBack: function() {
+            }
+        }, settings);
+        return this.each(function() {
+            if (!to && to != settings.endNumber) {
+                to = settings.startNumber;
+            }
+            $(this).val(settings.defaultVal + '(' + to + ')');
+            $(this).animate({
+                'disabled': true
+            }, settings.duration, '', function() {
+                if (to > settings.endNumber + 1) {
+                    $(this).val(settings.defaultVal + '(' + (to - 1) + ')').countDown(settings, to - 1);
+                }
+                else
+                {
+                    settings.callBack(this);
+                }
+            });
+
+        });
+    };
+    $(document).ready(function() {
+        $("#jq_mobile_btn").click(function() {
+            $(this).unbind('countDown');
+            $(this).countDown({
+                defaultVal: '重新发送',
+                startNumber: 100,
+                callBack: function(me) {
+                    $(me).val('重新发送');
+                    $(me).attr('disabled', false);
+                }
+            });
+            $.get('<{link ctl="member/member:code"}>');
+
+        });
+    });
+</script>
+<{include file="member/footer.html"}>

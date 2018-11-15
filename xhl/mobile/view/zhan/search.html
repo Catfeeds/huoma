@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{$seo.province_name}><{$seo.attr}><{$seo.zhantime}>行业展会_<{$seo.province_name}>展会信息_一路展<{$seo.province_name}>行业展会</title>
+    <meta name="description" content="一路展行业展会为<{$seo.province_name}><{$seo.attr}><{$seo.zhantime}>参展商提供最新最全的行业展会信息,寻找行业展会就上一路展！">
+    <meta name="Keywords" content="一路展,展装O2O,行业展会,展会信息,行业展会信息">
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<!--pageSearch-->
+<div data-role="page" id="pageSearch">
+    <!-- 主js-->
+    <div data-role="header" data-position="fixed" id="searchHeader" class="searchHeader">
+        <div class="searchBack">
+            <a href="/" data-rel="back"><span class="iconfont icon-left"></span></a>
+        </div>
+        <form method="get" action="<{link ctl='zhan/index'}>" class="headerSearch">
+            <input type="search" name="kw" id="searchInput" placeholder="输入您要查找的展会名称">
+            <div class="headerBack">
+                <button type="submit">搜索</button>
+            </div>
+        </form>
+    </div>
+
+      <div data-role="main">
+        <!-- 本例主要代码 Start ================================ -->
+       <div id="searchTab-<{$PAGEID}>" class="searchTab" data-slideid="searchTab">
+            <div class="hd" data-role="navbar" data-grid="d">
+                <ul>
+                    <li><a href="#" data-ajax="false">地域</a></li>
+                    <{foreach $attr_values as $v}>
+                        <li><a href="#" data-ajax="false"><{$v.title}></a></li>
+                    <{/foreach}>
+                    <li><a href="#" data-ajax="false">近期</a></li>
+                    <li><a href="#" data-ajax="false">往期</a></li>
+                </ul>
+            </div>
+            <div class="bd">
+                <ul>
+                    <li <{if empty($pager.province_id)}>class="active"<{/if}>><a href="<{$province_all_link}>">不限</a></li>
+                    <{foreach $province_list as $v}>
+                        <li <{if $v.province_id==$pager.province_id}>class="active"<{/if}>><a href="<{$v.link}>"><{$v.province_name}></a></li>
+                    <{/foreach}>
+                </ul>
+                <{foreach $attr_values as $v}>
+                <ul>
+                    <li <{if $v.checked}>class="active"<{/if}>><a href="<{$v.link}>">不限</a></li>
+                    <{foreach $v.values as $vv}>
+                        <li <{if $vv.checked}>class="active"<{/if}>><a href="<{$vv.link}>"><{$vv.title}></a></li>
+                    <{/foreach}>
+                </ul>
+                <{/foreach}>
+                  <ul>
+                      <li <{if empty($pager.zhantime)}>class="active"<{/if}>><a href="<{$zdate_all_link}>">不限</a></li>
+                      <li <{if $pager.zhantime==7}>class="active"<{/if}>><a href="<{$zdate_benzhou_link}>">一周内</a></li>
+                          <{foreach $zdate.now  as $v}>
+                              <li <{if $v.zhi==$pager.zhantime}>class="active"<{/if}>><a href="<{$v.link}>"><{$v.name}></a></li>
+                          <{/foreach}>     
+                  </ul>
+                  <ul>
+                      <li <{if empty($pager.zhantime)}>class="active"<{/if}>><a href="<{$zdate_all_link}>">不限</a></li>
+                      <{foreach $zdate.last  as $v}>
+                          <li <{if $v.zhi==$pager.zhantime}>class="active"<{/if}>><a href="<{$v.link}>"><{$v.name}></a></li>
+                      <{/foreach}> 
+                  </ul>
+            </div>
+        </div>
+        <!-- 本例主要代码 End ================================ -->
+    </div>
+<{include file="mobile:block/footer.html"}>

@@ -1,0 +1,63 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pagexiaoguotu" class="page1" data-dom-cache="false" data-title="效果图详情">
+
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>效果图详情</h1>
+        <!--<a href="search.html" data-transition="slide" class="ui-btn iconfont icon-search"></a>-->
+
+    </div>
+    <div data-role="main">
+        <div data-role="content" class="article-main">
+            <div class="article-title">
+               <!--  <div class="article-author">
+                   <p><{$zhantai.title}></p>
+                   <p>长：<{$zhantai.chang}>&nbsp;</p>
+                   <p>宽：<{$zhantai.kuan}>&nbsp;</p>
+                   <p>高:<{$zhantai.gao}></p>
+                   <p>面积:<{$zhantai.mianji}></p>
+                   <p><{$zhantai.intro}></p>
+               </div> -->
+                <div class="article-title-inner">
+                    <h2><{$zhantai.title}></h2>
+                    <table class="article-title-info">
+                        <tbody>
+                        <tr>
+                            <td>长：</td>
+                            <td><{$zhantai.chang}></td>
+                            <td>宽：</td>
+                            <td><{$zhantai.kuan}></td>
+                        </tr>
+                        <tr>
+                            <td>高：</td>
+                            <td><{$zhantai.gao}></td>
+                            <td>面积:</td>
+                            <td><{$zhantai.mianji}></td>
+                        </tr>
+                        <tr>
+                            <td><{$zhantai.intro}></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <!-- 文章内容部分-->
+            <div class="article-details">
+                <{foreach $xiaoguotu as $key=>$val}>
+                设计<{if $key}><{$key}><{/if}>稿
+                    <{foreach $val as $item}>
+                    <p><img src="<{$pager.img}>/<{$item.photo}>_expo.jpg"/> </p>
+                    <{foreachelse}>
+                        您还没有上传图片
+                    <{/foreach}>
+                <{/foreach}>
+                <{foreach $list_pic as $val}>
+                <p><img src="<{$pager.img}>/<{$val.photo}>"/></p>
+                <{/foreach}>
+            </div>
+        </div>
+    </div>
+<{include file="mobile:member/block/footer.html"}>

@@ -1,0 +1,12 @@
+{
+	"type":["商品列表"],
+	"list":[
+		{"id":1,"img":"img/index_11.png","tit":"在线抓娃娃"},
+	{"id":1,"img":"img/index_11.png","tit":"在线抓娃娃"},
+	{"id":1,"img":"img/index_11.png","tit":"在线抓娃娃"},
+		{"id":1,"img":"img/index_11.png","tit":"在线抓娃娃"},
+	{"id":1,"img":"img/index_11.png","tit":"在线抓娃娃"},
+	{"id":1,"img":"img/index_11.png","tit":"在线抓娃娃"},
+		{"id":1,"img":"img/index_11.png","tit":"在线抓娃娃"}
+	]
+}

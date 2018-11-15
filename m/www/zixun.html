@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>资讯-干点活</title>
+    <meta name="keywords" content="干点活"/>
+    <meta name="description" content="干点活"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/project/project.js"></script>
+    <script src="js/member_head.js"></script>
+    <!--<script src="js/index_load.js"></script>-->
+    <script src="js/touchslider.js"></script>
+    <script src="js/gdh_chat.js"></script>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/zixun.css"/>
+    <link rel="stylesheet" href="css/iconfont.css"/>
+    <link rel="stylesheet" href="css/iconfont1.css"/>
+    <link rel="stylesheet" href="css/iconfont3.css"/>
+    <link rel="stylesheet" href="css/style2.css" />
+    
+</head>
+
+<body>
+
+<div id="wrapper" class="collapse">
+    <div class="menu animate ">
+        <div class="menu-user">
+            <img src="img/user_photo.jpg" id="member_face"/>
+            <div class="menu-user-info">
+                <a class="unlog" href="login.html">登录</a>
+                <a class="unlog" href="register.html">注册</a>
+            </div>
+        </div>
+        <ul class="menu-list">
+            <li class="current"><a href="index.html">首页</a></li>
+            <li><a href="index.html">项目</a></li>
+            <li><a href="designer.html">技术</a></li>
+            <li><a href="project_class.html">活儿</a></li>
+            <li><a href="index.html">更多</a></li>
+            <li><a href="javascript:void(0);">APP下载</a></li>
+        </ul>
+    </div>
+    <script>
+        $(function () {
+            $(".menu-ico").click(function (e) {
+                e.preventDefault();
+                $(this).hide();
+                $("#wrapper").css("overflow", "hidden");
+                $("div.screen, div.fixedGuide").addClass("expand").removeClass("collapse");
+                $(".menu-close").fadeIn();
+            });
+
+            $(".menu-close").click(function (e) {
+                e.preventDefault();
+                $(this).hide();
+                $("div.screen, div.fixedGuide").removeClass("expand").addClass("collapse");
+                $(".menu-ico").fadeIn();
+                window.setTimeout(function () {
+                    $("#wrapper").css("overflow", "visible");
+                }, 1000);
+            });
+        });
+    </script>
+
+    <div class="screen animate collapse">
+
+        <header class="head">
+           
+            <div class="sear">
+            <span>资讯</span>
+            </div>
+           
+            <!-- <a class="logo" href="" title="天天投"><img src="http://pp1.evervc.com/mobi-topic-imgs/wap-logo.png" /></a>-->
+            <script>
+                $(function () {
+                    $(".search-status a").click(function (e) {
+                        e.preventDefault();
+                        $(this).hide();
+                        $(".search-cancel, .search-wrap").fadeIn();
+                    });
+
+                    $(".search-cancel").click(function (e) {
+                        e.preventDefault();
+                        $(".search-cancel").hide();
+                        $(".search-wrap").fadeOut();
+                        $(".search-status a").fadeIn();
+                    });
+
+                });
+            </script>
+
+
+        </header>
+  <div class="find_nav_left">
+        <div class="find_nav_list" id="pagenavi1">
+        <!--<nav class="navbar">-->
+            <ul>
+                <li class="current"><a href="index.html">推荐文章</a></li>
+                <li><a href="project_class.html">最新文章</a></li>
+                <li><a href="gdh_chat.html">综合文章</a></li>
+            </ul>
+       <!-- </nav>-->
+</div>
+</div>
+        <div class="main item-card" id="item-card">
+         
+            <!--内容-->
+            	
+          
+            <!--<div class="main2"> 
+            	<a href="detail.html?id="+index['xiangmu_id']+""> 
+            		<dl> 
+            			<dt><img src=""+res.attachurl+"/"+index['thumb']+""></dt> 
+            			<dd> <p class="p4">1213131</p>
+            				<span class="s1">名企</span><span class="s2">名校</span>
+            				 <p class="p5">132323</p>
+            				  </dd>
+            				   </dl> 
+            	</a> 
+            	<div class="rongzi"> 
+            		<div class="xin"> 
+            			<div class="left"> <i class="iconfont">&#xe608;</i><span>2</span>
+            				 </div> <div class="center"><i class="iconfont">&#xe64b;</i><span>2</span>
+            				 	
+            				 </div>
+     <div class="right">
+     	<a href="detail.html?id="+index['xiangmu_id']+"" class="iconfont">&#xe679;</a></div>
+            				   </div> </div> </div>-->
+            				   <div id="slider1" class="swipe">
+  <ul class="box01_list">
+	
+	<li class="li_list">     <div class="da">
+            <div class="main4"></div>
+            <div class="yi">
+      <p class="p5">Oracle Java SE 8发行版更新：限制商业或生产用途</p>
+      <div class="ziliao">
+      	<span class="s2"><img src="../img/xm_34.png"><h1>刘xx</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>28</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>123</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>123</h1></span>
+      	<p class="p4"><span class="s1">04-27</span>
+      	<span class="s1">12:08</span></p>
+      </div>
+      </div>
+        </div>
+	<div class="da1">
+		<a href="article.html"><div class="top"><p>JsoupXPath v2.0-Beta发布。HTML解析器</p></div></a>
+		<div class="center">
+			<div class="zhaopian"><img src="img/zixun_07.png"></div>
+			<div class="zhaopian"><img src="img/zixun_07.png"></div>
+			<div class="zhaopian"><img src="img/zixun_07.png"></div>
+		</div>
+		
+      <div class="ziliao">
+      	<span class="s2"><img src="../img/xm_34.png"><h1>刘xx</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>28</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>123</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>123</h1></span>
+      	<p class="p4"><span class="s1">04-27</span>
+      	<span class="s1">12:08</span></p>
+      </div>
+      
+	</div>
+	<div class="xiamian">
+		<div class="left1">
+			<img src="img/zixun_07.png">
+		</div>
+		<div class="right1">
+			<p>资源整合和资源变现是两码事</p>
+			<p class="p4"><span class="s1">04-27</span><span class="s1">12:08</span></p>
+			<div class="ziliao">	<span class="s2"><img src="../img/xm_34.png"><h1>刘xx</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>28</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>123</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>123</h1></span>
+			</div>
+		</div>
+	</div>
+	</li>
+	<li class="li_list_3">
+		 <div class="da">
+            <div class="main4"></div>
+            <div class="yi">
+      <p class="p5">Oracle Java SE 8发行版更新：限制商业或生产用途</p>
+      <div class="ziliao">
+      	<span class="s2"><img src="../img/xm_34.png"><h1>刘xx</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>28</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>123</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>123</h1></span>
+      	<p class="p4"><span class="s1">04-27</span>
+      	<span class="s1">12:08</span></p>
+      </div>
+      </div>
+        </div>
+	<div class="da1">
+		<a href="article.html"><div class="top"><p>JsoupXPath v2.0-Beta发布。HTML解析器</p></div></a>
+		<div class="center">
+			<div class="zhaopian"><img src="img/zixun_07.png"></div>
+			<div class="zhaopian"><img src="img/zixun_07.png"></div>
+			<div class="zhaopian"><img src="img/zixun_07.png"></div>
+		</div>
+		
+      <div class="ziliao">
+      	<span class="s2"><img src="../img/xm_34.png"><h1>刘xx</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>28</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>123</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>123</h1></span>
+      	<p class="p4"><span class="s1">04-27</span>
+      	<span class="s1">12:08</span></p>
+      </div>
+      
+	</div>
+	<div class="xiamian">
+		<div class="left1">
+			<img src="img/zixun_07.png">
+		</div>
+		<div class="right1">
+			<p>资源整合和资源变现是两码事</p>
+			<p class="p4"><span class="s1">04-27</span><span class="s1">12:08</span></p>
+			<div class="ziliao">	<span class="s2"><img src="../img/xm_34.png"><h1>刘xx</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>28</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>123</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>123</h1></span>
+			</div>
+		</div>
+	</div>
+	</li>
+	<li class="li_list">
+		 <div class="da">
+            <div class="main4"></div>
+            <div class="yi">
+      <p class="p5">Oracle Java SE 8发行版更新：限制商业或生产用途</p>
+      <div class="ziliao">
+      	<span class="s2"><img src="../img/xm_34.png"><h1>刘xx</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>28</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>123</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>123</h1></span>
+      	<p class="p4"><span class="s1">04-27</span>
+      	<span class="s1">12:08</span></p>
+      </div>
+      </div>
+        </div>
+        
+	<div class="da1">
+		<a href="article.html"><div class="top"><p>JsoupXPath v2.0-Beta发布。HTML解析器</p></div></a>
+		<div class="center">
+			<div class="zhaopian"><img src="img/zixun_07.png"></div>
+			<div class="zhaopian"><img src="img/zixun_07.png"></div>
+			<div class="zhaopian"><img src="img/zixun_07.png"></div>
+		</div>
+		
+      <div class="ziliao">
+      	<span class="s2"><img src="../img/xm_34.png"><h1>刘xx</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>28</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>123</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>123</h1></span>
+      	<p class="p4"><span class="s1">04-27</span>
+      	<span class="s1">12:08</span></p>
+      </div>
+      
+	</div>
+	<div class="xiamian">
+		<div class="left1">
+			<img src="img/zixun_07.png">
+		</div>
+		<div class="right1">
+			<p>资源整合和资源变现是两码事</p>
+			<p class="p4"><span class="s1">04-27</span><span class="s1">12:08</span></p>
+			<div class="ziliao">	<span class="s2"><img src="../img/xm_34.png"><h1>刘xx</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>28</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>123</h1></span>
+      	<span class="s2"><img src="../img/xm_34.png"><h1>123</h1></span>
+			</div>
+		</div>
+	</div>
+	</li>
+
+  </ul>
+</div>
+            				   <!--内容-->
+            				     
+        </div>
+
+        <div class="bottom">
+            <ul>
+                <li><a href="index.html" class="active"><i class="iconfont">&#xe62f;</i><span>项目</span></a></li>
+                <li><a href="designer.html"><i class="iconfont">&#xe72e;</i><span>技术</span></a></li>
+                <li><a href="member_preference.html"> <img src="img/index_19.png"></a></li>
+                <li><a href="zixun.html"><i class="iconfont">&#xe627;</i><span>资讯</span></a></li>
+                <li><a href="member.html"><i class="iconfont">&#xe619;</i><span>我的</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	$(".find_nav_list").css("left",0);
+
+$(".find_nav_list li").each(function(){
+		$(".sideline").css({left:0});
+		$(".find_nav_list li").eq(0).addClass("find_nav_cur").siblings().removeClass("find_nav_cur");
+});
+var nav_w=$(".find_nav_list li").first().width();
+$(".sideline").width(nav_w);
+$(".find_nav_list li").on('click', function(){
+	nav_w=$(this).width();
+	$(".sideline").stop(true);
+	$(".sideline").animate({left:$(this).position().left},300);
+	$(".sideline").animate({width:nav_w});
+	$(this).addClass("find_nav_cur").siblings().removeClass("find_nav_cur");
+	var fn_w = ($(".find_nav").width() - nav_w) / 2;
+	var fnl_l;
+	var fnl_x = parseInt($(this).position().left);
+	if (fnl_x <= fn_w) {
+		fnl_l = 0;
+	} else if (fn_w - fnl_x <= flb_w - fl_w) {
+		fnl_l = flb_w - fl_w;
+	} else {
+		fnl_l = fn_w - fnl_x;
+	}
+	$(".find_nav_list").animate({
+		"left" : fnl_l
+	}, 300);
+	
+});
+var fl_w=$(".find_nav_list").width();
+var flb_w=$(".find_nav_left").width();
+$(".find_nav_list").on('touchstart', function (e) {
+	var touch1 = e.originalEvent.targetTouches[0];
+	x1 = touch1.pageX;
+	y1 = touch1.pageY;
+	ty_left = parseInt($(this).css("left"));
+});
+$(".find_nav_list").on('touchmove', function (e) {
+	var touch2 = e.originalEvent.targetTouches[0];
+	var x2 = touch2.pageX;
+	var y2 = touch2.pageY;
+	if(ty_left + x2 - x1>=0){
+		$(this).css("left", 0);
+	}else if(ty_left + x2 - x1<=flb_w-fl_w){
+		$(this).css("left", flb_w-fl_w);
+	}else{
+		$(this).css("left", ty_left + x2 - x1);
+	}
+	if(Math.abs(y2-y1)>0){
+		e.preventDefault();
+	}
+});
+
+
+for(n=1;n<9;n++){
+	var page='pagenavi'+n;
+	var mslide='slider'+n;
+	var mtitle='emtitle'+n;
+	arrdiv = 'arrdiv' + n;
+	var as=document.getElementById(page).getElementsByTagName('a');
+	var tt=new TouchSlider({id:mslide,'auto':'-1',fx:'ease-out',direction:'left',speed:600,timeout:5000,'before':function(index){
+		var as=document.getElementById(this.page).getElementsByTagName('a');
+		as[this.p].className='';
+		this.p=index;
+		
+		fnl_x =  parseInt($(".find_nav_list li").eq(this.p).position().left);
+		
+		nav_w=$(".find_nav_list li").eq(this.p).width();
+		$(".sideline").stop(true);
+		$(".sideline").animate({left:$(".find_nav_list li").eq(this.p).position().left},300);
+		$(".sideline").animate({width:nav_w},100);
+		$(".find_nav_list li").eq(this.p).addClass("find_nav_cur").siblings().removeClass("find_nav_cur");
+		var fn_w = ($(".find_nav").width() - nav_w) / 2;
+		var fnl_l;
+		if (fnl_x <= fn_w) {
+			fnl_l = 0;
+		} else if (fn_w - fnl_x <= flb_w - fl_w) {
+			fnl_l = flb_w - fl_w;
+		} else {
+			fnl_l = fn_w - fnl_x;
+		}
+		$(".find_nav_list").animate({
+			"left" : fnl_l
+		}, 300);
+	}});
+	tt.page = page;
+	tt.p = 0;
+	//console.dir(tt); console.dir(tt.__proto__);
+
+	for(var i=0;i<as.length;i++){
+		(function(){
+			var j=i;
+			as[j].tt = tt;
+			as[j].onclick=function(){
+				this.tt.slide(j);
+				return false;
+			}
+		})();
+	}
+}
+</script>

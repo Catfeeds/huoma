@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{$zhan.title}>_一路展行业展会</title>
+    <meta name="description" content="<{strip_tags($zhan.content|cutstr:200:'.')}>">
+    <meta name="Keywords" content="一路展行业展会,展装O2O,<{$zhan.title}>,行业展会">
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageArticle3" class="page1" data-dom-cache="false" data-title="<{$zhan.title}>_一路展行业展会">
+   
+    <div data-role="header" class="header" data-position="fixed">
+        <a href="<{link ctl='zhan/index'}>" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+        <h1>展会详情</h1>
+        <a href="#article3-menu" class="ui-btn iconfont icon-menu"></a>
+    </div>
+    <div data-role="main">
+                <!-- 图片轮播 -->
+                <div class="index-focus article3-focus" id="zhanhui-<{$PAGEID}>"  data-slideid="article3Focus">
+                    <div class="hd">
+                        <ul></ul>
+                    </div>
+                    <div class="bd">
+                        <ul>
+                            <!-- 开发说明：轮播图，循环此 li 即可-->
+                           <!--  <{foreach from=$photos item=item name=photo}>  
+                           <li><a href="#"><img src="" _src="<{$pager.img}>/<{$item.photo}>"/> </a></li>
+                           <{/foreach}> -->
+                            <{if $zhan.thumb}>
+                                <li><a href="#"><img src="" _src="<{$pager.img}>/<{$zhan.thumb}>"/> </a></li>
+                                <{foreach from=$photos item=item name=photo}>
+                                    <li><a href="#"><img src="" _src="<{$pager.img}>/<{$item.photo}>"/> </a></li>
+                                <{/foreach}>
+                            <{else}>
+                                <li><a href="#"><img src="//www.jisunet.com/mobile/img/weishangchuan.jpg"/> </a></li>
+                           <{/if}>
+                        </ul>
+                    </div>
+                </div>
+                <div class="article3-main">
+                    <div class="article3-title">
+                        <h3><{$zhan.title}></h3>
+                    </div>
+                    <!-- 展馆展会内容部分-->
+                    <div class="article3-details">
+                        <ul data-role="listview">
+                           <{if $zhan.fromtime}><li><span class="iconfont icon-calender"></span>举办时间：<i><{$zhan.fromtime|format:"Y-m-d"}>至<{$zhan.totime|format:"Y-m-d"}></i></li><{/if}>
+                           <{if $guan.title}><li><span class="iconfont icon-flag"></span>举办展馆：<i><{$guan.title}></i></li><{/if}>
+                           <{if $guan.addr}><li><span class="iconfont icon-local"></span>展会地址：<i><{$guan.addr}></i></li><{/if}>
+                           <{foreach from=$attr_list item=attr}>  
+                           <li><span class="iconfont icon-industry-report"></span><{$attr.title}>：<i><{$attr.val}></i></li>
+                           <{/foreach}>
+                        </ul>
+
+                    </div>
+                    <!-- 展馆展会主内容区-->
+                    <div class="article3-details">
+                        <h3><i>展会介绍</i><span>&nbsp;</span></h3>
+                        <div class="article-3-details-con">
+                            <p><{$zhan.content}></p>
+                        </div>
+                    </div>
+                    <div class="article3-details">
+                        <h3><i>主办机构</i><span>&nbsp;</span></h3>
+                        <div class="article-3-details-con">
+                            <p><{$zhan.sponsor}></p>
+                        </div>
+                    </div>
+                    <div class="article3-details">
+                        <h3><i>承办机构</i><span>&nbsp;</span></h3>
+                        <div class="article-3-details-con">
+                            <p><{$zhan.undertaker}></p>
+                        </div>
+                    </div>
+                </div>
+    </div>
+<!-- panel 菜单 -->
+<{include file="mobile:block/top.html"}>
+<{include file="mobile:block/footer.html"}>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+    <link href="//www.jisunet.com/mobile/css/myTheme.css" rel="stylesheet"/>
+    <link href="//www.jisunet.com/mobile/css/jquery.mobile.icons.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="//www.jisunet.com/mobile/css/jquery.mobile.structure-1.4.5.css"/>
+    <title>一路展</title>
+</head>
+<body>
+<div data-role="page" id="pageArticleGallery" class="page1" data-dom-cache="false" data-title="报价项目详情页">
+    <!-- 报价panel 用来加载报价清单-->
+    <div data-role="panel" data-position="right" data-display="overlay" id="offerViewPanel"></div>
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>报价项目详情页</h1>
+    </div>
+    <div data-role="main">
+                <div data-role="content" class="article-main">
+                    <div class="article-title">
+                       <!--  <div class="article-author">
+                         <a href="#"><img src="/img/designer.jpg"/> </a>
+                                        
+                         <p><{$zhantai.uid}></p>
+                                      </div> -->
+                        <div class="article-title-inner">
+                            <h2><{$zhantai.title}></h2>
+                        </div>
+                        <div class="article2-author">
+                           <!--  <a href="#"><img src="img/designer.jpg"/> </a> -->
+                           <p><{if $zhantai.chang}>长：<{$zhantai.chang}><span>|</span><{/if}> <{if $zhantai.kuan}>宽：<{$zhantai.kuan}><span>|</span> <{/if}><{if $zhantai.gao}>高：<{$zhantai.gao}><span>|</span><{/if}>面积：<{$zhantai.mianji}></p>
+                        </div>
+                      </div>
+
+                    <!-- 文章内容部分-->
+                    <div class="article2-details">
+                        <{if $zhantai.intro}><p>项目简介：<{$zhantai.intro}></p><{/if}>
+                    </div>
+                    <div class="article-details">
+                        <!--设计图列表-->
+                        <{foreach $list_pic as $val}>
+                        <a  href="#" data-direction="reverse" data-rel="back">
+                            <img src="<{$pager.img}>/<{$val.photo}>_expo.jpg"/>
+                        </a>
+                        <{/foreach}>
+                        
+                    </div>
+                    <div class="article-notice">
+                        <h3>报价注意事项：</h3>
+                        <small>地面部分：仅指地面铺材</small>
+                        <small>主体结构：指全部制作部分</small>
+                        <small>电工/AV：所有电器、AV</small>
+                        <small>美工：指全部美工字、画面</small>
+                        <small>运输、搭建、拆除</small>
+                        <small>以最终总报价为准，请合理调整分项报价！</small>
+                        <small>不宜报价过高，请保留合理利润！</small>
+                    </div>
+                </div>
+    </div>
+    <div data-role="footer" data-position="fixed" class="footer fOffer-footer">
+        <div class="ui-grid-a">
+            <div class="fOffer-footer-r">
+                <a href="/member/chao/baojia-create-<{$baojia.baojia_id}>.html" class="ui-btn"><i class="iconfont icon-designno"></i>查看</a>
+            </div>
+        </div>
+    </div>
+</div>
+<{include file="mobile:member/block/bottom.html"}>
+</body>
+</html>

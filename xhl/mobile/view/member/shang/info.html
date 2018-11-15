@@ -1,0 +1,67 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageFactoryInfo" class="page1" data-dom-cache="false" data-title="参展商信息">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>基本信息</h1>
+    </div>
+    <div data-role="main">
+        <div data-role="content" class="factoryInfo-upload">
+            <form method="post" action="<{link ctl='member/shang:info'}>" id="factoryInfoForm" data-ajax="false" onsubmit="return false;"
+                  enctype="multipart/form-data">
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="companyName">公司名称：</label>
+                    <input type="text" name="data[title]" id="companyName" placeholder="请输入公司名称"  value="<{$shop.title|default:''}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryArea">地区：</label>
+                   <!--  <{if $shop.city_id}><{$shop.city_name}><{/if}> -->
+                    <input type="text" name="data[city_id]" id="factoryArea" placeholder="正在获取地理位置..." >
+                </div> 
+                <!-- <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryLogo">公司Logo：</label>
+                    <{if 0 && $shop.logo}><img src="<{$pager.img}>/<{$shop.logo}>"/><{/if}>
+                    <div id="factorylogo"></div>
+                </div> -->
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorycontact">公司负责人：</label>
+                    <input type="text" name="data[contact]" id="factoryName" placeholder="请输入公司负责人" value="<{$shop.contact|default:$MEMBER.uname}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorymobile">负责人手机：</label>
+                    <input type="text" name="data[mobile]" id="factorymobile" placeholder="请输入负责人手机号" value="<{$shop.mobile|default:$MEMBER.mobile}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryphone">公司电话：</label>
+                    <input type="text" name="data[phone]" id="factoryOwn" placeholder="公司电话" value="<{$shop.phone|default:''}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorymail">公司邮箱：</label>
+                    <input type="text" name="data[mail]" id="factorymail" placeholder="公司邮箱" value="<{$shop.mail|default:$MEMBER.mail}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryfox">公司传真：</label>
+                    <input type="text" name="data[fox]" id="factoryfox" placeholder="公司传真" value="<{$shop.fox|default:''}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryqq">QQ：</label>
+                    <input type="text" name="data[qq]" id="factoryqq" placeholder="QQ" value="<{$shop.qq|default:''}>">
+                </div>
+                 <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorydomain">公司网站：</label>
+                    <input type="text" name="data[domain]" id="factorydomain" placeholder="公司网站" value="<{$shop.domain|default:''}>">
+                </div>
+                 <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryaddr">公司地址：</label>
+                    <input type="text" name="data[addr]" id="factoryaddr" placeholder="公司地址" value="<{$shop.addr|default:''}>">
+                </div>
+                 <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryinfo">公司介绍：</label>
+                    <textarea name="data[info]"><{$shop.info}></textarea>
+                </div>
+                <button type="submit" id="factoryInfo-btn" class="factoryInfo-btn">发布</button>
+            </form>
+        </div>
+    </div>
+<{include file="mobile:member/block/footer.html"}>

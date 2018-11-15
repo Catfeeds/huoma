@@ -1,0 +1,58 @@
+*{margin:0;padding:0}
+input,select{background:#fff}
+.from_all{width:900px;height:1000px;margin:60px auto;font-size:14px}
+.from_all_table .from_input{height:32px;border-radius:3px;border:1px solid #d8d8d8;width:30%;line-height:32px;padding-left:5px}
+.from_all_table  .from_input:hover{border:1px solid #409DFE;box-shadow:0 0 3px #409DFE;}
+.from_all_table  td{padding-bottom:10px}
+.from_all_table .form_width{width:15%;text-align:right;margin-right:10px}
+.from_all_table .form_textarea{width:70%}
+.from_all_table .from_check input{margin-right:10px;margin-left:10px;vertical-align:middle;}
+.from_all_table .from_check{font-size:12px;color:#333} 
+.from_all_table .from_check_class input{margin-right:5px;margin-left:5px;vertical-align:middle;}
+.from_all_table .from_check_class{font-size:12px;color:#333} 
+
+
+.from_all_table span{margin-left:10px;line-height:28px;color:#949494;font-size:12px}
+.from_all_table .form_select select{width:20%;height:28px;border:1px solid #d8d8d8;}
+.from_all_table .from_input_org{padding:2px 3px 2px 3px;}
+.from_all_table  button{background:#1e57f9;color:#fff;font-size:14px;text-align:center;line-height:36px;width:10%;border:none;border-radius:3px;margin-left:20px}
+.from_all_table  button a{color:#fff}
+.from_all_table  form_but:hover{backgound:#6187f4}
+.from_all_table .form_but_hui  {background:#e1e2e3;color:#000}
+.from_all_table .form_but_hui1{color:#333}
+
+.from_all_table .form_but {
+    background: #1e57f9;
+    color: #fff;
+    height: 32px;
+    width: 80px;
+}
+.from_all_table .form_but_hui {
+    background: #e1e2e3;
+    color: #000;
+    height: 32px;
+    width: 80px;
+    margin-left:20px
+}
+.from_all_table .from_check_class .input_wrap,.from_all_table .from_check .input_wrap{
+    display:inline-block;
+    height:30px;
+    line-height:30px;
+    padding-right:20px;
+}
+/* select */
+.select_icon{position:relative;float:left;margin:0 10px;}
+.select_icon dt{height:30px;display:inline-block;border:1px solid #d2ccc4;background:#fcfcfb url(images/ico.gif) no-repeat 97px center;line-height:30px;font-weight:bold;padding-left:10px;cursor:pointer;width:90px;padding-right:12px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;position:relative;z-index:9;border-radius:3px}
+.select_icon dt:hover,.select dt.cur{border:1px solid #409DFE;box-shadow:0 0 3px #409DFE;}
+.select_icon dd{position:absolute;left:0;top:29px;border:1px solid #d2ccc4;background:#fff;display:none;z-index:12}
+.select_icon dd ul{padding:4px;width:104px;max-height:250px;overflow:auto;box-shadow:2px 2px 2px #ccc}
+.select_icon dd ul li a{line-height:28px;display:block;padding:0 8px;}
+.select_icon dd ul li a:hover{background:#f5f5f5;}
+/* select */
+.select_icon1{position:relative;float:left;margin:0 10px;}
+.select_icon1 dt{height:30px;display:inline-block;border:1px solid #d2ccc4;background:#fcfcfb url(images/ico.gif) no-repeat 97px center;line-height:30px;font-weight:bold;padding-left:10px;cursor:pointer;width:90px;padding-right:12px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;position:relative;z-index:1;border-radius:3px}
+.select_icon1 dt:hover,.select dt.cur{border:1px solid #409DFE;box-shadow:0 0 3px #409DFE;}
+.select_icon1 dd{position:absolute;left:0;top:29px;border:1px solid #d2ccc4;background:#fff;display:none;z-index:12}
+.select_icon1 dd ul{padding:4px;width:104px;max-height:250px;overflow:auto;box-shadow:2px 2px 2px #ccc}
+.select_icon1 dd ul li a{line-height:28px;display:block;padding:0 8px;}
+.select_icon1 dd ul li a:hover{background:#f5f5f5;}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>干点活</title>
+    <meta name="keywords" content="干点活"/>
+    <meta name="description" content="干点活"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/project/project.js"></script>
+    <script src="js/designer_info_load.js"></script>
+    <link rel="stylesheet" href="css/common.css"/>
+    <link rel="stylesheet" href="css/tzrxq.css"/>
+    <link rel="stylesheet" href="css/iconfont.css"/>
+    <link rel="stylesheet" href="css/iconfont1.css"/>
+    <link rel="stylesheet" href="css/iconfont3.css"/>
+    <link rel="stylesheet" href="css/iconfont4.css"/>
+    <link rel="stylesheet" href="css/style2.css" />
+</head>
+<body>
+<div id="wrapper" class="collapse">
+    <div class="screen animate collapse">
+        <header class="head">
+            <a href="javascript:history.go(-1);" class="fanhui"><img src="img/tou_03.png"></a>
+            <span class="s1">详情</span>
+            <!--<a href="#" class="message"><img src="img/tou_05.png"></a>-->
+        </header>
+        <div class="navbar">
+            <div class="shang">
+                <dl>
+                    <dt><img class="img1" src="img/user_photo.jpg" id="detail_img"></dt>
+                    <dd><span class="s2" id="detail_title"></span></dd>
+                </dl>
+            </div>
+        </div>
+        <div class="main">
+            <p class="kai">开启二度人脉，找熟人引荐</p>
+        </div>
+        <div class="main1">
+            <div id="about_list">
+            </div>
+            <div class="bao">
+                <p id="div1">
+                    <a class="teshu" href="javascript:void(0);">收起</a>
+                </p>
+            </div>
+        </div>
+        <div class="main2">
+            <p class="pgone">项目经验</p>
+            <div class="list" id="item_list">
+            </div>
+        </div>
+        <div class="main3">
+            <p class="pgone">相关人</p>
+            <div class="list">
+                <div class="list_1">
+                    <div class="list1_1">
+                        <p class="fen">粉丝：<span id="fans_num">0</span></p>
+                    </div>
+                    <div class="list1_2">
+
+                        <p class="fen">关注：<span id="follow_num">0</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <ul>
+            <li class="qub"><a href="javascript:follow ();"><i class="iconfont">&#xe600;</i><span class="sp1">关注</span></a></li>
+            <li class="qub1"><a href="javascript:void (0);"><i class="iconfont">&#xe69a;</i><span class="sp2">约谈</span></a></li>
+            <li><a class="sp3" href="javascript:void (0);">查看商业计划</a></li>
+        </ul>
+    </div>
+</div>
+<input type="hidden" id="designer_id">
+</body>
+</html>
+<script type="text/javascript">
+    //展开收起
+    var oDiv = document.getElementById('div1');//获取文字的盒子
+    var oA = oDiv.getElementsByTagName('a');//获取 a 标签
+    var onOff = true;
+    var old = '';
+    oA[0].onclick = function move() { //a 链接点击后执行 move 函数
+        if (onOff) {  //判断
+            onOff = false;
+            old = oDiv.innerHTML;
+            oDiv.innerHTML = oDiv.innerHTML.substring(0, 26) + '...<a style="color:blue;" href="javascript:;"> 展开 </a>';//默认显示65个字符，字符末尾添加 “...>>展开”
+            oA = oDiv.getElementsByTagName('a');
+            oA[0].onclick = move;
+        } else {
+            onOff = true;
+            oDiv.innerHTML = old;
+            oA = oDiv.getElementsByTagName('a');
+            oA[0].onclick = move;
+        }
+    }
+</script>
+
+

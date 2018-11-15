@@ -1,0 +1,23 @@
+fieldset{min-width:inherit;}
+.qiandan-item{margin:10px 25px;}
+.qiandan-item .panel-heading .panel-title{font-size:12px;}
+.order-detail-r{padding-left:15px;}
+.panel-table{width:100%;margin-bottom:-3px;}
+.panel-table th{text-align: left;padding:6px 8px;}
+.panel-table tr td{padding:6px 8px;border-bottom:1px solid #F3F3F3;white-space:normal;}
+.panel-table-odd tr td:nth-child(odd){text-align: right;}
+
+.pull-right{float:right !important;}
+.pull-left{float:left !important;}
+.order-edge span{background-color: #F97D26; color: #fff; padding: 5px 10px; font-weight: 700;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;}
+
+.alert{padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;}
+.alert-danger{color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;}

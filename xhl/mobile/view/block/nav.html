@@ -1,0 +1,23 @@
+<div class="menu animate ">
+    <div class="menu-user">
+        <img src="<{$pager.img}>/<{$MEMBER.face}>"/>
+        <div class="menu-user-info">
+            <{if $MEMBER.uid}>
+            <a class="unlog" href="<{link ctl='member/designer:index'}>"><{$MEMBER.uname}></a>
+            <a class="unlog" href="<{link ctl='user:loginout'}>">退出</a>
+            <{else}>
+            <a class="unlog" href="<{link ctl='member/designer:index'}>">登录</a>
+            <a class="unlog" href="<{link ctl='user:regone' arg0='designer'}>">注册</a>
+            <{/if}>
+        </div>
+    </div>
+
+    <ul class="menu-list">
+        <li class="<{if $selected_id eq 1}>current<{/if}>"><a href="<{link ctl='index'}>">首页</a></li>
+        <li class="<{if $selected_id eq 2}>current<{/if}>"><a href="<{link ctl='index'}>">项目</a></li>
+        <li class="<{if $selected_id eq 3}>current<{/if}>"><a href="<{link ctl='designer'}>">技术</a></li>
+        <li class="<{if $selected_id eq 4}>current<{/if}>"><a href="javascript:void(0);">活儿</a></li>
+        <li><a href="javascript:void(0);">更多</a></li>
+        <li><a href="javascript:void(0);">APP下载</a></li>
+    </ul>
+</div>

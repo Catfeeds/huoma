@@ -1,0 +1,9 @@
+<{foreach $guoqi as $item}>
+<li>
+    <a data-transition="slide" href="/member/chao/baojia-guoqiimg-<{$item.baojia_id}>.html">
+        <img src="<{$pager.img}>/<{$item.photo}>_small.jpg">
+        <h2><{$item.title|default:'--'}></h2>
+        <p><strong class="past">报价截止：<{$item.endtime|format:'Y-m-d H:i:s'}></strong></p>
+    </a>
+</li>
+<{/foreach}>

@@ -1,0 +1,28 @@
+<{include file="member/header.html"}>
+
+<div class="base_info"><b>企业模板选择</b></div>
+<form mini-form="company" action="<{link ctl='member/company:template'  http=true}>" method="post">
+    <table cellspacing="0" cellpadding="0" class="form">
+        <tr>
+            <th></th>
+            <td >
+                <a target="_blank" style="font-size: 18px; color: red;  " href="<{link ctl='company' arg0=$companyex.company_id}>">点击预览我的企业</a>
+            </td>
+        </tr>
+        <tr>
+            <th class="w-100"><span class="red">*</span>模板：</th>
+            <td>
+                <ul class="template_list">
+                    <{foreach from=$template_list key=key item=item}>
+                    <li>
+                        <img src="<{$pager.theme}>/<{$item.photo}>" />
+                        <label><input type="radio" name="template" id="template" <{if $key == $companyex['template_id']}> checked="checked" <{/if}> value="<{$key}>" /><{$item.name}></label>
+                    </li>
+                    <{/foreach}>
+                </ul>
+            </td>
+        </tr>
+        <tr><th></th><td><input type="submit" value="保存" class="set_btn" /></td></tr>
+    </table>
+</form>
+<{include file="member/footer.html"}>

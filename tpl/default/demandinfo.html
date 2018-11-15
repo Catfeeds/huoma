@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>项目详情页</title>
+    <{include file="block/header.html"}>
+</head>
+<body class="gdh-body">
+<div class="main-banner">
+    <{include file="block/headernav.html"}>
+    <!--头部导航 END-->
+</div>
+<!--user 头 END-->
+<div class="container-fluid case-con">
+    <div class="case-row">
+        <div class="col-sm-9 case-col">
+            <div class="case-detail">
+                <h3>
+                    <small class="pull-right"><div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a></div>
+                        <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></small>
+                    <{$demand.title}>
+                </h3>
+                <div class="case-detail-d">
+                    <{if $demand.thumb}>
+                    <img src="<{$pager.img}>/<{$demand.thumb}>" alt="" class="pull-left">
+                    <{else}>
+                    <img src="/tpl/default/asset/img/xiangmutu.png" alt="" class="pull-left">
+                    <{/if}>
+                    <div class="case-detail-dr">
+                        <table class="table">
+                            <tbody>
+                            <tr>
+                                <th>需求类型：</th><td><{$tree[$demand.demandtype]['title']}></td>
+                                <th>标签：</th>
+                                <td>
+                                    <{foreach $label as $teams}>
+                                        <{if in_array($teams.id,$demand.label)}>
+                                            <span style="border: 1px solid #cc0000;float: left;display: block;min-width: 40px;text-align: center;margin-right: 10px"><{$teams.labelname}></span>
+                                        <{/if}>
+                                    <{/foreach}>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>金额：</th><td>￥<{$demand.money|default:'--'}></td>
+                                <th>浏览次数：</th><td><{$demand.look}>次</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <{if 0}>
+                        <a class="btn btn-block btn-default" href="<{link ctl='detail-xmsheji' arg0=$demand.xiangmu_id}>"><small>关注此项目</small></a>
+                        <{/if}>
+                    </div>
+                </div>
+            </div>
+            <div class="case-detail">
+                <h4>
+                    <{$demand.title}>
+                </h4>
+                <div class="case-detail-d">
+                    <{$demand.content}>
+                </div>
+            </div>
+            <div class="case-detail" style="font-size: 25px">
+                我有类似的需求，立即发布需求，让专业人才来找您！
+                <{if $MEMBER['uid'] }>
+                <a href="<{link ctl='member/demand-add'}>?demandtype=<{$demand.demandtype}>&&label=<{implode(',',$demand.label)}>" class="btn js-dialog btn-login-list" style="font-size: 30px">我要发布需求</a>
+                <{else}>
+                <a href="<{link ctl='user'}>" title="网站登录" data-src="/tpl/default/user/login.html" class="btn js-dialog btn-login-list" style="font-size: 30px">我要发布需求</a>
+                <{/if}>
+            </div>
+            <div class="case-detail">
+                <h4 class="case-des-title">
+                    <span>相关推荐</span>
+                </h4>
+                <style>
+                    .recommend{ float: left;margin-right: 20px; border: 1px solid #ccc;width: 48%;text-align: center;}
+                    .recommend dt{ float: left;height: 100%;line-height: 100%;}
+                </style>
+                <div class="case-detail-d">
+                    <{foreach $recommend as $val}>
+                    <a href="<{link ctl='demand-info' arg0=$val.id}>">
+                        <dl class="recommend">
+                            <dt><img src="<{$pager.img}>/<{$val.thumb}>" style="width: 100%;height: 200px" onerror="this.src='/tpl/default/asset/img/xiangmutu.png'"></dt>
+                            <dd style="height: 50px;line-height: 50px"><{$val.title}></dd>
+                            <dd style="height: 50px;line-height: 50px"><{$val.look}>次</dd>
+                            <dd style="height: 50px;line-height: 50px">￥<{$val.money}></dd>
+                        </dl>
+                    </a>
+                    <{/foreach}>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 case-col">
+            <div style="background-color: #fff;">
+                <a href="/" target="_brank" data-link="10159068">
+                    <style>
+                        .title{font-size: 14px;font-weight: 700;color: #333;}
+                    </style>
+                    <div style="color: #484848;font-size:20px;font-weight: 700;padding: 10px;border-bottom: 1px solid #e6e6e6;margin-bottom: 10px;line-height: 100%">
+                        上干点活网，找专业人做专业事
+                    </div>
+                    <div>
+                        <ul style="list-style: none;">
+                            <li>
+                                <div>
+                                    <p class="title">海量服务</p>
+                                    <p>覆盖上千种服务，600万服务商帮您解决需求。</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <p class="title">免费咨询</p>
+                                    <p>干点活网上百名专业顾问，免费为您1对1在线答疑。</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <p class="title">客户保障</p>
+                                    <p>验收满意再付款，有问题先行赔付。</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title"><a class="pull-right" href="<{link ctl='deslist' arg0=$demand.xiangmu_id}>"><small>更多</small></a>技术人员推荐</h4>
+                </div>
+                <div class="panel-body">
+                    <ul class="case-recommend">
+                        <{foreach $tjjishu as $jishu}>
+                        <li>
+                            <a href="<{link ctl='center-index' arg0=$jishu.uid}>">
+                                <{if $jishu.face}>
+                                <img src="<{$pager.img}>/<{$jishu.face}>" alt="" class="pull-left">
+                                <{else}>
+                                <img src="/tpl/default/asset/img/tx.png" alt="" class="pull-left">
+                                <{/if}>
+                                <p>
+                                    <span><{$jishu.name}></span> <br>
+                                    <{$jishu.city_name}> / <{$jishu.group_id}>年 / <{$jishu.group_name}><br>
+                                    关注：12340 / 收藏：1256
+                                </p>
+                            </a>
+                        </li>
+                        <{/foreach}>
+                    </ul>
+                </div>
+            </div>
+            <!--关于二次开发的文章 END-->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title"><a class="pull-right" href="<{link ctl='list'}>"><small>更多</small></a>本月下载排行</h4>
+                </div>
+                <div class="panel-body">
+                    <ul class="case-recommend">
+                        <{foreach $items as $item}>
+                        <li>
+                            <a href="<{link ctl='detail' arg0=$item.xiangmu_id}>">
+                                <img src="<{$pager.img}>/<{$item.thumb}>" alt="" class="pull-left">
+                                <div><span><{$item.title}></span></div>
+                                <div>
+                                    <p><{$item.desc|cutstr:30}><span>[查看详情]</span></p>
+                                </div>
+                            </a>
+                        </li>
+                        <{/foreach}>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--footer-->
+<{include file="block/footer.html"}>
+
+</body>
+</html>

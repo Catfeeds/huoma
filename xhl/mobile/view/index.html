@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>展装设计搭建_展装设计师_搭建工厂_一路展展装网_手机版</title>
+    <meta name="description" content="一路展展装原本如此轻松~一路展是展台设计、展台搭建的展装O2O平台,让展装设计搭建省去诸多中间环节,给予参展企业实现 省心、省钱、省力 的互联网展装服务新体验.">
+    <meta name="Keywords" content="一路展,展装网,特装网,展台搭建,展台设计,展装APP,展装O2O,特装O2O,传统会展,互联网化,展装服务">
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageIndex" data-mylist-con="index-recommend-con" data-mylist-src="/index-items.html?" class="page1"
+     data-dom-cache="false" data-title="展装设计搭建_展装设计师_展装工厂_一路展展装网_手机版">
+    <div data-role="header" data-position="fixed" class="header index-header">
+        <a href="#article3-menu" class="ui-btn iconfont icon-menu ui-btn-right"></a>
+        <h1><img src="//www.jisunet.com/mobile/img/logo.png"/></h1>
+    </div>
+    <div data-role="main">
+                <!-- banner轮播 -->
+                <div class="index-focus" id="indexFocus-<{$PAGEID}>" data-slideid="indexFocus">
+                    <div class="hd">
+                        <ul></ul>
+                    </div>
+                    <div class="bd">
+                        <ul>
+                            <!-- 开发说明：轮播图，循环此 li 即可-->
+							<li><a href="#"><img src="" _src="//www.jisunet.com/mobile/img/1.png"/> </a></li>
+                            <li><a href="#"><img src="" _src="//www.jisunet.com/mobile/img/2.png"/> </a></li>
+                            <li><a href="#"><img src="" _src="//www.jisunet.com/mobile/img/3.png"/> </a></li>
+                            <li><a href="#"><img src="" _src="//www.jisunet.com/mobile/img/4.png"/> </a></li>      
+							<li><a data-ajax="false" href="/yqx/index.html"><img src="" _src="//www.jisunet.com/mobile/img/0.png"/> </a></li>							
+                        </ul>
+                    </div>
+                </div>
+                <!-- 导航 -->
+                <div class="index-nav">
+                    <ul class="ui-grid-c index-nav-inner">
+                        <li class="ui-block-a"><a href="<{link ctl='chao/index'}>"><span class="iconfont icon-shop"></span><b>特装超市</b></a></li>
+                        <li class="ui-block-b"><a href="<{link ctl='oem/index'}>"><span class="iconfont icon-gaoduandingzhi"></span><b>展装OEM</b></a></li>
+                        <li class="ui-block-b"><a href="<{link ctl='sheji/index'}>"><span class="iconfont icon-chuangyi"></span><b>找设计师</b></a></li>
+                        <li class="ui-block-c"><a href="<{link ctl='gong/index'}>"><span class="iconfont icon-fenshuashuazihover"></span><b>搭建工厂</b></a></li>
+                    </ul>
+                    <ul class="ui-grid-c index-nav-inner">
+                        <li class="ui-block-a"><a href="<{link ctl='zhan/index'}>"><span class="iconfont icon-xingyezhanhui"></span><b>行业展会</b></a></li>
+                        <li class="ui-block-b"><a href="<{link ctl='news:index'}>"><span class="iconfont icon-laba"></span><b>展会资讯</b></a></li>
+                        <li class="ui-block-c"><a href="<{link ctl='guan/index'}>"><span class="iconfont icon-17"></span><b>展馆信息</b></a></li>
+                        <!-- <li class="ui-block-b"><a href="#"><span class="iconfont icon-qiandai"></span><b>速算报价</b></a></li> -->
+                        <li class="ui-block-d"><a href="<{link ctl='member/member:index'}>"><span class="iconfont icon-gerenzhongxin"></span><b>个人中心</b></a></li>
+                    </ul>
+                </div>
+                <!-- 特装推荐 -->
+                <div class="index-recommend">
+                    <div class="index-recommend-title">
+                        <a href="<{link ctl='chao/index'}>">更多>></a>
+                        <h4>特装推荐</h4>
+                    </div>
+                    <div class="index-recommend-con" id="indexList-<{$page_time}>">
+                    <{foreach $items as $item}>
+                        <div class="my-grids-1 index-item">
+                            <a href="//www.jisunet.com/mobile/chao/tezhuang-imgpage-<{$item.case_id}>.html" class="index-case">
+                                <div class="index-case-pic"><img src="<{$pager.img}>/<{$item.photo}>_small.jpg"/></div>
+
+                                <p>【<{$item.sheji.uname}>】<{$item.title}></p>
+                                <small><{$item.mianji}>㎡</small>
+                            </a>
+                            <a href="<{link ctl='sheji/shi' arg0=$item.uid}>" class="index-designer">
+                                <img src="<{$pager.img}>/<{$item.sheji.face}>">
+                            </a>
+                        </div>
+                       <{/foreach}>
+                        
+                        
+                    </div>
+                   <!-- Loading-->
+                        <div class="listLoading" id="listLoading">
+                            <div class="listLoadLabel">上拉加载更多</div>
+                        </div>
+                </div>    
+    </div>  
+<!-- panel 菜单 -->
+<{include file="mobile:block/top.html"}>
+<{include file="mobile:block/footer.html"}>

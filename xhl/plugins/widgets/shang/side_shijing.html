@@ -1,0 +1,7 @@
+<{if $data.item}>
+<img src="<{$pager.img}>/<{$data.item.thumb}>" width="243" height="128" />
+<b class="mgb0px"><{$data.item.title}></b>
+<a href="<{link ctl='shop:shijing' arg0=$item.shop_id}>" class="fense">查看实景认证 &gt;&gt;</a>
+<{else}>
+实景未认证
+<{/if}>

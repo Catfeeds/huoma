@@ -1,0 +1,24 @@
+<{foreach $items as $item}>
+            <ul data-role="listview" data-icon="false" class="order-list-item">
+                <li class="ui-li-divider">订单号：<{$item.canzhan.order_sn}><span class="ui-li-count">执行经理：<{$item.canzhan.zhixing_name}></span></li>
+                <{if $item.case.photo}>
+                <li>
+                    <a data-transition="slide" href="/member/sheji/canzhan-show-<{$item.case_id}>.html">
+                        <img src="<{$pager.url}>/<{$item.case.photo}>"/>
+                        <h2><{$item.case.title}></h2>
+                        <!-- <p>展会时间：1970-01-01至1970-01-01</p>
+                        <p class="ui-li-aside">2016-16-14</p> -->
+                    </a>
+                </li>
+                <{else}>
+                <li>
+                    设计中...
+                    <small>最迟交稿时间：<{$item.endtime|format}></small>
+                </li>
+                <{/if}>
+                <div class="order-list-footer">
+                    <a href="<{link ctl='member/sheji/canzhan:track' arg0=$item.sheji_id}>">订单详情</a>
+                    <a href="tel:<{$item.zhixing_mobile}>"><span class="iconfont icon-tel"></span> 联系执行经理</a>
+                </div>
+            </ul>
+<{/foreach}>

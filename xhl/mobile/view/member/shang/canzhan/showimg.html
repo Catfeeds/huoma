@@ -1,0 +1,36 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageHammer" class="pageHammer" data-dom-cache="false" data-title="设计稿">
+    <div data-role="header" data-position="fixed" data-tap-toggle="false" class="header hammerHeader" data-fullscreen="true">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1><p class="hammerNum"></p>详情页</h1>
+        <a href="<{link ctl='member/shang/canzhan:show' arg0=$zhantai.case_id arg1=$cz_id}>" data-transition="slide" class="ui-btn iconfont icon-iconfont30"></a>
+    </div>
+    <div data-role="main">
+        <div class="swiper-container" data-conswiper="true" id="showimg-<{$PAGEID}>">
+            <div class="swiper-wrapper">
+                <{foreach $xiaoguotu as $key=>$val}>
+                    <{foreach $val as $item}>
+                        <div class="swiper-slide">
+                            <div class="hammerGallery">
+                                <img src="<{$pager.img}>/<{$item.photo}>_expo.jpg"/>
+                            </div>
+                        </div>
+                    <{/foreach}>
+                <{/foreach}>
+            </div>
+        </div>     
+    </div>
+    <div data-role="footer" data-position="fixed" class="footer hammerFooter" data-tap-toggle="false" data-fullscreen="true">
+        <{if $zhantai.caizhi}><p>材质要求：<{$zhantai.caizhi}></p><{/if}>
+        <div class="ui-grid-b hammerFooterMenu">
+            <div class="ui-block-a"></div>
+            <div class="ui-block-b">
+            </div>
+            <div class="ui-block-c"></div>
+        </div>
+    </div>
+</div>
+<{include file="mobile:member/block/bottom.html"}>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>干点活</title>
+	<meta name="keywords" content="干点活"/>
+    <meta name="description" content="干点活"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui"/>
+	<meta name="apple-touch-fullscreen" content="YES" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<script src="js/jquery-1.11.3.js"></script>
+	<script src="js/index.js"></script>
+	<link rel="stylesheet" href="css/common.css" />
+	<link rel="stylesheet" href="css/fanganxq.css" />
+	<link rel="stylesheet" href="css/iconfont.css" />
+	<link rel="stylesheet" href="css/iconfont1.css" />
+	<link rel="stylesheet" href="css/iconfont3.css" />
+	<link rel="stylesheet" href="css/iconfont4.css" />
+    <style type="text/css">
+      
+</style>
+
+
+
+<script type="text/javascript" src="js/vv.js" charset="UTF-8"></script>
+
+<script>
+
+wx.config({
+    appId: 'wx81e59e63edd9eae4',
+    timestamp: '1514541447', 
+    nonceStr: '1514541447', 
+    signature: '95b501c12cba44cbbedc0ce85300ed1e1f06f0b8',
+    jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'] 
+});
+
+wx.ready(function(){
+
+    var shareImg   = 'http://pp1.evervc.com/evervc.png@!logom';
+	var shareLink  = 'http://www.evervc.com/';
+	var shareTitle = '天天投融资中项目';
+	var shareDesc  = '天天投已汇聚近2000个知名投资机构/专业投资人、5000多个正在融资的优秀创业公司（娱乐/金融/医疗/O2O），帮助多个项目完成数千万的投融资对接，并提供全产业链资源扶持、以提升创业投资成功率。';
+	var tlDesc     = '天天投已汇聚近2000个知名投资机构/专业投资人、5000多个正在融资的优秀创业公司（娱乐/金融/医疗/O2O），帮助多个项目完成数千万的投融资对接，并提供全产业链资源扶持、以提升创业投资成功率。';
+
+	wx.onMenuShareTimeline({
+	    title: tlDesc,
+	    link: shareLink,
+	    imgUrl: shareImg
+	});
+	
+	wx.onMenuShareAppMessage({
+	    title: shareTitle, 
+	    desc: shareDesc,
+	    link: shareLink,
+	    imgUrl: shareImg
+	});
+});
+</script>
+</head>
+
+<body>
+
+<div id="wrapper" class="collapse">
+	
+<style>
+        
+
+</style>
+
+    	<script>
+    		$(function(){
+    			$(".menu-ico").click(function(e){
+    				e.preventDefault();
+    				$(this).hide();
+                    $("#wrapper").css("overflow", "hidden");
+    				$("div.screen, div.fixedGuide").addClass("expand").removeClass("collapse");
+    				$(".menu-close").fadeIn();
+    			});
+    			
+    			$(".menu-close").click(function(e){
+    				e.preventDefault();
+    				$(this).hide();
+    				$("div.screen, div.fixedGuide").removeClass("expand").addClass("collapse");
+    				$(".menu-ico").fadeIn();
+                    window.setTimeout(function(){$("#wrapper").css("overflow", "visible");}, 1000);
+    			});
+    		});
+    	</script>
+
+<div class="screen animate collapse" >
+
+
+       
+       
+		<script>
+		$(function(){
+			$(".search-status a").click(function(e){
+				e.preventDefault();
+				$(this).hide();
+				$(".search-cancel, .search-wrap").fadeIn();
+			});
+			
+			$(".search-cancel").click(function(e){
+				e.preventDefault();
+				$(".search-cancel").hide();
+				$(".search-wrap").fadeOut();
+				$(".search-status a").fadeIn();
+			});
+			
+		});
+		</script>        
+   
+  <header class="head">
+              <a href="jjfa.html" class="fanhui"><img src="img/tou_03.png"></a>
+              <span class="s1">解决方案</span>
+        	
+       
+    </header>
+    <div class="main item-card">
+      <!--<div class="main2">
+      	<a href="xmfangan.html">
+      	<dl>
+      		<dt><img src="img/index_11.png"></dt>
+      		<dd>
+      			<p class="p4">在线抓娃娃</p>
+      			<p class="p5">设置后我们可以根据你的投资领域、阶段等信息为你推荐匹配</p>
+      		</dd>
+      	</dl>
+      	</a>
+      	<div class="rongzi">
+      		<a href="xmfangan.html"><p class="p6">融资￥100万</p></a>
+      		<div class="xin">
+      			<div class="left">
+      				<i class="iconfont">&#xe608;</i><span>9</span>
+      			</div>
+      			<div class="center"><i class="iconfont">&#xe64b;</i><span>1</span></div>
+      			<div class="right"><i class="iconfont">&#xe679;</i></div>
+      		</div>
+      	</div>
+      </div>
+      
+      
+       <div class="main2">
+       	<a href="xmfangan.html">
+      	<dl>
+      		<dt><img src="img/index_11.png"></dt>
+      		<dd>
+      			<p class="p4">在线抓娃娃</p>
+      			<p class="p5">设置后我们可以根据你的投资领域、阶段等信息为你推荐匹配</p>
+      		</dd>
+      	</dl></a>
+      	<div class="rongzi">
+      		<a href="xmfangan.html"><p class="p6">融资￥100万</p></a>
+      		<div class="xin">
+      			<div class="left">
+      				<i class="iconfont">&#xe608;</i><span>9</span>
+      			</div>
+      			<div class="center"><i class="iconfont">&#xe64b;</i><span>1</span></div>
+      			<div class="right"><i class="iconfont">&#xe679;</i></div>
+      		</div>
+      	</div>
+      </div>
+      </a>
+      
+            <div class="main2">
+            	<a href="xmfangan.html">
+      	<dl>
+      		<dt><img src="img/index_11.png"></dt>
+      		<dd>
+      			<p class="p4">在线抓娃娃</p>
+      			<p class="p5">设置后我们可以根据你的投资领域、阶段等信息为你推荐匹配</p>
+      		</dd>
+      	</dl></a>
+      	<div class="rongzi">
+      		<a href="xmfangan.html"><p class="p6">融资￥100万</p></a>
+      		<div class="xin">
+      			<div class="left">
+      				<i class="iconfont">&#xe608;</i><span>9</span>
+      			</div>
+      			<div class="center"><i class="iconfont">&#xe64b;</i><span>1</span></div>
+      			<div class="right"><i class="iconfont">&#xe679;</i></div>
+      		</div>
+      	</div>
+      </div>
+      </a>
+             <div class="main2">
+            	<a href="xmfangan.html">
+      	<dl>
+      		<dt><img src="img/index_11.png"></dt>
+      		<dd>
+      			<p class="p4">在线抓娃娃</p>
+      			<p class="p5">设置后我们可以根据你的投资领域、阶段等信息为你推荐匹配</p>
+      		</dd>
+      	</dl></a>
+      	<div class="rongzi">
+      		<a href="xmfangan.html"><p class="p6">融资￥100万</p></a>
+      		<div class="xin">
+      			<div class="left">
+      				<i class="iconfont">&#xe608;</i><span>9</span>
+      			</div>
+      			<div class="center"><i class="iconfont">&#xe64b;</i><span>1</span></div>
+      			<div class="right"><i class="iconfont">&#xe679;</i></div>
+      		</div>
+      	</div>
+      </div>
+      </a>-->
+     
+      </div>
+       <a class="show" href="#">加载更多</a>
+</div>
+
+
+
+
+</div>
+</body>
+</html>
+<script>
+	var finishedLoadingMore = function(){
+        isLoadingMore = false;
+    };
+    var page = 1;
+       $.ajax({
+            type:'POST',
+            url:"json/touzir.json",
+            data:{"img":"img/index_11.png","tit":"在线抓娃娃"},
+            dataType:'JSON',
+            success:function(res){
+            	console.log(res);
+                if(!res.info || res.info.length == 0){
+                    page=-1;
+                    finishedLoadingMore();
+                    $panelLoading.fadeOut();
+                    return;
+                }
+                var str = "";
+                $.each(res.info,function(val,index,arr){
+                    str += "<div class=\"main2\"><a href=\"xmfangan.html\"><dl><dt><img src=\"img/index_11.png\"></dt><dd><p class=\"p4\">在线抓娃娃</p><p class=\"p5\">设置后我们可以根据你的投资领域阶段等信息为你推荐匹配</p></dd></dl></a><div class=\"rongzi\"><a href=\"xmfangan.html\"><p class=\"p6\">融资￥100万</p></a><div class=\"xin\"><div class=\"left\"><i class=\"iconfont\">&#xe608;</i><span>9</span></div><div class=\"center\"><i class=\"iconfont\">&#xe64b;</i><span>1</span></div><div class=\"right\"><i class=\"iconfont\">&#xe679;</i></div></div></div></div>";
+                });
+                $(".item-card").append(str);
+                page++;
+                finishedLoadingMore();
+            },
+            error:function(res){
+                console.log(res);
+                finishedLoadingMore();
+            }
+
+        });
+//  };
+</script>
+<!--<script type="text/javascript">
+      //查看更多
+	//瀑布流--ajax获取json数据
+	$.get("json/touzir.json",function(str){
+		// 解决兼容问题
+		var obj;
+		if(typeof str == "string"){
+			obj = (new Function("return" + str))();
+		}else{
+			obj = str;
+		}
+		//console.log(obj);
+		// 获取投资人列表
+		var arr = obj.list;
+		var l = arr.length;
+		// 循环
+		var ul = $(".list>ul");
+		for(var i = 0;i < l;i ++){
+			var goods = arr[i];	//获得对象
+			// 创建li
+			var li = $("<li></li>");
+			ul.append(li);
+			li.attr("goods",JSON.stringify(goods));
+			// 添加商品
+			var img = $("<img alt='' />");
+			img.attr("src",goods.img);
+			li.append(img);
+			//点击li中的img事件，进入详情页
+			img.click(function(){
+				// 找到商品
+				var goodstr = $(this).parent().attr("goods");
+				var goods = JSON.parse(goodstr);
+				//console.log( goods );
+				var str = getCookie("xq" + goods.id);
+				var num;
+				if( str == "" ){
+					num = 1;	// 如果之前没添加过该商品，则数量是1
+				}else{
+					num = JSON.parse(str).num + 1;	// 如果之前添加过该商品，则数量+1
+				}
+				goods["num"] = num;	// 该商品对象中，添加一个num属性，其值为num
+				setCookie("xq",JSON.stringify(goods));// 存储到cookie
+				//showCart();//显示购物车数量
+				location.href = "xiangqing.html";
+			})
+			// 添加商品标题
+			var h4 = $("<h4></h4>");
+			h4.html( goods.tit );
+			li.append(h4);
+			// 单价
+			var h5 = $("<h5>天天投&nbsp;创始人</h5>");
+			h5.html( goods.price );
+			li.append(h5);
+			//最下面一行
+			var oP = $("<p></p>");
+			li.append(oP);
+			// 添加到购物车
+			var oA = $("<a></a>");
+			oA.css("cursor","pointer");
+			oP.append(oA);
+			oA.click(function(){
+				// 找到商品
+				var goodstr = $(this).parent().parent().attr("goods");
+				var goods = JSON.parse(goodstr);
+				//console.log( goods );
+				var str = getCookie("goo" + goods.id);
+				var num;
+				if( str == "" ){
+					num = 1;	// 如果之前没添加过该商品，则数量是1
+				}else{
+					num = JSON.parse(str).num + 1;	// 如果之前添加过该商品，则数量+1
+				}
+				goods["num"] = num;	// 该商品对象中，添加一个num属性，其值为num
+				setCookie("goo" + goods.id,JSON.stringify(goods),3);// 存储到cookie
+				showCart();//显示购物车数量
+				if(confirm("成功添加到购物车\n\t是否去购物车结算")){
+					location.href = "gouwuche.html";
+				}
+			});
+			// 说明
+			var oi = $("<i></i>");
+			oi.html(goods.shuoming);
+			oP.append(oi);
+			// 收藏
+			var span = $("<span></span>");
+			oP.append(span);
+		}
+	});
+//	showCart();
+</script>-->
+
+

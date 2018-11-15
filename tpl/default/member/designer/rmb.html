@@ -1,0 +1,83 @@
+<{include file="member/block/header.html"}>
+<div class="ucenter_t">
+	<ul>
+		<li><a href="<{link ctl='member/designer:logs'}>">现金日志</a></li>
+		<li><a href="<{link ctl='member/designer:logs' arg0='in'}>">收入记录</a></li>
+		<li><a href="<{link ctl='member/designer:logs' arg0='out'}>">提现记录</a></li>
+		<li><a href="<{link ctl='member/member:logs'}>">展币日志</a></li>
+		<li><a href="<{link ctl='member/member:logs' arg0='in'}>">充值记录</a></li>
+		<li><a href="<{link ctl='member/member:logs' arg0='out'}>">消费记录</a></li>
+
+    <li class="on">申请支付</li></ul>
+</div>
+<div class="ucenter_c">
+<h4 class="tips" >累计收入：<font class="red"><{$MEMBER.rmb}></font>元&nbsp;&nbsp;&nbsp;&nbsp;
+累计支出：<font class="red"><{$MEMBER.rmb_zhi}></font>元&nbsp;&nbsp;&nbsp;&nbsp;
+ 申请待支付：<font class="red"><{$dai_zhi}></font>元&nbsp;&nbsp;&nbsp;&nbsp;
+可申请支付：<font class="red"><{$MEMBER.rmb_yu-$dai_zhi}></font>元</h4>
+
+<form action="<{link ctl='member/designer:rmb'}>" method="post" >
+<table cellspacing="0" cellpadding="0" class="form">
+    <tr>
+        <th>提现金额：</th>
+        <td>
+            <input type="text" name="data[rmb]" class="input w-200" value="" />
+            <span class="tip-commont">提现必须大于等于100元</span>
+        </td>
+    </tr>
+    <tr>
+        <th>支付宝帐户：</th>
+        <td>
+            <input type="text" name="data[alipay]" class="input w-200" value="<{$MEMBER.alipay}>" />
+            <span class="tip-commont">请核实准确</span>
+        </td>
+    </tr>
+    <tr>
+        <th>姓名：</th>
+        <td>
+            <input type="text" name="data[realname]" class="input w-200" value="<{$MEMBER.realname}>" />
+            <span class="tip-commont">必须与支付宝姓名一致</span>
+        </td>
+    </tr>
+    <tr>
+        <th>手机：</th>
+        <td>
+            <input type="text" name="data[mobile]" class="input w-200" value="<{$MEMBER.mobile}>" />
+            <span class="tip-commont">联系手机</span>
+        </td>
+    </tr>
+    <tr><td colspan="2">
+</td>
+      </tr>
+    <tr>
+        <th></th><td>
+        <{if $MEMBER.rmb_yu>=100}>
+   	     	<input type="submit" value="提交申请" class="green_btn" />
+        <{else}>
+   	     	<input type="submit" value="不符合提款要求" class="green_btn" disabled="disabled" />
+        <{/if}>
+        </td>
+    </tr>
+</table>
+</form>
+<table cellspacing="0" cellpadding="0" class="table">
+    <tr><th class="w-100">申请时间</th><th class="w-100">申请金额</th><th>扣税金额</th><th class="w-100">汇款手续费</th><th class="w-100">实付金额</th><th class="w-100">支付日期</th><th class="w-100">收款人</th><th class="w-100">支付宝帐户</th><th class="w-100">支付状态</th></tr>
+    <{foreach $zhi_list as $item}>
+    <tr>
+        <td><{$item.dateline|format}></td>
+        <td>￥<{$item.rmb}></td>        
+        <td>￥<{$item.shui}></td>
+        <td>￥<{$item.shouxu}></td>
+        <td>￥<{$item.shifu}></td>
+        <td><{$item.admintime|format}></td>
+        <td><{$item.realname}></td>
+        <td><{$item.alipay}></td>
+        <td><{if $item.status}>已支付<{else}>未支付<{/if}></td>
+     </tr>
+    <{foreachelse}>
+    <tr><td colspan="20"><p class="text-align tip-notice">没有数据</p></td></tr>
+    <{/foreach}>
+    <tr>
+    </table>
+</div>
+<{include file="member/block/footer.html"}>

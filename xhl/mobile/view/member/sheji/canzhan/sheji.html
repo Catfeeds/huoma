@@ -1,0 +1,31 @@
+<!--引入header-->
+<{include file="mobile:member/block/header.html"}>
+
+<div data-role="page" data-mylist-con="order-listCon" data-mylist-src="/member/sheji/canzhan-shejilist.html" id="pageList" class="pageUserFactoryOffer" data-dom-cache="false" data-title="设计中心">
+    <!-- 设计后台菜单 -->
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+        <h1>我的订单</h1>
+        <a href="#userFactoryOfferPanel" class="ui-btn iconfont icon-menu"></a>
+    </div>
+    <div data-role="main">
+                <!-- 订单列表 -->
+                <div class="order-listCon" id="shejilist-<{$PAGEID}>">
+                    <{if $items}>
+                        <{include file="mobile:member/sheji/canzhan/shejilist.html"}>
+                    <{else}>
+                        <div class="fOffer-noList">
+                            <h1><span class="iconfont icon-menu1"></span></h1>
+                        </div>
+                    <{/if}>  
+                </div> 
+                <!-- Loading-->
+                    <div class="listLoading" id="listLoading">
+                        <div class="listLoadLabel">上拉加载更多</div>
+                    </div>
+    </div>
+<!-- 设计后台菜单 -->
+<{include file="mobile:member/block/designertop.html"}>
+<!--引入footer-->
+<{include file="mobile:member/block/footer.html"}>

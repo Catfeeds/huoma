@@ -1,0 +1,527 @@
+<{include file="member/block/header.html"}>
+<link id="skinlayercss" href="<{$pager.res}>/linshi/base.css" rel="stylesheet" type="text/css">
+<link id="skinlayercss" href="<{$pager.res}>/linshi/product.css" rel="stylesheet" type="text/css">
+<div class="ucenter_t">
+    <ul><li><a href="<{link ctl='member/shang/canzhan:canzhan'}>">设计中</a></li>
+    <li class="on">订单详情</li>
+   <li> <a href="<{link ctl='member/shang/canzhan:canzhanfile' arg0=$detail.cz_id}>">符件管理</a></li>
+    </ul>
+</div>
+
+
+<div class="ex-progress-right">
+<div class="menu-form1-right-inner panel my-panel-style">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">展台设计要求问询表</h3>
+                    </div>
+                    <div class="panel-body menu-form1body">
+                        <form role="form" method="post" action="<{link ctl='member/shang/canzhan:create'}>" id="postaction" class="form-horizontal mymenuform1">
+                        <input type="hidden" name="id" value="<{$detail.id}>" />
+                            <div class="form-group form1-name">
+                                <label for="form1Name" class="control-label col-sm-3">企业名称：</label>
+
+                                <div class="col-sm-9"><input class="form-control" name="canzhan[cname]" id="form1Name"
+                                                             type="text" value="<{$detail.cname}>"></div>
+                            </div>
+                            <div class="form-group form1-net">
+                                <label for="form1Net" class="control-label col-sm-3">网址：</label>
+
+                                <div class="col-sm-9"><input class="form-control" name="canzhan[domain]" id="form1Net"
+                                                             type="text" value="<{$detail.domain}>"></div>
+                            </div>
+                            <div class="form-group form1-contacts">
+                                <label for="form1contacts" class="control-label col-sm-3">联系方式：</label>
+
+                                <div class="col-sm-9" id="form1contacts">
+                                    <div class="form-group form1-contacts col-sm-4">
+                                        <label for="form1contactsName" class="control-label col-sm-4">联系人：</label>
+
+                                        <div class="col-sm-8"><input id="form1contactsName" name="canzhan[uname]"
+                                                                     class="form-control" type="text" value="<{$detail.uname}>"></div>
+                                    </div>
+                                    <div class="form-group form1-contacts col-sm-4">
+                                        <label for="form1contactstel" class="control-label col-sm-4">电话：</label>
+
+                                        <div class="col-sm-8"><input id="form1contactstel" name="canzhan[mobile]"
+                                                                     class="form-control" type="tel"></div>
+                                    </div>
+                                    <div class="form-group form1-contacts col-sm-4">
+                                        <label for="form1contactsemail" class="control-label col-sm-4">E-MAIL:</label>
+
+                                        <div class="col-sm-8"><input id="form1contactsemail" name="canzhan[mail]"
+                                                                     class="form-control" type="email" value="<{$detail.mail}>"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form1-net">
+                                <label for="form1Net" class="control-label col-sm-3">展会名称：</label>
+
+                                <div class="col-sm-9"><input class="form-control" name="canzhan[zname]" id="form1Net"
+                                                             type="text" value="<{$detail.zname}>"></div>
+                            </div>
+                            <div class="form-group form1-exnum">
+                                <label for="form1exNum" class="col-sm-3 control-label">展位号：</label>
+
+                                <div class="col-sm-3"><input class="form-control" name="canzhan[zweihao]" id="form1exNum"
+                                                             type="text" value="<{$detail.zweihao}>"></div>
+                                <div class="col-sm-6">
+                                    <label for="form1areaLage" class="pull-left control-label">场地面积：</label>
+
+                                    <div class="pull-left form-inline"><input class="form-control" name="canzhan[mianji]" id="form1areaLage" type="text" value="<{$detail.mianji}>">平米（㎡）
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-group form1-exnum">
+                                <label for="form1height" class="col-sm-3 control-label">高度限制：</label>
+
+                                <div class="col-sm-3 form-inline"><input class="form-control" name="canzhan[xiangao]" id="form1height" type="text" value="<{$detail.xiangao}>">米（m）
+                                </div>
+                                <div class="col-sm-6">
+                                    <label for="form1budget" class="pull-left control-label">资金预算：</label>
+
+                                    <div class="pull-left form-inline"><input class="form-control" name="canzhan[yusuan]" id="form1budget" type="text" value="<{$detail.yusuan}>">万元
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="form-group form1Color">
+                                <label for="form1Color" class="control-label col-sm-3">公司标色：</label>
+
+                                <div class="col-sm-9" id="form1Color">
+                                    <div class="pull-left">
+                                        <label class="pull-left control-label" for="form1colorC">C</label>
+                                        <input class="pull-left form-control form1styleinput" name="expo[biaosec]" id="form1colorC"
+                                               type="text" value="<{$detail.expo.biaosec}>">
+                                    </div>
+                                    <div class="pull-left">
+                                        <label class="pull-left control-label" for="form1colorM">M</label>
+                                        <input class="pull-left form-control form1styleinput" name="expo[biaosem]"  id="form1colorM"
+                                               type="text" value="<{$detail.expo.biaosem}>">
+                                    </div>
+                                    <div class="pull-left">
+                                        <label class="pull-left control-label" for="form1colorY">Y</label>
+                                        <input class="pull-left form-control form1styleinput" name="expo[biaosey]"  id="form1colorY"
+                                               type="text" value="<{$detail.expo.biaosey}>">
+                                    </div>
+                                    <div class="pull-left">
+                                        <label class="pull-left control-label" for="form1colorK">K</label>
+                                        <input class="pull-left form-control form1styleinput" name="expo[biaosek]"  id="form1colorK"
+                                               type="text" value="<{$detail.expo.biaosek}>">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group form1Slogan">
+                                <label for="form1slogan" class="control-label col-sm-3">公司理念（口号）：</label>
+
+                                <div class="col-sm-9"><input type="text" name="expo[linian]" id="form1slogan"
+                                                             class="form-control" value="<{$detail.expo.linian}>"></div>
+                            </div>
+                            <div class="form-group form1Slogan2">
+                                <label for="form1slogan2" class="control-label col-sm-3">其他：</label>
+
+                                <div class="col-sm-9"><input type="text" name="expo[qita]" id="form1slogan2"
+                                                             class="form-control" value="<{$detail.expo.qita}>"></div>
+                            </div>
+                            <div class="form-group form1exstyle">
+                                <label for="form1exStyle" class="control-label col-sm-3">展台风格：</label>
+
+                                <div class="col-sm-9" id="form1exStyle">
+                                    <label class="checkbox-inline">
+                                        <input name="expo[fengge][1]" type="checkbox" id="form1exStyle1" value="简洁" <{if $detail.expo.fengge.1}>checked<{/if}>>简洁
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[fengge][2]" id="form1exStyle2" value="整体大气" <{if $detail.expo.fengge.2}>checked<{/if}>>整体大气
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[fengge][3]" id="form1exStyle3" value="豪华" <{if $detail.expo.fengge.3}>checked<{/if}>>豪华
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[fengge][4]" id="form1exStyle4" value="科技感" <{if $detail.expo.fengge.4}>checked<{/if}>>科技感
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[fengge][5]" id="form1exStyle5" value="经济适用" <{if $detail.expo.fengge.5}>checked<{/if}>>经济适用
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[fengge][6]" id="form1exStyle6" value="活泼生动" <{if $detail.expo.fengge.6}>checked<{/if}>>活泼生动
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[fengge][7]" id="form1exStyle7" value="古典" <{if $detail.expo.fengge.7}>checked<{/if}>>古典
+                                    </label>
+                                </div>
+                                <div class="col-sm-9 col-sm-offset-3">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[fengge][8]" id="form1exStyle8" value="艺术感" <{if $detail.expo.fengge.8}>checked<{/if}>>艺术感
+                                        （<input class="form1styleinput" type="text" name="expo[yisugan]"
+                                                id="form1exstyle81" value="<{$detail.expo.yisugan}>">风格）
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[fengge][9]" id="form1exStyle9" value="中国传统风格" <{if $detail.expo.fengge.9}>checked<{/if}>>中国传统风格
+                                        （<input class="form1styleinput" type="text" name="expo[chuangtongfeng]"
+                                                id="form1exstyle91" value="<{$detail.expo.chuangtongfeng}>">风格）
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[fengge][10]" id="form1exStyle10" value="外国风格" <{if $detail.expo.fengge.10}>checked<{/if}>>外国风格
+                                        （<input class="form1styleinput" type="text" name="expo[guo]"
+                                                id="form1exstyle102" value="<{$detail.expo.guo}>">国<input class="form1styleinput" type="text" name="expo[guofengge]"
+                                                id="form1exstyle101" value="<{$detail.expo.guofengge}>">风格）
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[fengge][11]" id="form1exStyle11" value="其他" <{if $detail.expo.fengge.11}>checked<{/if}>>其他
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="form1area" class="control-label col-sm-3">场地要求：</label>
+
+                                <div class="col-sm-9" id="form1area">
+                                    <label class="checkbox-inline">
+                                        <input name="expo[changdi][1]" type="checkbox" id="form1area1" value="单层搭建" <{if $detail.expo.changdi.1}>checked<{/if}>>单层搭建
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input name="expo[changdi][2]" type="checkbox" id="form1area2" value="双层搭建" value="单层搭建" <{if $detail.expo.changdi.2}>checked<{/if}>>双层搭建
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input name="expo[changdi][3]" type="checkbox" id="form1area3" value="展示区" value="单层搭建" <{if $detail.expo.changdi.3}>checked<{/if}>>展示区
+                                        <input class="form1styleinput" type="text" name="expo[changdiqu]"
+                                               id="form1area31" value="<{$detail.expo.changdiqu}>" >区
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input name="expo[changdi][4]" type="checkbox" id="form1area4" value="面开" value="单层搭建" <{if $detail.expo.changdi.4}>checked<{/if}>>
+                                        <input class="form1styleinput" type="text" name="expo[changdimiankai]"
+                                               id="form1area41" value="<{$detail.expo.changdimiankai}>">面开
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group form1Color2">
+                                <label for="form1Color2" class="control-label col-sm-3">展台颜色要求：</label>
+
+                                <div class="col-sm-9">
+                                    <input name="expo[ztyanse]" id="form1Color2" type="text" class="form-control"
+                                           placeholder="请输入展台颜色的相关要求" value="<{$detail.expo.ztyanse}>">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="form1exhibit" class="control-label col-sm-3">展品：</label>
+
+                                <div class="col-sm-9" id="form1exhibit">
+                                    <label class="checkbox-inline">
+                                        <input name="expo[zhanpin][1]" type="checkbox" id="form1exhibit1" value="所属行业" <{if $detail.expo.zhanpin.1}>checked<{/if}>>所属行业
+                                        <input class="form1styleinput" type="text" name="expo[hangye]"
+                                               id="form1exhibit11" value="<{$detail.expo.hangye}>">
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input name="expo[zhanpin][2]" type="checkbox" id="form1exhibit2" value="展品数量及尺寸" <{if $detail.expo.zhanpin.2}>checked<{/if}>>展品数量及尺寸
+                                        <input class="form1styleinput" type="text" name="expo[shuliang]"
+                                               id="form1exhibit21" value="<{$detail.expo.shuliang}>">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group form1function">
+                                <label for="form1function" class="control-label col-sm-3">功能需求：</label>
+
+                                <div class="col-sm-9" id="form1function">
+                                    <label class="checkbox-inline">
+                                        <input name="expo[gongneng][1]" type="checkbox" id="form1function1" value="接待台" <{if $detail.expo.gongneng.1}>checked<{/if}>>接待台
+                                        <input class="form1styleinput" type="text" name="expo[jdtaige]"
+                                               id="form1function11" value="<{$detail.expo.jdtaige}>">个
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input name="expo[gongneng][2]" type="checkbox" id="form1function2" value="储藏区" <{if $detail.expo.gongneng.2}>checked<{/if}>>储藏区
+                                        <input class="form1styleinput" type="text" name="expo[gnpingmi]"
+                                               id="form1function21" value="<{$detail.expo.gnpingmi}>">平米
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input name="expo[gongneng][3]" type="checkbox" id="form1function3" value="形象区" <{if $detail.expo.gongneng.3}>checked<{/if}>>形象区
+                                        <input class="form1styleinput" type="text" name="expo[xxpingmi]"
+                                               id="form1function31" value="<{$detail.expo.xxpingmi}>">平米
+                                    </label><br/>
+                                    <label class="checkbox-inline">
+                                        <input name="expo[gongneng][4]" type="checkbox" id="form1function4" value="演示区" <{if $detail.expo.gongneng.4}>checked<{/if}>>演示区（
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[yangshiqu][1]" value="集中" <{if $detail.expo.yangshiqu.1}>checked<{/if}>>集中
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[yangshiqu][2]" value="分区集中" <{if $detail.expo.yangshiqu.2}>checked<{/if}>>分区集中
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[yangshiqu][3]" value="单个分散" <{if $detail.expo.yangshiqu.3}>checked<{/if}>>单个分散）
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input name="expo[gongneng][5]" type="checkbox" id="form1function5" value="展板" <{if $detail.expo.gongneng.5}>checked<{/if}>>展板
+                                        <input class="form1styleinput" type="text" name="expo[zbkuai]"
+                                               id="form1function51" value="<{$detail.expo.zbkuai}>">块（尺寸）
+                                        <input class="form1styleinput" type="text" name="expo[zbchicun]"
+                                               id="form1function52" value="<{$detail.expo.zbchicun}>">
+                                    </label><br/>
+                                    <label class="checkbox-inline">
+                                        <input name="expo[gongneng][6]" type="checkbox" id="form1function6" value="洽谈区" <{if $detail.expo.gongneng.6}>checked<{/if}>>洽谈区
+                                        <input class="form1styleinput" type="text" name="expo[qtqge]"
+                                               id="form1function61" value="<{$detail.expo.qtqge}>">个（
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input name="expo[gongneng][7]" type="checkbox" id="form1function6a" value="开放" <{if $detail.expo.gongneng.7}>checked<{/if}>>开放
+                                        <input class="form1styleinput" type="text" name="expo[kfge]"
+                                               id="form1function6a1" value="<{$detail.expo.kfge}>">个
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input name="expo[gongneng][8]" type="checkbox" id="form1function6b" value="半封闭" <{if $detail.expo.gongneng.8}>checked<{/if}>>半封闭
+                                        <input class="form1styleinput" type="text" name="expo[bfbge]"
+                                               id="form1function6b1" value="<{$detail.expo.bfbge}>">个
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input name="expo[gongneng][9]" type="checkbox" id="form1function6c" value="全封闭" <{if $detail.expo.gongneng.9}>checked<{/if}>>全封闭
+                                        <input class="form1styleinput" type="text" name="expo[qfbge]"
+                                               id="form1function6c1" value="<{$detail.expo.qfbge}>">个）
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input name="expo[gongneng][10]" type="checkbox" id="form1function7" value="其他" <{if $detail.expo.gongneng.10}>checked<{/if}>>其他
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="form1av" class="control-label col-sm-3">AV设备：</label>
+
+                                <div class="col-sm-9" id="form1av">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[avshebei][1]" id="form1av1" value="投影/尺寸" <{if $detail.expo.avshebei.1}>checked<{/if}>>投影/尺寸
+                                        <input class="form1styleinput" type="text" id="form1av11" name="expo[avtouying]" value="<{$detail.expo.avtouying}>">(
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[avshebei][2]" id="form1av1a" value="前投" <{if $detail.expo.avshebei.2}>checked<{/if}>>前投
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[avshebei][3]" id="form1av1b" value="背投" <{if $detail.expo.avshebei.3}>checked<{/if}>>背投）
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[avshebei][4]" id="form1av3" value="等离子" <{if $detail.expo.avshebei.4}>checked<{/if}>>等离子
+                                        <input class="form1styleinput" type="text" id="form1av31" name="expo[avtai]" value="<{$detail.expo.avtai}>">台
+                                    </label><br/>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[avshebei][5]" id="form1av2" value="电视墙" <{if $detail.expo.avshebei.5}>checked<{/if}>>电视墙
+                                        <input class="form1styleinput" type="text" id="form1av21" name="expo[avqiang]" value="<{$detail.expo.avqiang}>">(
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[dianshiqian][1]" id="form1av2a" value="2*2" <{if $detail.expo.dianshiqian.1}>checked<{/if}>>2*2
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[dianshiqian][2]" id="form1av2b" value="3*3" <{if $detail.expo.dianshiqian.2}>checked<{/if}>>3*3
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[dianshiqian][3]" id="form1av2c" value="4*4" <{if $detail.expo.dianshiqian.3}>checked<{/if}>>4*4
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[dianshiqian][4]" id="form1av2d" value="5*5" <{if $detail.expo.dianshiqian.4}>checked<{/if}>>5*5
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[dianshiqian][5]" id="form1av2e" value="其他" <{if $detail.expo.dianshiqian.5}>checked<{/if}>>其他）
+                                    </label><br/>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[avshebei][6]" id="form1av4" value="LED尺寸" <{if $detail.expo.avshebei.6}>checked<{/if}>>LED尺寸
+                                        <input class="form1styleinput" type="text" id="form1av41" name="expo[ledchicun]" value="<{$detail.expo.ledchicun}>">
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[avshebei][7]" id="form1av5" value="其他" <{if $detail.expo.avshebei.7}>checked<{/if}>>其他
+                                        <input class="form1styleinput" type="text" id="form1av51" name="expo[avqita]" value="<{$detail.expo.avqita}>">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="form1material" class="control-label col-sm-3">搭建主要材料：</label>
+
+                                <div class="col-sm-9" id="form1material">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[cailiao][1]" id="form1material1" value="木结构"<{if $detail.expo.cailiao.1}>checked<{/if}>>木结构
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[cailiao][2]" id="form1material2" value="金属结构" value="木结构"<{if $detail.expo.cailiao.2}>checked<{/if}>>金属结构
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[cailiao][3]" id="form1material3" value="铁木结构" value="木结构"<{if $detail.expo.cailiao.3}>checked<{/if}>>铁木结构
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[cailiao][4]" id="form1material4" value="铝料结构" value="木结构"<{if $detail.expo.cailiao.4}>checked<{/if}>>铝料结构
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[cailiao][5]" id="form1material5" value="纸制" value="木结构"<{if $detail.expo.cailiao.5}>checked<{/if}>>纸制
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[cailiao][6]" id="form1material6" value="铁+玻璃" value="木结构"<{if $detail.expo.cailiao.6}>checked<{/if}>>铁+玻璃
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[cailiao][7]" id="form1material7" value="阳光板" value="木结构"<{if $detail.expo.cailiao.7}>checked<{/if}>>阳光板
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[cailiao][8]" id="form1material8" value="有机片" value="木结构"<{if $detail.expo.cailiao.8}>checked<{/if}>>有机片
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[cailiao][9]" id="form1material9" value="布艺" value="木结构"<{if $detail.expo.cailiao.9}>checked<{/if}>>布艺
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[cailiao][10]" id="form1material10" value="其他" value="木结构"<{if $detail.expo.cailiao.10}>checked<{/if}>>其他
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="form1cost" class="control-label col-sm-3">设计参考费用：</label>
+
+                                <div class="col-sm-9" id="form1cost">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[feiyong][1]" id="form1cost1" value="1000元/平米以下" value="木结构"<{if $detail.expo.feiyong.1}>checked<{/if}>>1000元/平米以下
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[feiyong][2]" id="form1cost2" value="1000元/平米" value="木结构"<{if $detail.expo.feiyong.2}>checked<{/if}>>1000元/平米
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="expo[feiyong][3]" id="form1cost3" value="1200元/平米以上" value="木结构"<{if $detail.expo.feiyong.3}>checked<{/if}>>1200元/平米以上
+                                    </label>
+                                  
+                                </div>
+							<div class="form-group">
+             <{if $detail.status<2}>
+  				 <a href="<{link ctl='member/shang/canzhan:canzhanEdit' arg0=$detail.cz_id}>" class="pbtn">完善需求信息</a>
+   			 <{/if}>
+                            </div>                            
+                            </div>
+                            
+                        </form>
+                    </div>
+               
+
+                <div class="my-progress-title">当前进度<{$detail.status}></div>
+                <div class="my-progress">
+                    <div class="progress progress-striped">
+                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:10%"></div>
+                    </div>
+                    <div class="my-progress-item">
+                        <ul class="row">
+                            <li class="col-xs-2 active">
+                                <p><br/><br/></p>
+                                <strong></strong>
+                                <p>发布需求<br/>2012.12.02</p>
+                            </li>
+                            <li class="col-xs-2 ">
+                                <p>设计中<br/>2012.12.02</p>
+                                <strong></strong>
+                                <p><br/><br/></p>
+                            </li>
+                            <li class="col-xs-2">
+                                <p><br/><br/></p>
+                                <strong></strong>
+                                <p>预报价<br/>2012.12.02</p>
+                            </li>
+                            <li class="col-xs-2">
+                                <p>定稿调优<br/>2012.12.02</p>
+                                <strong></strong>
+                                <p><br/><br/></p>
+                            </li>
+                            <li class="col-xs-2">
+                                <p><br/><br/></p>
+                                <strong></strong>
+                                <p>定报价<br/>2012.12.02</p>
+                            </li>
+                            <li class="col-xs-2">
+                                <p>签单<br/>2012.12.02</p>
+                                <strong></strong>
+                                <p><br/><br/></p>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <!--一些开发说明：
+                当没有工厂报价时，用div替换table，显示：工厂报价中
+                当设计师被选择时，伪media类div添加 active 改变背景颜色，同事显示工厂的：确认签单按钮
+                当展商选择了某个工厂确认签单后，则其他按钮被disable-->
+ 
+ <{foreach $look_list_sj as $item}>
+   <div class="designer-list">
+       <div class="media active">
+            <div class="pull-left">
+                 <p class="media-heading"><{$item.look_id}></p>
+                    <div class="caption">
+                     <img src="<{$pager.img}>/<{$item.face}>" /><a href="/sheji/shi-<{$item.uid}>.html" target="_black"><{$item.info.name}></a>
+                    <button type="button" data-toggle="modal" data-target="#chooseDesigner" class="designerBtn btn designer-list-btn-style active">选择</button>
+                     </div>
+         	 <{foreach $item.canzhan_case as $case}>
+                    <a class="designer-list-img" href="#"><img src="//www.jisunet.com/mobile/img/usercenter.jpg"/></a>
+            <{/foreach}>
+ 			</div>
+
+				<{if 0}>
+                        <div class="media-body">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <td>工厂名称</td>
+                                    <td>展台制作搭建费（<span>元</span>）</td>
+                                    <td>场地管理费（<span>元</span>）</td>
+                                    <td>税（<span>元</span>）</td>
+                                    <td>预报价（<span>元</span>）</td>
+                                    <td class="factory-order"></td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                     <{foreach from=$case.cphoto key=key item=item2 name=cpho}>
+                                 <tr>
+                                    <td>梦工厂公司梦工厂公司</td>
+                                    <td>152</td>
+                                    <td>123</td>
+                                    <td>456</td>
+                                    <td>123</td>
+                                    <td class="factory-order">
+                                    <button type="button" data-toggle="modal" data-target="#designerOrderModel" class="btn designer-list-btn-style active">已签单</button> 
+                                    <button type="button" data-toggle="modal" data-target="#designerOrderModel" class="btn designer-list-btn-style disabled" disabled="disabled">确认签单</button>
+                                    <button type="button" data-toggle="modal" data-target="#designerOrderModel" class="btn designer-list-btn-style">确认签单</button>   </td>
+                                </tr>
+                 <{/foreach}>
+                                 </tbody>
+                            </table>
+                        </div>
+         <{/if}>
+                    </div>
+                </div>
+ 
+ 
+ 
+ 
+
+<{foreachelse}>
+    <div class="designer-list">
+        <div class="media-body">
+         <h1>暂无选择设计师...</h1>
+        </div>
+    </div>
+<{/foreach}>
+                
+                
+                
+
+</div>
+ </div>
+
+<div class="ucenter_c">
+<{if $count_sj<5}>
+    <div class="main bgGray chooses" id="selectdashejishi"></div>
+    <script>
+        $(function(){
+            
+            $.get('canzhan-selectdashejishi-<{$detail.cz_id}>-1.html',function(ret){
+                $('#selectdashejishi').html(ret);
+            });
+        });
+    
+        function changedashejishi(id){
+            $.get('canzhan-selectdashejishi-<{$detail.cz_id}>-'+id+'.html',function(ret){
+                $('#selectdashejishi').html(ret);
+            });
+        }
+    </script>
+<{/if}>
+</div>
+
+<{include file="member/block/footer.html"}>

@@ -1,0 +1,51 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageFactoryInfo" class="page1" data-dom-cache="false" data-title="资料设置">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>资料设置</h1>
+    </div>
+    <div data-role="main">
+        <div data-role="content" class="factoryInfo-upload">
+            <form method="post" action="<{link ctl='member/designer:info'}>" onsubmit="return false;" id="factoryInfoForm" data-ajax="false"  
+                  enctype="multipart/form-data">
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryName">名称：</label>
+                    <input type="text" name="data[name]" id="factoryName" placeholder="请输入设计师名称" value="<{$designer.name}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryArea">地区：</label>
+                    <{if $designer.city_id}>
+                    <b class="blue"><{$designer.city_name}></b>
+                    <{/if}>
+                    <!-- <input type="text" name="factoryArea" id="factoryArea" placeholder="正在获取地理位置..."> -->
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryslogan">设计理念：</label>
+                    <input type="text" name="data[slogan]" id="factoryslogan" placeholder="设计理念" value="<{$designer.slogan}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryqq">企业QQ：</label>
+                    <input type="text" name="data[qq]" id="factoryqq" placeholder="企业QQ" value="<{$designer.qq}>"    disabled="disabled">
+					<small style="color:#ccc">（企业QQ由系统分配不可修改）</small>
+				</div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryqqpas">QQ初始密码：</label>
+                    <input type="text" name="data[qqpas]" id="factoryqqpas" placeholder="QQ初始密码" disabled="disabled" value="<{$designer.qqpas}>">
+					<small style="color:#ccc">（如需修改请登录企业QQ修改密码）</small>
+				</div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryschool">毕业院校：</label>
+                    <input type="text" name="data[school]" id="factoryschool" placeholder="毕业院校" value="<{$designer.school}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryabout">个人简介：</label>
+                    <textarea name="data[about]" id="factoryabout"><{$designer.about}></textarea>
+                </div>
+                <button type="submit" id="factoryInfo-btn" class="factoryInfo-btn">发布</button>
+            </form>
+        </div>
+    </div>
+
+<{include file="mobile:member/block/footer.html"}>

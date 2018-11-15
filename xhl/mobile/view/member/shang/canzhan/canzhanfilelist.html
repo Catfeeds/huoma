@@ -1,0 +1,12 @@
+<{foreach $items as $item}>
+<li>
+    <a data-transition="slide" href="<{link ctl='member/shang/canzhan:canzhanDetail' arg0=$item.cz_id}>">
+        <h2><{$item.zname}></h2>
+        <p>文件：<{if $item.type=='jpg' || $item.type=='png'}><img src="<{$pager.img}>/<{$item.file}>" photo="<{$pager.img}>/<{$item.photo}>"/><{else}><img src="<{$pager.img}>/default/<{$item.type}>.jpg" photo="<{$pager.img}>/default/<{$item.type}>.jpg" /><{/if}></p>
+        <p>标题：<{$item.filename}></p>
+        <p><a href="<{$pager.img}>/<{$item.file}>" target="_blank" class="pbtn">   下载</a>
+           <a href="<{link ctl='member/shang/canzhan:deletefile' arg0=$item.file_id}>"  mini-act="confirm:您确定要删除该文件吗？" class="pbtn red">删除</a>
+        </p>
+    </a>
+</li>
+<{/foreach}>

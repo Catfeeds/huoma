@@ -1,0 +1,11 @@
+<{foreach $items as $item}>
+<li>
+    <a data-transition="slide" href="<{link ctl='member/shang/canzhan:canzhanDetail' arg0=$item.cz_id}>">
+        <h2>展会名称：<{$item.zname}></h2>
+        <p>展位号：<{$item.zweihao}></p>
+        <p>负责人：<{$item.uname}></p>
+        <p>开始时间：<{$item.startime|format:'Y-m-d'}>至<{$item.endtime|format:'Y-m-d'}></p>
+        <p>展位面积：<{$item.mianji}>㎡</p>
+    </a>
+</li>
+<{/foreach}>

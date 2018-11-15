@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{$guan.title}>_一路展展馆信息</title>
+    <meta name="description" content="<{strip_tags($guan.zhaiyao|cutstr:200:'.')}>">
+    <meta name="Keywords" content="一路展展馆信息,展装O2O,<{$guan.title}>,展馆信息">
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageArticle3" class="page1" data-dom-cache="false" data-title="<{$guan.title}>_一路展展馆信息">
+    <div data-role="header" class="header" data-position="fixed">
+        <a href="<{link ctl='guan/index'}>" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+        <h1>展馆详情</h1>
+        <a href="#article3-menu" class="ui-btn iconfont icon-menu"></a>
+    </div>
+    <div data-role="main">
+        <!-- 图片轮播 -->
+                <div class="index-focus article3-focus" id="zhanguan-<{$PAGEID}>" data-slideid="article3Focus">
+                    <div class="hd">
+                        <ul></ul>
+                    </div>
+                    <div class="bd">
+                        <ul>
+                            <!-- <li><a href="#"><img src="" _src="<{$pager.img}>/<{$item.photo}>"/> </a></li> -->
+                            <!-- 开发说明：轮播图，循环此 li 即可-->
+                            <!-- <{foreach $photos as $item}>
+                            <li><a href="#"><img src="" _src="<{$pager.img}>/<{$item.photo}>"/> </a></li>
+                            <{/foreach}> -->
+                            <{if $guan.thumb}>
+                                <li><a href="#"><img src="" _src="<{$pager.img}>/<{$guan.thumb}>"/> </a></li>
+                                <{foreach $photos as $item}>
+                                <li><a href="#"><img src="" _src="<{$pager.img}>/<{$item.photo}>"/> </a></li>
+                                <{/foreach}>
+                            <{else}>
+                            <li><a href="#"><img src="//www.jisunet.com/mobile/img/weishangchuan.jpg"/> </a></li>
+                            <{/if}>
+                        </ul>
+                    </div>
+                </div>
+                <div class="article3-main">
+                    <div class="article3-title">
+                        <h3><{$guan.title}></h3>
+                    </div>
+                    <!-- 展馆展会内容部分-->
+                    <div class="article3-details">
+                        <ul data-role="listview">
+                           <{if $guan.addr}><li><span class="iconfont icon-local"></span>地址：<i><{$guan.addr}></i></li><{/if}>
+                           <{if $guan.city_name}><li><span class="iconfont icon-local"></span>城市：<i><{$guan.city_name}></i></li><{/if}>
+                           <{if $guan.phone}><li><span class="iconfont icon-tel"></span>联系电话：<i><{$guan.phone}></i></li><{/if}>
+                           <{if $guan.url}><li><span class="iconfont icon-web"></span>官方网站：<i><{$guan.url}></i></li><{/if}>
+                        </ul>
+
+                    </div>
+                    <div class="article3-details">
+                        <h3><i>近期展会</i><span>&nbsp;</span></h3>
+                        <ul data-role="listview">
+                            <{foreach $gzhan as $zhan}>
+                            <li data-icon="false"><a href="<{link ctl='zhan/hui' arg0=$zhan.zhan_id}>"><{$zhan.title}></a></li>
+                            <{/foreach}>
+                        </ul>
+                        <p><a href="<{link ctl='zhan/index'}>"><button>查看更多<span class="iconfont icon-keyboardarrowright"></span></button></a></p>
+                    </div>
+                    <!-- 展馆展会主内容区-->
+                    <div class="article3-details">
+                        <h3><i>展馆介绍</i><span>&nbsp;</span></h3>
+                        <div class="article-3-details-con">
+                            <p><{$guan.content}></p>
+                        </div>
+                    </div>
+                    <div class="article3-details">
+                        <h3><i>展馆规模</i><span>&nbsp;</span></h3>
+                        <div class="article-3-details-con">
+                            <p><{$guan.guimo}></p>
+                        </div>
+                    </div>
+                </div>
+    </div>
+<!-- panel 菜单 -->
+<{include file="mobile:block/top.html"}>
+<{include file="mobile:block/footer.html"}>

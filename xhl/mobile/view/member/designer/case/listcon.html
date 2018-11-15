@@ -1,0 +1,12 @@
+<{foreach $items as $item}>
+<li>
+    <a data-transition="slide" href="<{link ctl='member/sheji/zhantai:xiaoguotu' arg0=$item.case_id}>">
+        <h2><{$item.title}></h2>
+        <p>图片数：<{$item.photos}></p>
+        <p>最后上传：<{if $item.lasttime}><{$item.lasttime|format}><{else}><{$item.dateline|format}><{/if}></p>
+        <p>审核：<{if $item.audit}><b>通过</b><{else}><b>待审</b><{/if}></p>
+        <p><a href="<{link ctl='member/designer/case:detail' arg0=$item.case_id}>">查看详情</a>
+        <a href="<{link ctl='member/designer/case:edit' arg0=$item.case_id}>">修改</a> 
+    </a><a class="fList-del-btn" href="<{link ctl='member/designer/case:delete' arg0=$item.case_id}>" data-icon="delete"></a>
+</li>
+<{/foreach}>

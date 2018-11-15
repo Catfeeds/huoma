@@ -1,0 +1,73 @@
+<{assign var="ucenter_header" value=true}>
+<{include file="block/small-header.html"}>
+<link rel="stylesheet" type="text/css" href="%THEME%/static/css/ucenter.css">
+<div id="wrap">
+    <div class="head">
+		<div class="logo">			
+			<span class="lt">管理中心</span>
+			<span class="rt" style=" font-size:16px;">
+               <{if $MEMBER.from=='designer'}> <font class="logo_rt_icon"></font>累计收入：<font class="orange" style="font-size:20px;"><{$MEMBER.rmb}></font>元
+                <a href="<{link ctl='member/designer:rmb'}>" class="green">申请支付</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                <{/if}>
+                 <font class="logo_rt_icon"></font>展币：<font class="orange"><{$MEMBER.gold}></font>
+                <a href="<{link ctl='member/member:gold'}>" class="green">充值展币</a>
+            </span>
+            <div class="cl"></div>
+		</div>
+		<div class="nav">
+			<ul class="lt">
+				<li><a href="<{link ctl='member/member:index'}>" class="on">管理菜单</a></li>
+				<{if $HAVE_WEIXIN && ($MEMBER.from=='shop' || $MEMBER.from=='company')}>
+                <li><a href="<{link ctl='member/weixin:index'}>"<{if $ctlgroup=='weixin'}> class="on"<{/if}>>微信管理</a></li>
+                <{/if}>
+			</ul>
+			<span class="rt">
+                <{if $MEMBER.from=='company'}>
+                <font class="nav_icon"></font><a href="<{link ctl='member/member:home' arg0=$MEMBER.uid}>" target="_blank">工厂主页</a>
+                <{elseif 0 && $MEMBER.from=='shop'}>
+                <font class="nav_icon"></font><a href="<{link ctl='member/member:home' arg0=$MEMBER.uid}>" target="_blank">企业主页</a>
+                <{elseif $MEMBER.from=='designer'}>
+                <font class="nav_icon"></font><a href="<{link ctl='member/member:home' arg0=$MEMBER.uid}>" target="_blank">我的主页</a>            
+                <{elseif $MEMBER.from=='mechanic'}>
+                <font class="nav_icon"></font><a href="<{link ctl='member/member:home' arg0=$MEMBER.uid}>" target="_blank">工人主页</a>
+                <{/if}>
+            </span>
+		</div>
+	</div>
+	<div class="content" id="ucenter_main_lay">
+		<div class="cont_lt lt" id="ucenter_left_lay">
+			<ul class="menu_lay">
+                <{foreach $menu_list as $menu}>
+                <li>
+                    <{if $menu.menu}>
+                    <li class="menu open"><font class="menu_open_icon"></font><a href="javascript:;"><{$menu.title}></a>
+                    <ul class="sub_menu">
+                        <{foreach $menu.items as $item}>
+                        <{if $item.menu}>
+                        <li><a href="<{link ctl=$item.ctl}>"<{if $request.ctlmap.ctl==$item.ctl || $request.ctlmap.nav==$item.ctl}> class="on"<{/if}>><{$item.title}></a></li>
+                        <{/if}>
+                        <{/foreach}>
+                    </ul>
+                    <{/if}>
+                </li>
+                <{/foreach}>	
+            </ul>
+		</div>
+    <script type="text/javascript">
+    (function(K, $){
+        $("menu_lay li.menu").click(function(){
+            if($(this).hasClass("open")){
+                $(this).removeClass("open").addClass("close");
+                $(this).next("ul.sub_menu").slideUp("fast");
+            }else{
+                $(this).removeClass("close").addClass("open");
+                $(this).next("ul.sub_menu").slideDown("fast");    
+            }
+        });
+    })(window.KT, window.jQuery);
+    </script>
+		<div class="cont_rt rt" id="ucenter_right_lay">
+
+
+
+

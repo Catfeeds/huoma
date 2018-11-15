@@ -1,0 +1,79 @@
+<{include file="admin:common/header.html"}>
+<div class="page-title">
+    <table width="100%" align="center" cellpadding="0" cellspacing="0" >
+      <tr>
+        <td width="30" align="right"><img src="<{$pager.url}>/images/main-h5-ico.gif" alt="" /></td>
+        <th><{$MOD.title}></th>
+        <td align="right"><{link ctl="card/fans:index" priv="hidden" class="button"}></td>
+        <td width="15"></td>
+      </tr>
+    </table>
+</div>
+<div class="page-data">
+
+    <form action="?card/fans-edit.html" mini-form="guan-form" method="post" ENCTYPE="multipart/form-data">
+    <input type="hidden" name="id" value="<{$detail.fanid}>"/>
+<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+    <li><a href="#table-info">基本信息</a></li><li><a href="#table-info1">详细资料</a></li>
+</ul>
+<table width="100%" border="0" cellspacing="0" id="table-info" class="table-data form">
+<tr><th>昵称：</th><td><input type="text" name="data[nickname]" value="<{$detail.nickname|default:''}>" class="input w-300"/></td></tr>
+<tr><th>OpenId：</th><td><input type="text" name="data[openid]" value="<{$detail.openid|default:''}>" class="input w-300"/></td></tr>
+
+
+<tr><th class="clear-th-bottom"></th><td class="clear-td-bottom" colspan="10"><input type="submit" class="bt-big" value="提交数据" /></td></tr>
+</table>
+
+    <table width="100%" border="0" cellspacing="0" id="table-info1" class="table-data form">
+        <input type="hidden" name="mid" value="<{$member.id}>">
+        <tr><th>真实名称：</th><td><input type="text" name="mdata[realname]" value="<{$member.realname|default:''}>" class="input w-300"/></td></tr>
+        <tr><th>手机：</th><td><input type="text" name="mdata[mobile]" value="<{$member.mobile|default:''}>" class="input w-300"/></td></tr>
+        <tr>
+            <th>性别：</th>
+            <td>
+                <label><input type="radio" name="mdata[sex]" <{if $member.sex==1}>checked<{/if}> value="1"/>男</label>&nbsp;&nbsp;
+                <label><input type="radio" name="mdata[sex]"  <{if $member.sex==2}>checked<{/if}>  value="2"/>女</label>
+
+            </td>
+        </tr>
+        <tr><th>地址：</th><td><input type="text" name="mdata[address]" value="<{$member.address|default:''}>" class="input w-300"/></td></tr>
+        <tr><th>个人介绍：</th><td><textarea name="mdata[desc]" id="" cols="30" rows="10"><{$member.desc|default:''}></textarea></td></tr>
+
+
+        <tr><th class="clear-th-bottom"></th><td class="clear-td-bottom" colspan="10"><input type="submit" class="bt-big" value="提交数据" /></td></tr>
+    </table>
+<table width="100%" border="0" cellspacing="0" class="table-data form" id="table-attr" style="display:none;">
+<{widget id="attr/form" from="zx:guan"}>
+<tr><th class="clear-th-bottom"></th><td class="clear-td-bottom" colspan="10"><input type="submit" class="bt-big" value="提交数据" /></td></tr>
+</table>        
+        
+</form></div>
+<script type="text/javascript" src="<{$pager.res}>/kindeditor/kindeditor.js"></script>
+<script type="text/javascript" src="<{$pager.res}>/script/widget.bmap.js"></script>
+<script type="text/javascript">
+(function(K, $){
+var editor = KindEditor.create('textarea[kindeditor]', {uploadJson : '?magic/upload-editor.html', extraFileUploadParams:{OATOKEN:"<{$OATOKEN}>"}});
+})(window.KT, window.jQuery);
+</script> <script type="text/javascript">
+(function(K, $){
+    $("div.page-data").tabs();
+$("select[name='data[city_id]']").live('change', function(){
+	var city_id = $(this).val();
+	if(!city_id){return false;}
+	$.getJSON("?data/area-city-"+city_id+".html", function(ret){
+		if(ret.error){
+			Widget.MsgBox.error(ret.message.join(","));
+		}else if(ret.areas.length>0){
+			var html = "";
+			for(var i=0; i<ret.areas.length; i++){
+				html += '<option value="'+ret.areas[i].area_id+'">'+ret.areas[i].area_name+'</option>';
+			}
+			$("select[name='data[area_id]']").html(html);		
+		}else{
+			$("select[name='data[area_id]']").html('<option value="">--</option>');
+		}
+	});
+});
+})(window.KT, window.jQuery);
+</script>
+<{include file="admin:common/footer.html"}>

@@ -1,0 +1,46 @@
+<{include file="member/block/header.html"}>
+<div class="ucenter_t">
+    <ul>
+        <li class="on">团队添加</li>
+    </ul>
+</div>
+<div class="admin-right">
+<{if !$edit}>
+<form style="overflow: hidden" action="<{link ctl='member/sheji/zhantai:teamadd' arg0=$xiangmu_id}>" mini-form="ucenter" method="post" ENCTYPE="multipart/form-data">
+<{else}>
+<form style="overflow: hidden" action="<{link ctl='member/sheji/zhantai:edit' arg0=$xiangmu_id}>" mini-form="ucenter" method="post" ENCTYPE="multipart/form-data">
+<{/if}>
+    <{foreach $items as $item}>
+    <dl style="float: left; margin-left: 10px;margin-top: 10px" class="dlactive">
+        <dt><img src="<{$pager.img}>/<{$item.team_img}>" /></dt>
+        <dd style="text-align: center"><{$item.team_name}></dd>
+    </dl>
+    <input style="display: none" type="checkbox" value="<{$item.team_id}>" name="teamid[]">
+    <{foreachelse}>
+    <div class="gotoaddteam"><a style="text-decoration: none;font-size: 20px;color:#fff;" href="<{link ctl='member/sheji/team:teamadd'}>" >请添加团队</a></div>
+    <{/foreach}>
+    <{if $items}>
+        <input type="submit" value="<{if !$edit}>添加<{else}>修改<{/if}>" />
+    <{/if}>
+</form>
+</div>
+<script type="text/javascript" src="<{$pager.res}>/kindeditor/kindeditor.js"></script>
+<style>
+    .dlactive{ border: 1px solid #fff; }
+    .gotoaddteam{ text-align: center;margin: 0 auto;width: 50%;height: 45px;line-height: 45px; font-size: 20px;border-radius: 5px; color:#fff;background-color: #ffb100; }
+</style>
+<script type="text/javascript">
+(function(K, $){
+var editor = KindEditor.create('textarea[kindeditor]',{uploadJson : '<{link ctl="magic:editorupload" http="base"}>', extraFileUploadParams:{OTOKEN:"<{$OTOKEN}>"}});
+})(window.KT, window.jQuery);
+    $('form dl').click(function(){
+        if($(this).css('border-color') == 'rgb(255, 177, 0)'){
+            $(this).css('border-color','#fff');
+            $(this).next().removeAttr("checked");
+        }else{
+            $(this).css('border-color','#ffb100');
+            $(this).next().attr("checked",'true');
+        }
+    })
+</script>
+<{include file="member/block/footer.html"}>

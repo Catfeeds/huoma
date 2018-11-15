@@ -1,0 +1,40 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageFactoryInfo" class="page1" data-dom-cache="true" data-title="设计师认证">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>手机认证</h1>
+    </div>
+    <div data-role="main">
+        <div data-role="content" class="factoryInfo-upload">
+            <form method="post" action="<{link ctl='member/member/verify:mobile'}>" id="factoryInfoForm" data-ajax="false"
+                  enctype="multipart/form-data">
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryName">用户名：</label>
+                    <b><{$MEMBER.uname}></b>
+                </div>
+                <{if $MEMBER.mobile}>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorynumber">手机号：</label>
+                    <b><{$MEMBER.mobile}></b>
+                    <span style="margin-left:20px;"><button type="button" id="jq_send_verify" class="pbtn">获取验证码</button>
+					</span>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryLogo">验证码：</label>
+                    <input type="text" name="data[code]" value=""/>
+                    <input type="submit" value="立即验证"/>
+                    
+                </div>
+                 <{else}>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorynumber">您还没有设置手机号，不能验证手机.</label>
+                    <a href="<{link ctl='member/member:info'}>" value="">立即设置</a>
+                </div>
+                <{/if}>
+            </form>
+        </div>
+    </div>
+
+<{include file="mobile:member/block/footer.html"}>

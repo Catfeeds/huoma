@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{if $cate_title}><{$cate_title}>_<{/if}>展装资讯_一路展展装网</title>
+    <{include file="mobile:block/header.html"}> 
+</head>
+<body>
+<div data-role="page" id="pageList" data-mylist-con="listviewCon" data-mylist-src="/news/index-listcon.html?" class="page1" data-dom-cache="false" data-title="<{if $cate_title}><{$cate_title}>_<{/if}>展装资讯_一路展展装网">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>展会资讯</h1>
+        <a href="#article3-menu" class="ui-btn iconfont icon-menu ui-btn-right"></a>
+    </div>
+    <div data-role="main">
+                <!-- list 数据容器，这里不要存放数据-->
+                <div class="market-list2">
+                    <ul data-role="listview" class="listviewCon" id="news-<{$PAGEID}>">
+                        <{include file="mobile:news/listcon.html"}>     
+                    </ul>
+                    <!-- Loading-->
+                    <div class="listLoading" id="listLoading">
+                        <div class="listLoadLabel">上拉加载更多</div>
+                    </div>
+                </div>
+    </div>
+<!-- panel 菜单 -->
+<{include file="mobile:block/top.html"}>
+<{include file="mobile:block/footer.html"}>

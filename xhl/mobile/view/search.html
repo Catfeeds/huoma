@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link href="css/myTheme.css" rel="stylesheet"/>
+    <link href="css/jquery.mobile.icons.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.css"/>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script src="js/TouchSlide.1.1.js"></script>
+    <title>搜索页面</title>
+</head>
+<body>
+<!--pageSearch-->
+<div data-role="page" id="pageSearch">
+    <!-- 主js-->
+    <script>
+        $(document).on('pageinit', function () {
+            var dWidth = $(document).width();
+            $('.headerSearch').width(dWidth - 70);
+        });
+        $(document).on('pageshow', function () {
+            var tempWrap = $('#searchTab').children('.tempWrap');
+            if (tempWrap.size()==0) {
+                TouchSlide({slideCell: "#searchTab", effect: "leftLoop"});
+            }
+        });
+    </script>
+    <div data-role="header" data-position="fixed" id="searchHeader">
+        <div class="headerSearch">
+            <form method="post" action="list.html">
+                <input type="search" name="searchInput" id="searchInput" placeholder="搜索">
+            </form>
+        </div>
+        <div class="headerBack">
+            <a href="#" data-rel="back">取消</a>
+        </div>
+
+
+    </div>
+    <div data-role="main">
+        <!-- 本例主要代码 Start ================================ -->
+        <div id="searchTab" class="searchTab">
+            <div class="hd" data-role="navbar" data-grid="d">
+                <ul>
+                    <li><a href="#" data-ajax="false">面积</a></li>
+                    <li><a href="#" data-ajax="false">造价</a></li>
+                    <li><a href="#" data-ajax="false">色调</a></li>
+                    <li><a href="#" data-ajax="false">开口</a></li>
+                    <li><a href="#" data-ajax="false">行业</a></li>
+                </ul>
+            </div>
+            <div class="bd">
+                <ul>
+                    <li><a href="#">不限</a></li>
+                    <li><a href="#">10-50平米</a></li>
+                    <li><a href="#">10-50平米</a></li>
+                    <li><a href="#">10-50平米</a></li>
+                    <li><a href="#">10-50平米</a></li>
+                    <li><a href="#">102-500平米</a></li>
+                    <li><a href="#">100平米以上</a></li>
+                    <li><a href="#">其他</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">不限</a></li>
+                    <li><a href="#">10万元</a></li>
+                    <li><a href="#">10-50万元</a></li>
+                    <li><a href="#">10-50万元</a></li>
+                    <li><a href="#">10-50万元</a></li>
+                    <li><a href="#">102-500万元</a></li>
+                    <li><a href="#">100万元以上</a></li>
+                    <li><a href="#">其他</a></li>
+                </ul>
+                <ul class="searchColor">
+                    <li><a style="background-color:#eedccd" href="#"></a></li>
+                    <li><a style="background-color:#eecf47" href="#"></a></li>
+                    <li><a style="background-color:#ef924c" href="#"></a></li>
+                    <li><a style="background-color:#e1394a" href="#"></a></li>
+                    <li><a style="background-color:#ef8093" href="#"></a></li>
+                    <li><a style="background-color:#bdd43f" href="#"></a></li>
+                    <li><a style="background-color:#699dcd" href="#"></a></li>
+                    <li><a style="background-color:#8e6dab" href="#"></a></li>
+                    <li><a style="background-color:#333333" href="#"></a></li>
+                    <li><a style="background-color:#a9804f" href="#"></a></li>
+                    <li><a style="background-color:#999999" href="#"></a></li>
+                    <li><a style="background-image:url(img/colorX.jpg)" href="#"></a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">不限</a></li>
+                    <li><a href="#">一面开口</a></li>
+                    <li><a href="#">二面开口</a></li>
+                    <li><a href="#">三面开口</a></li>
+                    <li><a href="#">四面开口</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">不限</a></li>
+                    <li><a href="#">政府</a></li>
+                    <li><a href="#">交通</a></li>
+                    <li><a href="#">通信电子</a></li>
+                    <li><a href="#">医药医疗</a></li>
+                    <li><a href="#">能源</a></li>
+                    <li><a href="#">房产</a></li>
+                    <li><a href="#">机械机床</a></li>
+                    <li><a href="#">纺织服装</a></li>
+                    <li><a href="#">电力电工</a></li>
+                    <li><a href="#">安防消防</a></li>
+                    <li><a href="#">矿产冶金</a></li>
+                    <li><a href="#">金融投资</a></li>
+                    <li><a href="#">化工环保</a></li>
+                    <li><a href="#">光电暖通</a></li>
+                    <li><a href="#">海洋航空</a></li>
+                    <li><a href="#">旅游/酒店/餐饮/婚礼</a></li>
+                    <li><a href="#">食品/饮料/茶叶/酒</a></li>
+                    <li><a href="#">文化/教育/图书/艺术/摄影</a></li>
+                    <li><a href="#">农/林/牧/渔</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 本例主要代码 End ================================ -->
+    </div>
+<{include file="mobile:block/footer.html"}>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{$seo.group_name}><{$seo.attr}>_展装设计师_展装设计案例_一路展设计中心</title>
+    <meta name="description" content="一路展设计中心汇聚国内精英展装设计师,找会展设计案例、展台设计方案、展装设计效果图,就上一路展设计中心,海量设计师方案供您服务!一路展,展装原本如此轻松~">
+    <meta name="Keywords" content="展台设计,展览设计,会展设计,展会设计,展台设计方案,展览设计效果图,一路展,设计师列表">
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageList" data-mylist-con="listviewCon" data-mylist-src="/sheji/index-listcon-<{$group_id}>-<{$jingyan}>.html?kw=<{$kw}>&" class="page1" data-dom-cache="false" data-title="<{$seo.group_name}><{$seo.attr}>_展装设计师_展装设计案例_一路展设计中心">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="<{link ctl='index'}>" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+        <h1><{if $seo.group_name||$seo.attr}><{$seo.group_name}><{$seo.attr}><{else}>设计中心<{/if}></h1>
+        <a href="<{link ctl='sheji/index:search'}>" data-transition="slideup" class="ui-btn iconfont icon-search"></a>
+    </div>
+    <div data-role="main">
+                <!-- list 数据容器，这里不要存放数据-->
+                <div class="designer-list">
+                    <ul data-role="listview" class="listviewCon" id="sheji-<{$PAGEID}>">
+                         <{include file="mobile:sheji/listcon.html"}> 
+                    </ul>
+                    <!-- Loading-->
+                    <div class="listLoading" id="listLoading">
+                        <div class="listLoadLabel">上拉加载更多</div>
+                    </div>
+                </div>
+    </div>
+<{include file="mobile:block/footer.html"}>

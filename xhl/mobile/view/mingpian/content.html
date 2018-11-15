@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>电子名片-一路展</title>
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageArticleGallery" class="page1" data-dom-cache="true" data-title="自定义title标题，用于SEO">
+
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>详细信息</h1>
+        <!--<a href="search.html" data-transition="slide" class="ui-btn iconfont icon-search"></a>-->
+
+    </div>
+    <div data-role="main">
+        <section id="con1" class="banner">
+            <div class="bannerTx">
+                <img src="<{$pager.img}>/<{$mingpian.face}>" />
+                <h2><{$mingpian.username}></h2>
+                <small>职位：<{$mingpian.zhiwei}></small>
+                <p><a class="btn" href="tel:18612037193"><span class="iconfont icon-tel"></span> <{$mingpian.mobile}></a></p>
+                <p><a class="link" href="#"><span class="iconfont icon-contact"></span> 添加到通讯录</a></p>
+            </div>
+        </section>
+        <section id="con2" class="container">
+            <div class="content">
+                <h3>一路展（北京）信息科技股份有限公司</h3>
+                <small>展装原本如此轻松</small>
+            </div>
+            <div class="content-2">
+                <ul>
+                    <li>
+                        <span class="iconfont icon-qq"> QQ：</span>
+                        <p><{$mingpian.qq}></p>
+                    </li>
+                    <li>
+                        <span class="iconfont icon-mail"> 邮箱：</span>
+                        <p><{$mingpian.email}></p>
+                    </li>
+                    <li>
+                        <span class="iconfont icon-jingyan"> 经验：</span>
+                        <p><{$mingpian.jingyan}></p>
+                    </li>
+                    <li>
+                        <span class="iconfont icon-shanchang"> 擅长：</span>
+                        <p><{$mingpian.shanchang}></p>
+                    </li>
+                    <li>
+                        <span class="iconfont icon-bumen"> 官网：</span>
+                        <p>http://www.jisunet.com</p>
+                    </li>
+                    <li>
+                        <span class="iconfont icon-location"> 地址：</span>
+                        <p>北京市朝阳区大屯路凯旋城F坐K01</p>
+                    </li>
+                     <li>
+                        <span class="iconfont icon-jianjie"> 简介：</span>
+                        <p><{$mingpian.jianjie}></p>
+                    </li>
+                   <li>
+                        <span class="iconfont icon-wechart"> 微信：</span>
+                        <p><{$mingpian.weixinhao}><img src="<{$pager.img}>/<{$mingpian.weixin}>" />按住识别二维码，关注我</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="footer" class="footer">
+            <p><a href="http://m.jisunet.com/aboutus/index.html"><span class="iconfont icon-about"></span> 关于一路展</a></p>
+            <p>Copyright © 2015-2016 一路展 版权所有</p>
+        </section>
+    </div>
+<{include file="mobile:block/footer.html" }>

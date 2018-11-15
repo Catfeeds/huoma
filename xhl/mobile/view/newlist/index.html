@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <{include file='mobile:block/header.html'}>
+    <script src="/js/project/project.js"></script>
+    <script src="/js/project/project1.js"></script>
+    <link rel="stylesheet" href="/css/project/project.css"/>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?b8afd1353ddcc6a6e3630d282272fa54";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+<div id="wrapper">
+    <{include file='mobile:block/nav.html'}>
+    <script>
+        $(function () {
+            $(".menu-ico").click(function (e) {
+                e.preventDefault();
+                $(this).hide();
+                $("#wrapper").css("overflow", "hidden");
+                $("div.screen, div.fixedGuide").addClass("expand").removeClass("collapse");
+                $(".menu-close").fadeIn();
+            });
+
+            $(".menu-close").click(function (e) {
+                e.preventDefault();
+                $(this).hide();
+                $("div.screen, div.fixedGuide").removeClass("expand").addClass("collapse");
+                $(".menu-ico").fadeIn();
+                window.setTimeout(function () {
+                    $("#wrapper").css("overflow", "visible");
+                }, 1000);
+            });
+        });
+    </script>
+
+    <div class="screen animate collapse">
+
+        <header class="head">
+            <div class="menu-ico"></div>
+            <div class="menu-close" style="display: none;"></div>
+            <div class="tit">项目</div>
+            <script>
+                $(function () {
+                    $(".search-status a").click(function (e) {
+                        e.preventDefault();
+                        $(this).hide();
+                        $(".search-cancel, .search-wrap").fadeIn();
+                    });
+
+                    $(".search-cancel").click(function (e) {
+                        e.preventDefault();
+                        $(".search-cancel").hide();
+                        $(".search-wrap").fadeOut();
+                        $(".search-status a").fadeIn();
+                    });
+
+                });
+            </script>
+            <div class="search">
+                <!-- 搜索默认状态 -->
+                <div class="search-status">
+                    <a href="javascript:void(0);"></a>
+                    <span class="search-cancel" style="display: none">取消</span> <!-- 展开搜索栏后显示"取消" -->
+                </div>
+
+                <!-- 搜索栏展开 -->
+                <div class="search-wrap" style="display: none;">
+                    <form action="" method="GET">
+                        <button type="submit" class="search-btn">搜索</button>
+                        <div class="search-input">
+                            <input type="text" name="keywords" id="keywords" placeholder="搜索项目或投资人" value="<{$smarty.get.keywords}>"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </header>
+
+        <nav class="tabbar">
+            <ul>
+                <li class="sort-name<{if $smarty.get.sort eq ''}> current<{/if}>"><a href="?keywords=<{$smarty.get.keywords}>">默认</a></li>
+                <li class="sort-name<{if $smarty.get.sort eq 'dateline'}> current<{/if}>"><a href="?keywords=<{$smarty.get.keywords}>&sort=dateline">最新</a></li>
+                <li class="sort-name<{if $smarty.get.sort eq 'views'}> current<{/if}>"><a href="?keywords=<{$smarty.get.keywords}>&sort=views">最热</a></li>
+                <li><a href="javascript:void(0);" class="switch-filter"><i class="ico-filter"></i>筛选</a></li>
+            </ul>
+        </nav>
+
+        <div class="main">
+
+            <div class="item-section">
+                <div class="item-wapper">
+                    <ul class="item-card">
+                        <{foreach $items as $v}>
+                        <li>
+                            <div class="item-logo">
+                                <a href="<{link ctl='detail' arg0=$v.xiangmu_id}>">
+                                    <img src="<{$pager.img}>/<{$v.thumb}>" alt="<{$v.title}>">
+                                </a>
+                            </div>
+                            <div class="item-intro">
+                                <a href="<{link ctl='detail' arg0=$v.xiangmu_id}>">
+                                    <h3><{$v.title}></h3>
+                                    <p class="item-desc">
+                                        <{$v.desc}>
+                                    </p>
+                                    <p class="item-tag">
+                                        <{$v.cat_title}>
+                                    </p>
+                                </a>
+                            </div>
+                        </li>
+                        <{/foreach}>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <{include file='mobile:block/copyright.html'}>
+        <div class="filter-wrap" style="display: none;">
+            <div class="filter-main">
+                <div class="filter-tit">
+                    <span class="cancel">取消</span>
+                    <span class="name">筛选</span>
+                </div>
+                <div class="filter-content">
+                    <div class="filter-group filter-cates">
+                        <h3 style="display: none;">分类</h3>
+                        <ul>
+                            <li <{if $cat_id eq 0}>class="current"<{/if}>><a href="<{link ctl='newlist'}>">全部</a></li>
+                            <{foreach $cate.0 as $v}>
+                            <li <{if $cat_id eq $v.cat_id}>class="current"<{/if}>><a href="<{link ctl='newlist' arg0=$v.cat_id arg1=1}>"><{$v.title}></a></li>
+                            <{/foreach}>
+                        </ul>
+                    </div>
+                </div>
+                <div class="filter-btn" style="display: none;">
+                    <span class="reset">重置</span>
+                    <span class="confirm">确定</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="toTop"></div>
+<{include file='mobile:block/bottom_nav.html'}>
+</body>
+</html>

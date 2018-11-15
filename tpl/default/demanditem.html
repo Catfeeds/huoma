@@ -1,0 +1,20 @@
+<{foreach $demanditems as $item}>
+		<div class="js-guild-item guild-item">
+			<div class="guild-item-inner">
+				<a class="gdh-list-pic" href="<{link ctl='demand:info' arg0=$item.id}>">
+					<{if $item.thumb}>
+					<img src="<{$pager.img}>/<{$item.thumb}>" alt="">
+					<{else}>
+					<img src="/tpl/default/asset/img/xiangmutu.png" alt="">
+					<{/if}>
+				</a>
+				<a class="gdh-list-des" href="<{link ctl='demend:info' arg0=$item.id}>">
+					<p><{$item.title}></p>
+				</a>
+				<!--<p class="gdh-list-sm">
+					<span><em class="iconfont icon-start"></em><{$item.favorites}></span>
+					<span><em class="iconfont icon-comm"></em><{$item.comments}></span>
+				</p>-->
+			</div>
+		</div>
+<{/foreach}>

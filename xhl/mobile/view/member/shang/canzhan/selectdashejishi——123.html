@@ -1,0 +1,25 @@
+		<div class="m-index m-i-h">
+				<h3 class="newsh3">预约设计师</h3>
+		<h4>共有<i><{$pager.count}></i>位设计师可为您提供服务-当前最多选择5位设计师为您提供设计稿，不成单不收取任何设计费！成单后按项目总额5%收取</h4>
+		<div class="choose-panel">
+     <{foreach $items as $item}>
+			<span>
+            <a href="<{link ctl='blog' arg0=$item.uid}>" target="_blank" class="personA"><img src="<{$pager.img}>/<{$item.face}>" /></a>
+				<h2><a href="<{link ctl='blog' arg0=$item.uid}>"  target="_blank"><{$item.name}></a></h2>
+				<h4><{$item.city_name}></h4>
+				<h3 class="pingLv">
+					<{$item.group_name}>
+				</h3>
+				<div class="choose-panel-but">
+				<a href="<{link ctl='member/shang/canzhan:selectdesigner' arg0=$pager.id arg1=$item.uid}>" class="but-chan"><i>预约设计师</i></a>
+				</div>
+			</span>
+    <{/foreach}>
+						
+			<a href="javascript:;" class="panel-event panel-event-le" onclick="changedashejishi(<{$pager.left}>)"></a>
+			<a href="javascript:;" class="panel-event panel-event-ri" onclick="changedashejishi(<{$pager.right}>)"></a>
+		</div>
+		<div class="choose-panel-more-refresh">
+			<a href="javascript:;" class="choose-refresh" onclick="changedashejishi(<{$pager.right}>)">换一批</a>
+		</div>
+	</div>

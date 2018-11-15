@@ -1,0 +1,8 @@
+<div class="article3-title">
+    <h3><{$company.title}></h3>
+	<{if $company.city_name}><p>地区：<{$company.city_name}></p><{/if}>
+    <{if $company.slogan}><p>服务口号：<{$company.slogan|cutstr:150}></p><{/if}>
+    <p><!-- <span class="iconfont icon-yirenzheng active">实地认证</span><span class="iconfont icon-shenfenrenzheng">身份认证</span> -->
+    <{if $company.group_name}><span class="active iconfont icon-zizhi"><{$company.group_name}></span><{/if}>
+	</p>
+</div>

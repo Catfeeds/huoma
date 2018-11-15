@@ -1,0 +1,42 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageFactoryInfo" class="page1" data-dom-cache="true" data-title="案例管理">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>添加案例第一步填写案例信息</h1>
+    </div>
+    <div data-role="main">
+        <div data-role="content" class="factoryInfo-upload">
+            <form method="post" action="<{link ctl='member/designer/case:create'}>" id="factoryInfoForm" data-ajax="false" 
+                  enctype="multipart/form-data">
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorytitle">展台名称：</label>
+                    <input type="text" name="data[title]" id="factoryName" placeholder="名称" value="<{$detail.title|default:''}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorymianji">展台面积：</label>
+                    <input type="text" name="data[mianji]" id="factoryName" placeholder="面积" value="<{$detail.mianji}>">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryintro">展台简介：</label>
+                    <textarea name="data[intro]"><{$detail.intro}></textarea>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryistz">发布到超市：</label>
+                    <label class="radio-inline">
+                        <input type="radio" id="form2class2" name="data[istz]" value="0" checked>否
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" id="form2class1" name="data[istz]" value="1">是
+                    </label> <br>
+                    <span style="font-size:12px;">注：发布到特装超市，使的您的设计可以重复利用，如有参展商选择将直接把订单发给您，一次设计多次获益！<br>
+选择否仅在个人主页案例中展示不可交易！</span>
+                </div>
+
+              <button type="submit" id="factoryInfo-btn" class="factoryInfo-btn">下一步</button>
+            </form>
+        </div>
+    </div>
+
+<{include file="mobile:member/block/footer.html"}>

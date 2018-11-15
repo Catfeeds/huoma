@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>干点活</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?97"/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.4, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui "/>
+    <!--initial-scale=1.4; minimum-scale=1.0; maximum-scale=2.0-->
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link rel="stylesheet" href="css/mobile.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="css/resetv.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="css/style2.css" />
+</head>
+<body>
+<div id="wrapperB">
+    <div id="content">
+    	<div class="shang"><span class="deng">注册</span></div>
+        <div class="contentBox">
+            <div class="siginTitle">
+            	<img src="img/logo.png" style="margin-bottom: 1em;"/>
+                <a href="javascript:history.go(-1);">
+                    <img class="cha" src="img/cha_03.png"/>
+                </a>
+            </div>
+            
+            <form id="formPhone" role="form" action="" method="post">
+                <div class="">
+                    <ul class="ul-signin">
+                        <li>
+                            <input class="input300" name="ylz[mobile]" id="mobile" type="number" value="" placeholder="请输入手机号码">
+                        </li>
+                        <li>
+                            <input class="input300" name="ylz[mobile]" id="code" type="text" value="" placeholder="请输入验证码" maxlength="4">
+                            <img type="button" class="signin" id="loginCode" src="/user-verify.html" onclick="this.src='/user-verify.html&_'+Math.random()"/>
+                        </li>
+                        <li>
+                            <input class="input300" name="ylz[regCode]" id="regCode" type="number" value="" placeholder="请输入短信验证码">
+                            <button type="button" class="signin" id="loginGetCode" onclick="getRegCode()">
+                                获取短信验证码
+                            </button>
+                        </li>
+                        <li>
+                            <input class="input300" name="ylz[passwd]" id="passwd" type="password" value="" placeholder="请输入密码">
+                            <img class="yan" src="img/yanjing_07.png"/>
+                        </li>
+                        <li>
+                            <input class="input300" name="ylz[passwd_check]" id="passwd_check" type="password" value="" placeholder="请再次输入密码">
+                              <img class="yan1" src="img/yanjing_07.png"/>
+                        </li>
+                        <li class="error" style="text-align:center"></li>
+                    </ul>
+                </div>
+               
+                <div class="mt30 clearfix">
+                    <button type="submit" class="signin">注册</button>
+                </div>
+               
+                <div class="mt20">
+                	  <p class="mt20">
+                          <label class="term"><input type="checkbox" checked="checked" name="isAllow" value="1"> 阅读并同意<a class="a56" href="agreement.html"><span>干点活服务协议</span></a></label>
+                </p>
+                	<a class="signin-old" href="login.html">已有账户，请登录</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-1.11.3.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/denglu.js" charset="UTF-8"></script>
+<script src="js/denglu1.js"></script>
+<script src="js/project/project.js"></script>
+<script src="js/register.js"></script>
+</body>
+</html>

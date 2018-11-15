@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <script src="/tpl/default/asset/public/js/jquery-1.11.2.min.js"></script>
+        <link rel="stylesheet" href="/tpl/default/asset/public/css/style.css" />
+        <link rel="stylesheet" href="/tpl/default/asset/public/css/jjfa.css" />
+       
+        <script type="text/javascript" charset="utf-8" src="/m/my/ueditor/ueditor.config.js"></script>
+        <script type="text/javascript" charset="utf-8" src="/m/my/ueditor/ueditor.all.min.js"> </script>
+        <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+        <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+        <script type="text/javascript" charset="utf-8" src="lang/zh-cn/zh-cn.js"></script>
+        </head>
+    <body>
+        <div class="top">
+            <div class="container">
+                <div class="logo">
+                    <a href="#"><img src="/tpl/default/asset/public/img/gdhlogo.png"/></a>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <li><a href="<{link ctl='list'}>">项目</a></li>
+                        <li><a href="#">技术</a></li>
+                        <li><a href="#">资讯</a></li>
+                        <li><a href="#">需求</a></li>
+                    </ul>
+                </div>
+                
+                <div class="denglu">
+                    <{if $MEMBER.uid}>
+                    <a href="<{link ctl='member/designer:index'}>"><{$MEMBER.uname}>已登录</a>
+
+                <{else}>
+                    <a data-src="/tpl/default/user/reg.html" title="注册新用户" href="<{link ctl='user:reg'}>" class="zhu">注册</a>
+                    <a data-src="/tpl/default/user/login.html" title="网站登录" href="<{link ctl='user'}>" class="deng">登录</a>
+                    <{/if}>
+                </div>
+                <div class="search">
+                    <input class="form-control" type="text" autocomplete="off" name="q">
+                    <a href="#"><img class="img1" src="/tpl/default/asset/public/img/search_03.png"/></a>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <form action="<{link ctl='member/sheji/project:create'}>" mini-form="ucenter" method="post" ENCTYPE="multipart/form-data">
+            <div class="main_1">
+                <div class="banner">
+                    <p>干点活  >  项目  >  项目详情  >  解决方案</p>
+                </div>
+                <div class="box">
+                    <p>发起解决方案</p>
+                </div>
+                <h3>项目标题：</h3>
+                <{if $xiangmu_id != ''}>
+                    <div class="title">
+                        <select name="data[xiangmu_id]" class="inp1" disabled="disabled" >
+                        <{foreach $xiangmu as $xiangmus}>
+                            <option value="<{$xiangmus.xiangmu_id}>" 
+                                    <{if $xiangmus.xiangmu_id == $xiangmu_id}>
+                                       selected="selected"
+                                    <{/if}>
+                            ><{$xiangmus.title}></option>
+                        <{/foreach}>
+                        </select> 
+                       <input type="hidden"  name="data[xiangmu_id]" value="<{$xiangmu_id}>" class="inp1">
+                    </div>
+                <{else}>
+                     <div class="title">
+                        <select name="data[xiangmu_id]" class="inp1">
+                        <{foreach $xiangmu as $xiangmus}>
+                            <option value="<{$xiangmus.xiangmu_id}>"><{$xiangmus.title}></option>
+                        <{/foreach}>
+                        </select> 
+                    </div>
+                <{/if}>
+                <h3>项目标签：</h3>
+                <div class="title">
+                    <input type="text" placeholder="项目标签..." name="data[project_title]" value="" class="inp1">
+                    
+                </div>
+                <h3>项目补充（选填）：</h3>
+                <div class="title1">
+                  
+                    <script id="editor" type="text/plain" name="data[project_content]" style="width:1024px;height:300px;"></script>
+                </div>
+
+                <h3>添加附件：</h3>
+                <div class="title">
+                    <input type="file"  name="data[project_content]" value="" class="inp2">
+                   
+                </div>
+
+                <div class="title3">
+                    <button type="submit">确认</button>
+                </div>
+            </div>
+            </form>
+        </div>
+        <div class="bottom">
+        <div class="bottom_1">
+            <ul>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+                <ul>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+                <ul>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+                <ul>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+                <ul>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+        </div>
+    </body>
+</html>
+<script type="text/javascript">
+
+    //实例化编辑器
+    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+   // var ue = UE.getEditor('editor');
+   var ue = UE.getEditor('editor',{
+                initialFrameWidth :'100%',//设置编辑器宽度
+                initialFrameHeight:'40%',//设置编辑器高度
+                scaleEnabled:true//设置不自动调整高度
+                //scaleEnabled {Boolean} [默认值：false]//是否可以拉伸长高，(设置true开启时，自动长高失效)
+            }); 
+
+    function isFocus(e){
+        alert(UE.getEditor('editor').isFocus());
+        UE.dom.domUtils.preventDefault(e)
+    }
+    function setblur(e){
+        UE.getEditor('editor').blur();
+        UE.dom.domUtils.preventDefault(e)
+    }
+    function insertHtml() {
+        var value = prompt('插入html代码', '');
+        UE.getEditor('editor').execCommand('insertHtml', value)
+    }
+    function createEditor() {
+        enableBtn();
+        UE.getEditor('editor');
+    }
+    function getAllHtml() {
+        alert(UE.getEditor('editor').getAllHtml())
+    }
+    function getContent() {
+        var arr = [];
+        arr.push("使用editor.getContent()方法可以获得编辑器的内容");
+        arr.push("内容为：");
+        arr.push(UE.getEditor('editor').getContent());
+        alert(arr.join("\n"));
+    }
+    function getPlainTxt() {
+        var arr = [];
+        arr.push("使用editor.getPlainTxt()方法可以获得编辑器的带格式的纯文本内容");
+        arr.push("内容为：");
+        arr.push(UE.getEditor('editor').getPlainTxt());
+        alert(arr.join('\n'))
+    }
+    function setContent(isAppendTo) {
+        var arr = [];
+        arr.push("使用editor.setContent('欢迎使用ueditor')方法可以设置编辑器的内容");
+        UE.getEditor('editor').setContent('欢迎使用ueditor', isAppendTo);
+        alert(arr.join("\n"));
+    }
+    function setDisabled() {
+        UE.getEditor('editor').setDisabled('fullscreen');
+        disableBtn("enable");
+    }
+
+    function setEnabled() {
+        UE.getEditor('editor').setEnabled();
+        enableBtn();
+    }
+
+    function getText() {
+        //当你点击按钮时编辑区域已经失去了焦点，如果直接用getText将不会得到内容，所以要在选回来，然后取得内容
+        var range = UE.getEditor('editor').selection.getRange();
+        range.select();
+        var txt = UE.getEditor('editor').selection.getText();
+        alert(txt)
+    }
+
+    function getContentTxt() {
+        var arr = [];
+        arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
+        arr.push("编辑器的纯文本内容为：");
+        arr.push(UE.getEditor('editor').getContentTxt());
+        alert(arr.join("\n"));
+    }
+    function hasContent() {
+        var arr = [];
+        arr.push("使用editor.hasContents()方法判断编辑器里是否有内容");
+        arr.push("判断结果为：");
+        arr.push(UE.getEditor('editor').hasContents());
+        alert(arr.join("\n"));
+    }
+    function setFocus() {
+        UE.getEditor('editor').focus();
+    }
+    function deleteEditor() {
+        disableBtn();
+        UE.getEditor('editor').destroy();
+    }
+    function disableBtn(str) {
+        var div = document.getElementById('btns');
+        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+        for (var i = 0, btn; btn = btns[i++];) {
+            if (btn.id == str) {
+                UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+            } else {
+                btn.setAttribute("disabled", "true");
+            }
+        }
+    }
+    function enableBtn() {
+        var div = document.getElementById('btns');
+        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+        for (var i = 0, btn; btn = btns[i++];) {
+            UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+        }
+    }
+
+    function getLocalData () {
+        alert(UE.getEditor('editor').execCommand( "getlocaldata" ));
+    }
+
+    function clearLocalData () {
+        UE.getEditor('editor').execCommand( "clearlocaldata" );
+        alert("已清空草稿箱")
+    }
+</script>

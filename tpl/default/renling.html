@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>活码</title>
+    <link rel="stylesheet" href="/tpl/default/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/tpl/default/static/css/huoma.css">
+    <script src="/tpl/default/static/js/jquery-2.2.3.min.js"></script>
+    <script src="/tpl/default/static/js/bootstrap.js"></script>
+
+</head>
+<body style="background: #fff;">
+<div class="zhuse" style="text-align:center;">
+    <p style="margin-top: 30px;">提示:此码为空白码,认领后即可编辑为自己的专属码！</p>
+    <!-- <img src="/tpl/default/static/images/huoma.png" alt="" class="renlingma"> -->
+    <img src="<{$data.code_link}>" alt="" class="renlingma">
+    <a href="ewm-code?code=<{$data.code}>" class="next" style="width:50%;">认领活码</a>
+    <br>
+    <a href="" style="color:#666;font-size: 18px;margin-top: 20px;display: inline-block;">暂不需要,跳过此页</a>
+</div>
+<script src="/tpl/default/static/js/huoma.js"></script>
+</body>
+</html>

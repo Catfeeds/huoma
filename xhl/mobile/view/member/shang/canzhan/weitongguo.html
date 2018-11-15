@@ -1,0 +1,15 @@
+<{foreach $wtg as $item}>
+        <ul data-role="listview" data-icon="false" class="order-list-item">
+            <li class="ui-li-divider"><i><{if $item.isoem}>OEM<{else}>定制<{/if}></i>订单号：<{$item.order_sn}><span class="ui-li-count"><{$status_list[$item.status]}></span></li>
+
+            <div class="order-list-offer">展会名称：<span><{$item.zname}></span></div>
+            <div class="order-list-offer">展位号：<span><{$item.zweihao}></span></div>
+            <div class="order-list-offer">展会时间：<span><{date('Y-m-d',$item.ztime)}></span></div>
+            <div class="order-list-offer">展位面积：<span><{$item.mianji}>㎡</span></div>
+            
+            <div class="order-list-footer">
+                <a href="<{link ctl='member/shang/canzhan:canzhanDetail' arg0=$item.cz_id}>" class="ui-link">订单详情</a>
+                <a href="tel:<{$item.zhixing_mobile}>" class="ui-link"><span class="iconfont icon-tel"></span> 联系执行经理</a>
+            </div>
+        </ul>
+<{/foreach}>

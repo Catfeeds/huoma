@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{$seo.province_name}><{$seo.attr}><{$seo.zhantime}>行业展会_<{$seo.province_name}>展会信息_一路展<{$seo.province_name}>行业展会</title>
+    <meta name="description" content="一路展行业展会为<{$seo.province_name}><{$seo.attr}><{$seo.zhantime}>参展商提供最新最全的行业展会信息,寻找行业展会就上一路展！">
+    <meta name="Keywords" content="一路展,展装O2O,行业展会,展会信息,行业展会信息">
+    <{include file="mobile:block/header.html"}>
+</head>
+
+<body>
+<div data-role="page" id="pageList" data-mylist-con="listviewCon" data-mylist-src="/zhan/index-listcon-<{$province_id}>-<{$fenlei}>-<{$mianji}>-<{$zhantime}>.html?kw=<{$kw}>&" class="page1" data-dom-cache="false" data-title="<{$seo.province_name}><{$seo.attr}><{$seo.zhantime}>行业展会_<{$seo.province_name}>展会信息_一路展<{$seo.province_name}>行业展会">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="<{link ctl='index'}>" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+        <h1><{if $seo.province_name||$seo.attr||$seo.zhantime}><{$seo.province_name}><{$seo.attr}><{$seo.zhantime}><{else}>展会列表<{/if}></h1>
+        <a href="<{link ctl='zhan:search'}>" data-transition="slideup" class="ui-btn iconfont icon-search"></a>
+    </div>
+    <div data-role="main">
+                <!-- list 数据容器，这里不要存放数据-->
+                <div class="market-list2">
+                    <ul data-role="listview" class="listviewCon" id="zhan-<{$PAGEID}>">
+                       <{include file="mobile:zhan/listcon.html"}>
+                    </ul>
+                    <!-- Loading-->
+                    <div class="listLoading" id="listLoading">
+                        <div class="listLoadLabel">上拉加载更多</div>
+                    </div>
+                </div>
+    </div>
+<{include file="mobile:block/footer.html"}>
+

@@ -1,0 +1,34 @@
+<!--引入header-->
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageUserFactory" class="pageUserFactory" data-dom-cache="false" data-title="工厂中心">
+ <div data-role="header" data-position="fixed" class="header">
+     <h1>工厂中心</h1>
+     <a href="<{link ctl='about/index:about'}>" class="ui-btn iconfont icon-about ui-btn-right"></a>
+ </div>
+ <div data-role="main">
+    <!-- 工厂头 -->
+     <div class="factoryU-banner">
+         <img src="<{$pager.img}>/<{$company.logo}>"/>
+         <h4><{$company.title}></h4>
+         <small><{$company.slogan}></small>
+     </div>
+    <!-- 工厂菜单 -->
+    <{foreach $menu_list as $menu}>
+        <{if $menu.menu}>
+            <div class="factory-list-h"><span class="iconfont icon-menu1"></span><{$menu.title}></div>
+             <ul data-role="listview" class="user-listView factory-list">
+                <{foreach $menu.items as $item}>
+                <{if $item.menu}>
+                <li data-icon="false"><a data-transition="slide" href="<{link ctl=$item.ctl}>"><span class="iconfont icon-yuandian1 " <{if $request.ctlmap.ctl==$item.ctl || $request.ctlmap.nav==$item.ctl}>class="iconfont icon-yuandian1 first"<{/if}>></span><{$item.title}><i class="iconfont icon-keyboardarrowright"></i></a> </li>
+                <{/if}>
+                <{/foreach}>
+             </ul>
+        <{/if}>
+    <{/foreach}>
+    <ul data-role="listview" class="user-listView factory-list">
+            <li data-icon="false"><a data-myquit="true" href="<{link ctl='user:loginout'}>"><span class="iconfont icon-yuandian1"></span>退出<i class="iconfont icon-keyboardarrowright"></i></a> </li>
+    </ul>
+
+ </div>
+<!--引入footer-->
+  <{include file="mobile:member/block/footer.html"}>

@@ -1,0 +1,15 @@
+<div class="material_hot_command bgwhite mt15 hauto">
+    <h2>热卖推荐</h2>
+    <ul>
+        <{foreach $data.items as $v}>
+        <li>
+            <a href="<{link ctl='qiye/product:detail' arg0=$v.product_id}>"><img src="<{$pager.img}>/<{$v.photo}>_thumb.jpg" width="165" height="110" /></a>
+            <p></p>
+            <p class="text"><span></span>剩余2天02时33分</p>
+            <h3 class="h30"></h3>
+            <h3>【限时抢购】<a href="###"><{$v.title}></a></h3>
+             <h3>抢购价<span>￥<{$v.price}></span></h3>
+        </li>
+        <{/foreach}>
+    </ul>
+</div>

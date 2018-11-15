@@ -1,0 +1,37 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageFactoryInfo" class="page1" data-dom-cache="true" data-title="案例管理">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>添加案例第二步上传图片</h1>
+    </div>
+    <div data-role="main">
+        <div data-role="content" class="factoryInfo-upload">
+            <form method="post" action="<{link ctl='member/designer/case:update'}>" id="factoryInfoForm" data-ajax="false" 
+                  enctype="multipart/form-data">
+                <input type="hidden" name="case_id" value="<{$detail.case_id}>" />
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorytitle">展台名称：</label>
+                    <b><{$detail.title}></b>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorymianji">展台面积：</label>
+                    <b><{$detail.mianji}></b>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryintro">展台简介：</label>
+                    <b><{$detail.intro}></b>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorylogo">效果图：</label>
+                    
+                    <div id="factorylogo"></div>
+                </div>
+                <{if $detail.photo == $item.photo}>已设为封面<{else}><a href="<{link ctl='member/designer/case:defaultphoto' arg0=$item.photo_id}>"  mini-act="confirm:您确定设为封面？">设为封面</a><{/if}>
+                 <button type="submit" id="factoryInfo-btn" class="factoryInfo-btn">更新数据</button>
+              </form>  
+        </div>
+    </div>
+
+<{include file="mobile:member/block/footer.html"}>

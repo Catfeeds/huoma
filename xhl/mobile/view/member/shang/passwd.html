@@ -1,0 +1,29 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageFactoryInfo" class="page1" data-dom-cache="false" data-title="参展商修改密码">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>修改密码</h1>
+    </div>
+    <div data-role="main">
+        <div data-role="content" class="factoryInfo-upload">
+            <form method="post" action="<{link ctl='member/shang:passwd'}>" id="factoryInfoForm" data-ajax="false"  onsubmit="return false;"
+                  enctype="multipart/form-data">
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="oldpasswd">原密码：</label>
+                    <input type="password" name="account[old_passwd]" id="oldpasswd" placeholder="请输入原密码"  value="">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="passwd">新密码：</label>
+                    <input type="password" name="account[passwd]" id="passwd" placeholder="请输入新密码"  value="">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="confirmpasswd">确认密码：</label>
+                    <input type="password" name="account[confirm_passwd]" id="confirmpasswd" placeholder="请输入确认密码"  value="">
+                </div>
+                <button type="submit" id="factoryInfo-btn" class="factoryInfo-btn">提交</button>
+            </form>
+        </div>
+    </div>
+<{include file="mobile:member/block/footer.html"}>

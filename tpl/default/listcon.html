@@ -1,0 +1,19 @@
+<{foreach $items as $item}>
+		<div class="js-guild-item guild-item">
+			<div class="guild-item-inner">
+				<a class="gdh-list-pic" href="<{link ctl='detail' arg0=$item.xiangmu_id}>">
+					<img src="<{$pager.img}>/<{$item.thumb}>" alt="">
+				</a>
+				<a class="gdh-list-des" href="<{link ctl='detail' arg0=$item.xiangmu_id}>">
+					<p><{$item.title}></p>
+				</a>
+				<p class="gdh-list-sm">
+					<span><em class="iconfont icon-start"></em><{$item.favorites}></span>
+					<span><em class="iconfont icon-comm"></em><{$item.comments}></span>
+				</p>
+			
+			</div>
+		</div>
+		<!--item END-->
+<{/foreach}>
+

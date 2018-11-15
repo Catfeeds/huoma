@@ -1,0 +1,26 @@
+<!--引入header-->
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageUserFactory" class="pageUserFactory" data-dom-cache="false" data-title="一起干点活">
+ <div data-role="header" data-position="fixed" class="header">
+     <h1>一起干点活</h1>
+     <a href="<{link ctl='about/index:about'}>" class="ui-btn iconfont icon-about ui-btn-right"></a>
+ </div>
+ <div data-role="main">
+     <div class="factoryU-banner">
+
+             <!--img src="<{$pager.img}>/<{$shop.logo}>"/-->
+
+         <h4>参与人数：123456</h4>
+         <p><small>同资源的人：（0）</small></p>
+         <p><small>同资源需求的人：（0）</small></p>
+         <p><small>需要的资源持有人：（0）</small></p>
+     </div>
+    <ul data-role="listview" class="user-listView factory-list">
+        <li data-icon="false"><a data-myquit="true" href="<{link ctl='gdh:loginout'}>"><span class="iconfont icon-yuandian1"></span>我想干点活<i class="iconfont icon-keyboardarrowright"></i></a> </li>
+    </ul>
+
+ </div>
+
+<!--引入footer-->
+<{include file="mobile:member/block/footer.html"}>
+

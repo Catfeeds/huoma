@@ -1,0 +1,8 @@
+<{if $data.item}>
+<img src="<{$pager.img}>/<{$data.item.thumb}>" width="243" height="128" />
+<b class="mgb0px"><{$data.item.title}></b>
+<p>活动时间：<br /><{$data.item.stime|format:'Y年m月d日'}> - <{$data.item.ltime|format:'Y年m月d日'}></p>
+<a href="<{link ctl='huodong:detail' arg0=$data.item.huodong_id}>" class="fense">查看活动详细 &gt;&gt;</a>
+<{else}>
+该企业未发布活动
+<{/if}>

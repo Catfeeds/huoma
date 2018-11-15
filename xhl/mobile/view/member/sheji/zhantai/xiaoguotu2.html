@@ -1,0 +1,36 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageFactoryInfo" class="page1" data-dom-cache="false" data-title="案例管理">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>查看案例详情</h1>
+    </div>
+    <div data-role="main">
+        <div data-role="content" class="factoryInfo-upload">
+            <form method="post" action="<{link ctl='member/sheji/zhantai:edit' arg0=$detail.case_id}>" id="factoryInfoForm" data-ajax="false" 
+                  enctype="multipart/form-data">
+                <input type="hidden" name="case_id" value="<{$detail.case_id}>" />
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorytitle">展台名称：</label>
+                    <b><{$detail.title}></b>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorymianji">展台面积：</label>
+                    <b><{$detail.mianji}></b>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryintro">展台简介：</label>
+                    <b><{$detail.intro}></b>
+                </div>
+               <!-- <div class="ui-field-contain factoryInfo-item">
+                   <label for="factorylogo">效果图：</label>
+                   
+                   <div id="factorylogo"></div>
+               </div>
+                <{if $detail.photo == $item.photo}><p>已设为封面</p><{else}><a href="<{link ctl='member/sheji/zhantai:defaultphoto' arg0=$item.photo_id}>"  mini-act="confirm:您确定设为封面？" class="btn btn-tu-2">设为封面</a><{/if}> -->
+              </form>  
+        </div>
+    </div>
+
+<{include file="mobile:member/block/footer.html"}>

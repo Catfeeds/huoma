@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>活码</title>
+    <link rel="stylesheet" href="/tpl/default/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/tpl/default/static/css/huoma.css">
+    <script src="/tpl/default/static/js/jquery-2.2.3.min.js"></script>
+    <script src="/tpl/default/static/js/bootstrap.js"></script>
+
+</head>
+<body>
+<div class="container bj">
+    <h4 style="margin:20px 0;" class="title">活码信息</h4>
+    <h5 style="font-size: 18px;" class="title">3/3</h5>
+    <div class="box">
+        <div class="ewm_information">
+            <!-- <img src="/tpl/default/static/images/hm.png" alt="" class="ewm"> -->
+            <!-- <img src="/static/code/2018101815398286482629821.png" alt="" class="ewm"> -->
+            <img src="<{$data.code_link}>" alt="" class="ewm">
+            <p class="zhuse" style="margin-top:10px;"> <a href="<{$data.code_link}>" downlode>下载活码</a> </p>
+            <div class="ewm_information_center">
+                <p><span class="zhuse pull-left">活码标题</span><{$data.title}></p>
+                <p><span class="zhuse pull-left">活码类型</span><{$data.type}></p>
+            </div>
+        </div>
+    </div>
+    <!-- <a href="" class="next">保存</a> -->
+</div>
+<footer>
+    <ul class="footnav">
+        <li class="nav-1 "><a href="index.html"><i></i>首页</a></li>
+        <li class="nav-2 on"><a href="ewm.html"><i></i>活码</a></li>
+        <li class="nav-3 "><a href="my.html"><i></i>我的</a></li>
+    </ul>
+</footer>
+<script src="/tpl/default/static/js/huoma.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{$detail.title}>_<{$designer.name}>的案例_一路展设计中心</title>
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageArticleGallery" class="page1" data-dom-cache="false" data-title="<{$detail.title}>_<{$designer.name}>的案例_一路展设计中心">
+
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>详情页</h1>
+
+    </div>
+    <div data-role="main">
+                <div data-role="content" class="article-main">
+                    <div class="article-title">
+                        <div class="article-title-inner">
+                            <h2><{$detail.title}></h2>
+                        </div>
+                        <div class="article2-author">
+                            <a href="#"><img src="<{$pager.img}>/<{$designer.face}>"/> </a>
+                            <p><{$designer.name}><span>|</span>作品：<{$designer.case_num}><span>|</span>关注：<{$designer.attention_num}></p>
+
+                        </div>
+                    </div>
+                    <!-- 文章内容部分-->
+                    <div class="article2-details">
+                        <p><{$detail.intro}></p>
+
+                    </div>
+                    <div class="article-details">
+                        <{foreach $photos as $item}>
+                        <a  href="#" data-direction="reverse" data-rel="back">
+                        <img src="<{$pager.img}>/<{$item.photo}>"/></a>
+                        <{/foreach}>
+                    </div>
+                    <div class="article-like" data-setsupport="true"><a href="<{link ctl='sheji/anli:like' arg0=$detail.case_id}>"></a></div>
+                </div>
+    </div>
+<{include file="mobile:block/foot.html"}>
+<{include file="mobile:block/bottom.html"}>
+</body>
+</html>

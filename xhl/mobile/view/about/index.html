@@ -1,0 +1,21 @@
+<!--引入header-->
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageUserFactory" class="pageUserFactory" data-dom-cache="false" data-title="关于我们">
+ <div data-role="header" data-position="fixed" class="header">
+     <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+     <h1>关于我们</h1>
+    <!--  <a href="#" class="ui-btn iconfont icon-xiaoxi"></a> -->
+ </div> 
+ <div data-role="main">
+    <ul data-role="listview" class="user-listView factory-list">
+    	<li data-icon="false"><a href="<{link ctl='aboutus/index'}>"><span class="iconfont icon-yuandian1"></span>关于我们<i class="iconfont icon-keyboardarrowright"></i></a> </li>
+    	<li data-icon="false"><a href="<{link ctl='about/listcon' arg0=nct}>"><span class="iconfont icon-yuandian1"></span>免责条款<i class="iconfont icon-keyboardarrowright"></i></a> </li>
+    	<li data-icon="false"><a href="<{link ctl='about/listcon' arg0=protocol}>"><span class="iconfont icon-yuandian1"></span>用户协议<i class="iconfont icon-keyboardarrowright"></i></a> </li>
+    	<li data-icon="false"><a href="<{link ctl='about/listcon' arg0=contact}>"><span class="iconfont icon-yuandian1"></span>联系我们<i class="iconfont icon-keyboardarrowright"></i></a> </li>
+    	<li data-icon="false"><a href="<{link ctl='about/listcon' arg0=meiti}>"><span class="iconfont icon-yuandian1"></span>媒体报道<i class="iconfont icon-keyboardarrowright"></i></a> </li>
+    </ul>
+
+ </div>
+<!--引入footer-->
+<{include file="mobile:block/footer.html"}>
+                        

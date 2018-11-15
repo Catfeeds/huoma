@@ -1,0 +1,14 @@
+<{foreach $items as $item}>
+<li>
+    <a data-transition="slide" href="<{link ctl='member/company/case:detail' arg0=$item.case_id}>">
+        <h2><{$item.title}></h2>
+        <p><strong class="past">最后上传：<{$item.lasttime|format}></strong></p>
+        <p>图片数：<{$item.photos}></p>
+        <p>审核：<{if $item.audit}><strong class="over">通过</strong><{else}><strong>待审</strong><{/if}></p>
+    </a>
+	<div class="fList-manageBtn">
+        <a class="fList-manage-btn change" href="<{link ctl='member/company/case:edit' arg0=$item.case_id}>" ><span>修改</span></a>
+        <a class="fList-manage-btn del" href="<{link ctl='member/company/case:delete' arg0=$item.case_id}>"><span>删除</span></a>
+    </div>
+</li>
+<{/foreach}>

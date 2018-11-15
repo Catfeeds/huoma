@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+    <link href="//www.jisunet.com/mobile/css/myTheme.css" rel="stylesheet"/>
+    <link href="//www.jisunet.com/mobile/css/jquery.mobile.icons.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="//www.jisunet.com/mobile/css/jquery.mobile.structure-1.4.5.css"/>
+    <title>一路展</title>
+</head>
+<body>
+<div data-role="page" id="pageArticleGallery" class="page1" data-dom-cache="false" data-title="报价项目详情页">
+    <!-- 报价panel 用来加载报价清单-->
+    <div data-role="panel" data-position="right" data-display="overlay" id="offerViewPanel"></div>
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>报价项目详情页</h1>
+    </div>
+    <div data-role="main">
+        <div data-role="content" class="article-main">
+            <div class="article-title">
+               <div class="article-author">
+                  <a href="#"><img src="//www.jisunet.com/mobile/img/designer.jpg"/> </a>
+                                 
+                  <p><{$zhantai.uid}></p>
+               </div>
+                <div class="article-title-inner">
+                    <h2><{$zhantai.title}></h2>
+                </div>
+                <div class="article2-author">
+                   <!--  <a href="#"><img src="img/designer.jpg"/> </a> -->
+                    <p><{if $zhantai.chang}>长：<{$zhantai.chang}><span>|</span><{/if}> <{if $zhantai.kuan}>宽：<{$zhantai.kuan}><span>|</span> <{/if}><{if $zhantai.gao}>高：<{$zhantai.gao}><span>|</span><{/if}>面积：<{$zhantai.mianji}></p>
+
+                </div>
+                    <!-- <table class="article-title-info">
+                        <tbody>
+                            <{if $zhantai.chang}>
+                            <tr>
+                                <td>长：</td>
+                                <td><{$zhantai.chang}></td>
+                            </tr>
+                            <{/if}>
+                            <{if $zhantai.kuan}>
+                            <tr>
+                                <td>宽：</td>
+                                <td><{$zhantai.kuan}></td>
+                            </tr>
+                            <{/if}>
+                            <{if $zhantai.gao}>
+                            <tr>
+                                <td>高：</td>
+                                <td><{$zhantai.gao}></td>
+                            </tr>
+                            <{/if}>
+                            <tr>
+                                <td>面积：</td>
+                                <td><{$zhantai.mianji}></td>
+                            </tr>
+                        </tbody>
+                    </table> -->
+                </div>
+
+            </div>
+            <!-- 文章内容部分-->
+            <div class="article-details" id="wanchengdetail-<{$PAGEID}>" data-mygallery="true">
+                <{if $zhantai.intro}><p class="offer-view-info">项目简介：<{$zhantai.intro}></p><{/if}>
+                <!--设计图列表-->
+                <{foreach $list_pic as $val}>
+                <p data-src="<{$pager.img}>/<{$val.photo}>_expo.jpg"><img src="<{$pager.img}>/<{$val.photo}>_expo.jpg"/> </p>
+                <{/foreach}>
+                <p class="offer-view-info">报价注意事项：</p>
+                <p class="offer-view-info">
+                    地面部分：仅指地面铺材<br>
+                    主体结构：指全部制作部分<br>
+                    电工/AV：所有电器、AV<br>
+                    美工：指全部美工字、画面<br>
+                    运输、搭建、拆除<br>
+                    以最终总报价为准，请合理调整分项报价！<br>
+                    不宜报价过高，请保留合理利润！
+                </p>
+            </div>
+        </div>
+    <div data-role="footer" data-position="fixed" class="footer fOffer-footer">
+        <div class="ui-grid-a">
+            <div class="fOffer-footer-r">
+                <a href="/member/chao/baojia-create-<{$item.baojia_id}>.html" class="ui-btn"><i class="iconfont icon-designno"></i>查看</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+<{include file="mobile:block/bottom.html"}>
+</body>
+</html>

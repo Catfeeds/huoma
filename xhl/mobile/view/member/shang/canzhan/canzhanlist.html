@@ -1,0 +1,55 @@
+<{foreach $items as $item}>
+<ul data-role="listview" data-icon="false" class="order-list-item ui-listview">
+    <li class="ui-li-divider ui-li-static ui-body-inherit ui-li-has-count ui-first-child"><i><{if $item.isoem}>OEM<{else}>定制<{/if}></i>订单号：<{$item.order_sn}><span class="ui-li-count ui-body-inherit"><{$status_list[$item.status]}></span></li>
+    <{if $item.status>1 || $item.isoem}> 
+    <{foreach $item.sheji as $sheji}>
+    <{if $item.uid==$sheji.uid}>
+    <li class="ui-li-has-thumb ui-last-child">
+        <{if $sheji.case.photo}>
+        <a href="/member/shang/canzhan-showimg-<{$sheji.case_id}>-<{$item.cz_id}>.html" data-transition="slide">
+            
+            <img src="<{$pager.img}>/<{$sheji.case.photo}>_small.jpg">
+            <h2><{$sheji.case.title}></h2>
+        <{else}>
+            <img src="//www.jisunet.com/mobile/img/moren.jpg">
+            <h2>暂未上传...</h2>
+        <{/if}>
+        <p>展会时间：<{$item.startime|format:'Y-m-d'}>至<{$item.endtime|format:'Y-m-d'}></p>
+        </a>
+    </li>
+    <{if $sheji.tjprice}><div class="order-list-offer">平台推荐报价：<{$sheji.tjprice}>（元）<a href="/member/shang/canzhan-baojia-<{$sheji.case_id}>-<{$item.cz_id}>.html" class="ui-link">查看更多报价<span class="iconfont icon-keyboardarrowright"></span></a></div><{/if}>
+    <{else}>
+    <li class="ui-li-has-thumb ui-last-child">
+        <a href="/member/shang/canzhan-showimg-<{$sheji.case_id}>-<{$item.cz_id}>.html" data-transition="slide">
+            <{if $sheji.case.photo}>
+            <img src="<{$pager.img}>/<{$sheji.case.photo}>_small.jpg">
+            <h2><{$sheji.case.title}></h2>
+            <p><{if $item.case_id && $item.case_id==$sheji.case_id}>已经选定当前设计稿<{elseif  $item.case_id}>未被选中<{/if}></p>
+            <{else}>
+            设计中...
+            <p><small>最迟交稿时间：<{$sheji.endtime|format}></small></p>
+            <{/if}>
+            <p>设计师：<{$sheji.uname}></p>
+        </a>
+    </li>
+     <{if $sheji.tjprice}><div class="order-list-offer">平台推荐报价：<{$sheji.tjprice}>（元）<a href="/member/shang/canzhan-baojia-<{$sheji.case_id}>-<{$item.cz_id}>.html" class="ui-link">查看更多报价<span class="iconfont icon-keyboardarrowright"></span></a></div><{/if}>
+    <{/if}>
+    <{foreachelse}>
+        <{if $item.status==2 || $item.isoem==0}>
+              <li class="ui-li-has-thumb ui-last-child">
+                <a href="#" data-transition="slide">
+                    <img src="//www.jisunet.com/mobile/img/moren.jpg">
+                    <h2>暂未指定设计师</h2>
+                </a>
+              </li>
+        <{/if}>
+    <{/foreach}>
+    <{/if}>
+    <div class="order-list-footer">
+        <a href="<{link ctl='member/shang/canzhan:canzhanDetail' arg0=$item.cz_id}>" class="ui-link">订单详情</a>
+        <{if $item.zhixing_id}>
+        <a href="tel:<{$item.zhixing_mobile}>" class="ui-link"><span class="iconfont icon-tel"></span> 联系执行经理</a>
+        <{/if}>
+    </div>
+</ul>
+<{/foreach}> 

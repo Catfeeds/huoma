@@ -1,0 +1,27 @@
+
+<div class="col-sm-9">
+    <div class="factory-offer-demo">
+        <div class="factory-offer-demo-inner">
+            <!--设计图列表-->
+           <{foreach $list_pic as $val}>
+                <a href="<{$pager.img}>/<{$val.photo}>"  data-lightbox="roadtrip"><img src="<{$pager.img}>/<{$val.photo}>"/></a>
+            <{/foreach}>
+        </div>
+    </div>
+</div>
+<div class="col-sm-3">
+    <div class="offer-des"><{$zhantai.title}><br>
+   长：<{$zhantai.chang}>&nbsp;宽：<{$zhantai.kuan}>&nbsp;高:<{$zhantai.gao}>面积:<{$zhantai.mianji}><br>
+
+	<{$zhantai.intro}><br>
+
+</div>
+    
+</div>
+<script src="%THEME%/js/factory.offer.js"></script>
+<script src="%THEME%/js/lightbox.min.js"></script>
+
+
+
+
+

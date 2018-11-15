@@ -1,0 +1,7 @@
+<region id="<{$widget.GUID}>">
+<select class="<{$data.class|default:'w-150'}>" province="<{$data.province_id}>" name="<{$data.name_province|default:'data[province_id]'}>"><{html_options options=$data.provinces selected=$data.province_id}></select>
+<{if $data.level>1}>
+<select class="<{$data.class|default:'w-150'}>" city="<{$data.city_id}>" name="<{$data.name_province|default:'data[city_id]'}>"><{html_options options=$data.citys selected=$data.city_id}></select>
+<{/if}>
+</region>
+<script type="text/javascript">(function(K, $){Widget.Region("<{$widget.GUID}>");})(window.KT, window.jQuery);</script>

@@ -1,0 +1,50 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageFactoryInfo" class="page1" data-dom-cache="false" data-title="申请支付">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>申请支付</h1>
+    </div>
+    <!--累计开始-->
+        &nbsp;&nbsp;&nbsp;&nbsp;<small>累计收入：<{$MEMBER.rmb}>元</small>&nbsp;&nbsp;&nbsp;
+        <small>累计支出：<{$MEMBER.rmb_zhi}>元</small>&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;<small>申请待支付：<{$dai_zhi}>元</small>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>可申请支付：<{$MEMBER.rmb_yu-$dai_zhi}>元</small>
+    <!--累计结束-->
+    <div data-role="main">
+        <div data-role="content" class="factoryInfo-upload">
+            <form method="post" action="<{link ctl='member/designer:rmb'}>" id="factoryInfoForm" data-ajax="false"
+                  enctype="multipart/form-data">
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryrmb">提现金额：</label>
+                    <input type="text" name="data[rmb]" id="factoryrmb" placeholder="请输入提现金额" value="">
+                    <span style="color:#ccc;font-size:12px;">提现必须大于等于100元</span>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryalipay">支付宝帐户：</label>
+                    <input type="text" name="data[alipay]" id="factoryalipay" placeholder="支付宝帐户" value="<{$MEMBER.alipay}>">
+                    <span style="color:#ccc;font-size:12px;">请核实准确</span>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryrealname">姓名：</label>
+                    <input type="text" name="data[realname]" id="factoryrealname" placeholder="姓名" value="<{$MEMBER.realname}>">
+                    <span style="color:#ccc;font-size:12px;">必须与支付宝姓名一致</span>
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factorymobile">手机：</label>
+                    <input type="text" name="data[mobile]" id="factorymobile" placeholder="手机号" value="<{$MEMBER.mobile}>">
+                    <span style="color:#ccc;font-size:12px;">联系手机</span>
+                </div>
+                
+             <!--    <{if $MEMBER.rmb_yu>=100}>
+                 <input type="submit" value="提交申请" class="green_btn" />
+             <{else}>
+                 <input type="submit" value="不符合提款要求" class="green_btn" disabled="disabled" />
+             <{/if}> -->
+              <button type="submit" id="factoryInfo-btn" class="factoryInfo-btn">提交申请</button>
+            </form>
+        </div>
+    </div>
+
+<{include file="mobile:member/block/footer.html"}>

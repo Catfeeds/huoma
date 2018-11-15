@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{$seo.province_name}>展馆列表_<{$seo.province_name}>展览馆信息大全_一路展<{$seo.province_name}>展馆信息</title>
+    <meta name="description" content="一路展<{$seo.province_name}>展馆信息,包括展馆使用情况、展览馆介绍,为参展商提供最新最全的展览馆信息,了解展览馆信息就上一路展!">
+    <meta name="Keywords" content="一路展,展装O2O,<{$seo.province_name}>展馆信息,<{$seo.province_name}>展览馆情况,<{$seo.province_name}>展览馆介绍">
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageList"  data-mylist-con="listviewCon" data-mylist-src="/guan/index-listcon-<{$province_id}>.html?kw=<{$kw}>&"  class="page1" data-dom-cache="false" data-title="<{$seo.province_name}>展馆列表_<{$seo.province_name}>展览馆信息大全_一路展<{$seo.province_name}>展馆信息">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="<{link ctl='index'}>" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1><{if $seo.province_name}><{$seo.province_name}><{else}>展馆列表<{/if}></h1>
+        <a href="<{link ctl='guan:search'}>" data-transition="slideup" class="ui-btn iconfont icon-search"></a>
+
+    </div>
+    <div data-role="main">
+                <!-- list 数据容器，这里不要存放数据-->
+                <div class="market-list2">
+                    <ul data-role="listview" class="listviewCon" id="guan-<{$PAGEID}>">
+                        <{include file="mobile:guan/listcon.html"}>             
+                    </ul>
+                    <!-- Loading-->
+                    <div class="listLoading" id="listLoading">
+                        <div class="listLoadLabel">上拉加载更多</div>
+                    </div>
+                </div>
+    </div>
+<{include file="mobile:block/footer.html"}>
+

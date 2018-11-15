@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{$detail.title}>_<{$detail.cat_title}>_展装资讯_一路展展装网</title>
+    <meta content="<{$detail.seo_keywords}>" name="keywords">
+    <meta content="<{$detail.seo_description}>" name="description">
+    <{include file="mobile:block/header.html"}>  
+</head>
+<body>
+<div data-role="page" id="pageArticle2" class="page1" data-dom-cache="false" data-title="<{$detail.title}>_<{$detail.cat_title}>_展装资讯_一路展展装网">
+
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>展会资讯详情</h1>
+
+    </div>
+    <div data-role="main">
+        <div data-role="content" class="article-main">
+            <div class="article-title">
+                <div class="article-title-inner">
+                    <h2><{$detail.title}></h2>
+                </div>
+                <div class="article2-author">
+                    <div class="article2-size"><span class="iconfont icon-a1"></span><span class="iconfont icon-a"></span></div>
+                   <!--  <a href="#"><img src="img/designer.jpg"/> </a> -->
+                    <p>浏览人数:<{$detail.views}>&nbsp;&nbsp;&nbsp;时间:<{$detail.dateline|format}></p>
+                </div>
+            </div>
+            <!-- 文章内容部分-->
+            <div class="article2-details">
+                <p><{$detail.content}></p>
+            </div>
+
+            <div class="ui-grid-a article-pager">
+                <{if $next_item}>
+                <div class="ui-block-a"><a href="<{link ctl='news/content' arg0=$next_item.article_id}>" title='<{$next_item.title}>' class="ui-link"><span class="iconfont icon-left"></span>上一篇</a></div>
+                <{/if}>
+                <{if $up_item}>
+                <div class="ui-block-b"><a href="<{link ctl='news/content' arg0=$up_item.article_id}>" title="<{$up_item.title}>" class="ui-link">下一篇<span class="iconfont icon-keyboardarrowright"></span></a></div>
+                <{/if}>
+            </div>
+        </div>
+    </div>
+<{include file="mobile:block/footer.html"}>

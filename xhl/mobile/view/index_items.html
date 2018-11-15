@@ -1,0 +1,12 @@
+            <{foreach $items as $item}>
+                <div class="my-grids-1 index-item">
+                    <a href="/chao/tezhuang-imgpage-<{$item.case_id}>.html" class="index-case">
+                        <div class="index-case-pic"><img src="<{$pager.img}>/<{$item.photo}>_small.jpg"/></div>
+                        <p>【<{$item.sheji.uname}>】<{$item.title}></p>
+                        <small><{$item.mianji}>㎡</small>
+                    </a>
+                    <a href="<{link ctl='sheji/shi' arg0=$item.uid}>" class="index-designer">
+                        <img src="<{$pager.img}>/<{$item.sheji.face}>">
+                    </a>
+                </div>
+               <{/foreach}>

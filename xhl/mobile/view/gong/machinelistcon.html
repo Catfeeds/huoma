@@ -1,0 +1,11 @@
+ <{foreach $items as $v}>
+ 	<{if $v.type == 1}>
+	 <div class="marketLIst-item my-grids-2">
+	 	<a href="#" class="ui-body-a" data-transition="slide" data-form="ui-body-a"><div class="index-case-pic"><img src="<{$pager.img}>/<{$v.photo}>"></div>
+	 	<div class="caption">
+	 		<p><{$v.title}></p>
+	 	</div>
+	 	</a>
+	 </div>
+	<{/if}>
+ <{/foreach}>

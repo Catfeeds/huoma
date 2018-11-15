@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>干点活</title>
+    <meta name="keywords" content="干点活"/>
+    <meta name="description" content="干点活"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <script src="/js/jquery-2.1.4.min.js"></script>
+    <script src="/js/index/index.js"></script>
+    <script src="/js/project/project.js"></script>
+    <script src="/js/project/project1.js"></script>
+    <link rel="stylesheet" href="/css/common.css"/>
+    <link rel="stylesheet" href="/css/index.css"/>
+    <link rel="stylesheet" href="/css/iconfont.css"/>
+    <link rel="stylesheet" href="/css/iconfont1.css"/>
+    <link rel="stylesheet" href="/css/iconfont3.css"/>
+</head>
+<body>
+<div id="wrapper" class="collapse">
+    <{include file='mobile:block/nav.html'}>
+    <script>
+        $(function () {
+            $(".menu-ico").click(function (e) {
+                e.preventDefault();
+                $(this).hide();
+                $("#wrapper").css("overflow", "hidden");
+                $("div.screen, div.fixedGuide").addClass("expand").removeClass("collapse");
+                $(".menu-close").fadeIn();
+            });
+
+            $(".menu-close").click(function (e) {
+                e.preventDefault();
+                $(this).hide();
+                $("div.screen, div.fixedGuide").removeClass("expand").addClass("collapse");
+                $(".menu-ico").fadeIn();
+                window.setTimeout(function () {
+                    $("#wrapper").css("overflow", "visible");
+                }, 1000);
+            });
+        });
+    </script>
+
+    <div class="screen animate collapse">
+
+        <header class="head">
+            <div class="menu-ico"></div>
+            <div class="menu-close" style="display: none;"></div>
+            <div class="sear search_box">
+                <input type="text" name="keyword" id="keyword" placeholder="项目/解决方案/问题" value="<{$smarty.get.keyword}>"/>
+                <a href="#"><img src="img/search_03.png"></a>
+            </div>
+            <script>
+                $(function () {
+                    $(".search_box a").click(function(){
+                        var keyword = $("#keyword").val();
+                        window.location.href="<{link ctl='index'}>?keyword="+keyword;
+                    });
+
+                    $(".search-status a").click(function (e) {
+                        e.preventDefault();
+                        $(this).hide();
+                        $(".search-cancel, .search-wrap").fadeIn();
+                    });
+
+                    $(".search-cancel").click(function (e) {
+                        e.preventDefault();
+                        $(".search-cancel").hide();
+                        $(".search-wrap").fadeOut();
+                        $(".search-status a").fadeIn();
+                    });
+
+                });
+            </script>
+
+            <a href="#" class="message">信息</a>
+
+        </header>
+
+        <nav class="navbar">
+            <ul>
+                <li class="current"><a href="<{link ctl='index'}>">项目</a></li>
+                <li><a href="javascript:void(0);">解决方案</a></li>
+                <li><a href="javascript:void(0);">问答</a></li>
+
+            </ul>
+        </nav>
+
+        <div class="main item-card">
+            <div class="main1">
+                <p class="p1">Hi,干点活是否设置投资偏好？</p>
+                <p class="p2">设置后我们可以根据你的投资领域、阶段等信息为你推荐匹配项目，以便提升工作效率。</p>
+                <p class="p3">以后再说</p>
+                <a class="a1" href="#">立即设置</a>
+            </div>
+
+            <{foreach $project as $v}>
+            <div class="main2">
+                <a href="<{link ctl='detail' arg0=$v.xiangmu_id}>">
+                    <dl>
+                        <dt><img src="<{$pager.img}>/<{$v.thumb}>"></dt>
+                        <dd>
+                            <p class="p4"><{$v.title}></p><span class="s1">名企</span><span class="s2">名校</span>
+                            <p class="p5"><{$v.desc}></p>
+                        </dd>
+                    </dl>
+                </a>
+                <div class="rongzi">
+                    <div class="xin">
+                        <div class="left">
+                            <i class="iconfont">&#xe608;</i><span><{$v.favorites}></span>
+                        </div>
+                        <div class="center"><i class="iconfont">&#xe64b;</i><span><{$v.comments}></span></div>
+                        <div class="right"><a href="<{link ctl='detail' arg0=$v.xiangmu_id}>" class="iconfont">&#xe679;</a></div>
+                    </div>
+                </div>
+            </div>
+            <{/foreach}>
+        </div>
+
+        <{include file='mobile:block/bottom_nav.html'}>
+    </div>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,11 @@
+<{foreach $items as $item}>
+<li data-icon="false" class="my-grids-1">
+    <a href="<{link ctl='guan/chang' arg0=$item.guan_id}>">
+        <{if $item.thumb}><img src="<{$pager.img}>/<{$item.thumb}>"/><{else}><img src="//www.jisunet.com/mobile/img/moren.jpg"/><{/if}>
+
+        <h2><{$item.title}></h2>
+
+        <p>展会地址：<{$item.addr}></p>
+    </a>
+</li>
+<{/foreach}>

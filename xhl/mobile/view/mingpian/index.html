@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>电子名片-一路展</title>
+    <meta name="description" content="一路展-电子名片，一路展,展装原本如此轻松~">
+    <meta name="Keywords" content="一路展,名片">
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageList" data-mylist-con="listviewCon" data-mylist-src="/mingpian/index-listcon.html" class="page1" data-dom-cache="false" data-title="电子名片_一路展">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="<{link ctl='index'}>" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+        <h1>电子名片</h1>
+        
+    </div>
+    <div data-role="main">
+                <!-- list 数据容器，这里不要存放数据-->
+                <div class="designer-list">
+                    <ul data-role="listview" class="listviewCon" id="mingpian-<{$PAGEID}>">
+                         <{include file="mobile:mingpian/listcon.html"}> 
+                    </ul>
+                    <!-- Loading-->
+                    <div class="listLoading" id="listLoading">
+                        <div class="listLoadLabel">上拉加载更多</div>
+                    </div>
+                </div>
+    </div>
+<{include file="mobile:block/footer.html"}>

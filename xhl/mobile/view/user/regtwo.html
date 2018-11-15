@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{$pager.from_title}>注册_一路展展装网</title>
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageReg" class="page1 regMain" data-dom-cache="false" data-title="<{$pager.from_title}>注册_一路展展装网">
+
+    <div data-role="header" data-position="fixed" data-tap-toggle="false" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+        <h1><{$pager.from_title}>注册（3/3）</h1>
+    </div>
+    <div data-role="main">
+
+        <div class="setp">
+            <!-- 用户头  onsubmit="return false;" -->
+            
+           <form data-role="form" method="post" action="<{link ctl='user:create' http='base'}>" onsubmit="return false;" data-ajax="false" id="loginForm"> <input type="hidden" name="ylz[from]" value="<{$pager.from}>"/>
+           <{if $pager.from=='company'}>
+                <div class=" reg-fromInput">
+                    <label for="uname"><span class="iconfont icon-shenfenrenzheng"></span> </label>
+                    <input type="text" name="ylz[cname]" id="cname" placeholder="工厂名称">
+                </div>
+           <{elseif $pager.from=='shang'}>
+                <div class=" reg-fromInput">
+                    <label for="uname"><span class="iconfont icon-shenfenrenzheng"></span> </label>
+                    <input type="text" name="ylz[cname]" id="cname" placeholder="公司名称">
+                </div>
+           <{/if}>
+                <div class=" reg-fromInput">
+                    <label for="uname"><span class="iconfont icon-user"></span> </label>
+                    <input type="text" name="ylz[uname]" id="uname" placeholder="用户名">
+                </div>
+                <div class="reg-fromInput">
+                    <label for="loginUserRPwd"><span class="iconfont icon-password"></span> </label>
+                    <input type="password" name="ylz[passwd]" id="loginUserRPwd" placeholder="密码">
+                </div>
+                <fieldset class="loginForgot"></fieldset>
+                <!--<fieldset class="loginSubmit">-->
+                    <!--<input type="submit" id="regSubmit" value="完成">-->
+                <!--</fieldset>-->
+                <div class="reg-codeCon">
+                    <button type="submit" class="registerCodeBtn" id="regSubmit">注册</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<{include file="mobile:block/bottom.html"}>
+</body>
+</html>

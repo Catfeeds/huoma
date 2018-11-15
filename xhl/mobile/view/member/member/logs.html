@@ -1,0 +1,62 @@
+<!--引入header-->
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageUserFactoryOffer" class="pageUserFactoryOffer" data-dom-cache="false" data-title="普通用户中心">
+    <!-- 普通用户后台菜单 -->
+    <{include file="mobile:member/block/membertop.html"}>
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>展币日志</h1>
+        <a href="#userFactoryOfferPanel" class="ui-btn iconfont icon-menu"></a>
+    </div>
+    <div data-role="main">
+        <!-- 展币日志列表 -->
+        <div class="fOffer3-list" id="fOffer-<{$PAGEID}>" data-slideid="fOfferList">
+            <div class="hd">
+                <ul class="ui-grid-b">
+                    <li class="ui-block-a"><a href="<{link ctl='member/member:logs'}>">展币日志</a></li>
+                    <li class="ui-block-b"><a href="<{link ctl='member/member:logs' arg0='in'}>">充值记录</a></li>
+                    <li class="ui-block-c"><a href="<{link ctl='member/member:logs' arg0='out'}>">消费记录</a></li>
+                </ul>
+            </div>
+            <div class="bd" id="34535">
+                <div class="autoHeight">
+                    <ul data-offerList-url="/member/member-listcon.html"
+                        class="fOffer3-list-item">
+                        <!--展币日志-->
+                            <{include file="mobile:member/member/listcon.html"}>                
+                        <li class="offer-list-more">
+                            <button class="offer-list-moreBtn"><span class="iconfont icon-more"></span></button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="autoHeight">
+                    <ul data-offerList-url="/member/member-chongzhi.html"
+                        class="fOffer3-list-item">
+                        <!--充值记录-->
+                       <{include file="mobile:member/member/chongzhi.html"}>    
+                        <li class="offer-list-more">
+                            <button class="offer-list-moreBtn"><span class="iconfont icon-more"></span></button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="autoHeight">
+                    <ul data-offerList-url="/member/member-xiaofei.html"
+                        class="fOffer3-list-item">
+                        <!--消费记录-->
+                       <{include file="mobile:member/member/xiaofei.html"}>    
+                        <li class="offer-list-more">
+                            <button class="offer-list-moreBtn"><span class="iconfont icon-more"></span></button>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+<!-- 普通用户后台菜单 -->
+<{include file="mobile:member/block/membertop.html"}>
+<!--引入footer-->
+<{include file="mobile:member/block/footer.html"}>

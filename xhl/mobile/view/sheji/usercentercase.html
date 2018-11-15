@@ -1,0 +1,8 @@
+<{foreach $cases as $case}>
+<div class="bd-case-item">
+	<a href="<{link ctl='sheji/anli-caseimg' arg0=$case.case_id}>">
+		<div class="index-case-pic"><img src="<{$pager.img}>/<{$case.photo}>_small.jpg"></div>
+		<p><{$case.title}><br><small><{$case.intro|cutstr:50}></small></p>
+	</a>
+</div>
+<{/foreach}> 

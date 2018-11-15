@@ -1,0 +1,44 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageHammer" class="pageHammer" data-dom-cache="false" data-title="报价详情图片">
+    <div data-role="header" data-position="fixed" data-tap-toggle="false" class="header hammerHeader" data-fullscreen="true">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1><p class="hammerNum"></p>详情页</h1>
+        <a href="/member/chao/baojia-baojiadetail-<{$baojia.baojia_id}>.html" data-transition="slide" class="ui-btn iconfont icon-iconfont30"></a>
+    </div>
+    <div data-role="main">
+
+        <div class="swiper-container" data-conswiper="true" id="baojiaimg-<{$PAGEID}>">
+            <div class="swiper-wrapper">
+                <{foreach $list_pic as $val}>
+                    <div class="swiper-slide">
+                        <div class="hammerGallery">
+                            <img src="<{$pager.img}>/<{$val.photo}>_expo.jpg"/>
+                        </div>
+                    </div>
+                <{/foreach}>
+            </div>
+        </div>
+
+        <!--<div class="hammerGallery" id="hammerPage">-->
+            <!--<img src="../img/pic2.jpg"/>-->
+        <!--</div>-->
+
+    </div>
+    <div data-role="footer" data-position="fixed" class="footer hammerFooter" data-tap-toggle="false" data-fullscreen="true">
+        <{if $zhantai.caizhi}><p>材质要求：<{$zhantai.caizhi}></p><{/if}>
+        <div class="ui-grid-b hammerFooterMenu">
+            <div class="ui-block-a"></div>
+            <div class="ui-block-b">
+                <a href="/member/chao/baojia-create-<{$baojia.baojia_id}>.html" data-transition="slide" class="ui-btn"><i
+                        class="iconfont icon-designno"></i>马上报价</a>
+            </div>
+            <div class="ui-block-c"></div>
+        </div>
+    </div>
+</div>
+
+<!--引入footer-->
+<{include file="mobile:member/block/bottom.html"}>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!--引入header-->
+<{include file="mobile:block/header.html"}>
+<div data-role="page" id="pageUserFactoryOffer" class="pageUserFactoryOffer" data-dom-cache="false" data-title="设计中心">
+   <!-- 设计师后台菜单 -->
+   <{include file="mobile:member/block/membertop.html"}>
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>基本信息</h1>
+        <a href="#userFactoryOfferPanel" class="ui-btn iconfont icon-menu"></a>
+    </div>
+    <div data-role="main">
+        <!-- 设计列表 -->
+        <div class="fOffer3-list" id="fOffer-<{$PAGEID}>" data-slideid="fOfferList">
+            <div class="hd">
+                <ul class="ui-grid-c">
+                    <li class="ui-block-a"><a href="#">基本信息</a></li>
+                    <li class="ui-block-b"><a href="#">修改密码</a></li>
+                    <li class="ui-block-c"><a href="#">更换邮箱</a></li>
+                    <li class="ui-block-d"><a href="#">修改头像</a></li>
+                </ul>
+            </div>
+            <div class="bd" id="34535">
+                <div class="autoHeight">
+                    <ul data-offerList-url="#"
+                        class="fOffer3-list-item">
+                        <{include file="mobile:member/member/info.html"}>
+                    </ul>
+                </div>
+                <div class="autoHeight">
+                    <ul data-offerList-url="#"
+                        class="fOffer3-list-item">
+                         <{include file="mobile:member/member/passwd.html"}>                    
+                    </ul>
+                </div>
+                <div class="autoHeight">
+                    <ul data-offerList-url="#"
+                        class="fOffer3-list-item">
+                        <{include file="mobile:member/member/mail.html"}>
+                    </ul>
+                </div>
+                <div class="autoHeight">
+                    <ul data-offerList-url="#"
+                        class="fOffer3-list-item">
+                        <{include file="mobile:member/member/face.html"}>
+                        <li class="offer-list-more">
+                            <button class="offer-list-moreBtn"><span class="iconfont icon-more"></span></button>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+   <!--引入footer-->
+<{include file="mobile:block/footer.html"}>

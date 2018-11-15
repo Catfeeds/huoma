@@ -1,0 +1,16 @@
+<{foreach $items as $item}>
+<li>
+    <a data-transition="slide" href="/member/chao/baojia-baojiadetail-<{$item.baojia_id}>.html">
+        <img src="<{$pager.img}>/<{$item.photo}>_small.jpg">
+        <h2><{$item.title|default:'--'}></h2>
+        <p><strong>报价剩余时间：<{$item.endtime}></strong></p>
+    </a>
+</li>
+<{foreachelse}>
+<li>
+    <div class="fOffer-noList">
+        <h1><span class="iconfont icon-menu1"></span></h1>
+        <p>没有订单</p>
+    </div>
+</li>
+<{/foreach}>

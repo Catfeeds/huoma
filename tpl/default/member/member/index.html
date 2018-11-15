@@ -1,0 +1,30 @@
+<{include file="member/block/header.html"}>
+<div class="admin-right">
+    <div class="index_rt_top">
+        <a href="<{link ctl='member/member:index'}>" class="lt"><img src="<{$pager.img}>/<{$MEMBER.face}>" width="120" height="120"/></a>
+        <div class="shop_top_lt lt">
+            <p class="title"><{$MEMBER.uname}></p>
+            <p>帐户类型： <{$MEMBER.from_title}></p>
+            <p>邮箱地址：<a href="<{link ctl='member/member/verify:mail'}>"><{$MEMBER.mail}></a><{if $MEMBER.verify_mail}>[已认证]<{else}>[未认证]<{/if}></p>
+            <p>手机号码：<a href="<{link ctl='member/member/verify:mobile'}>"><{$MEMBER.mobile|default:'--'}></a><{if $MEMBER.mobile}><{if $MEMBER.verify_mobile}>[已认证]<{else}>[未认证]<{/if}><{/if}></p>
+        </div>
+        <div class="shop_top_rt personal_top_rt rt">
+            <p>注册时间：<{$MEMBER.dateline|format}></p>
+            <p>最后登录：<{$MEMBER.lastlogin|format}></p>
+            <p>登录地点：<font class="green"><{$MEMBER.loginip|cutstr:6:"******"}></font>(<{$MEMBER.loginip|iplocal}>)</p>
+        </div>
+    </div>
+    
+    <div class="index_cont_rt">
+        <div class="index_c_rt">
+            <p class="title"><font class="index_c_rt_icon1"></font>公告</p>
+            <p class="txt"><{$CONFIG.bulletin.member}></p>
+        </div>
+        <div class="index_c_rt">
+            <p class="title"><font class="index_c_rt_icon2"></font>平台联系方式</p>
+            <p class="txt">客服电话: <font class="green"><{$CONFIG.site.phone}></font></p>
+            <p>服务时间:9:00-18:00(周一至周日)</p>
+        </div>
+    </div>
+ </div>
+<{include file="member/block/footer.html"}>

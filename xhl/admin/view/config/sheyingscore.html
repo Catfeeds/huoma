@@ -1,0 +1,29 @@
+<{include file="admin:common/header.html"}>
+<div class="page-title">
+    <table width="100%" align="center" cellpadding="0" cellspacing="0" >
+      <tr>
+        <td width="30" align="right"><img src="<{$pager.url}>/images/main-h5-ico.gif" alt="" /></td>
+        <th><{$MOD.title}></th>
+        <td align="right"></td>
+        <td width="15"></td>
+      </tr>
+    </table>
+</div>
+<div class="page-data">
+<h4 class="tip-notice">留空表示不启用该评分项</h4>
+<form action="?system/config-sheyingscore.html" mini-form="config-form" method="post" >
+<input type="hidden" name="K" value="sheyingscore" />
+<table width="100%" border="0" cellspacing="0" class="table-data form">
+<tr><th class="w-100">score1：</th><td><input type="text" name="config[score1]" value="<{$config.score1|default:''}>" class="input w-300"/></td></tr>
+<tr><th class="w-100">score2：</th><td><input type="text" name="config[score2]" value="<{$config.score2|default:''}>" class="input w-300"/></td></tr>
+<tr><th class="w-100">score3：</th><td><input type="text" name="config[score3]" value="<{$config.score3|default:''}>" class="input w-300"/></td></tr>
+<tr><th class="w-100">score4：</th><td><input type="text" name="config[score4]" value="<{$config.score4|default:''}>" class="input w-300"/></td></tr>
+<tr><th class="w-100">score5：</th><td><input type="text" name="config[score5]" value="<{$config.score5|default:''}>" class="input w-300"/></td></tr>
+<tr><th class="w-100">score6：</th><td><input type="text" name="config[score6]" value="<{$config.score6|default:''}>" class="input w-300"/></td></tr>
+<tr><th class="w-100">score7：</th><td><input type="text" name="config[score7]" value="<{$config.score7|default:''}>" class="input w-300"/></td></tr>
+<tr><th class="w-100">score8：</th><td><input type="text" name="config[score8]" value="<{$config.score8|default:''}>" class="input w-300"/></td></tr>
+    <tr><th class="clear-th-bottom"></th><td class="clear-td-bottom" colspan="10"><input type="submit" class="bt-big" value="提交数据" /></td></tr>
+</table>
+</form>
+</div>
+<{include file="admin:common/footer.html"}>

@@ -1,0 +1,30 @@
+<{include file="member/block/header.html"}>
+<div class="ucenter_t">
+    <ul>
+        <li class="on">团队添加</li>
+    </ul>
+</div>
+<div class="admin-right">
+<{if !$edit}>
+<form action="<{link ctl='member/sheji/team:teamadd'}>" mini-form="ucenter" method="post" ENCTYPE="multipart/form-data">
+<{else}>
+<form action="<{link ctl='member/sheji/team:edit' arg0=$team_id}>" mini-form="ucenter" method="post" ENCTYPE="multipart/form-data">
+<{/if}>
+    <table cellspacing="0" cellpadding="0" class="form">
+    <tr><th>姓名：</th><td><input type="text" name="data[team_name]" value="<{$detail.team_name}>" class="input w-300"/></td></tr>
+    <tr><th>头像：</th><td><{if $detail.team_img}><img src="<{$pager.img}>/<{$detail.team_img}>" /><{/if}><input type="file" name="data[team_img]" class="input w-300" /></td></tr>
+    <tr><th>手机号：</th><td><input type="text" name="data[team_mobile]" value="<{$detail.team_mobile}>" class="input title w-500"/></td></tr>
+    <tr><th>邮箱：</th><td><input type="text" name="data[team_email]" value="<{$detail.team_email}>" class="input title w-500"/></td></tr>
+    <tr><th>团队用户任务负责：</th><td>
+    <textarea name="data[team_task]" kindeditor="full" style="width:800px;height:350px;"><{$detail.team_task}></textarea></td></tr>
+    <tr><th></th><td><input type="submit" value="保存" class="green_btn" /></td></tr>
+</table>
+</form>
+</div>
+<script type="text/javascript" src="<{$pager.res}>/kindeditor/kindeditor.js"></script>
+<script type="text/javascript">
+(function(K, $){
+var editor = KindEditor.create('textarea[kindeditor]',{uploadJson : '<{link ctl="magic:editorupload" http="base"}>', extraFileUploadParams:{OTOKEN:"<{$OTOKEN}>"}});
+})(window.KT, window.jQuery);
+</script>
+<{include file="member/block/footer.html"}>

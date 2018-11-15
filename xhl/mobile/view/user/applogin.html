@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>参展商登录_设计师登录_工厂登录_一路展展装网</title>
+    <meta name="description" content="会员登录设计、展台搭建的展装O2O平台,让展装设计搭建省去诸多中间环节,给予参展企业实现 省心、省钱、省力 的互联网展装服务新体验.">
+    <meta name="Keywords" content="一路展,展装网,特装网,展台搭建,展台设计,展装APP,展装O2O,特装O2O,参展商登录,设计师登录,工厂登录">
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageLogin" class="loginCon" data-dom-cache="false" data-title="欢迎登录">
+
+    <div data-role="main">
+        <div class="loginLogo">
+            <img src="//www.jisunet.com/mobile/img/loginLogo.png" />
+        </div>
+        <form data-role="form" method="post" action="<{link ctl='user:login'}>" id="loginForm">
+        	<input type="hidden" name="ylz[app]" value="<{$app}>"/>
+        	<input type="hidden" name="ylz[openid]" value="<{$openid}>"/>
+            <div class="login-content">
+                <fieldset class="login-fromInput">
+                    <label for="loginUserName"><span class="iconfont icon-user"></span> </label>
+                    <input type="text" name="ylz[uname]" id="loginUserName" placeholder="用户名/手机号" autocomplete="off">
+                </fieldset>
+                <fieldset class="login-fromInput">
+                 <input type="text" name="aaaa" id="loginUserName" style="display:none;">
+                    <label for="loginUserPwd"><span class="iconfont icon-password"></span> </label>
+                    <span style="font-family:Comic Sans MS;"><input type="text" name="ylz[passwd]" id="loginUserPwd" placeholder="输入密码" onfocus="this.type='password'" autocomplete="off"></span>  
+                </fieldset>
+            </div>
+            <fieldset class="loginSubmit">
+                <input type="submit" id="loginSubmit" value="登录">
+            </fieldset>
+            <div class="regCheck"></div>
+            <fieldset class="loginForgot">
+                <a href="<{link ctl='user:reg'}>">新用户注册</a>
+                <a href="<{link ctl='user:forgetpw'}>" class="pull-left">忘记密码？</a>
+            </fieldset>
+            
+        </form>
+<div class="loginInfo">
+            <p>服务热线：400-178-1616</p>
+            <p>Copyright  2016 一路展信息科技股份有限公司</p>
+        </div>
+    </div>
+</div>
+<{include file="mobile:block/bottom.html"}>

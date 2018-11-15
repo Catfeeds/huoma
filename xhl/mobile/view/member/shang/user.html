@@ -1,0 +1,24 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageUserFactoryMachine" class="pageUserFactoryOffer" data-dom-cache="false" data-title="展商中心">
+  
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+ 
+        <h1>管理人员列表</h1>
+        <a href="#userFactoryOfferPanel" class="ui-btn iconfont icon-menu"></a>
+    </div>
+    <div data-role="main">
+        <!-- 管理人员列表 -->
+        <div class="fOffer-list">
+            <ul class="fOffer-list-view" data-offerList-url="/member/shang-listcon.html" data-role="listview" data-inset="false" data-input="#offerFilter" data-icon="false">
+                <li class="ui-li-divider"><i></i><a data-transition="slide" href="<{link ctl='member/shang:reg'}>" class="iconfont icon-plus1"></a>管理人员列表</li>
+                <small>(管理人员不能超过3个)</small>
+                <{include file="mobile:member/shang/listcon.html"}>
+                <li class="offer-list-more"><button  class="offer-list-moreBtn"><span class="iconfont icon-more"></span></button></li>
+            </ul>
+        </div>
+    </div>
+<!-- 展商后台菜单 -->
+<{include file="mobile:member/block/shangtop.html"}>
+<{include file="mobile:member/block/footer.html"}>

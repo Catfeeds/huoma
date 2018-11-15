@@ -1,0 +1,744 @@
+.car_number{
+	width: 100%;
+	height: 38px;
+	margin-top: 15px;
+	line-height: 38px;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	font-size: 14px;
+}
+.car_number label{
+	margin-left: 15px;
+}
+.car_number a{
+	float: right;
+	margin-right: 15px;
+}
+.car_explain{
+	clear: both;
+	height: 50px;
+	width: 100%;
+	overflow: hidden;
+	text-align: center;;
+}
+.car_explain p{
+	height: 24px;
+	line-height: 24px;
+	width: 100%;
+	overflow: hidden;
+	font-size: 12px;
+	margin-top: 23px;
+}
+.car_match{
+	clear: both;
+	overflow: hidden;
+	width: 100%;
+}
+.car_match li{
+	width: 100%;
+	height: 38px;
+	line-height: 38px;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	font-size: 14px;
+	clear: both;
+}
+.car_match li:last-child{
+	border-top: none;
+}
+.car_match li label{
+	margin-left: 15px;
+}
+.car_match li  a{
+	float: right;
+	margin-right: 15px;
+}
+.car_sur{
+	width: 90%;
+	margin: 25px auto 0;
+	clear: both;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 15px;
+}
+.wrap_footer{
+	width: 100%;
+	position: fixed;
+	height: 60px;
+	border-top: 1px solid #ccc;
+	left: 0;
+	bottom: 0;
+}
+.wrap_footer li{
+	width: 25%;
+	height: 60px;
+	float: left;
+	font-size: 10px;
+	text-align: center;
+}
+.wrap_footer li a{
+	width: 100%;
+	height: 100%;
+	display: block;
+	padding-top: 45px;
+	position: relative;
+}
+.wrap_footer li a:hover{
+	color: #3f85e4;
+	text-decoration: none;
+}
+.wrap_footer li a:focus{
+	color: #3f85e4;
+	text-decoration: none;
+}
+.wrap_footer .wrap_footer_bg1{
+	background: url(../images/car_order.png) center 10px no-repeat;
+	background-size: 30px;	
+}
+.wrap_footer .wrap_footer_bg1:hover{
+	background: url(../images/car_order_on.png) center 10px no-repeat;
+	background-size: 30px;	
+}
+.wrap_footer .wrap_footer_bg1:focus{
+	background: url(../images/car_order_on.png) center 10px no-repeat;
+	background-size: 30px;	
+}
+.wrap_footer .wrap_footer_bg2{
+	background: url(../images/pay_ico.png) center 10px no-repeat;
+	background-size: 30px;	
+}
+.wrap_footer .wrap_footer_bg2:hover{
+	background: url(../images/pay_ico_on.png) center 10px no-repeat;
+	background-size: 30px;	
+}
+.wrap_footer .wrap_footer_bg2:focus{
+	background: url(../images/pay_ico_on.png) center 10px no-repeat;
+	background-size: 30px;	
+}
+.wrap_footer .wrap_footer_bg3{
+	background: url(../images/search_car.png) center 10px no-repeat;
+	background-size: 30px;	
+}
+.wrap_footer .wrap_footer_bg3:hover{
+	background: url(../images/search_car_on.png) center 10px no-repeat;
+	background-size: 30px;	
+}
+.wrap_footer .wrap_footer_bg3:focus{
+	background: url(../images/search_car_on.png) center 10px no-repeat;
+	background-size: 30px;	
+}
+.wrap_footer .wrap_footer_bg4{
+	background: url(../images/set_ico.png) center 10px no-repeat;
+	background-size: 30px;	
+}
+.wrap_footer .wrap_footer_bg4:hover{
+	background: url(../images/set_ico_on.png) center 10px no-repeat;
+	background-size: 30px;	
+}
+.wrap_footer .wrap_footer_bg4:focus{
+	background: url(../images/set_ico_on.png) center 10px no-repeat;
+	background-size: 30px;	
+}
+/*费用查询结果*/
+.payment_result_title{
+	width: 100%;
+	height: 150px;
+	overflow: hidden;
+}
+.payment_result_title img{
+	width: 100%;
+	height: 100%;
+}
+.payment_result_center{
+	width: 100%;
+}
+.payment_result_center li{
+	width: 100%;
+	clear: both;
+	height: 40px;
+	line-height: 40px;
+	overflow: hidden;
+	border-bottom: 1px solid #ccc;
+}
+.payment_result_center li label{
+	margin-left: 15px;
+}
+.payment_result_center li span{
+	float: right;
+	margin-right: 15px;
+}
+.wrap .hgt-1{
+	height: 55px;
+	line-height: 55px;
+}
+.rescan_top{
+	width: 100%;
+	height: 257px;
+	overflow: hidden;
+	background: url(../images/rescan_ico.png) center 95px no-repeat;
+	background-size: 69px 50px;
+}
+.rescan_top_text{
+	width: 100%;
+	height: 92px;
+	overflow: hidden;
+	margin-top: 160px;
+	text-align: center;
+}
+.rescan_top_text p{
+	height: 24px;
+	font-size: 14px;
+	line-height: 24px;	
+}
+/*payment_time*/
+.payment_time{
+	width: 100%;
+}
+.payment_time_title{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	overflow: hidden;
+	font-size: 14px;
+}
+.payment_time_title label{
+	margin-left: 15px;
+}
+.payment_time_title span{
+	float: right;
+	margin-right: 15px;
+	color: #999;
+    width:50%;
+    text-align: right;
+}
+.payment_time_mask{
+	display: none;
+}
+.payment_time_mask1{
+	display: none;
+}
+.payment_time_mask2{
+	display: none;
+}
+.payment_time_mask3{
+	display: none;
+}
+.payment_time_list{
+	width: 94%;
+	margin: 0 auto;
+}
+.payment_time_list li{
+	width: 44%;
+	height: 140px;
+	float: left;
+	margin: 10px 3%;
+}
+.payment_time_list span{
+	height: 105px;
+	display: block;
+}
+.payment_time_list em{
+	height: 35px;
+	display: block;
+	text-align: center;
+	line-height: 35px;
+	overflow: hidden;
+	font-size: 14px;
+}
+.payment_time_list span a img{
+	width: 100%;
+	height: 100%;
+}
+.payment_time_mask{
+	z-index: 999;
+	width: 100%;
+	height: 372px;
+	position: absolute;
+	top: 295px;
+	overflow: hidden;
+	text-align: center;
+	background:white;
+}
+.payment_time_mask1{
+z-index: 999;
+	width: 100%;
+	height: 372px;
+	position: absolute;
+	top: 295px;
+	overflow: hidden;
+	/*text-align: center;*/
+	background:white;
+}
+.payment_time_mask2{
+z-index: 100;
+	width: 100%;
+	height: 372px;
+	position: absolute;
+	top: 295px;
+	overflow: hidden;
+	text-align: center;
+	background:white;
+}
+.payment_time_mask3{
+	z-index: 999;
+	width: 100%;
+	height: 372px;
+	position: absolute;
+	top: 295px;
+	overflow: hidden;
+	text-align: center;
+	background:white;
+}
+.payment_time_mask3 .top{
+	height:40px;
+	background:#f7f7f7;
+}
+.payment_time_mask3 .a1{
+	float:left;
+	font-size:14px;
+	padding-left:10px;
+	line-height:40px;
+}
+.payment_time_mask3 .a2{
+	float:left;
+	font-size:14px;
+	margin-left:26%;
+	/*margin-left:-78px;*/
+	line-height:40px;
+	color:#6a6a6a;
+}
+.payment_time_mask3 .a3{
+	float:right;
+	font-size:14px;
+	padding-right:10px;
+	line-height:40px;
+}
+.bottom2 ul li{
+	float:left;
+	/*width:21%;*/
+    /*width:74%;*/
+	/*padding:0 2%;*/
+	/*height:28px;*/
+	
+}
+.bottom2 ul{
+	margin-top:20px;
+	margin-left:-19px
+}
+.bottom2 ul li .a4{
+	height:22px;
+	display:block;
+	width:200px;
+	margin:0 auto;
+	font-size:14px;
+	border:1px solid #cdcdcd;
+}
+/*.payment_time_mask li{
+	height: 38px;
+	line-height: 38px;
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+}
+.payment_time_mask1 li{
+	height: 38px;
+	line-height: 38px;
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+}
+.payment_time_mask2 li{
+	height: 38px;
+	line-height: 38px;
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+}
+.payment_time_mask3 li{
+	height: 38px;
+	line-height: 38px;
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+}*/
+#bg{
+	background-color:#000;
+	position:fixed;
+	z-index:99;
+	left:0;
+	top:0;
+	display:none;
+	width:100%;
+	height:100%;
+	opacity:0.3;
+	filter: alpha(opacity=30);
+	-moz-opacity: 0.3;
+}
+#bg1{
+	background-color:#000;
+	position:fixed;
+	z-index:99;
+	left:0;
+	top:0;
+	display:none;
+	width:100%;
+	height:100%;
+	opacity:0.3;
+	filter: alpha(opacity=30);
+	-moz-opacity: 0.3;
+}
+#bg2{
+	background-color:#000;
+	position:fixed;
+	z-index:99;
+	left:0;
+	top:0;
+	display:none;
+	width:100%;
+	height:100%;
+	opacity:0.3;
+	filter: alpha(opacity=30);
+	-moz-opacity: 0.3;
+}
+#bg3{
+	background-color:#000;
+	position:fixed;
+	z-index:99;
+	left:0;
+	top:0;
+	display:none;
+	width:100%;
+	height:100%;
+	opacity:0.3;
+	filter: alpha(opacity=30);
+	-moz-opacity: 0.3;
+}
+/*payment_expense*/
+.payment_expense{
+	width: 100%;
+}
+.payment_expense li{
+	height: 60px;
+	width: 100%;
+	overflow: hidden;
+	border-bottom: 1px solid #ccc;
+	line-height: 60px;
+}
+.payment_expense_list{
+	width: 100%;
+	clear: both;
+	height: 60px;
+	font-size: 14px;
+}
+.payment_expense_list_left{
+	float: left;
+	margin-left: 15px;
+	line-height: 30px;
+}
+.payment_expense_list_right{
+	float: right;
+	margin-right: 15px;
+}
+/*payment_detials*/
+.payment_detials{
+	width: 100%;
+}
+.payment_detials li{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	clear: both;
+	border-bottom: 1px solid #ccc;
+	font-size: 14px;
+}
+.payment_detials li label{
+	margin-left: 15px;
+}
+.payment_detials li span{
+	float: right;
+	margin-right: 15px;
+}
+
+.bottom2 ul .current>.a4{background:red;color:#fff;}
+.payment_time_mask2 .top{
+	height:40px;
+	background:#f7f7f7;
+}
+.payment_time_mask2 .a1{
+	float:left;
+	font-size:14px;
+	padding-left:10px;
+	line-height:40px;
+}
+.payment_time_mask2 .a2{
+	float:left;
+	font-size:14px;
+	margin-left:26%;
+	/*margin-left:-78px;*/
+	line-height:40px;
+	color:#6a6a6a;
+}
+.payment_time_mask2 .a3{
+	float:right;
+	font-size:14px;
+	padding-right:10px;
+	line-height:40px;
+}
+
+.payment_time_mask1 .top{
+	height:40px;
+	background:#f7f7f7;
+}
+.payment_time_mask1 .a1{
+	float:left;
+	font-size:14px;
+	padding-left:10px;
+	line-height:40px;
+}
+.payment_time_mask1 .a2{
+	float:left;
+	font-size:14px;
+	margin-left:26%;
+	/*margin-left:-78px;*/
+	line-height:40px;
+	color:#6a6a6a;
+}
+.payment_time_mask1 .a3{
+	float:right;
+	font-size:14px;
+	padding-right:10px;
+	line-height:40px;
+}
+
+.payment_time_mask .top{
+	height:40px;
+	background:#f7f7f7;
+}
+.payment_time_mask .a1{
+	float:left;
+	font-size:14px;
+	padding-left:10px;
+	line-height:40px;
+}
+.payment_time_mask .a2{
+	float:left;
+	font-size:14px;
+	margin-left:26%;
+	/*margin-left:-78px;*/
+	line-height:40px;
+	color:#6a6a6a;
+}
+.payment_time_mask .a3{
+	float:right;
+	font-size:14px;
+	padding-right:10px;
+	line-height:40px;
+}
+.context{
+	/*padding: 0 9px 10px;*/
+	margin-top:15px;
+	margin-left:20px;
+}
+.context p input{
+    width:40%;
+    height:20px;
+}
+.context p select{
+    width:20%;
+    height:24px;
+}
+.context button{
+    margin:10px 0 0 10px;
+    width:20%;
+    height:20px;
+}
+.box button{
+    margin:10px 0 0 10px;
+    width:20%;
+    height:24px;
+}
+.box9 button{
+    margin-left:10px;
+    width:20%;
+    height:24px;
+    /*position: absolute;*/
+    /*bottom:0;*/
+}
+.context li{
+    list-style: none;
+}
+#form li{
+	    position: relative;
+    list-style: none;
+    margin-bottom: 4px;
+    margin-right: 15px;
+        float: left;
+        /*padding: 0 2%;*/
+        display:block;
+}
+#form li:nth-child(3){
+	    position: relative;
+    list-style: none;
+    margin-top: 12px;
+    margin-right: 1px;
+        float: left;
+        padding: 0 2%;
+        
+}
+#form textarea{
+	margin-top:10px;
+	width:148px;
+	height:60px;
+}
+.add_stars option{
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+#date_start{
+	background:url(../img/320_timeicon.png) no-repeat right center;
+    width: 90px;
+    height: 20px;
+    border:1px solid #999;
+}
+#date_end{
+	background:url(../img/320_timeicon.png) no-repeat right center;
+    width: 90px;
+    height: 20px;
+    margin-top:10px;
+    border:1px solid #999;
+}
+#industry{
+	margin-left:73px;
+}
+.bottom3 .pt{
+	margin-left:37px;
+	margin-top:2px;
+    width: 60%;
+    height: 20px;
+    line-height: 20px;
+    border:1px solid #999;
+    display: inline-block;
+}
+.bottom2 .pt{
+    margin-left:37px;
+    margin-top:2px;
+    width: 60%;
+    height: 20px;
+    line-height: 20px;
+    border:1px solid #999;
+    display: inline-block;
+}
+.bottom2_2 .pt{
+    margin-top:2px;
+    width: 65%;
+    min-height: 20px;
+    line-height: 20px;
+    border:1px solid #999;
+    display: inline-block;
+}
+.box9 .pt{
+    width: 65%;
+    min-height: 20px;
+    max-height: 40px;
+    overflow: hidden;
+    line-height: 20px;
+    border:1px solid #999;
+    display: inline-block;
+}
+.bottom3 li{
+    width: 100%;
+}
+.bottom3 button{
+	margin:10px 0 0 10px;
+    width: 20%;
+    height: 22px;
+}
+.pt1{
+	width:100px;
+	margin-top:10px;
+	margin-right:3px;
+}
+.box{
+    margin-top:15px;
+    margin-left:20px;
+}
+.box p input{
+	width:100px;
+	margin-left:10px;
+}
+.diyi{
+	margin-left:16px;
+	width:100px;
+	margin-top:17px;
+}
+.box p{
+	width:288px;
+	margin-top:5px;
+	/*margin-left:10px;*/
+}
+.box button{
+	margin-left:10px;
+}
+.bottom2 .school,.bottom2 .job{
+	width:106px;
+}
+.box9 p{
+    width: 288px;
+    margin-top: 5px;
+}
+.box9 p input{
+	width:100px;
+	margin-left:10px;
+}
+.box9{
+	/*margin-top:208px;*/
+}
+.box9 li{
+    text-align: left;
+    margin:10px 0 0 20px;
+}
+.box9 textarea{
+	margin-top:10px;
+}
+.school_ul{
+    text-align: left;
+}
+.school_ul .school{
+    width:60%;
+}
+.school_ul select{
+    height:24px;
+}
+.school_ul input{
+    height:20px;
+}
+.bottom4 li{
+    text-align: left;
+    width:99%;
+    margin-top: 10px;
+}
+.bottom4 input{
+    height: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

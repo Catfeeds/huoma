@@ -1,0 +1,51 @@
+<div class="col-sm-9">
+    <div class="factory-offer-demo">
+        <div class="factory-offer-demo-inner">
+            <!--设计图列表-->
+           
+        <a href="/expo/expo/img/pic2.jpg" data-lightbox="roadtrip"><img src="//www.jisunet.com/mobile/img/pic2.jpg"></a>
+        <a href="/expo/expo/img/pic2.jpg" data-lightbox="roadtrip"><img src="//www.jisunet.com/mobile/img/pic2.jpg"></a>
+        <a href="/expo/expo/img/pic2.jpg" data-lightbox="roadtrip"><img src="//www.jisunet.com/mobile/img/pic2.jpg"></a>
+        <a href="/expo/expo/img/pic2.jpg" data-lightbox="roadtrip"><img src="//www.jisunet.com/mobile/img/pic2.jpg"></a>
+        </div>
+    </div>
+</div>
+<div class="col-sm-3">
+    <div class="offer-des">长：10.0
+宽：19.0
+高：20.0
+面积：200.0</div>
+    <form role="form" method="post" class="form-horizontal offer-form" id="offerForm" action="#" onsubmit="return false;">
+        
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <button class="pull-right btn-link" id="offerAdd">新增</button>
+                <h4 class="panel-title">展台报价明细</h4>
+                
+            </div>
+            <div class="panel-body">
+                <div class="offer-form-list">
+                <!--系统项目容器-->
+                <div class="form-group"><div class="col-lg-5"><input class="form-control" name="baojia[xiangmu][0]" type="text" value="地面部分"></div><div class="col-lg-7"><input class="form-control item" name="baojia[price][0]" type="text" placeholder="费用（元）"></div></div><div class="form-group"><div class="col-lg-5"><input class="form-control" name="baojia[xiangmu][1]" type="text" value="主体结构"></div><div class="col-lg-7"><input class="form-control item" name="baojia[price][1]" type="text" placeholder="费用（元）"></div></div><div class="form-group"><div class="col-lg-5"><input class="form-control" name="baojia[xiangmu][2]" type="text" value="运输及安装"></div><div class="col-lg-7"><input class="form-control item" name="baojia[price][2]" type="text" placeholder="费用（元）"></div></div><div class="form-group"><div class="col-lg-5"><input class="form-control" name="baojia[xiangmu][3]" type="text" value="灯具租赁部分"></div><div class="col-lg-7"><input class="form-control item" name="baojia[price][3]" type="text" placeholder="费用（元）"></div></div></div>
+                <div class="offer-form-custom" data-custom="2">
+                <!--自定义项目容器-->
+                </div>
+            </div>
+            <div class="panel-footer">
+
+                    <label for="name5" class="control-label col-sm-5">合计：</label>
+
+                    <div class="col-sm-7">
+                        <input id="sum" class="form-control sum" name="sum" type="text" placeholder="0">
+                    </div>
+
+            </div>
+        </div>
+        
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="submit" class="btn btn-success" id="facOfferSubmit">提交</button>
+        
+    </form>
+</div>
+    <script src="/expo/expo/js/factory.offer.js"></script>
+    <script src="/expo/expo/js/lightbox.min.js"></script>

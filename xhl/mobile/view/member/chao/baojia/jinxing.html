@@ -1,0 +1,18 @@
+<{foreach $items as $item}>
+<li>
+    <a data-transition="slide" href="#">
+        <img src="<{$pager.img}>/<{$item.photo}>_small.jpg">
+        <h2><{$item.title|default:'--'}></h2>
+		<p>设计师：<{$item.name}></p>
+		<p>距报价结束还有：<{$item.endtime}></p>
+		<p>
+		当前状态：
+		<{if $item.cz_id}>
+			<b style="color:red">客户项目报价</b>
+        <{else}>
+        	<b style="color:red">展装超市报价</b>
+        <{/if}>
+		</p>
+    </a>
+</li>
+<{/foreach}>

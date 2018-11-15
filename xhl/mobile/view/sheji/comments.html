@@ -1,0 +1,30 @@
+<{foreach $comment_info as $item}>
+<li>
+    <img src="<{$pager.img}>/<{$designer.face}>">
+
+    <p class="disCon1r">
+        <small><{$user_list[$item.uid].uname|cutstr:6:''}><i><{$item.dateline|format}></i></small>
+        <span><{foreach $CONFIG.score.designer as $k=>$v}><{if $v}><{$v}>:<{$item[$k]}>  <{/if}><{/foreach}></span>
+        <{$item.content}>
+    </p>
+</li>
+<{/foreach}>   
+<li>
+    <img src="//www.jisunet.com/mobile/img/tx.jpg">
+
+    <p class="disCon1r">
+        <small>feng<i>2015-12-18</i></small>
+        <span>好评</span>
+        sadfsadfsdf评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容...
+    </p>
+</li>
+<li>
+    <img src="//www.jisunet.com/mobile/img/tx.jpg">
+
+    <p class="disCon1r">
+        <small>feng<i>2015-12-18</i></small>
+        <span>好评</span>
+        sadfsadfsdf评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容评价内容...
+    </p>
+</li>
+

@@ -1,0 +1,54 @@
+<!--引入header-->
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageUserFactoryOffer" class="pageUserFactoryOffer" data-dom-cache="false" data-title="设计中心">
+   <!-- 设计后台菜单 -->
+    <{include file="mobile:member/block/designertop.html"}>
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>财务管理</h1>
+        <a href="#userFactoryOfferPanel" class="ui-btn iconfont icon-menu"></a>
+    </div>
+    <div data-role="main">
+        <!-- 财务列表 -->
+        <div class="fOffer3-list" id="fOffer-<{$PAGEID}>" data-slideid="fOfferList">
+            <div class="hd">
+                <ul class="ui-grid-b">
+                    <li class="ui-block-a"><a href="<{link ctl='member/designer:logs'}>">现金日志</a></li>
+                    <li class="ui-block-b"><a href="<{link ctl='member/designer:logs' arg0='in'}>">收入记录</a></li>
+                    <li class="ui-block-c"><a href="<{link ctl='member/designer:logs' arg0='out'}>">提现记录</a></li>
+                </ul>
+            <span class="r"><a href="<{link ctl='member/designer:rmb'}>">&nbsp;&nbsp;&nbsp;&nbsp;<small>申请支付</small></a></span><br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;<small>累计收入：<{$MEMBER.rmb}>元</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <small>累计支付：<{$MEMBER.rmb_zhi}>元</small><br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;<small>可支付余额：<{$MEMBER.rmb_yu}>元</small>
+            </div>
+            <div class="bd" id="34535">
+                <div class="autoHeight">
+                    <ul data-offerList-url="/member/designer-listcon.html"
+                        class="fOffer3-list-item">
+                        <{include file="mobile:member/designer/listcon.html"}>
+                    </ul>
+                </div>
+                <div class="autoHeight">
+                    <ul data-offerList-url="/member/designer-shouru.html"
+                        class="fOffer3-list-item">
+                         <{include file="mobile:member/designer/shouru.html"}>
+                    </ul>
+                </div>
+                <div class="autoHeight">
+                    <ul data-offerList-url="/member/designer-tixian.html"
+                        class="fOffer3-list-item">
+                        <{include file="mobile:member/designer/tixian.html"}>
+                    </ul>
+                </div>              
+
+            </div>
+        </div>
+        <!-- Loading-->
+        <div class="listLoading">
+            <div class="listLoadLabel"><img src="//www.jisunet.com/mobile/img/listload.gif" height="12"/> 等待载入数据。。。</div>
+        </div>
+    </div>
+   <!--引入footer-->
+<{include file="mobile:member/block/footer.html"}>

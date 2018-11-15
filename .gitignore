@@ -1,0 +1,8 @@
+/build
+*.db
+.idea
+node_modules
+/files
+/xhl/data
+/xhl/config.php
+/m/www/laychat/vendor/Workerman/workerman.log

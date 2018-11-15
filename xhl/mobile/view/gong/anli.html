@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{$seo_title}>_一路展工程中心</title>
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageArticleGallery" class="page1" data-dom-cache="false" data-title="<{$seo_title}>_一路展工程中心">
+
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>案例详情页</h1>
+
+    </div>
+    <div data-role="main">
+                <div data-role="content" class="article-main">
+                    <div class="article-title">
+                        <div class="article-title-inner">
+                            <h2><{$detail.title}></h2>
+                        </div>
+                        <div class="article2-author">
+                            <!-- <a href="#"><img src="img/designer.jpg"/> </a> 
+                            <p>尚强<span>|</span>粉丝：12223<span>|</span>关注：34225</p>-->
+                            <p>面积：<{$detail.mianji}>平米</p>
+                            <p>发布时间：<{$detail.lasttime|format:'Y-m-d H:i:s'}><span>|</span>浏览人数：<{$detail.views}></p>
+                        </div>
+                    </div>
+                    <!-- 文章内容部分-->
+                    <div class="article2-details">
+                        <p><{$detail.intro}></p>
+                    </div>
+                    <div class="article-details">
+                        <{foreach $photos as $item}>
+                        <a  href="#" data-direction="reverse" data-rel="back" >
+                        <img src="<{$pager.img}>/<{$item.photo}>"/></a>
+                        <{/foreach}>
+                    </div>
+                </div>
+    </div>
+<{include file="mobile:block/foot.html"}>
+<{include file="mobile:block/bottom.html"}>
+</body>
+</html>

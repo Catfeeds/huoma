@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>展台设计效果图_3D展台模型_一路展特装超市</title>
+    <meta name="description" content="一路展特装超市，汇聚海量展台设计案例、展台设计效果图、3D展台模型，找展台设计案例、3D展台模型就上一路展特装超市，海量展台设计效果图任意选择! ">
+    <meta name="Keywords" content="一路展展装网,特装网,特装设计，特装设计案例，特装效果图，特装设计效果图，3D特装模型">
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<!--pageSearch-->
+<div data-role="page" id="pageSearch">
+    <!-- 主js-->
+    <div data-role="header" data-position="fixed" id="searchHeader" class="searchHeader">
+        <div class="searchBack">
+            <a href="/" data-rel="back"><span class="iconfont icon-left"></span></a>
+        </div>
+        <form method="get" action="<{link ctl='chao/index'}>" class="headerSearch">
+            <input type="search" name="kw" id="searchInput" placeholder="输入您要查找的关键词">
+            <div class="headerBack">
+                <button type="submit">搜索</button>
+            </div>
+        </form>
+    </div>
+
+    <div data-role="main">
+        <!-- 本例主要代码 Start ================================ -->
+     <div id="searchTab-<{$PAGEID}>" class="searchTab" data-slideid="searchTab">
+            <div class="hd" data-role="navbar" data-grid="d">
+                <ul>
+                    <{foreach $attr_values as $v}>
+                    <li><a href="#" data-ajax="false"><{$v.title}></a></li>
+                    <{/foreach}>
+                    <li><a href="#" data-ajax="false">面积</a></li>
+                </ul>
+            </div>
+            <div class="bd">
+                <{foreach $attr_values as $v}>
+                <ul>
+                    <li class="<{if $v.checked == true}>active<{/if}>"><a href="<{$v.link}>">不限</a></li>
+                    <{foreach $v.values as $vv}>
+                        <li class="<{if $vv.checked == true}>active<{/if}>"><a href="<{$vv.link}>"><{$vv.title}></a></li>
+                    <{/foreach}> 
+                </ul>
+                <{/foreach}>
+                <ul>
+                    <li class="<{if $mianji == 0}>active<{/if}>"><a href="<{$mianji_all_link}>">不限</a></li>
+                    <{foreach $mianji_list as $mj}>
+                        <li class="<{if $mianji == $mj.val}>active<{/if}>"><a href="<{$mj.link}>"><{$mj.title}></a></li>
+                    <{/foreach}> 
+                </ul>
+            </div>
+        </div>
+        <!-- 本例主要代码 End ================================ -->
+    </div>
+  <{include file="mobile:block/footer.html"}>

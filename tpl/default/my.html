@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>活码</title>
+    <link rel="stylesheet" href="/tpl/default/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/tpl/default/static/css/huoma.css">
+    <script src="/tpl/default/static/js/jquery-2.2.3.min.js"></script>
+    <script src="/tpl/default/static/js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="my_information" style="position:relative;">
+        <a href="user-loginout" style="position: absolute;right:10px;top:10px;color: #fff;">退出登录</a>
+        <div class="my_information_top">
+            <img src="/tpl/default/static/images/w.png" alt="" class="my_photo">
+            <p class="name">
+                <{if $uname}>
+                <{$uname}>
+                <{else}>
+                    <a href="user">登陆</a>
+                <{/if}>
+            </p>
+            <p class="grade">免费用户</p>
+            <div class="tongji">
+                <div class="tj">
+                    <p>
+                        <{if $num}>
+                        <{$num}>
+                        <{else}>
+                        0
+                        <{/if}>
+                    </p>
+                    <p class="zhuse">活码数量</p>
+                </div>
+                <div class="tj">
+                    <p>
+                        <{if $fangwen_num}>
+                        <{$fangwen_num}>
+                        <{else}>
+                        0
+                        <{/if}>        
+                    </p>
+                    <p class="zhuse">累计扫描</p>
+                </div>
+            </div>
+        </div>
+        <div class="my_information_content">
+            <ul>
+                <li>
+                    <a href="ewm.html">
+                        我的活码
+                    </a>
+                </li>
+                <li>
+                    <a href="my-help">
+                        帮助中心
+                    </a>
+                </li>
+                <li>
+                    <a href="my-about">
+                        关于我们
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<footer>
+    <ul class="footnav">
+        <li class="nav-1 "><a href="index.html"><i></i>首页</a></li>
+        <li class="nav-2 "><a href="ewm.html"><i></i>活码</a></li>
+        <li class="nav-3 on"><a href="my.html"><i></i>我的</a></li>
+    </ul>
+</footer>
+<script src="/tpl/default/static/js/huoma.js"></script>
+</body>
+</html>

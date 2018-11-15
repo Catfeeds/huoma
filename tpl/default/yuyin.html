@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>项目列表</title>
+	<{include file="block/header.html"}>
+</head>
+<body class="gdh-body">
+<div class="main-banner">
+	<{include file="block/headernav.html"}>
+	<!--头部导航 END-->
+</div>
+<!--主导航-->
+<div class="container-fluid">
+	<ul class="list-nav">
+		<{foreach $cate.0 as $cates}>
+				<li>
+					<a href="<{link ctl='list' arg0=$cates.cat_id arg1=1}>">
+						<{$cates.title}>
+					</a>
+				</li>
+		<{/foreach}>
+	</ul>	
+	<ul class="list-nav">
+			<{if $cat_id!=0}>
+			<{foreach $cate.$cat_id as $cates}>
+				<li>
+					<a href="<{link ctl='list' arg0=$cates.cat_id arg1=1}>">
+						<{$cates.title}>
+					</a>
+				</li>
+			<{/foreach}>
+			<{/if}>
+	</ul>	
+</div>
+<!--主内容-->
+<div class="container-fluid">
+	
+
+	<div class="guild-bottom js-ajaxLoad" data-url="/list-listcon-<{$cat_id}>.html?kw=<{$kw}>&">
+	  
+			<textarea class="form-control"  id="yuyin" cols="30" rows="5"></textarea>
+			
+			<button  onclick="renwu(0)">普通女声</button>
+			<button  onclick="renwu(1)">普通男生</button>
+			<button  onclick="renwu(3)">情感合成-度逍遥</button>
+			<button  onclick="renwu(4)">情感合成-度丫丫</button>
+			<br>
+			<input type="text" id ="yusu" value="5">(语速设置0-9)
+			<br>
+			<button  onclick="dianji()">提交</button>
+			<input type="hidden" id="qinggan" value="1">
+	</div>
+
+	<audio src="/i/song.ogg" controls="controls" id="bofang"> </audio>
+
+</div>
+
+<!--footer-->
+<script type="text/javascript" src="/tpl/default/asset/public/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+
+function renwu(id){
+
+	$("#qinggan").attr('value',id);
+
+}
+	
+function dianji(){
+
+	var str = $("#yuyin").val();
+	var per = $("#qinggan").val();
+	var spd = $("#yusu").val();
+
+	$.ajax({
+			type:'POST',
+			url:"<{link ctl='yuyin-ajaxyy'}>",
+			data:{
+				
+				"data": str,
+				"per": per,
+				"spd": spd,		
+			},
+			success:function(data){			
+				$("#bofang").attr('src',data);
+			},
+			error:function(){
+				alert('系统繁忙,请稍候重试！');
+			}
+		
+		});	 
+
+
+}
+
+</script>
+	
+</body>
+</html>

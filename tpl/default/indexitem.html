@@ -1,0 +1,48 @@
+<{foreach $items as $item}>
+		<!--item END-->
+		<div class="js-guild-item guild-item">
+			<div class="guild-item-inner">
+				<a class="gdh-list-pic" href="<{link ctl='detail' arg0=$item.xiangmu_id}>">
+					<{if $item.thumb}>
+					<img src="<{$pager.img}>/<{$item.thumb}>" alt="">
+					<{else}>
+					<img src="/tpl/default/asset/img/xiangmutu.png" alt="">
+					<{/if}>
+				</a>
+				<a class="gdh-list-des" href="<{link ctl='detail' arg0=$item.xiangmu_id}>">
+					<p><{$item.title}></p>
+				</a>
+				<p class="gdh-list-sm">
+					<span><em class="iconfont icon-start"></em><{$item.favorites}></span>
+					<span><em class="iconfont icon-comm"></em><{$item.comments}></span>
+				</p>
+				<!--用户交互-->
+				<!-- <ul class="gdh-discuss">
+					<li>
+						<img src="/tpl/default/asset/img/tx.png" class="pull-left" alt="">
+						<a href="#"><span>爱笑的眼睛</span> <small>[前端工程师]</small></a>
+						<p>21 案例</p>
+					</li>
+					<li>
+						<img src="/tpl/default/asset/img/tx.png" class="pull-left" alt="">
+						<a href="#"><span>爱笑的眼睛</span> 好看，清新的感觉，简单好看，清新的感觉，简单</a>
+					</li>
+					<li>
+						<img src="/tpl/default/asset/img/tx.png" class="pull-left" alt="">
+						<a href="#"><span>爱笑的眼睛</span> 好看，清新的感觉，简单好看，清新的感觉，简单</a>
+					</li>
+					<li>
+						<img src="/tpl/default/asset/img/tx.png" class="pull-left" alt="">
+						<a href="#"><span>爱笑的眼睛</span> 好看，清新的感觉，简单好看，清新的感觉，简单</a>
+					</li>
+					<li>
+						<img src="/tpl/default/asset/img/txd.png" class="pull-left" alt="">
+						<div class="gdh-textarea">
+							<textarea name="aaaa">添加评论...</textarea>
+						</div>
+					</li>
+				</ul> -->
+			</div>
+		</div>
+		<!--item END-->
+<{/foreach}>

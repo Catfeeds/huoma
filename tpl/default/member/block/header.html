@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{if $seo_sub_title}><{$seo_sub_title}>_<{/if}><{if $seo_title}><{$seo_title}><{elseif
+        $SEO.title}><{$SEO.title}><{else}><{$CONFIG.site.title}><{/if}></title>
+    <{include file="member/block/headerinfo.html"}>
+    <link rel="stylesheet" type="text/css" href="%THEME%/member/css/common.css">
+    <link rel="stylesheet" type="text/css" href="%THEME%/member/css/member.css">
+    <link rel="stylesheet" type="text/css" href="%THEME%/member/css/expowidget.css"/>
+    <link type="text/css" href="<{$pager.res}>/ui/j.ui.css" rel="stylesheet"/>
+    <link type="text/css" href="<{$pager.res}>/ui/j.ui.timepicker.css" rel="stylesheet"/>
+
+
+    <script type="text/javascript">window.URL = {
+        "domain": "<{$CONFIG.site.domain}>",
+        "url": "<{$CONFIG.siteurl}>",
+        "res": "<{$pager.res}>",
+        "img": "<{$pager.img}>",
+        "city": "<{$request.city.siteurl}>"
+    };
+    window.G = {"city": "<{$request.city.city_name}>"};</script>
+    <script src="/tpl/default/js/jquery-1.11.3.min.js"></script>
+    <script src="/tpl/default/js/bootstrap.js"></script>
+    <script type="text/javascript" src="<{$pager.res}>/script/kt.js?<{$VER}>"></script>
+    <script type="text/javascript" src="<{$pager.res}>/ui/j.ui.js?<{$VER}>"></script>
+    <script type="text/javascript" src="<{$pager.res}>/ui/j.ui.timepicker.js"></script>
+    <script type="text/javascript" src="<{$pager.res}>/script/widget.login.js?<{$VER}>"></script>
+    <script type="text/javascript" src="<{$pager.res}>/script/widget.msgbox.js?<{$VER}>"></script>
+    <script type="text/javascript" src="%THEME%/js/mydialog.js"></script>
+    <!--<script type="text/javascript" src="/expo/default/static/js/scroll.js?<{$VER}>"></script>-->
+    <script src="/tpl/default/js/addElement.module.js"></script>
+    <link href="/tpl/default/css/addElement.module.css" rel="stylesheet">
+    <link href="/tpl/default/member/css/manage.center.css" rel="stylesheet">
+    <script>
+        $(function () {
+            $('.js-flex').on('click',function () {
+                var u = $(this).siblings('.admin-nav-sub');
+                if(u.hasClass('hide')){
+                    $(this).find('span').addClass('icon-arrUp').removeClass('icon-arrDown');
+                    u.addClass('show').removeClass('hide');
+                }else{
+                    $(this).find('span').addClass('icon-arrDown').removeClass('icon-arrUp');
+                    u.addClass('hide').removeClass('show');
+                }
+            });
+        });
+    </script>
+    <style>
+
+    </style>
+
+</head>
+<body>
+<{assign var="ucenter_header" value=true}>
+<iframe id="miniframe" name="miniframe" style="display:none;"></iframe>
+<!--mini-header-->
+
+<header class="admin-con">
+    <div class="container-fluid">
+
+        <!--主导航-->
+        <div class="admin-main-nav">
+            <div class="admin-title-h">
+                <ul id="uul">
+                    <li id="user"><span id="ua">您好，<{$MEMBER.uname}></span>
+                        <span  id="downpoin" class="caret_u"></span>
+                        <dl class="user_info">
+                            <dd><a href="<{link ctl='member/designer:index'}>">个人信息</a></dd>
+                            <dd><a href="<{link ctl='member/sheji/zhantai:index'}>">项目管理</a></dd>
+                            <dd><a href="<{link ctl='user:loginout'}>">退出</a></dd>
+                        </dl>
+                    </li>
+
+                    <!--<li><a class="admin-head-message" href="#"><span class="glyphicon glyphicon-volume-up"></span>消息 <i>6</i></a></li>-->
+                    <!--<li><a href=""><span class="iconfont icon-quit"></span>退出</a></li>-->
+                </ul>
+            </div>
+            <div class="admin-main-logo"><a href="<{link ctl='index'}>"><img src="/tpl/default/asset/img/logo.png" title="干点活-您身边的技术合伙人"/></a></div>
+            <ul class="nav navbar-nav admin-main-navbar">
+                <li><a class="active" href="<{link ctl='index'}>">首页</a></li>
+                <li <{if $request.ctl=='list' }>class="active"<{/if}>><a href="<{link ctl='list'}>">项目</a></li>
+                <li <{if $request.ctl=='newlist'}>class="active"<{/if}>><a href="<{link ctl='newlist'}>">最新</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<script>
+    $('.admin-title-h').mouseover(function(){
+        $('.user_info').show();
+        $('#downpoin').addClass('caret_u2');
+        $('#downpoin').removeClass('caret_u');
+    });
+    $('.admin-title-h').mouseout(function(e){
+
+        $('.user_info').hide();
+        $('#downpoin').removeClass('caret_u2');
+        $('#downpoin').addClass('caret_u');
+    });
+
+</script>
+<!--头部完成-->
+<div class="manage-content">
+    <!-- 内容分栏-->
+    <div class="admin-main-table">
+        <div class="menu-form1-left">
+            <!--<h3><span class="glyphicon glyphicon-home"></span>会员中心首页</h3>-->
+            <div class="menu-form1-left-con">
+
+                <div class="menu-item panel my-panel-style">
+
+                    <!--<div class="panel-heading">-->
+                    <!--<h3 class="panel-title"><{$menu.title}><span></span></h3>-->
+                    <!--</div>-->
+                    <div class="panel-body">
+                        <div class="list-group my-list-group">
+                       <{foreach $menu_list as $menu}>
+                       <{if $menu.menu}>
+                            <li class="list-group-item on">
+                                <a class="js-flex" href="#"><i class="iconfont <{$menu.biao}>"></i> <{$menu.title}><span class="iconfont icon-arrUp"></span></a>
+                                <ul class="admin-nav-sub">
+                                    <{foreach $menu.items as $item}>
+                                    <{if $item.menu}>
+                                    <li class="list-group-item  <{if $request.ctlmap.ctl==$item.ctl || $request.ctlmap.nav==$item.ctl}> on<{/if}>"><a href="<{link ctl=$item.ctl}>"><em class="iconfont icon-model"></em> <{$item.title}></a></li>
+                                    <{/if}>
+                                    <{/foreach}>
+                                </ul>
+                            </li>
+                        <{/if}>
+                        <{/foreach}>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="menu-form1-right">
+            <!-- 面包屑啊面包屑-->
+          <div class="admin-main-Breadcrumbs">
+              <div class="admin-menu-home">
+                  当前位置：
+                  <a href="<{link ctl='member/member:index'}>" target="_blank">个人中心</a>
+                  <{foreach $menu_list as $menu}>
+                  <{foreach $menu.items as $item}>
+                  <{if $request.ctlmap.ctl==$item.ctl}>
+                  <span><{$menu.title}></span>
+                  <span class="active"><{$item.title}></span>
+                  <{/if}>
+                  <{/foreach}>
+                  <{/foreach}>
+              </div>
+          </div>
+
+

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>资讯-干点活</title>
+		<script src="/tpl/default/asset/public/js/jquery-1.11.2.min.js"></script>
+		<link rel="stylesheet" href="/tpl/default/asset/public/css/style.css" />
+		<link rel="stylesheet" href="/tpl/default/asset/public/css/zixun.css" />
+	</head>
+	<body>
+		<div class="top">
+					<{include file="block/headernavnew.html"}>
+		</div>
+		<div class="box2">
+			<div class="box2_1">
+				<div class="left">
+					<div class="banner">
+					<div class="slider" id="slider">
+  <div class="slider-inner">
+  <{foreach $huandeng as $huandengs}>
+  
+    <div class="item">
+      <dl>
+      <a href="<{link ctl='newdetail' arg0=$huandengs.itemId}>" target="_blank">
+      	<dt><img src="<{$img_url}><{$huandengs.thumb}>"></dt>
+      	</a>
+      	<dd>
+      	 <a href="<{link ctl='newdetail' arg0=$huandengs.itemId}>" target="_blank">
+      		<p class="pp"><{$huandengs.title}></p>
+      		<p class="pp1"><{$huandengs.desc}></p>
+      		</a>
+      		<p class="pp2"><img src="/tpl/default/asset/public/img/xun_06.png"><{$huandengs.dateline|format}></p>
+      	</dd>
+      </dl>
+    </div>
+    
+    <{/foreach}>
+  
+  </div>
+</div>
+				</div>
+				<div class="tiwen"><a href="#">热点列表</a></div>
+				<div id="tabbox">
+					<ul class="tabs" id="tabs">
+						<li><a class="a1" href="javascript:;">推荐文章</a></li>
+						<li><a class="a1" href="javascript:;">最新文章</a></li>
+						<li><a class="a1" href="javascript:;">综合文章</a></li>
+					</ul>
+				</div>
+				  <ul class="tab_conbox" id="tab_conbox">
+				<li class="tab_con">
+           <div class="wenda">
+           	
+					<table>
+						<tbody>
+
+						<{foreach $tuijian as $tuijians}>
+						
+							<tr>
+								
+								<{if $tuijians.thumb != ''}>
+								
+								<td class="col-meta2">
+								<a href="<{link ctl='newdetail' arg0=$tuijians.itemId}>" target="_blank">
+									<div class="left_1"><img class="im" src="<{$img_url}><{$tuijians.thumb}>"/></div>
+									</a>
+								</td>
+								<{/if}>
+								<td class="tm-col-master2">
+								<a href="<{link ctl='newdetail' arg0=$tuijians.itemId}>" target="_blank">
+									<p class="shou"><{$tuijians.title}><span class="x"><img src="/tpl/default/asset/public/img/xun_06.png"><{$tuijians.dateline|format}></span></p>
+									<p class="fang1"><{$tuijians.desc}></p>
+									</a>
+									<p class="shijian1">
+										<a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/xun_11.png">25</a>
+										<a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/xun_11.png">123</a>
+										<a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/xun_11.png">13</a>
+									</p>
+								</td>
+								
+							</tr>
+						
+						<{/foreach}>	
+
+
+						</tbody>
+					</table>
+					</div>
+        </li>
+         <li class="tab_con">
+           <div class="wenda">
+           
+					<table>
+						<tbody>
+						
+							<{foreach  $article as $articles}>
+							<tr>
+									<{if $articles.thumb != ''}>
+								<td class="col-meta2">
+								<a href="<{link ctl='newdetail' arg0=$articles.article_id}>" target="_blank">
+									<div class="left_1"><img class="im" src="<{$img_url}><{$articles.thumb}>"/></div>
+									</a>
+								</td>
+								<{/if}>
+								<td class="tm-col-master2">
+								<a href="<{link ctl='newdetail' arg0=$articles.article_id}>" target="_blank">
+									<p class="shou"><{$articles.title}><span class="x"><img src="/tpl/default/asset/public/img/xun_06.png"><{$articles.dateline|format}></span></p>
+									<p class="fang1"><{$articles.desc}></p>
+									</a>
+									<p class="shijian1">
+										<a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/xun_11.png">25</a>
+										<a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/xun_11.png">123</a>
+										<a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/xun_11.png">13</a>
+									</p>
+								</td>
+							
+							</tr>
+							<{/foreach}>
+
+						</tbody>
+					</table>
+					</div>
+        </li>
+        <li class="tab_con">
+           <div class="wenda">
+           
+					<table>
+						<tbody>
+						<{foreach $zonghe as $zonghes}>
+							<tr>
+									<{if $zonghes.thumb != ''}>
+								<td class="col-meta2">
+								<a href="<{link ctl='newdetail' arg0=$zonghes.article_id}>" target="_blank">
+									<div class="left_1"><img class="im" src="<{$img_url}><{$zonghes.thumb}>"/></div>
+									</a>
+								</td>
+								<{/if}>
+								<td class="tm-col-master2">
+								<a href="<{link ctl='newdetail' arg0=$zonghes.article_id}>" target="_blank">
+									<p class="shou"><{$zonghes.title}><span class="x"><img src="/tpl/default/asset/public/img/xun_06.png">
+										<{$zonghes.dateline|format}>
+									</span></p>
+									<p class="fang1"><{$zonghes.desc}></p>
+									</a>
+									<p class="shijian1">
+										<a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/xun_11.png">25</a>
+										<a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/xun_11.png">123</a>
+										<a href="#"><img class="tubiao" src="/tpl/default/asset/public/img/xun_11.png">13</a>
+									</p>
+								</td>
+							
+							</tr>
+						<{/foreach}>
+						</tbody>
+					</table>
+					</div>
+        </li>
+				</ul>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	
+$(document).ready(function() {
+jQuery.jqtab = function(tabtit,tab_conbox,shijian) {
+$(tab_conbox).find("li").hide();
+$(tabtit).find("li:first").addClass("thistab").show(); 
+$(tab_conbox).find("li:first").show();
+$(tabtit).find("li").bind(shijian,function(){
+ $(this).addClass("thistab").siblings("li").removeClass("thistab"); 
+var activeindex = $(tabtit).find("li").index(this);
+$(tab_conbox).children().eq(activeindex).show().siblings().hide();
+return false;
+});
+};
+/*调用方法如下：*/
+$.jqtab("#tabs","#tab_conbox","click");
+//$.jqtab("#tabs","#tab_conbox","mouseenter");
+
+//$(".xuhao a").on("click","a",function(){
+//      $(".xuhao a").removeClass("add");
+//      $(this).addClass("add");
+//  });
+});
+//ul背景
+//序号
+
+ window.onload=function(){
+var oA=document.getElementsByClassName('shu');
+for(var i=0;i<oA.length;i++){
+oA[i].onclick=function() {
+for(var i=0;i<oA.length;i++){
+oA[i].style.background="";
+oA[i].style.color="";
+}
+this.style.background='#ccc';
+this.style.color='red';
+}
+}
+} 
+</script>
+<script>
+/**
+ * Author         : CheneyLiu
+ * Date           : date
+ * isAuto:        true, 自动播放
+ * transTime:     3000, 自动播放间隔
+ * animateSpeed:  1000,  动画速度
+ * sliderMode:    'slide', 类型//'slide | fade',
+ * pointerControl: true, 指示器开关
+ * pointerEvent:  'click', 指示器类型//'hover' | 'click',
+ * arrowControl:  true, 左右控制
+ */
+;(function($) {
+$.fn.Slider = function(options) {
+  "use strict";
+
+  var settings = $.extend({
+    isAuto: true,
+    transTime: 4000,
+    animateSpeed: 1000,  
+    sliderMode: 'slide', //'slide | fade',
+    pointerControl: true,
+    pointerEvent: 'click',//'hover' | 'click',
+    arrowControl: true,
+  }, options);
+  var interval;
+  var isAnimating     = false;
+  var $slider         = $(this);
+  var $sliderWrap     = $slider.find('.slider-inner');
+  var sliderCount     = $sliderWrap.find('> .item').length;
+  var sliderWidth     = $slider.width();
+  var currentIndex    = 0;
+
+  var sliderFun = {
+    controlInit: function() {
+      // pointerControl
+      if (settings.pointerControl) {
+        
+        var html = '';
+        html += '<ol class="slider-pointer">';
+        for (var i = 0; i < sliderCount; i++) {
+          if (i == 0) {
+            html += '<li class="active"></li>'
+          }else{
+            html += '<li></li>'
+          }
+        }
+        html += '</ol>'
+        $slider.append(html);
+          // 指示器居中
+        var $pointer = $slider.find('.slider-pointer');
+        $pointer.css({
+          left: '87%',
+          marginLeft: - $pointer.width()/2
+        });
+      }
+      // pointerControl
+      if (settings.arrowControl) {
+        var html = "";
+        html += '<span class="slider-control prev">&lt;</span>';
+        html += '<span class="slider-control next">&gt;</span>'
+        $slider.append(html);
+      }
+      $slider.on('click', '.slider-control.prev', function(event) {
+        sliderFun.toggleSlide('prev');
+      });
+      $slider.on('click', '.slider-control.next', function(event) {
+        sliderFun.toggleSlide('next');
+      });
+    },
+    // slider
+    sliderInit: function() {
+      sliderFun.controlInit();
+      // 模式选择
+      if (settings.sliderMode == 'slide') {
+        // slide 模式
+        $sliderWrap.width(sliderWidth * sliderCount);
+        $sliderWrap.children().width(sliderWidth);
+      }else{
+        // mode 模式
+        $sliderWrap.children().css({
+          'position': 'absolute',
+          'left': 0,
+          'top': 0
+        });
+        $sliderWrap.children().first().siblings().hide();
+      }
+      // 控制事件
+      if (settings.pointerEvent == 'hover') {
+        $slider.find('.slider-pointer > li').mouseenter(function(event) {
+          sliderFun.sliderPlay($(this).index());
+        });
+      }else{
+        $slider.find('.slider-pointer > li').click(function(event) {
+          if (currentIndex != $(this).index()) {
+				sliderFun.sliderPlay($(this).index())
+			}
+        });
+      }
+      // 自动播放
+      sliderFun.autoPlay();
+    },
+    // slidePlay
+    sliderPlay: function(index) {
+      sliderFun.stop();
+      isAnimating = true;
+      $sliderWrap.children().first().stop(true, true);
+      $sliderWrap.children().stop(true, true);
+      $slider.find('.slider-pointer').children()
+        .eq(index).addClass('active')
+        .siblings().removeClass('active');
+      if (settings.sliderMode == "slide") {
+        // slide
+        if (index > currentIndex) {
+          $sliderWrap.animate({
+        left: '-=' + Math.abs(index - currentIndex) * sliderWidth + 'px'
+    }, settings.animateSpeed, function() {
+        sliderFun.stop();
+        isAnimating = false;
+        sliderFun.autoPlay()
+    });
+        } else if (index < currentIndex) {
+          $sliderWrap.animate({
+            left: '+=' + Math.abs(index - currentIndex) * sliderWidth + 'px'
+          }, settings.animateSpeed, function() {
+            isAnimating = false;
+            sliderFun.autoPlay();
+          });
+        } else {
+          return;
+        }
+      }else{
+        // fade
+        if ($sliderWrap.children(':visible').index() == index) return;
+        $sliderWrap.children().fadeOut(settings.animateSpeed)
+          .eq(index).fadeIn(settings.animateSpeed, function() {
+            isAnimating = false;
+            sliderFun.autoPlay();
+          });
+      }
+      currentIndex = index;
+    },
+    // toggleSlide
+    toggleSlide: function(arrow) {
+      if (isAnimating) {
+        return;
+      }
+      var index;
+      if (arrow == 'prev') {
+        index = (currentIndex == 0) ? sliderCount - 1 : currentIndex - 1;
+        sliderFun.sliderPlay(index);
+      }else if(arrow =='next'){
+        index = (currentIndex == sliderCount - 1) ? 0 : currentIndex + 1;
+        sliderFun.sliderPlay(index);
+      }
+    },
+    // autoPlay
+    autoPlay: function() {
+      if (settings.isAuto) {
+        interval = setInterval(function () {
+          var index = currentIndex;
+          (currentIndex == sliderCount - 1) ? index = 0: index = currentIndex + 1;
+          sliderFun.sliderPlay(index);
+        }, settings.transTime);
+      }else{
+        return;
+      }
+    },
+    //stop
+    stop: function() {
+      clearInterval(interval);
+    },
+  };
+  sliderFun.sliderInit();
+}
+})(jQuery);
+jQuery(document).ready(function($) {
+  $('#slider').Slider();
+});
+</script>
+<script type="text/javascript">
+   $("tbody").on("click","tr",function(){
+        $("tbody tr").removeClass("add");
+        $(this).addClass("add");
+    });
+</script>

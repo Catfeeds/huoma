@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <link href="//www.jisunet.com/mobile/css/myTheme.css" rel="stylesheet"/>
+    <link href="//www.jisunet.com/mobile/css/jquery.mobile.icons.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="//www.jisunet.com/mobile/css/jquery.mobile.structure-1.4.5.css"/>
+    <title>一路展</title>
+</head>
+<body>
+<div data-role="page" id="pageOfferInput" class="page1" data-dom-cache="false" data-title="报价">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>报价</h1>
+    </div>
+    <div data-role="main">
+        <div class="order-listCon">
+        <ul data-role="listview" class="order-list-item">
+            <li class="ui-li-divider"><span><{$zhantai.title}></span></li>
+                <{if $zhantai.chang}>
+                <div class="order-list-offer">长：<span><{$zhantai.chang}>（米）</span></div>
+                <{/if}>
+                <{if $zhantai.kuan}>
+                <div class="order-list-offer">宽：<span><{$zhantai.kuan}>（米）</span></div>
+                <{/if}>
+                <{if $zhantai.gao}>
+                <div class="order-list-offer">高：<span><{$zhantai.gao}>（米）</span></div>
+                <{/if}>
+                <{if $zhantai.mianji}>
+                <div class="order-list-offer">面积：<span><{$zhantai.mianji}>（平米）</span></div>
+                <{/if}>
+                <{if $zhantai.intro}>
+                <div class="order-list-offer"><span><{$zhantai.intro}></span></div>
+                <{/if}>
+                <{if $zhantai.caizhi}>
+                <div class="order-list-offer">材质要求：<span><{$zhantai.caizhi}></span></div>
+                <{/if}>
+        </ul>
+    </div>
+        <div class="pageOfferInput-con">
+            <div class="pageOfferInput-divider">报价单 <{if !$jieshu}> <span class="iconfont icon-plus offerInput-custom-add">增加项目</span><{/if}></div>
+
+            <form method="post" action="/member/chao/baojia-create-<{$baojia.baojia_id}>.html" id="offerInputForm" data-ajax="false" onsubmit="return false;"
+                  enctype="multipart/form-data">
+                <{foreach $xiangmu as $key=>$xm }>
+                <{if $jieshu}>
+                <div class="ui-grid-a OfferInput-item">
+                    <div class="ui-block-a readonly">
+                       <{$xm.xiangmu}>
+                    </div>
+                    <div class="ui-block-b">
+                        <{$xm.price}>
+                    </div>
+                </div>
+                <{else}>
+                <div class="ui-grid-a OfferInput-item">
+                    <div class="ui-block-a readonly">
+                        <label for="factoryName"><span class="iconfont icon-iconfontedit1 offerInput-edit"></span></label>
+                        <input type="text" name="baojia[xiangmu][<{$key}>]" id="factoryNameLabel1" placeholder="项目名称" value="<{$xm.xiangmu}>">
+                    </div>
+                    <div class="ui-block-b">
+                        <input class="sumItem" type="text" data-clear-btn="true" name="baojia[price][<{$key}>]" id="factoryName" placeholder="<{$xm.price}>" value="<{$xm.price}>">
+                    </div>
+                </div>
+                <{/if}>
+                <{/foreach}>
+                <!--自定义添加容器-->
+                <div class="offerinput-custom-con"></div>
+
+                <div class="ui-grid-a OfferInput-item total">
+                    <div class="ui-block-a">
+                        <{if $jieshu}>
+                            合计报价：
+                        <{else}>
+                            <label for="factoryNameT">合计报价：</label>
+                        <{/if}>
+                    </div>
+                    <div class="ui-block-b">
+                        <{if $jieshu}>
+                            <{$baojia.gc_price}>
+                        <{else}>
+                        <input class="sumCont" readonly type="text" name="factoryName" id="factoryNameT" value="<{$baojia.gc_price}>">
+                        <{/if}>
+                    </div>
+                </div>
+                <{if !$jieshu}>
+                <div class="OfferInput-item">
+                    <button type="submit" id="offerInput-btn" class="factoryInfo-btn">发布</button>
+                </div>
+                <{/if}>
+            </form>
+            <{if !$jieshu}>
+            <div class="article-notice">
+                <h3>报价注意事项：</h3>
+                <small>地面部分：仅指地面铺材</small>
+                <small>主体结构：指全部制作部分</small>
+                <small>电工/AV：所有电器、AV</small>
+                <small>美工：指全部美工字、画面</small>
+                <small>运输、搭建、拆除</small>
+                <small>报价含税，工厂提供正规发票</small>
+                <small>以最终总报价为准，请合理调整分项报价！</small>
+                <small>不宜报价过高，请保留合理利润！</small>
+            </div>
+            <{/if}>
+        </div>
+    </div>
+</div>
+<{include file="mobile:member/block/bottom.html"}>
+</body>
+</html>

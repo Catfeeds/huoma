@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{$pager.from_title}>找回密码_一路展展装网</title>
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageReg" class="page1 regMain"  data-pageuse="retrieve" data-dom-cache="false" data-title="找回密码_一路展展装网">
+
+
+    <div data-role="header" data-position="fixed" data-tap-toggle="false" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+        <h1><{$pager.from_title}>找回密码</h1>
+    </div>
+    <div data-role="main">
+
+        <div class="setp">
+            <!-- 用户头 -->
+            <div class="factoryU-banner">
+            	用户名：<{$member.uname}><br>
+                手机：<{$mobile}>
+            </div>
+            <form data-role="form" method="post" action="<{link ctl='user:forgot'}>" onsubmit="return false;" data-ajax="false" id="loginForm">
+           <!--  <input type="hidden" name="ylz[from]" value="<{$pager.from}>"/> -->
+                <div class="reg-fromInput">
+                    <label for="loginUserRPwd"><span class="iconfont icon-password"></span> </label>
+                    <input type="password" name="passwd" id="passwd" placeholder="输入新密码">
+                </div>
+                <div class="reg-fromInput">
+                    <label for="loginUserRPwd"><span class="iconfont icon-password"></span> </label>
+                    <input type="password" name="confirmpwd" id="confirmpwd" placeholder="确认新密码">
+                </div>
+                <fieldset class="loginForgot"></fieldset>
+                <fieldset class="loginSubmit">
+                    <input type="submit" id="regSubmit" value="完成">
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+<{include file="mobile:block/bottom.html"}>
+</body>
+</html>

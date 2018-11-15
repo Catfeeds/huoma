@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><{$seo.city_name}><{$seo.group_name}>展装工厂大全_<{$seo.city_name}><{$seo.group_name}>展览工厂列表_一路展<{$seo.city_name}>工程中心</title>
+    <meta name="description" content="一路展工程中心汇聚<{$seo.city_name}><{$seo.group_name}>专业展装搭建公司,找展台搭建商、展览搭建公司、展会搭建工厂就上一路展工程中心,海量展览搭建公司随心选择!一路展,展装原本如此轻松~">
+    <meta name="Keywords" content="展台搭建,展览搭建,会展搭建,展台搭建商,一路展,展览搭建公司">
+    <{include file="mobile:block/header.html"}>
+</head>
+<body>
+<div data-role="page" id="pageList" data-mylist-con="listviewCon" data-mylist-src="/gong/index-listcon-<{$city_id}>-<{$group_id}>.html?kw=<{$kw}>&" class="page1" data-dom-cache="false" data-title="<{$seo.city_name}><{$seo.group_name}>展装工厂大全_<{$seo.city_name}><{$seo.group_name}>展览工厂列表_一路展<{$seo.city_name}>工程中心">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="<{link ctl='index'}>" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1><{if $seo.city_name || $seo.group_name}><{$seo.city_name}><{$seo.group_name}>工厂<{else}>工程中心<{/if}></h1>
+        <a href="<{link ctl='gong:search'}>" data-transition="slideup" class="ui-btn iconfont icon-search"></a>
+
+    </div>
+    <div data-role="main">
+                <!-- list 数据容器，这里不要存放数据-->
+                <div class="market-list2">
+                    <ul data-role="listview" class="listviewCon" id="gong-<{$PAGEID}>">
+                         <{include file="mobile:gong/listcon.html"}> 
+                    </ul>
+                        <!-- Loading-->
+                        <div class="listLoading" id="listLoading">
+                            <div class="listLoadLabel">上拉加载更多</div>
+                        </div>
+                </div>
+    </div>
+<{include file="mobile:block/footer.html"}>

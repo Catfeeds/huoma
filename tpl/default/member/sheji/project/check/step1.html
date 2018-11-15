@@ -1,0 +1,43 @@
+<{include file="member/block/header.html"}>
+<div class="ucenter_t">
+	<ul>
+		<li class="on"><a href="<{link ctl='member/designer:info'}>">验证文件</a></li>
+
+	</ul>
+</div>
+
+<div class="admin-right" style="min-height: 400px">
+	<div class="check_step">
+		<div class="step step1">
+			确认验证网址
+		</div>
+		<div class="step step2">
+			<span class="step_f">下载验证文件</span>
+		</div>
+		<div class="step step3">
+			<span class="step_f3">验证完成</span>
+		</div>
+
+	</div>
+	<form action="<{link ctl='member/sheji/zhantai:check'}>"  method="post" ENCTYPE="multipart/form-data">
+		<table cellspacing="0" cellpadding="0" class="form" style="margin:0 auto;">
+			<input type="hidden" name="step" value="2">
+			<input type="hidden" name="xiangmu_id" value="<{$xiangmu.xiangmu_id}>">
+			<tr><td>
+				<textarea name="data[content]" style="width:500px;height:300px"  disabled="disabled"><{$xiangmu.gurl}></textarea></td></tr>
+			<tr></tr>
+			<tr><td><input type="submit" value="下一步" class="green_btn next_botton" /></td></tr>
+		</table>
+		<div style="width:100%;height:30px;clear: both">
+
+		</div>
+
+	</form>
+</div>
+<script type="text/javascript" src="<{$pager.res}>/kindeditor/kindeditor.js"></script>
+<script type="text/javascript">
+	(function(K, $){
+		var editor = KindEditor.create('textarea[kindeditor]',{uploadJson : '<{link ctl="magic:editorupload" http="base"}>', extraFileUploadParams:{OTOKEN:"<{$OTOKEN}>"}});
+	})(window.KT, window.jQuery);
+</script>
+<{include file="member/block/footer.html"}>

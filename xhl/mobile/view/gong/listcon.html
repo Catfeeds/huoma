@@ -1,0 +1,14 @@
+<{foreach $items as $item}>
+<li data-icon="false" class="my-grids-1">
+    <a href="<{$item.company_url}>">
+		<{if $item.logo}>
+        <img src="<{$pager.img}>/<{$item.logo}>" />
+        <{else}>
+        <img src="//www.jisunet.com/mobile/img/moren.jpg"/>
+        <{/if}>
+        <h2><{$item.title}></h2>
+        <small><{$item.group_name}><span>|</span><{$item.city_name}></small>
+        <p><span></span><{if $item.slogan}><{$item.slogan}><{else}>&nbsp;<{/if}></p>
+    </a>
+</li>
+<{/foreach}>

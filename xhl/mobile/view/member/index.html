@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>天天投-创业第一站，靠谱投融资对接平台</title>
+    <meta name="keywords" content="投融资，创业，融资，创业投资"/>
+    <meta name="description" content="天天投投融资服务平台：3650助梦创业计划给早期项目提供百万创业投资；创业课堂为创业者传授创业经验、扩展创业资源；投融资面对面为创业者直接向投资人展示项目、拿到下一轮创业投资的机会。天天投-让创业投融资变得简单。"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <script src="/js/jquery-2.1.4.min.js"></script>
+    <script src="/js/index/index.js"></script>
+    <link rel="stylesheet" href="/css/index/common.css"/>
+    <link rel="stylesheet" href="/css/index/index.css"/>
+    <link rel="stylesheet" href="/css/index/iconfont.css"/>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" charset="UTF-8"></script>
+
+    <script>
+
+        wx.config({
+            appId: 'wx81e59e63edd9eae4',
+            timestamp: '1514541447',
+            nonceStr: '1514541447',
+            signature: '95b501c12cba44cbbedc0ce85300ed1e1f06f0b8',
+            jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
+        });
+
+        wx.ready(function () {
+
+            var shareImg = 'http://pp1.evervc.com/evervc.png@!logom';
+            var shareLink = 'http://www.evervc.com/';
+            var shareTitle = '天天投融资中项目';
+            var shareDesc = '天天投已汇聚近2000个知名投资机构/专业投资人、5000多个正在融资的优秀创业公司（娱乐/金融/医疗/O2O），帮助多个项目完成数千万的投融资对接，并提供全产业链资源扶持、以提升创业投资成功率。';
+            var tlDesc = '天天投已汇聚近2000个知名投资机构/专业投资人、5000多个正在融资的优秀创业公司（娱乐/金融/医疗/O2O），帮助多个项目完成数千万的投融资对接，并提供全产业链资源扶持、以提升创业投资成功率。';
+
+            wx.onMenuShareTimeline({
+                title: tlDesc,
+                link: shareLink,
+                imgUrl: shareImg
+            });
+
+            wx.onMenuShareAppMessage({
+                title: shareTitle,
+                desc: shareDesc,
+                link: shareLink,
+                imgUrl: shareImg
+            });
+        });
+    </script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?b8afd1353ddcc6a6e3630d282272fa54";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+
+<div id="wrapper" class="collapse">
+    <style>
+
+
+    </style>
+
+    <div class="menu animate ">
+        <div class="menu-user">
+            <img src="img/user_photo.jpg"/>
+            <div class="menu-user-info">
+                <a class="unlog" href="">登录</a>
+                <a class="unlog" href="">注册</a>
+            </div>
+        </div>
+
+        <ul class="menu-list">
+            <li class="current"><a href="/">首页</a></li>
+            <li><a href="xiangmu.html">项目</a></li>
+            <li><a href="">技术</a></li>
+            <li><a href="">活儿</a></li>
+            <li><a href="">更多</a></li>
+            <li><a href="">APP下载<span>投融资必备工具</span></a></li>
+        </ul>
+    </div>
+    <script>
+        $(function () {
+            $(".menu-ico").click(function (e) {
+                e.preventDefault();
+                $(this).hide();
+                $("#wrapper").css("overflow", "hidden");
+                $("div.screen, div.fixedGuide").addClass("expand").removeClass("collapse");
+                $(".menu-close").fadeIn();
+            });
+
+            $(".menu-close").click(function (e) {
+                e.preventDefault();
+                $(this).hide();
+                $("div.screen, div.fixedGuide").removeClass("expand").addClass("collapse");
+                $(".menu-ico").fadeIn();
+                window.setTimeout(function () {
+                    $("#wrapper").css("overflow", "visible");
+                }, 1000);
+            });
+        });
+    </script>
+
+    <div class="screen animate collapse">
+
+        <header class="head">
+            <div class="menu-ico"></div>
+            <div class="menu-close" style="display: none;"></div>
+            <a class="logo" href="" title="天天投"><img src="http://pp1.evervc.com/mobi-topic-imgs/wap-logo.png"/></a>
+            <script>
+                $(function () {
+                    $(".search-status a").click(function (e) {
+                        e.preventDefault();
+                        $(this).hide();
+                        $(".search-cancel, .search-wrap").fadeIn();
+                    });
+
+                    $(".search-cancel").click(function (e) {
+                        e.preventDefault();
+                        $(".search-cancel").hide();
+                        $(".search-wrap").fadeOut();
+                        $(".search-status a").fadeIn();
+                    });
+
+                });
+            </script>
+            <div class="search">
+                <!-- 搜索默认状态 -->
+                <div class="search-status">
+                    <a href="javascript:void(0);"></a>
+                    <span class="search-cancel" style="display: none">取消</span> <!-- 展开搜索栏后显示"取消" -->
+                </div>
+
+                <!-- 搜索栏展开 -->
+                <div class="search-wrap" style="display: none;">
+                    <form action="" method="GET">
+                        <button type="submit" class="search-btn">搜索</button>
+                        <div class="search-input">
+                            <input type="text" name="keyword" placeholder="搜索项目或投资人"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </header>
+
+        <nav class="navbar">
+            <ul>
+                <li class="current"><a href="/">首页</a></li>
+                <li><a href="<{link ctl='index:project'}>">项目</a></li>
+                <li><a href="">活儿</a></li>
+                <li><a href="">更多</a></li>
+            </ul>
+        </nav>
+
+        <div class="main">
+
+
+            <div class="section">
+                <div class="section-tit">
+                    <div class="box"><span>潜力项目</span></div>
+                    <div class="more"><a href="">更多</a></div>
+                </div>
+                <div class="home-wapper">
+                    <ul class="recommend-list">
+                        <li>
+                            <a href="javascript:void(0);">
+                                <img class="startup-logo" src="http://pp1.evervc.com/2017/12/06/49a5169e03e848cfa491550a1a7f09ad.png@!logom" alt="在线抓娃娃"/>
+                                <span class="startup-name">在线抓娃娃</span>
+                                <span class="startup-city">上海</span>
+                                <span class="startup-desc">
+                            			腾讯
+                            			上海交通大学
+                            </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img class="startup-logo" src="http://pp1.evervc.com/2016/08/23/e93ab086814b4c9196d8cd0acbdd0e36.jpg@!logom" alt="国信安服"/>
+                                <span class="startup-name">国信安服</span>
+                                <span class="startup-city">北京</span>
+                                <span class="startup-desc">
+                            </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img class="startup-logo" src="http://pp1.evervc.com/2017/11/07/cfee9b1cb9854f9bb64f054276e4750d.jpg@!logom" alt="斑马快过（北京）智能技术有限公司"/>
+                                <span class="startup-name">斑马快过（北京）智能技术有限公司</span>
+                                <span class="startup-city">北京</span>
+                                <span class="startup-desc">
+                            			清华大学
+                            </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img class="startup-logo" src="http://pp1.evervc.com/2017/10/26/18a7b2ff3ecf472abd33e9740c7bbd4f.png@!logom" alt="双师互动课堂"/>
+                                <span class="startup-name">双师互动课堂</span>
+                                <span class="startup-city">北京</span>
+                                <span class="startup-desc">
+                            			清华大学
+                            </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img class="startup-logo" src="http://pp1.evervc.com/2017/11/01/d31e0b47017444f89f2206940218f789.jpg@!logom" alt="豆盐家"/>
+                                <span class="startup-name">豆盐家</span>
+                                <span class="startup-city">上海</span>
+                                <span class="startup-desc">
+                            			复旦大学
+                            </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img class="startup-logo" src="http://pp1.evervc.com/2017/11/14/18dea58ee6b44230ab74ca0b14b6650f.png@!logom" alt="北京天河石科技"/>
+                                <span class="startup-name">北京天河石科技</span>
+                                <span class="startup-city">北京</span>
+                                <span class="startup-desc">
+                            </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-tit">
+                    <div class="box"><span>投资人们</span></div>
+                    <div class="more"><a href="">更多</a></div>
+                </div>
+                <div class="home-wapper">
+                    <ul class="item-list">
+                        <li>
+                            <a href="">
+                                <div class="item-logo"><img src="http://pp1.evervc.com/2016/10/10/442096950d1b4ebc9b716d02c797442d.jpg@!logom" alt="徐小平"></div>
+                                <div class="item-intro">
+                                    <h3>徐小平</h3>
+                                    <p class="item-desc">真格基金 创始合伙人</p>
+                                    <p class="item-desc">
+                                        真格基金创始人、中国著名天使投资人。投资案例：世纪佳缘、聚美优品、兰亭集势、找钢网、美菜网、蜜芽、小红书、51talk、大姨吗、易到用车、一起作业、亿航、Hyperloop等</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="item-logo"><img src="http://pp1.evervc.com/2015/05/04/3ce48370e1c44e99a874483bdbe144da.jpg@!logom" alt="沈劲"></div>
+                                <div class="item-intro">
+                                    <h3>沈劲</h3>
+                                    <p class="item-desc">高通 全球副总裁兼高通投资部中国区总经理</p>
+                                    <p class="item-desc">
+                                        现任美国高通风险投资公司业务拓展副总裁，兼美国高通风险投资公司风险投资中国部总经理。他领导了高通向汉翔（触宝）、网秦、小米科技、机锋网、中科创达、易到用车、脉可寻、百纳（海豚浏览器）、亿动传媒、活动行、神州鹰、爱乐奇、薄荷网、剑桥WoWo、硬糖、触控科技、云知声和七鑫易维等公司的风险投资。</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="item-logo"><img src="http://pp1.evervc.com/2015/04/23/84d9aaaca350427da65a4951ab5051ad.jpg@!logom" alt="程天"></div>
+                                <div class="item-intro">
+                                    <h3>程天</h3>
+                                    <p class="item-desc">顺为资本 合伙人</p>
+                                    <p class="item-desc">顺为资本合伙人，投资案例包括阿里巴巴集团，小米，凡客诚品，优酷土豆网，途牛网，
+                                        盛大文学，蘑菇街，陌陌，滴滴打车，融360，酒仙网等。拥有复旦大学理学学士和管理学硕士学位。</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-tit">
+                    <div class="box"><span>最新项目</span></div>
+                    <div class="more"><a href="">更多</a></div>
+                </div>
+                <div class="home-wapper">
+                    <ul class="item-list">
+                        <li>
+                            <div class="item-logo">
+                                <a href="">
+                                    <img src="http://pp1.evervc.com/2017/12/28/c1d6836e976949848d2d6d8b12ef923e.jpg@!logom" alt="推客儿">
+                                </a>
+                            </div>
+                            <div class="item-intro">
+                                <a href="">
+                                    <h3>推客儿</h3>
+                                    <p class="item-desc">
+                                        一个为用户赚钱的网站 1，解决用户额外赚钱渠道少赚钱难的痛点，项目平台提供赚钱的资源，利…
+                                    </p>
+                                    <p class="item-tag">
+                                        成都<span>|</span>
+                                        企业服务
+                                    </p>
+                                </a>
+                                <p class="item-price"><a href="">融资信息仅认证投资人可见</a></p>
+                            </div>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="item-logo">
+                                <a href="">
+                                    <img src="http://pp1.evervc.com/2017/08/18/0567034cf5fa40929502dd90dee56e62.jpg@!logom" alt="打造亚洲第一网红天使自媒体生态帝国">
+                                </a>
+                            </div>
+                            <div class="item-intro">
+                                <a href="">
+                                    <h3>打造亚洲第一网红天使自媒体生态帝国</h3>
+                                    <p class="item-desc">
+                                        网红平台涵盖四大板块 PC视频门户 App直播 网红孵化 线下娱乐 网红孵化-PGC创…
+                                    </p>
+                                    <p class="item-tag">
+                                        北京<span>|</span>
+                                        网红经济
+                                    </p>
+                                </a>
+                                <p class="item-price"><a href="">融资信息仅认证投资人可见</a></p>
+                            </div>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="item-logo">
+                                <a href="">
+                                    <img src="http://pp1.evervc.com/2015/07/24/9997126874be41b99dcffca1ad722bda.png@!logom" alt="泛趣网">
+                                </a>
+                            </div>
+                            <div class="item-intro">
+                                <a href="">
+                                    <h3>泛趣网</h3>
+                                    <p class="item-desc">
+                                        国外信息分类平台 泛趣网是以个人行旅游为基点的信息交互平台，立志为用户提供更完善多元化的…
+                                    </p>
+                                    <p class="item-tag">
+                                        上海<span>|</span>
+                                        消费升级
+                                    </p>
+                                </a>
+                                <p class="item-price"><a href="">融资信息仅认证投资人可见</a></p>
+                            </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
+        <footer class="footer">
+            <ul class="footer-contact">
+                <li>
+                    <span class="left">发送商业计划书：</span>
+                    <span class="right">bp@evervc.com</span>
+                </li>
+                <li>
+                    <span class="left">商务合作微信：</span>
+                    <span class="right"><em>1764085</em></span>
+                </li>
+                <li>
+                    <span class="left">客服微信：</span>
+                    <span class="right">ever_vc</span>
+                </li>
+            </ul>
+            <p class="footer-copyright">&copy; 2014 - 2016 天天投 版权所有</p>
+        </footer>
+    </div>
+
+    <div class="bottom">
+        <ul>
+            <li><a href="xiangmu.html"><i class="iconfont icon-xiangmu"></i><span>项目</span></a></li>
+            <li><a href="javascript:void(0);"><i class="iconfont icon-jishu"></i><span>技术</span></a></li>
+            <li><a href="javascript:void(0);"><i class="iconfont icon-huodong"></i><span>活儿</span></a></li>
+            <li><a href="javascript:void(0);"><i class="iconfont icon-gengduo"></i><span>更多</span></a></li>
+            <li><a href="javascript:void(0);"><i class="iconfont icon-wode"></i><span>我的</span></a></li>
+        </ul>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    //	     $(function() {
+    //  $('button').click(function(){
+    //      $(this).addClass("btn-success").siblings("button").removeClass("btn-success").addClass("btn-default");
+    //      var text = $(this).text();
+    //      $('p').text('切换到了' + text);
+    //  });
+    //});
+</script>
+

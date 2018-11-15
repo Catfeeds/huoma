@@ -1,0 +1,34 @@
+<{include file="mobile:member/block/header.html"}>
+<div data-role="page" id="pageFactoryInfo" class="page1" data-dom-cache="false" data-title="工厂设备">
+
+    <div data-role="header" data-position="fixed" class="header">
+        <a href="#" data-direction="reverse" data-rel="back" class="ui-btn iconfont icon-jiantou"></a>
+
+        <h1>添加工厂设备</h1>
+    </div>
+    <div data-role="main">
+        <div data-role="content" class="factoryInfo-upload">
+            <form method="post" action="<{link ctl='member/company/photo:create'}>" id="factoryInfoForm" data-ajax="false" onsubmit="return false;"
+                  enctype="multipart/form-data">
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryName">类型：</label>
+                    <select name="data[type]"><{html_options options=$type_list}></select>
+                    <!-- <input type="text" name="data[type]" id="factoryName" placeholder="请输入工厂名称"> -->
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryOwn">名称：</label>
+                    <input type="text" name="data[title]" id="factoryOwn" placeholder="设备名称" value="设备">
+                </div>
+                <div class="ui-field-contain factoryInfo-item">
+                    <label for="factoryLogo">图片：</label>
+
+                    <div id="factorylogo" data-upurl="/up-600.html" data-mutpic="1"></div>
+                    <input type="hidden" name="data[logo]" id="factoryLogoPath">
+                    <span style="font-size:12px;">图片尺寸 宽：600px 高：600px</span>
+                </div>
+                <button type="submit" id="factoryInfo-btn" class="factoryInfo-btn">发布</button>
+            </form>
+        </div>
+    </div>
+
+<{include file="mobile:member/block/footer.html"}>
