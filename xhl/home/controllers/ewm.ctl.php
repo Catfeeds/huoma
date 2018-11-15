@@ -199,6 +199,7 @@ class Ctl_Ewm extends Ctl
     //删除二维码
     public function shanchu()
     {
+        //
         $data = $_POST['a'];
         $shanchu = K::M('code/content')->shanchu($data);
         $returnData = json_encode($shanchu, JSON_UNESCAPED_UNICODE); 
